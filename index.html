@@ -22,6 +22,10 @@ header{background:var(--v);color:#fff;padding:26px 0 22px;text-align:center}
 .hero{background:linear-gradient(180deg,var(--v) 0%,#7a9a9e 100%);color:#fff;text-align:center;padding:14px 16px 30px}
 .badge{display:inline-block;background:#fff;color:var(--v);font-weight:700;font-size:13px;letter-spacing:2px;padding:8px 20px;border-radius:99px;margin-bottom:2px}
 .badge b{color:#c0392b}
+.badge.off{background:#c0392b;color:#fff}
+.badge.off b{color:#fff}
+.closed .add,.closed .tl{pointer-events:none;opacity:.45}
+.wamsg{margin-top:14px}.wamsg a{color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:9px 20px;text-decoration:none;font-size:14px;display:inline-block}
 .hero h1{font-size:30px;font-weight:700;line-height:1.15;margin-bottom:8px}
 .hero p{font-weight:300;font-size:15px;opacity:.92;max-width:520px;margin:0 auto}
 .cd{display:flex;gap:8px;justify-content:center;margin:20px 0 4px}
@@ -102,7 +106,7 @@ footer a{color:#fff}
 
 <section class="hero">
   <div class="wrap">
-    <div class="badge">● PEDIDO ABIERTO — <b>SEPTIEMBRE 2026</b></div>
+    <div class="badge" id="badge">● PEDIDO ABIERTO — <b>SEPTIEMBRE 2026</b></div>
     <div class="cd" id="cd">
       <div><span id="d">--</span><small>DÍAS</small></div>
       <div><span id="h">--</span><small>HORAS</small></div>
@@ -799,13 +803,34 @@ footer a{color:#fff}
 </footer>
 
 <script>
+/* ===== INTERRUPTOR DEL PEDIDO =====
+   false = CERRADO (no se puede comprar, sin importar la fecha)
+   true  = ABIERTO hasta la fecha de CIERRE                      */
+var ABIERTO = false;
 var SENA=10000, WA="5493795574887", CIERRE=new Date("2026-09-07T22:00:00-03:00");
 
 /* ---------- COUNTDOWN ---------- */
+var CERRADO=false;
+function cerrarPedido(){
+  if(CERRADO)return; CERRADO=true;
+  document.getElementById('cd').style.display='none';
+  var b=document.getElementById('badge');
+  b.className='badge off'; b.innerHTML='● PEDIDO CERRADO';
+  document.getElementById('cdl').innerHTML='Este pedido ya cerró.<div class="wamsg">'+
+    '<a href="https://wa.me/'+WA+'?text=Hola!%20Quiero%20avisos%20del%20pr%C3%B3ximo%20pedido">'+
+    'Avisame del próximo pedido</a></div>';
+  document.body.classList.add('closed');
+  document.querySelectorAll('.add').forEach(function(a){
+    a.disabled=true; a.textContent='Pedido cerrado';
+  });
+  cart=[]; sync();
+  document.getElementById('cartbar').classList.remove('on');
+  cerrar();
+}
 function tick(){
+  if(!ABIERTO){cerrarPedido();return;}
   var t=CIERRE-new Date();
-  if(t<=0){document.getElementById('cd').style.display='none';
-    document.getElementById('cdl').textContent='EL PEDIDO CERRÓ';return;}
+  if(t<=0){cerrarPedido();return;}
   var d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60,s=Math.floor(t/1e3)%60;
   var p=function(n){return n<10?'0'+n:''+n};
   document.getElementById('d').textContent=d;
@@ -813,7 +838,6 @@ function tick(){
   document.getElementById('m').textContent=p(m);
   document.getElementById('s').textContent=p(s);
 }
-tick();setInterval(tick,1000);
 
 /* ---------- FILTROS ---------- */
 var F={cat:null,gen:null,talle:null};
@@ -850,7 +874,7 @@ document.querySelectorAll('.card').forEach(function(c){
     };
   });
   btn.onclick=function(){
-    if(!sel)return;
+    if(!sel||!ABIERTO||CERRADO||new Date()>=CIERRE){cerrarPedido();return;}
     cart.push({code:c.dataset.code,nom:c.dataset.nom,talle:sel,precio:+c.dataset.precio});
     btn.textContent='Agregado ✓'; btn.classList.add('done');
     setTimeout(function(){btn.textContent='Reservar';btn.classList.remove('done')},1200);
@@ -887,6 +911,7 @@ document.querySelectorAll('.cp').forEach(function(b){
 
 /* ---------- WHATSAPP ---------- */
 document.getElementById('wa').onclick=function(){
+  if(!ABIERTO||CERRADO||new Date()>=CIERRE){cerrarPedido();toast('El pedido ya cerró');return;}
   var v=document.getElementById('vend').value.trim();
   var c=document.getElementById('cli').value.trim();
   document.getElementById('everr').classList.toggle('on',!v);
@@ -905,6 +930,8 @@ document.getElementById('wa').onclick=function(){
   m+='Alias: PATOCAMPSANT (Santander)';
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
 };
+
+tick(); setInterval(tick,1000);
 </script>
 </body>
 </html>
