@@ -134,7 +134,7 @@ footer a{color:#fff}
 </ol></div></section>
 
 <div class="fbar"><div class="wrap">
-  <div class="frow"><em>Categoría</em><button class="chip" data-f="cat" data-v="Packs de Bodies">Packs de Bodies</button><button class="chip" data-f="cat" data-v="Sets 2 Piezas">Sets 2 Piezas</button><button class="chip" data-f="cat" data-v="Sets 3 Piezas">Sets 3 Piezas</button><button class="chip" data-f="cat" data-v="Vestidos">Vestidos</button><button class="chip" data-f="cat" data-v="Pijamas Algodón">Pijamas Algodón</button><button class="chip" data-f="cat" data-v="Enteritos">Enteritos</button><button class="chip" data-f="cat" data-v="Mantas">Mantas</button></div><div class="frow"><em>Género</em><button class="chip" data-f="gen" data-v="Nena">Nena</button><button class="chip" data-f="gen" data-v="Nene">Nene</button><button class="chip" data-f="gen" data-v="Unisex">Unisex</button></div><div class="frow"><em>Talles bebé</em><button class="chip" data-f="talle" data-v="NB">NB</button><button class="chip" data-f="talle" data-v="3M">3M</button><button class="chip" data-f="talle" data-v="6M">6M</button><button class="chip" data-f="talle" data-v="9M">9M</button><button class="chip" data-f="talle" data-v="12M">12M</button><button class="chip" data-f="talle" data-v="18M">18M</button><button class="chip" data-f="talle" data-v="24M">24M</button></div><div class="frow"><em>Talles niño</em><button class="chip" data-f="talle" data-v="3T">3T</button><button class="chip" data-f="talle" data-v="4T">4T</button><button class="chip" data-f="talle" data-v="5T">5T</button></div><div class="frow"><em>Talle único</em><button class="chip" data-f="talle" data-v="OSZ">OSZ</button></div>
+  <div class="frow"><em>Ordenar</em><button class="chip on" data-s="">Sugerido</button><button class="chip" data-s="desc">Mayor precio</button><button class="chip" data-s="asc">Menor precio</button></div><div class="frow"><em>Categoría</em><button class="chip" data-f="cat" data-v="Packs de Bodies">Packs de Bodies</button><button class="chip" data-f="cat" data-v="Sets 2 Piezas">Sets 2 Piezas</button><button class="chip" data-f="cat" data-v="Sets 3 Piezas">Sets 3 Piezas</button><button class="chip" data-f="cat" data-v="Vestidos">Vestidos</button><button class="chip" data-f="cat" data-v="Pijamas Algodón">Pijamas Algodón</button><button class="chip" data-f="cat" data-v="Enteritos">Enteritos</button><button class="chip" data-f="cat" data-v="Mantas">Mantas</button></div><div class="frow"><em>Género</em><button class="chip" data-f="gen" data-v="Nena">Nena</button><button class="chip" data-f="gen" data-v="Nene">Nene</button><button class="chip" data-f="gen" data-v="Unisex">Unisex</button></div><div class="frow"><em>Talles bebé</em><button class="chip" data-f="talle" data-v="NB">NB</button><button class="chip" data-f="talle" data-v="3M">3M</button><button class="chip" data-f="talle" data-v="6M">6M</button><button class="chip" data-f="talle" data-v="9M">9M</button><button class="chip" data-f="talle" data-v="12M">12M</button><button class="chip" data-f="talle" data-v="18M">18M</button><button class="chip" data-f="talle" data-v="24M">24M</button></div><div class="frow"><em>Talles niño</em><button class="chip" data-f="talle" data-v="3T">3T</button><button class="chip" data-f="talle" data-v="4T">4T</button><button class="chip" data-f="talle" data-v="5T">5T</button></div><div class="frow"><em>Talle único</em><button class="chip" data-f="talle" data-v="OSZ">OSZ</button></div>
   <div class="count" id="count"></div>
 </div></div>
 
@@ -983,7 +983,7 @@ function tick(){
 
 /* ---------- FILTROS ---------- */
 var F={cat:null,gen:null,talle:null};
-document.querySelectorAll('.chip').forEach(function(c){
+document.querySelectorAll('.chip[data-f]').forEach(function(c){
   c.onclick=function(){
     var f=c.dataset.f,v=c.dataset.v;
     var was=F[f]===v;
@@ -992,6 +992,21 @@ document.querySelectorAll('.chip').forEach(function(c){
     render();
   };
 });
+var GRID=document.getElementById('grid');
+var ORIG=Array.prototype.slice.call(GRID.querySelectorAll('.card'));
+var SORT='';
+document.querySelectorAll('.chip[data-s]').forEach(function(c){
+  c.onclick=function(){
+    document.querySelectorAll('.chip[data-s]').forEach(function(x){x.classList.remove('on');});
+    c.classList.add('on'); SORT=c.dataset.s; ordenar();
+  };
+});
+function ordenar(){
+  var l=ORIG.slice();
+  if(SORT==='asc')  l.sort(function(a,b){return a.dataset.precio-b.dataset.precio;});
+  if(SORT==='desc') l.sort(function(a,b){return b.dataset.precio-a.dataset.precio;});
+  l.forEach(function(c){GRID.appendChild(c);});
+}
 function render(){
   var n=0;
   document.querySelectorAll('.card').forEach(function(c){
