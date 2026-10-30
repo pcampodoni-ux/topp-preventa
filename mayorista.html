@@ -457,6 +457,7 @@ function fCt(btn, ct) {
 }
 
 function addCart(id) {
+  if (deadline - Date.now() <= 0) { showT('El pedido está cerrado'); return; }
   var sz = selSizes[id];
   if (!sz) { showT('Primero elegí un talle'); return; }
   var card = document.querySelector('.card[data-id="' + id + '"]');
@@ -513,6 +514,7 @@ function renderItems() {
 }
 
 function openCart() {
+  if (deadline - Date.now() <= 0) { showT('El pedido está cerrado'); return; }
   if (!Object.keys(cart).length) { showT('Agrega productos primero'); return; }
   var totalUnidades = Object.values(cart).length;
   if (totalUnidades < 25) { showT('Pedido mayorista: minimo 25 productos. Te faltan ' + (25 - totalUnidades)); return; }
@@ -527,6 +529,7 @@ function closeModal() { document.getElementById('ovl').classList.remove('show');
 function closeOvl(e) { if (e.target === document.getElementById('ovl')) closeModal(); }
 
 function confirmar() {
+  if (deadline - Date.now() <= 0) { showT('El pedido está cerrado'); return; }
   var nombre = document.getElementById('mnombre').value.trim();
   var apellido = document.getElementById('mapellido').value.trim();
   var tel = document.getElementById('mtel').value.trim();
@@ -565,7 +568,7 @@ function showT(msg) {
 }
 
 // Popup countdown
-var deadline = new Date(2099, 0, 1, 0, 0, 0, 0);
+var deadline = new Date(2000, 0, 1, 0, 0, 0, 0); // PEDIDO CERRADO. Para abrir: poner la fecha de cierre del próximo pedido
 
 function updateCountdown() {
   var now = new Date().getTime();
@@ -575,12 +578,9 @@ function updateCountdown() {
   var sub = document.getElementById('popupSub');
   var btn = document.querySelector('.popup-btn');
   if (diff <= 0) {
-    document.getElementById('cdD').textContent = '00';
-    document.getElementById('cdH').textContent = '00';
-    document.getElementById('cdM').textContent = '00';
-    document.getElementById('cdS').textContent = '00';
+    ['cdD','cdH','cdM','cdS'].forEach(function(i){ var e=document.getElementById(i); if(e) e.textContent='00'; });
     badge.textContent = 'Pedido cerrado';
-    sub.textContent = 'Pedido abierto. Podes hacer tu compra cuando quieras.';
+    sub.textContent = 'Este pedido ya cerró. Te avisamos cuando abra el próximo.';
     bar.innerHTML = '<span>Pedido cerrado</span>';
   var st = document.getElementById('statusText');
   if(st) st.textContent = 'Pedido cerrado';
