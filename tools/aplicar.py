@@ -41,7 +41,7 @@ def tocar(m):
     art = re.sub(r'data-talles="[^"]*"', 'data-talles="' + '|'.join(r['still']) + '"', art)
     for t in r['gone']:
         art = art.replace(f'<button class="tl" data-t="{t}">{t}</button>', '')
-    art = re.sub(r'<p class="lb">[^<]*</p>\n<div class="tls"></div>\n?', '', art)
+    art = re.sub(r'<p class="lb">(?:(?!</p>).)*</p>\n<div class="tls"></div>\n?', '', art)
     return art
 
 s2 = re.sub(r'<article class="card"[\s\S]*?</article>\n?', tocar, s)
