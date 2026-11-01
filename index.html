@@ -3036,21 +3036,9 @@ footer a{color:#fff}
   <input class="f" id="tel" type="tel" inputmode="numeric" placeholder="Ej: 3795123456 (sin 0 ni 15)" autocomplete="tel">
   <div class="err" id="telerr">Poné tu número de WhatsApp con característica, sin 0 ni 15.</div>
 
-  <label class="f" for="env">¿Dónde querés recibir tu pedido? <b>*</b></label>
-  <select class="f" id="env">
-    <option value="">Elegí una opción</option>
-    <option>Retiro en Corrientes Capital</option>
-    <option>Envío a domicilio — Corrientes Capital</option>
-    <option>Envío a domicilio — Resistencia</option>
-    <option>Envío al interior del país por correo</option>
-    <option>Todavía no sé, lo coordino por WhatsApp</option>
-  </select>
-  <div class="err" id="enverr">Elegí dónde querés recibir el pedido.</div>
-  <input class="f dir" id="dir" type="text" placeholder="Localidad, calle y número">
-  <div class="err" id="direrr">Necesitamos la dirección para el envío.</div>
-
-  <label class="f" for="vend">¿Sabés el nombre de tu vendedora? <span class="opt">Opcional</span></label>
-  <input class="f" id="vend" type="text" placeholder="Si no te acordás, dejalo vacío" autocomplete="off">
+  <label class="f" for="res">Lugar de residencia <b>*</b></label>
+  <input class="f" id="res" type="text" placeholder="Ciudad y provincia. Ej: Corrientes Capital" autocomplete="address-level2">
+  <div class="err" id="reserr">Poné tu ciudad o localidad.</div>
 
   <div class="pay">
     <b>Datos para transferir</b><br>
@@ -3198,11 +3186,6 @@ function money(n){return '$'+n.toLocaleString('es-AR')}
 function toast(t){var e=document.getElementById('toast');e.textContent=t;e.classList.add('on');
   clearTimeout(window._t);window._t=setTimeout(function(){e.classList.remove('on')},1800);}
 function cerrar(){document.getElementById("ov").classList.remove("on")}
-document.getElementById('env').onchange=function(){
-  var e=this.value, d=document.getElementById('dir');
-  d.classList.toggle('on', e.indexOf('Env')===0);
-  if(e.indexOf('Env')!==0){d.value='';document.getElementById('direrr').classList.remove('on');}
-};
 document.getElementById('open').onclick=function(){document.getElementById('ov').classList.add('on')};
 document.getElementById('cls').onclick=cerrar;
 document.getElementById('ov').onclick=function(e){if(e.target.id==='ov')cerrar()};
@@ -3215,33 +3198,26 @@ document.getElementById('wa').onclick=function(){
   if(!ABIERTO||CERRADO||new Date()>=CIERRE){cerrarPedido();toast('El pedido ya cerró');return;}
   var c=document.getElementById('cli').value.trim();
   var t=document.getElementById('tel').value.replace(/\D/g,'');
-  var e=document.getElementById('env').value;
-  var dir=document.getElementById('dir').value.trim();
-  var v=document.getElementById('vend').value.trim();
-  var envio=e.indexOf('Env')===0;
+  var res=document.getElementById('res').value.trim();
   document.getElementById('clerr').classList.toggle('on',!c);
   document.getElementById('telerr').classList.toggle('on',t.length<10);
-  document.getElementById('enverr').classList.toggle('on',!e);
-  document.getElementById('direrr').classList.toggle('on',envio&&!dir);
+  document.getElementById('reserr').classList.toggle('on',!res);
   if(!c){document.getElementById('cli').focus();return;}
   if(t.length<10){document.getElementById('tel').focus();return;}
-  if(!e){document.getElementById('env').focus();return;}
-  if(envio&&!dir){document.getElementById('dir').focus();return;}
+  if(!res){document.getElementById('res').focus();return;}
   if(!cart.length)return;
-  var m='*PEDIDO TOPP — NOVIEMBRE 2026*%0A%0A';
-  m+='*Nombre:* '+c+'%0A*WhatsApp:* '+t+'%0A*Entrega:* '+e+(dir?' — '+dir:'')+
-     (v?'%0A*Vendedora:* '+v:'')+'%0A%0A';
   var cc=calc();
+  var m='*PEDIDO TOPP — NOVIEMBRE 2026*%0A%0A';
+  m+='*Nombre y apellido:* '+encodeURIComponent(c)+'%0A';
+  m+='*Lugar de residencia:* '+encodeURIComponent(res)+'%0A';
+  m+='*WhatsApp:* '+t+'%0A%0A';
+  m+='*Pedido:*%0A';
   cart.forEach(function(i,k){
-    var fp=cc.off[k];
-    m+=(k+1)+'. '+i.nom+'%0A   Cód: '+i.code+' · Talle: '+i.talle+' · '+
-       (fp?money(fp)+' (2da unidad -25%25, antes '+money(i.precio)+')':money(i.precio))+'%0A';
+    m+=(k+1)+'. '+i.code+' - Talle '+i.talle+' - '+money(i.precio)+'%0A';
   });
-  m+='%0A*Productos:* '+cart.length+'%0A';
-  if(cc.ahorro) m+='*Ahorro promo 2da unidad:* -'+money(cc.ahorro)+'%0A';
+  m+='%0A*Total del pedido:* '+money(cc.total)+'%0A';
   m+='*Seña a transferir:* '+money(cart.length*SENA)+'%0A';
-  m+='*Total del pedido:* '+money(cc.total)+'%0A%0A';
-  m+='Alias: PATOCAMPSANT (Santander)';
+  m+='(Voy a transferir al alias PATOCAMPSANT)';
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
 };
 
