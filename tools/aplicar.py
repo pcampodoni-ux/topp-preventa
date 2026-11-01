@@ -15,7 +15,7 @@ ap.add_argument('resultado'); ap.add_argument('--index', default='index.html')
 ap.add_argument('--cot', type=float, default=1560); ap.add_argument('--flete', type=float, default=6.94)
 ap.add_argument('--flete-acc', type=float, default=3.5); ap.add_argument('--min-ganancia', type=float, default=8000)
 a = ap.parse_args()
-ACC = {'Medias', 'Mantas', 'Mitones', 'Ropa interior'}
+ACC = {'Medias', 'Mantas', 'Mitones', 'Ropa interior', 'Hora del baño', 'Hora de comer'}
 
 res = {r['code']: r for r in json.load(open(a.resultado)) if 'code' in r}
 s = open(a.index, encoding='utf-8').read()

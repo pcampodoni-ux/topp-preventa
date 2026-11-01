@@ -7,7 +7,7 @@
   const cards = [...d.querySelectorAll('.card')].map(c => ({
     code: c.dataset.code, cat: c.dataset.cat, talles: c.dataset.talles.split('|'),
     precio: +c.dataset.precio, nom: c.dataset.nom }));
-  const ACC = ['Medias', 'Mantas', 'Mitones', 'Ropa interior'];
+  const ACC = ['Medias', 'Mantas', 'Mitones', 'Ropa interior', 'Hora del baño', 'Hora de comer'];
   const norm = s => s.toLowerCase().replace(/[^0-9a-z]/g, '').replace(/^(os|osz|unico)$/, 'os');
   const nAcc = s => norm(s.normalize('NFD').replace(/[̀-ͯ]/g, '')).replace(/[mt]/g, '');
   window.__chk = []; window.__cd = false; window.__ci = 0; window.__total = cards.length;
