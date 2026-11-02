@@ -3741,7 +3741,7 @@ document.getElementById('wa').onclick=function(){
   m+='*WhatsApp:* '+t+'%0A%0A';
   m+='*Pedido:*%0A';
   cart.forEach(function(i,k){
-    m+=(k+1)+'. '+i.code+' - Talle '+i.talle+' - '+money(i.precio)+'%0A';
+    m+=(k+1)+'. *'+encodeURIComponent(i.nom)+'*%0A   '+i.code+' - Talle '+i.talle+' - '+money(i.precio)+'%0A';
   });
   m+='%0A*Total del pedido:* '+money(cc.total)+'%0A';
   m+='*Seña a transferir:* '+money(cart.length*SENA)+'%0A';
