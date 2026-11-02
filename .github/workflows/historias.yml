@@ -2,7 +2,7 @@ name: Renderizar historias
 on:
   workflow_dispatch:
   push:
-    paths: ['historias/*.html']
+    paths: ['historias/*.html','historias/render.js']
 permissions:
   contents: write
 jobs:
@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm i playwright@1 && npx playwright install --with-deps chromium
+      - run: curl -sS -o /dev/null -w '%{http_code} %{size_download}\n' -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130 Safari/537.36' 'https://dw.cartersstorefront.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dwccb7023d/productimages/1U932910.jpg?sw=600' || true
       - run: node historias/render.js historias historias/img
       - run: |
           git config user.name "topp-bot"
