@@ -26,21 +26,24 @@ def card(r):
     p = precio(float(r['usd']), COT)
     if 30300 <= p <= 35000: p = 29900
     t = r['talles'].split('|')
-    eds = [e for e, ok in (('Bebés', any(not x.endswith('T') for x in t)), ('Niños', any(x.endswith('T') for x in t))) if ok]
+    BIG = {'4-5', '6-7', '8', '10', '12', '14-16'}
+    kind = lambda x: 'g' if x in BIG else ('n' if x.endswith('T') else 'b')
+    G = [('b', 'Talles bebés', 'Bebés'), ('n', 'Talles niños', 'Niños'), ('g', 'Talles (años)', 'Grandes')]
+    groups = [(lb, [x for x in t if kind(x) == k], ed) for k, lb, ed in G if any(kind(x) == k for x in t)]
+    eds = [ed for _, _, ed in groups]
+    ED_TXT = {'Bebés': 'Bebés', 'Niños': 'Niños', 'Grandes': 'Niños grandes'}
     nom = html.escape(r['nombre'], quote=True)
     url = f'https://www.gapfactory.com/browse/product.do?pid={r["code"]}'
     img = f'https://content.gapinc.com/b/00{r["img"]}?width=600'
     def grp(xs): return ''.join(f'<button class="tl" data-t="{x}">{x}</button>' for x in xs)
-    tb = [x for x in t if not x.endswith('T')]; tn = [x for x in t if x.endswith('T')]
-    if tb and tn:
-        btns = f'{grp(tb)}</div>\n<p class="lb">Talles niños</p>\n<div class="tls">{grp(tn)}'; lbl = 'Talles bebés'
-    else:
-        btns = grp(t); lbl = 'Talles niños' if tn else 'Talles bebés'
+    TT = '<button class="ttl" type="button" data-tt>¿Qué talle?</button>'
+    lbl = groups[0][0] + TT
+    btns = grp(groups[0][1]) + ''.join(f'</div>\n<p class="lb">{lb}</p>\n<div class="tls">{grp(xs)}' for lb, xs, _ in groups[1:])
     return p, (
         f'<article class="card" data-marca="gapfactory" data-cat="{r["cat"]}" data-edad="{"|".join(eds)}" data-gen="{r["gen"]}" '
         f'data-talles="{r["talles"]}" data-code="{r["code"]}" data-nom="{nom}" data-precio="{p}">\n'
         f'<a class="ph" href="{url}" target="_blank" rel="noopener"><img loading="lazy" src="{img}" alt="{nom}" '
-        f'onerror="this.style.opacity=0"></a>\n<div class="bd">\n<span class="tag">GAP Factory · {r["cat"]} · {" y ".join(eds)}</span>\n'
+        f'onerror="this.style.opacity=0"></a>\n<div class="bd">\n<span class="tag">GAP Factory · {r["cat"]} · {" y ".join(ED_TXT[e] for e in eds)}</span>\n'
         f'<h3><a class="nm" href="{url}" target="_blank" rel="noopener">{nom}</a></h3>\n<div class="pr"><b>{fmt(p)}</b></div>\n'
         f'<p class="lb">{lbl}</p>\n<div class="tls">{btns}</div>\n<button class="add" disabled>Elegí un talle</button>\n</div></article>')
 
@@ -79,6 +82,17 @@ if '(!F.marca||' not in s:
     s = s.replace("var ok=(!F.cat||c.dataset.cat===F.cat)", "var ok=(!F.marca||c.dataset.marca===F.marca)&&(!F.cat||c.dataset.cat===F.cat)")
 assert '(!F.marca||' in s
 
+EDAD_G = '<button class="chip" data-f="edad" data-v="Grandes">Niños grandes (4 a 16 años)</button>'
+if EDAD_G not in s:
+    s = s.replace('<button class="chip" data-f="edad" data-v="Niños">Niños (2 a 5 años)</button>', '<button class="chip" data-f="edad" data-v="Niños">Niños (2 a 5 años)</button>' + EDAD_G, 1)
+FG = '<div class="frow" id="ftg"><em>Talles grandes</em>' + ''.join(f'<button class="chip" data-f="talle" data-v="{x}">{x}</button>' for x in ['4-5', '6-7', '8', '10', '12', '14-16']) + '</div>'
+s = re.sub(r'<div class="frow" id="ftg">.*?</div>', '', s)
+s = re.sub(r'(<div class="frow"><em>Talles niños</em>.*?</div>)', lambda m: m.group(1) + FG, s, count=1)
+assert EDAD_G in s and 'id="ftg"' in s
+NOTA2 = '<br><b>GAP chicos grandes:</b> 4-5 = XS · 6-7 = S · 8 = M · 10 = L · 12 = XL · 14-16 = XXL (talle en años).'
+if '<b>GAP chicos grandes:</b>' not in s:
+    i = s.index('<div class="ttn">'); j = s.index('</div>', i)
+    s = s[:j] + NOTA2 + s[j:]
 # Tabla de talles: equivalencia GAP
 NOTA = ('<br><b>GAP:</b> 0-3 meses = 3M · 3-6 meses = 6M · 6-12 meses = 12M · 12-18 meses = 18M · 18-24 meses = 24M · '
         '2 a 5 años = 2T a 5T. Hasta 3,2 kg = NB.')
