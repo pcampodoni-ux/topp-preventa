@@ -4,7 +4,7 @@
 (async () => {
   const r = await fetch('https://topp.wowcyk.com/?nc=' + Date.now(), { cache: 'no-store' });
   const d = new DOMParser().parseFromString(await r.text(), 'text/html');
-  const cards = [...d.querySelectorAll('.card')].map(c => ({
+  const cards = [...d.querySelectorAll('.card')].filter(c => c.dataset.marca !== 'gap').map(c => ({
     code: c.dataset.code, cat: c.dataset.cat, talles: c.dataset.talles.split('|'),
     precio: +c.dataset.precio, nom: c.dataset.nom }));
   const ACC = ['Medias', 'Mantas', 'Mitones', 'Ropa interior', 'Hora del baño', 'Hora de comer'];
