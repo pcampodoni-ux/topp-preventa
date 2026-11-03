@@ -108,6 +108,15 @@ footer{background:var(--v);color:#fff;text-align:center;padding:28px 16px;font-s
 footer a{color:#fff}
 .empty{text-align:center;padding:50px 16px;color:#9aa4a6;font-weight:300;display:none}
 .frow.wrap{flex-wrap:wrap;overflow:visible;row-gap:6px}.frow.wrap em{width:100%;margin:0}@media(max-width:899px){.fbar{position:static}}a.ph{cursor:pointer}.nm{color:inherit;text-decoration:none;cursor:pointer}.ttb{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--v);color:var(--v);background:#fff;border-radius:99px;padding:6px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;margin:2px 0 6px}.ttl{background:none;border:0;color:var(--v);font:inherit;font-size:10.5px;text-decoration:underline;cursor:pointer;padding:0;margin-left:6px;letter-spacing:0;text-transform:none}.tt{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}.tt th{background:var(--v);color:#fff;font-weight:600;padding:7px 6px;text-align:left;font-size:12px}.tt td{padding:7px 6px;border-bottom:1px solid var(--gr)}.tt tr.sep td{border-top:2px solid var(--v)}.ttn{font-size:12.5px;line-height:1.55;color:var(--tx);background:var(--bg);border-radius:10px;padding:11px 13px;margin-top:6px}.ttn b{color:var(--v)}
+/* barra de filtros: no fija; mini barra fija al bajar */
+.fbar{position:static!important}
+.fmini{position:fixed;top:0;left:0;right:0;z-index:45;background:rgba(242,248,248,.97);border-bottom:1px solid var(--gr);box-shadow:0 2px 10px rgba(0,0,0,.06);transform:translateY(-110%);transition:transform .2s}
+.fmini.on{transform:none}
+.fmini .wrap{display:flex;align-items:center;gap:10px;padding-top:8px;padding-bottom:8px;flex-wrap:nowrap}
+.fmini button{flex:0 0 auto;border:1px solid var(--v);background:var(--v);color:#fff;border-radius:99px;padding:7px 16px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.fmini button.lmp{background:#fff;color:var(--v)}
+.fmini .act{flex:1;min-width:0;font-size:12.5px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fmini .act b{color:var(--v)}
 </style>
 </head>
 <body>
@@ -134,6 +143,7 @@ footer a{color:#fff}
   <li><b>4</b>Te avisamos cuando llega</li>
 </ol></div></section>
 
+<div class="fmini" id="fmini"><div class="wrap"><button type="button" id="fmup">⚙ Filtros</button><span class="act" id="fmact"></span><button type="button" class="lmp" id="fmclr">Limpiar</button></div></div>
 <div class="fbar"><div class="wrap">
   <div class="frow"><em>Ordenar</em><button class="chip on" data-s="">Sugerido</button><button class="chip" data-s="desc">Mayor precio</button><button class="chip" data-s="asc">Menor precio</button></div><div class="frow wrap"><em>Categoría</em><button class="chip" data-f="cat" data-v="Packs de Bodies">Packs de Bodies</button><button class="chip" data-f="cat" data-v="Bodies">Bodies</button><button class="chip" data-f="cat" data-v="Sets 2 Piezas">Sets 2 Piezas</button><button class="chip" data-f="cat" data-v="Sets 3 Piezas">Sets 3 Piezas</button><button class="chip" data-f="cat" data-v="Enteritos">Enteritos</button><button class="chip" data-f="cat" data-v="Vestidos">Vestidos</button><button class="chip" data-f="cat" data-v="Remeras">Remeras</button><button class="chip" data-f="cat" data-v="Buzos">Buzos</button><button class="chip" data-f="cat" data-v="Shorts">Shorts</button><button class="chip" data-f="cat" data-v="Pijamas">Pijamas</button><button class="chip" data-f="cat" data-v="Pijamas de Polar">Pijamas de Polar</button><button class="chip" data-f="cat" data-v="Mallas">Mallas</button><button class="chip" data-f="cat" data-v="Medias">Medias</button><button class="chip" data-f="cat" data-v="Mantas">Mantas</button><button class="chip" data-f="cat" data-v="Mitones">Mitones</button><button class="chip" data-f="cat" data-v="Ropa interior">Ropa interior</button><button class="chip" data-f="cat" data-v="Hora del baño">Skip Hop · Hora del baño</button><button class="chip" data-f="cat" data-v="Hora de comer">Skip Hop · Hora de comer</button></div><div class="frow" id="fmarca"><em>Marca</em><button class="chip" data-f="marca" data-v="carters">Carter's</button><button class="chip" data-f="marca" data-v="gapfactory">GAP Factory</button><button class="chip" data-f="marca" data-v="skiphop">Skip Hop</button></div><div class="frow"><em>Edad</em><button class="chip" data-f="edad" data-v="Bebés">Bebés (0 a 24 meses)</button><button class="chip" data-f="edad" data-v="Niños">Niños (2 a 5 años)</button><button class="chip" data-f="edad" data-v="Grandes">Niños grandes (4 a 16 años)</button></div><div class="frow"><em>Género</em><button class="chip" data-f="gen" data-v="Nena">Nena</button><button class="chip" data-f="gen" data-v="Nene">Nene</button><button class="chip" data-f="gen" data-v="Unisex">Unisex</button></div><div class="frow"><em>Talles bebés</em><button class="chip" data-f="talle" data-v="PRE">PRE</button><button class="chip" data-f="talle" data-v="NB">NB</button><button class="chip" data-f="talle" data-v="3M">3M</button><button class="chip" data-f="talle" data-v="6M">6M</button><button class="chip" data-f="talle" data-v="9M">9M</button><button class="chip" data-f="talle" data-v="12M">12M</button><button class="chip" data-f="talle" data-v="18M">18M</button><button class="chip" data-f="talle" data-v="24M">24M</button></div><div class="frow"><em>Talles niños</em><button class="chip" data-f="talle" data-v="2T">2T</button><button class="chip" data-f="talle" data-v="3T">3T</button><button class="chip" data-f="talle" data-v="4T">4T</button><button class="chip" data-f="talle" data-v="5T">5T</button></div><div class="frow" id="ftg"><em>Talles grandes</em><button class="chip" data-f="talle" data-v="4-5">4-5</button><button class="chip" data-f="talle" data-v="6-7">6-7</button><button class="chip" data-f="talle" data-v="8">8</button><button class="chip" data-f="talle" data-v="10">10</button><button class="chip" data-f="talle" data-v="12">12</button><button class="chip" data-f="talle" data-v="14-16">14-16</button></div>
   <button class="ttb" type="button" data-tt>📏 Tabla de talles</button><div class="count" id="count"></div>
@@ -6457,6 +6467,24 @@ document.querySelectorAll('[data-tt]').forEach(function(b){b.onclick=function(e)
 document.getElementById('ttcls').onclick=function(){document.getElementById('ttov').classList.remove('on')};
 document.getElementById('ttov').onclick=function(e){if(e.target.id==='ttov')this.classList.remove('on')};
 tick(); setInterval(tick,1000);
+</script>
+<script>
+/* ---------- MINI BARRA DE FILTROS ---------- */
+(function(){
+  var fb=document.querySelector('.fbar'),mini=document.getElementById('fmini'),act=document.getElementById('fmact'),clr=document.getElementById('fmclr');
+  function upd(){
+    var on=[].slice.call(document.querySelectorAll('.chip.on[data-f]')).map(function(c){return c.textContent.trim();});
+    var n=document.getElementById('count').textContent;
+    act.innerHTML='<b>'+n+'</b>'+(on.length?' · '+on.join(' · '):' · sin filtros');
+    clr.style.display=on.length?'':'none';
+  }
+  function onScroll(){mini.classList.toggle('on',fb.getBoundingClientRect().bottom<0);}
+  document.getElementById('fmup').onclick=function(){fb.scrollIntoView({behavior:'smooth'});};
+  clr.onclick=function(){[].slice.call(document.querySelectorAll('.chip.on[data-f]')).forEach(function(c){c.click();});upd();};
+  document.querySelectorAll('.chip[data-f]').forEach(function(c){c.addEventListener('click',function(){setTimeout(upd,0);});});
+  window.addEventListener('scroll',onScroll,{passive:true});
+  upd();onScroll();
+})();
 </script>
 </body>
 </html>
