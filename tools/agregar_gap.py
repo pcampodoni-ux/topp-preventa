@@ -8,7 +8,9 @@ Uso: python3 tools/agregar_gap.py
 """
 import csv, html, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
+import precio as _P
 from precio import precio
+_P.MARGEN = 1.7   # GAP Factory va con margen 1,7 (pedido de Patricio 2/11/2026 22:45)
 
 COT = 1560
 HERE = os.path.dirname(os.path.abspath(__file__))
