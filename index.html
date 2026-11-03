@@ -117,6 +117,15 @@ footer a{color:#fff}
 .fmini button.lmp{background:#fff;color:var(--v)}
 .fmini .act{flex:1;min-width:0;font-size:12.5px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fmini .act b{color:var(--v)}
+/* tabla de talles Carter's + GAP */
+.ttm{max-width:1060px}
+.ttm h3{font-size:16px;color:var(--v);margin:4px 0 2px;letter-spacing:.5px}
+.tttabs{display:flex;gap:8px;margin:10px 0 4px}
+.tttabs button{flex:1;border:1px solid var(--v);background:#fff;color:var(--v);border-radius:99px;padding:8px 10px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.tttabs button.on{background:var(--v);color:#fff}
+.ttc{display:none}.ttc.on{display:block}
+.ttc .tt td,.ttc .tt th{font-size:12px}
+@media(min-width:900px){.tttabs{display:none}.ttwrap{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;align-items:start}.ttc{display:block}}
 </style>
 </head>
 <body>
@@ -6286,11 +6295,11 @@ footer a{color:#fff}
   <button class="cls" id="cls">Seguir mirando</button>
 </div></div>
 
-<div class="ov" id="ttov"><div class="modal">
-  <h2>Tabla de talles Carter's</h2>
-  <p class="sub">Carter's talla por <b>altura y peso</b>, no por edad. La edad es solo orientativa.</p>
-  <table class="tt"><tr><th>Talle</th><th>Edad aprox.</th><th>Altura (cm)</th><th>Peso (kg)</th></tr><tr><td><b>PRE</b></td><td>Prematuro</td><td>hasta 46</td><td>hasta 2,7</td></tr><tr><td><b>NB</b></td><td>Recién nacido</td><td>46 a 55</td><td>2,7 a 4,1</td></tr><tr><td><b>3M</b></td><td>0 a 3 meses</td><td>55 a 61</td><td>4,1 a 5,7</td></tr><tr><td><b>6M</b></td><td>3 a 6 meses</td><td>61 a 69</td><td>5,7 a 7,7</td></tr><tr><td><b>9M</b></td><td>6 a 9 meses</td><td>69 a 72</td><td>7,7 a 9,5</td></tr><tr><td><b>12M</b></td><td>9 a 12 meses</td><td>72 a 76</td><td>9,5 a 11,3</td></tr><tr><td><b>18M</b></td><td>12 a 18 meses</td><td>76 a 81</td><td>11,3 a 12,7</td></tr><tr><td><b>24M</b></td><td>18 a 24 meses</td><td>81 a 86</td><td>12,7 a 13,6</td></tr><tr class=sep><td><b>2T</b></td><td>2 años</td><td>89 a 93</td><td>13,2 a 14,1</td></tr><tr><td><b>3T</b></td><td>3 años</td><td>93 a 99</td><td>14,1 a 15</td></tr><tr><td><b>4T</b></td><td>4 años</td><td>99 a 105</td><td>15 a 17</td></tr><tr><td><b>5T</b></td><td>5 años</td><td>105 a 112</td><td>17 a 19</td></tr></table>
-  <div class="ttn"><b>¿Entre dos talles?</b> Te recomendamos elegir el más grande.<br><b>Medias:</b> 0-3M (largo del pie 8 a 9 cm) · 3-12M (9 a 11,5 cm) · 12-24M (11 a 13,5 cm) · 2T-4T (13,5 a 15 cm).<br><b>Ropa interior:</b> 2T-3T (13 a 15 kg) · 4T-5T (15 a 19 kg).<br><b>GAP:</b> 0-3 meses = 3M · 3-6 meses = 6M · 6-12 meses = 12M · 12-18 meses = 18M · 18-24 meses = 24M · 2 a 5 años = 2T a 5T. Hasta 3,2 kg = NB.<br><b>GAP chicos grandes:</b> 4-5 = XS · 6-7 = S · 8 = M · 10 = L · 12 = XL · 14-16 = XXL (talle en años).</div>
+<div class="ov" id="ttov"><div class="modal ttm">
+  <h2>Tabla de talles</h2>
+  <p class="sub">Cada marca talla distinto. Fijate qué marca dice la etiqueta del producto (Carter's o GAP Factory) y elegí por <b>altura y peso</b>; la edad es solo orientativa.</p>
+  <div class="tttabs"><button type="button" class="on" data-ttb="carters">Carter's</button><button type="button" data-ttb="gap">GAP Factory</button></div>
+  <div class="ttwrap"><section class="ttc on" data-ttc="carters"><h3>Carter's</h3><table class="tt"><tr><th>Talle</th><th>Edad aprox.</th><th>Altura (cm)</th><th>Peso (kg)</th></tr><tr><td><b>PRE</b></td><td>Prematuro</td><td>hasta 46</td><td>hasta 2,7</td></tr><tr><td><b>NB</b></td><td>Recién nacido</td><td>46 a 55</td><td>2,7 a 4,1</td></tr><tr><td><b>3M</b></td><td>0 a 3 meses</td><td>55 a 61</td><td>4,1 a 5,7</td></tr><tr><td><b>6M</b></td><td>3 a 6 meses</td><td>61 a 69</td><td>5,7 a 7,7</td></tr><tr><td><b>9M</b></td><td>6 a 9 meses</td><td>69 a 72</td><td>7,7 a 9,5</td></tr><tr><td><b>12M</b></td><td>9 a 12 meses</td><td>72 a 76</td><td>9,5 a 11,3</td></tr><tr><td><b>18M</b></td><td>12 a 18 meses</td><td>76 a 81</td><td>11,3 a 12,7</td></tr><tr><td><b>24M</b></td><td>18 a 24 meses</td><td>81 a 86</td><td>12,7 a 13,6</td></tr><tr class=sep><td><b>2T</b></td><td>2 años</td><td>89 a 93</td><td>13,2 a 14,1</td></tr><tr><td><b>3T</b></td><td>3 años</td><td>93 a 99</td><td>14,1 a 15</td></tr><tr><td><b>4T</b></td><td>4 años</td><td>99 a 105</td><td>15 a 17</td></tr><tr><td><b>5T</b></td><td>5 años</td><td>105 a 112</td><td>17 a 19</td></tr></table><div class="ttn"><b>¿Entre dos talles?</b> Te recomendamos elegir el más grande.<br><b>Medias:</b> 0-3M (largo del pie 8 a 9 cm) · 3-12M (9 a 11,5 cm) · 12-24M (11 a 13,5 cm) · 2T-4T (13,5 a 15 cm).<br><b>Ropa interior:</b> 2T-3T (13 a 15 kg) · 4T-5T (15 a 19 kg).</div></section><section class="ttc" data-ttc="gap"><h3>GAP Factory</h3><table class="tt"><tr><th>Talle acá</th><th>Etiqueta GAP</th><th>Edad aprox.</th><th>Altura (cm)</th><th>Peso (kg)</th></tr><tr><td><b>NB</b></td><td>Hasta 7 lb</td><td>Recién nacido</td><td>hasta 46</td><td>hasta 3</td></tr><tr><td><b>3M</b></td><td>0-3 M</td><td>0 a 3 meses</td><td>46 a 58</td><td>3 a 5</td></tr><tr><td><b>6M</b></td><td>3-6 M</td><td>3 a 6 meses</td><td>58 a 69</td><td>5 a 8</td></tr><tr><td><b>12M</b></td><td>6-12 M</td><td>6 a 12 meses</td><td>69 a 74</td><td>8 a 10</td></tr><tr><td><b>18M</b></td><td>12-18 M</td><td>12 a 18 meses</td><td>74 a 79</td><td>10 a 12</td></tr><tr><td><b>24M</b></td><td>18-24 M</td><td>18 a 24 meses</td><td>79 a 84</td><td>12 a 14</td></tr><tr class=sep><td><b>2T</b></td><td>2 YRS</td><td>2 años</td><td>84 a 91</td><td>14 a 15</td></tr><tr><td><b>3T</b></td><td>3 YRS</td><td>3 años</td><td>91 a 99</td><td>15 a 16</td></tr><tr><td><b>4T</b></td><td>4 YRS</td><td>4 años</td><td>99 a 107</td><td>16 a 18</td></tr><tr><td><b>5T</b></td><td>5 YRS</td><td>5 años</td><td>107 a 114</td><td>18 a 21</td></tr><tr class=sep><td><b>4-5</b></td><td>XS (4/5)</td><td>4 y 5 años</td><td>99 a 114</td><td>15 a 20</td></tr><tr><td><b>6-7</b></td><td>S (6/7)</td><td>6 y 7 años</td><td>114 a 134</td><td>20 a 29</td></tr><tr><td><b>8</b></td><td>M (8)</td><td>8 y 9 años</td><td>134 a 137</td><td>29 a 33</td></tr><tr><td><b>10</b></td><td>L (10)</td><td>10 y 11 años</td><td>137 a 145</td><td>33 a 37</td></tr><tr><td><b>12</b></td><td>XL (12)</td><td>12 y 13 años</td><td>145 a 152</td><td>37 a 42</td></tr><tr><td><b>14-16</b></td><td>XXL (14/16)</td><td>13 años o más</td><td>152 a 163</td><td>42 a 52</td></tr></table><div class="ttn"><b>En GAP el talle es un rango de edad.</b> Por ejemplo, "12M" acá es la etiqueta GAP <b>6-12 meses</b>; en chicos grandes, "10" es la etiqueta <b>L (10)</b>.<br><b>Ojo:</b> el mismo talle no mide igual en Carter's y en GAP. Elegí por <b>altura y peso</b>.<br><b>¿Entre dos talles?</b> Elegí el más grande.</div></section></div>
   <button class="cls" id="ttcls">Cerrar</button>
 </div></div>
 <div class="toast" id="toast"></div>
@@ -6484,6 +6493,16 @@ tick(); setInterval(tick,1000);
   document.querySelectorAll('.chip[data-f]').forEach(function(c){c.addEventListener('click',function(){setTimeout(upd,0);});});
   window.addEventListener('scroll',onScroll,{passive:true});
   upd();onScroll();
+})();
+</script>
+<script>
+/* ---------- TABLA DE TALLES: pestañas Carter's / GAP ---------- */
+(function(){
+  function tab(b){document.querySelectorAll('[data-ttb]').forEach(function(x){x.classList.toggle('on',x.dataset.ttb===b);});
+    document.querySelectorAll('[data-ttc]').forEach(function(x){x.classList.toggle('on',x.dataset.ttc===b);});}
+  document.querySelectorAll('[data-ttb]').forEach(function(x){x.onclick=function(){tab(x.dataset.ttb);};});
+  document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-tt]');if(!t)return;
+    var c=t.closest('.card');tab(c&&c.dataset.marca==='gapfactory'?'gap':'carters');},true);
 })();
 </script>
 </body>

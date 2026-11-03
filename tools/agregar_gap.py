@@ -90,13 +90,15 @@ s = re.sub(r'<div class="frow" id="ftg">.*?</div>', '', s)
 s = re.sub(r'(<div class="frow"><em>Talles niños</em>.*?</div>)', lambda m: m.group(1) + FG, s, count=1)
 assert EDAD_G in s and 'id="ftg"' in s
 NOTA2 = '<br><b>GAP chicos grandes:</b> 4-5 = XS · 6-7 = S · 8 = M · 10 = L · 12 = XL · 14-16 = XXL (talle en años).'
-if '<b>GAP chicos grandes:</b>' not in s:
+if False:  # tabla GAP propia en el modal
+  if '<b>GAP chicos grandes:</b>' not in s:
     i = s.index('<div class="ttn">'); j = s.index('</div>', i)
     s = s[:j] + NOTA2 + s[j:]
 # Tabla de talles: equivalencia GAP
 NOTA = ('<br><b>GAP:</b> 0-3 meses = 3M · 3-6 meses = 6M · 6-12 meses = 12M · 12-18 meses = 18M · 18-24 meses = 24M · '
         '2 a 5 años = 2T a 5T. Hasta 3,2 kg = NB.')
-if '<b>GAP:</b>' not in s:
+if False:  # tabla GAP propia en el modal
+  if '<b>GAP:</b>' not in s:
     i = s.index('<div class="ttn">'); j = s.index('</div>', i)
     s = s[:j] + NOTA + s[j:]
 open(IDX, 'w', encoding='utf-8').write(s)
