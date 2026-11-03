@@ -27,7 +27,7 @@ code	cat	gen	nombre	usd	talles	img
 1178780011	Remeras	Nene	GAP · Remera Estampada Dinosaurios Verde	5.99	12M|18M|24M|2T|3T|4T|5T	63/101/810/cn63101810.png
 1178780031	Remeras	Nene	GAP · Remera Estampada Perro Skater Verde	5.99	12M|18M|24M|2T|3T|4T|5T	63/232/507/cn63232507.png
 1178780041	Remeras	Nene	GAP · Remera Estampada Deportes Negra	5.99	12M|18M|24M|2T|3T|4T|5T	63/101/854/cn63101854.png
-1178780051	Remeras	Nene	GAP · Remera Estampada Osito Brannan Verde	5.99	12M|18M|24M|2T|3T|4T|5T	63/128/034/cn63128034.png
+1178780051	Remeras	Nene	GAP · Remera Estampada Osito Brannan Verde	5.99	12M|18M|24M|2T|4T|5T	63/128/034/cn63128034.png
 1178780071	Remeras	Nene	GAP · Remera Estampada Cohete Azul Marino	5.99	12M|18M|24M|2T|3T|4T|5T	63/101/850/cn63101850.png
 1178780081	Remeras	Nene	GAP · Remera Estampada Construcción	5.99	12M|18M|24M|2T|3T|4T|5T	63/057/938/cn63057938.png
 1178780091	Remeras	Nene	GAP · Remera Estampada Camión Gris	5.99	12M|18M|24M|2T|3T|4T|5T	63/138/773/cn63138773.png
@@ -45,10 +45,6 @@ code	cat	gen	nombre	usd	talles	img
 1174699021	Shorts	Nena	GAP · Calza Corta Floral Naranja	8.99	3M|6M	61/804/448/cn61804448.png
 1174699031	Shorts	Nena	GAP · Calza Corta Arcoíris Amarilla	9.99	3M|6M	62/354/182/cn62354182.png
 759742021	Shorts	Nena	GAP · Calza Corta Negra	5.99	3M|6M|12M|18M|24M|2T|3T|4T|5T	20/163/298/cn20163298.png
-791556001	Packs de Bodies	Unisex	GAP · Pack 3 Bodies Manga Corta Crudo	15.99	NB|3M|6M|12M|18M|24M	58/076/990/cn58076990.png
-791556011	Packs de Bodies	Nena	GAP · Pack 3 Bodies Manga Corta Lila	15.99	NB|3M|6M|12M|18M|24M	58/076/966/cn58076966.png
-791556021	Packs de Bodies	Unisex	GAP · Pack 3 Bodies Manga Corta Gris	15.99	NB|3M|6M|12M|18M|24M	58/076/978/cn58076978.png
-1177221011	Packs de Bodies	Nene	GAP · Pack 3 Bodies Manga Corta Trencitos	15.99	NB|3M|6M|12M|18M|24M	62/907/441/cn62907441.png
 791558121	Bodies	Nena	GAP · Body Estampado Gatita Sirena	7.99	NB|3M|6M|18M|24M	61/808/142/cn61808142.png
 791558171	Bodies	Nena	GAP · Body "Mommy" Frutillas	7.99	3M|6M|24M	62/404/425/cn62404425.png
 791558061	Bodies	Unisex	GAP · Body Estampado Azul	5.97	NB|3M	61/166/605/cn61166605.png
