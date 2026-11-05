@@ -14,10 +14,10 @@ ap.add_argument('--cierre', required=True); ap.add_argument('--titulo', default=
 a = ap.parse_args()
 HERE = os.path.dirname(os.path.abspath(__file__)); IDX = os.path.join(HERE, '..', 'index.html')
 IMG_C = 'https://dw.cartersstorefront.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/'
-CATS = ["Packs de Bodies", "Bodies", "Sets 2 Piezas", "Enteritos", "Pijamas", "Vestidos", "Remeras", "Buzos", "Camperas",
-        "Pantalones", "Shorts", "Mallas", "Medias", "Accesorios"]
-ACC = {'Medias', 'Accesorios'}
-BIG = ['4-5', '6-7', '8', '10', '12', '14-16']
+CATS = ["Packs de Bodies", "Bodies", "Sets 2 Piezas", "Enteritos", "Pijamas", "Pijamas de Polar", "Vestidos", "Remeras", "Buzos", "Camperas",
+        "Pantalones", "Shorts", "Mallas", "Medias", "Ropa interior", "Accesorios"]
+ACC = {'Medias', 'Accesorios', 'Ropa interior'}
+BIG = ['4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '12', '14', '14-16', '16']
 BABY = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M']; TOD = ['2T', '3T', '4T', '5T']
 
 def fmt(n): return '$' + f"{n:,}".replace(',', '.')
@@ -53,7 +53,7 @@ def card(r, marca):
     return (CATS.index(r['cat']), p, 0 if marca == 'carters' else 1, art), set(t), set(eds)
 
 items, talles, edades = [], set(), set()
-for f, marca in (('carters_bf.tsv', 'carters'), ('gapfactory.tsv', 'gapfactory')):
+for f, marca in (('carters_bf.tsv', 'carters'), ('carters_cl.tsv', 'carters'), ('gapfactory.tsv', 'gapfactory')):
     path = os.path.join(HERE, f)
     if not os.path.exists(path): continue
     for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t'):
