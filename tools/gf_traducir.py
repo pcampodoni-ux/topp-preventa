@@ -75,6 +75,10 @@ def color_es(c):
     if 'Azul Marino' in out and 'Azul' in out: out.remove('Azul')
     return ' '.join(out[:3]) or c.strip().title()
 
+FEM = {'Remera', 'Musculosa', 'Chomba', 'Calza', 'Campera', 'Malla', 'Pollera', 'Pollera-Short'}
+FEMW = [('Estampado', 'Estampada'), ('Rayado', 'Rayada'), ('Calado', 'Calada'), ('Navideño', 'Navideña'), ('Negro', 'Negra'),
+        ('Blanco', 'Blanca'), ('Rojo', 'Roja'), ('Amarillo', 'Amarilla'), ('Camuflado', 'Camuflada'), ('Escocés', 'Escocesa'),
+        ('Dorado', 'Dorada'), ('Plateado', 'Plateada')]
 rows, sk = [], collections.Counter()
 seen = collections.Counter()
 for a in raw:
@@ -89,6 +93,7 @@ for a in raw:
                 n = next((g for g in m.groups() if g), '3'); base = b.format(n=n)
             break
     if not cat: sk['sin tipo'] += 1; continue
+    if cat == 'Packs de Bodies': sk['pack bodies (decisión: no van)'] += 1; continue
     if cat == 'Accesorios':
         base = next((v for k, v in ACC.items() if re.search(k, nm, re.I)), 'Accesorio')
     st = []
@@ -108,8 +113,13 @@ for a in raw:
     col = color_es(a['color'])
     name = ' '.join(['GAP ·', base] + ext[:3] + [col])
     name = re.sub(r'\s+', ' ', name).strip()
+    if base.split()[0] in FEM:
+        for m, f in FEMW: name = re.sub(r'\b' + m + r'\b', f, name)
+    if seen[name]:
+        alt = name + ' (' + a['color'].strip().title() + ')'
+        seen[name] += 1
+        name = alt if not seen[alt] else f'{name} (modelo {seen[name]})'
     seen[name] += 1
-    if seen[name] > 1: name += f' (modelo {seen[name]})'
     gen = 'Nena' if a['k'] in ('g', 'tg', 'bg') else 'Nene'
     img = a['img']
     if img.startswith('00'): img = img[2:]
