@@ -53,6 +53,6 @@ async function pdp(a) {
     }
   } catch (e) {}
 }
-const q = [...cand];
+const q = process.env.SKIP_PDP ? [] : [...cand];
 await Promise.all(Array.from({ length: 6 }, async () => { while (q.length) { await pdp(q.shift()); if (++done % 100 === 0) console.error('pdp', done); await sleep(150); } }));
 console.log(JSON.stringify(cand));
