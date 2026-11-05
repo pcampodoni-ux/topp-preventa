@@ -20,12 +20,17 @@ ACC = {'Medias', 'Accesorios', 'Ropa interior'}
 BIG = ['4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '12', '14', '14-16', '16']
 BABY = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M']; TOD = ['2T', '3T', '4T', '5T']
 
+TRAMOS = [(10, 12, 42900), (12, 13, 44900)]  # USD 10–11,99 → $42.900; USD 12–12,99 → $44.900
+
 def fmt(n): return '$' + f"{n:,}".replace(',', '.')
 def precio(usd, cat, margen, fijo=None):
     if fijo: return int(fijo)
     P.MARGEN = margen
     p = P.precio(usd, a.cot, 3.5 if cat in ACC else None)
-    return 29900 if 30300 <= p <= 35000 else p
+    p = 29900 if 30300 <= p <= 35000 else p
+    for lo, hi, v in TRAMOS:          # precios por tramo de USD (5/11/2026); nunca suben un precio
+        if lo <= usd < hi: p = min(p, v)
+    return p
 
 TT = '<button class="ttl" type="button" data-tt>¿Qué talle?</button>'
 def card(r, marca):
