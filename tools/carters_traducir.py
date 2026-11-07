@@ -135,6 +135,7 @@ for r in raw:
     fijo = ''
     if cat == 'Packs de Bodies': fijo = '49900' if base.startswith('Pack 3') else ('59900' if base[5] in '45' else '')
     elif cat == 'Remeras' and usd <= 4.99: fijo = '24900'
+    elif cat == 'Remeras' and usd == 5: fijo = '29900'   # 7/11: remeras de USD 5 a $29.900
     elif cat == 'Pijamas de Polar' and usd <= 10: fijo = '39900'
     if cat == 'Pijamas de Polar' and not fijo: cat = 'Pijamas'
     quote = re.findall(r"'([^']{3,40})'", nm)

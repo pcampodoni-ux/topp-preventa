@@ -3,8 +3,9 @@
 Uso: python3 tools/curar.py entrada.tsv salida.tsv N [raw.json]"""
 import csv, sys, json, collections, re
 ent, sal, N = sys.argv[1], sys.argv[2], int(sys.argv[3])
-cl = set()
-if len(sys.argv) > 4: cl = {r['code'] for r in json.load(open(sys.argv[4])) if r.get('cl')}
+cl, en = set(), {}
+if len(sys.argv) > 4:
+    raw = json.load(open(sys.argv[4])); cl = {r['code'] for r in raw if r.get('cl')}; en = {r['code']: r['name'] for r in raw}
 ROPA = {'Packs de Bodies', 'Sets 2 Piezas', 'Enteritos', 'Pijamas', 'Pijamas de Polar', 'Vestidos', 'Remeras', 'Buzos', 'Pantalones', 'Shorts'}
 SKIP = {'Hora de Comer', 'Hora del Baño', 'Mochilas y Bolsos', 'Juguetes'}
 BABY = {'PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M'}
@@ -23,7 +24,12 @@ for k, xs in grp.items():
     xs.sort(key=lambda r: (float(r['usd']), r['code'] not in cl))
     xs = [r for r in xs if not re.search(r'Sorbete', r['nombre'])]   # 7/11: sin vasos con sorbete
     out += xs[: (max(4, N // 3) if k[1] == 'u' else (N * 2 if k[0] in ('Packs de Bodies', 'Bodies', 'Remeras', 'Sets 2 Piezas') else N))]
-import re
+# 7/11: todas las remeras de manga corta (y musculosas), sin tope
+ya = {r['code'] for r in out}
+def manga_corta(r):
+    n = en.get(r['code'], '') + ' ' + r['nombre']
+    return not re.search(r'Long[- ]Sleeve|Turtleneck|Manga Larga|Polera', n, re.I)
+out += [r for r in rows if r['cat'] == 'Remeras' and r['code'] not in ya and manga_corta(r)]
 seen = collections.Counter()
 for r in sorted(out, key=lambda r: float(r['usd'])):
     b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
