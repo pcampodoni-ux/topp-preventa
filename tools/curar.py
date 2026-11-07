@@ -5,7 +5,7 @@ import csv, sys, json, collections
 ent, sal, N = sys.argv[1], sys.argv[2], int(sys.argv[3])
 cl = set()
 if len(sys.argv) > 4: cl = {r['code'] for r in json.load(open(sys.argv[4])) if r.get('cl')}
-ROPA = {'Packs de Bodies', 'Bodies', 'Sets 2 Piezas', 'Enteritos', 'Pijamas', 'Pijamas de Polar', 'Vestidos', 'Remeras', 'Buzos', 'Pantalones', 'Shorts'}
+ROPA = {'Packs de Bodies', 'Sets 2 Piezas', 'Enteritos', 'Pijamas', 'Pijamas de Polar', 'Vestidos', 'Remeras', 'Buzos', 'Pantalones', 'Shorts'}
 SKIP = {'Hora de Comer', 'Hora del Baño', 'Mochilas y Bolsos', 'Juguetes'}
 BABY = {'PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M'}
 def edad(t):
