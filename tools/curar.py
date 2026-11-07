@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Curaduría del pedido: solo categorías principales y, dentro de cada categoría y edad, los N más baratos (prioriza liquidación).
 Uso: python3 tools/curar.py entrada.tsv salida.tsv N [raw.json]"""
-import csv, sys, json, collections
+import csv, sys, json, collections, re
 ent, sal, N = sys.argv[1], sys.argv[2], int(sys.argv[3])
 cl = set()
 if len(sys.argv) > 4: cl = {r['code'] for r in json.load(open(sys.argv[4])) if r.get('cl')}
@@ -21,7 +21,8 @@ for r in rows:
 out = []
 for k, xs in grp.items():
     xs.sort(key=lambda r: (float(r['usd']), r['code'] not in cl))
-    out += xs[: (max(4, N // 3) if k[1] == 'u' else (N * 2 if k[0] in ('Packs de Bodies', 'Bodies') else N))]
+    xs = [r for r in xs if not re.search(r'Sorbete', r['nombre'])]   # 7/11: sin vasos con sorbete
+    out += xs[: (max(4, N // 3) if k[1] == 'u' else (N * 2 if k[0] in ('Packs de Bodies', 'Bodies', 'Remeras', 'Sets 2 Piezas') else N))]
 import re
 seen = collections.Counter()
 for r in sorted(out, key=lambda r: float(r['usd'])):
