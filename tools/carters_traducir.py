@@ -4,16 +4,32 @@ Reglas: USD ≤ MAX (talle en stock más caro), al menos 2 talles en stock (1 en
 Precios fijos de Patricio: pack 3 bodies $49.900; packs 4 y 5 bodies $59.900; remeras ≤ USD 4,99 $23.900; pijamas de polar ≤ USD 10 $39.900.
 Uso: python3 tools/carters_traducir.py [--max 20] [--excluir tools/carters_bf.tsv]"""
 import argparse, json, re, os, collections, csv
-ap = argparse.ArgumentParser(); ap.add_argument('--max', type=float, default=20); ap.add_argument('--excluir', default='')
+ap = argparse.ArgumentParser(); ap.add_argument('--max', type=float, default=20); ap.add_argument('--excluir', default=''); ap.add_argument('--entrada', default='carters_raw.json'); ap.add_argument('--salida', default='carters_cl.tsv')
 a = ap.parse_args()
 HERE = os.path.dirname(os.path.abspath(__file__))
-raw = json.load(open(os.path.join(HERE, 'carters_raw.json')))
+raw = json.load(open(os.path.join(HERE, a.entrada)))
 ya = set()
 if a.excluir and os.path.exists(a.excluir):
     ya = {r['code'] for r in csv.DictReader(open(a.excluir, encoding='utf-8'), delimiter='\t')}
 
-ORDER = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M', '2T', '3T', '4T', '5T', '4', '5', '6', '6-6X', '7', '8', '10', '12', '14', '16', 'Único']
-NORM = {'OS': 'Único', 'ONE SIZE': 'Único', 'NO SIZE': 'Único', '6/6X': '6-6X', '6X': '6-6X'}
+ORDER = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M', '2T', '3T', '4T', '5T', '4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '10-12', '12', '14', '16', 'Único']
+NORM = {'OS': 'Único', 'ONE SIZE': 'Único', 'NO SIZE': 'Único', '6/6X': '6-6X', '6X': '6-6X', 'PREEMIE (UP TO 6LBS)': 'PRE', 'PREEMIE': 'PRE'}
+# Talles en letras de niños grandes (tabla oficial Carter's/OshKosh): XS = 4-5, S = 6-7, M = 8, L = 10-12, XL = 14
+ALFA = {'XS': '4-5', 'S': '6-7', 'M': '8', 'L': '10-12', 'XL': '14'}
+SKIP = [(r'Stroller|Car Seat|Changing|Monitor|Night ?Light|Sound|Bouncer|Chair|Seat\b|Playard|Crib|Mattress|Gate|Carrier', None, None),
+        (r'Lunch|Backpack|Bag|Tote|Diaper|Duffle|Suitcase|Luggage|Pouch', 'Mochilas y Bolsos', None),
+        (r'Bath|Tub|Towel|Spout|Hooded|Shampoo|Rinse|Wash|Potty|Toilet|Tooth', 'Hora del Baño', None),
+        (r'Bowl|Plate|Utensil|Cup|Bottle|Snack|Bib|Feeding|Meal|Placemat|Sippy|Straw|Spoon|Fork|Container|Teether|Pacifier', 'Hora de Comer', None),
+        (r'Toy|Activity|Play|Gym|Rattle|Book|Plush|Stack|Block|Puzzle|Ball|Spinner|Crayon|Art|Game|Musical|Sensory|Truck|Car\b', 'Juguetes', None)]
+SKIP_N = [(r'Insulated Lunch|Lunch Bag|Lunch', 'Lonchera'), (r'Backpack', 'Mochila'), (r'Diaper', 'Bolso Maternal'), (r'Tote|Bag', 'Bolso'), (r'Spout', 'Protector de Canilla'),
+          (r'Tub', 'Bañera'), (r'Towel', 'Toallón'), (r'Bath Toy|Bath', 'Juguete para el Baño'), (r'Potty|Toilet', 'Pelela'), (r'Bowl', 'Bowl'), (r'Plate', 'Plato'),
+          (r'Utensil|Spoon|Fork', 'Cubiertos'), (r'Snack|Container', 'Contenedor de Snacks'), (r'Straw Bottle|Straw Cup', 'Vaso con Sorbete'), (r'Sippy|Cup', 'Vaso'), (r'Bottle', 'Botella'),
+          (r'Bib', 'Babero'), (r'Teether', 'Mordillo'), (r'Book', 'Libro'), (r'Rattle', 'Sonajero'), (r'Plush', 'Peluche'), (r'Gym|Activity|Play', 'Juguete Didáctico'), (r'Toy', 'Juguete')]
+ANIM = {'fox': 'Zorro', 'owl': 'Búho', 'unicorn': 'Unicornio', 'dinosaur': 'Dinosaurio', 'dino': 'Dinosaurio', 'shark': 'Tiburón', 'bee': 'Abeja', 'butterfly': 'Mariposa', 'monkey': 'Mono',
+        'giraffe': 'Jirafa', 'elephant': 'Elefante', 'lion': 'León', 'tiger': 'Tigre', 'bear': 'Oso', 'bunny': 'Conejo', 'cat': 'Gato', 'dog': 'Perro', 'llama': 'Llama', 'narwhal': 'Narval',
+        'penguin': 'Pingüino', 'turtle': 'Tortuga', 'whale': 'Ballena', 'octopus': 'Pulpo', 'frog': 'Rana', 'koala': 'Koala', 'zebra': 'Cebra', 'sloth': 'Perezoso', 'astronaut': 'Astronauta',
+        'rainbow': 'Arcoíris', 'ladybug': 'Vaquita de San Antonio', 'hedgehog': 'Erizo', 'mermaid': 'Sirena', 'panda': 'Panda', 'cheetah': 'Guepardo', 'kitty': 'Gatito', 'puppy': 'Perrito'}
+MARCA = {'carters': 'carters', 'littleplanet': 'carters', 'otteravenue': 'carters', 'oshkosh': 'oshkosh', 'skiphop': 'skiphop'}
 
 TIPOS = [
     (r'Shoe|Sneaker|Sandal|Boot|Slipper|Crib Shoe|Booties', None, None),
@@ -82,13 +98,18 @@ for r in raw:
     if r.get('err') or not r.get('vs') or not r.get('name'): sk['sin datos'] += 1; continue
     if r['code'] in ya: sk['ya está (Black Friday)'] += 1; continue
     full = r['name'].strip()
+    marca = MARCA.get(r.get('brand') or 'carters')
+    if not marca: sk['otra marca'] += 1; continue
+    if (r.get('seg') or '') == 'Adult' or re.search(r'\b(Adult|Women|Men|Mommy|Daddy)\b', full): sk['adultos'] += 1; continue
+    kid = (r.get('seg') == 'Kid') or bool(re.search(r'^(Girls|Boys|Kids?)\b', full))
     nm, _, col = full.partition(' - ') if ' - ' in full else (full, '', '')
     cat = base = None
-    for pat, c, b in TIPOS:
+    for pat, c, b in (SKIP if marca == 'skiphop' else TIPOS):
         m = re.search(pat, nm, re.I)
         if m:
             cat, base = c, b
             if pat.startswith(r'Shoe'): cat = 'ZAPATOS'
+            elif marca == 'skiphop': cat = c or 'GEAR'; base = next((v for k, v in SKIP_N if re.search(k, nm, re.I)), 'Producto')
             elif pat == r'Bodysuit':
                 if re.search(r'Pant|Short|Legging|Skirt|Set|Piece', nm, re.I): cat, base = 'Sets 2 Piezas', 'Set Body y Pantalón' if re.search('Pant|Legging', nm) else 'Set Body y Short'
                 else: cat, base = 'Bodies', 'Body'
@@ -97,15 +118,17 @@ for r in raw:
                 if base == 'Set 2 Piezas' and re.search('Bodysuit', nm): base = 'Set Body y Pantalón'
             break
     if cat == 'ZAPATOS': sk['zapatos'] += 1; continue
+    if cat == 'GEAR': sk['skip hop equipamiento'] += 1; continue
     if not cat: sk['sin tipo'] += 1; continue
     if cat == 'Accesorios': base = next((v for k, v in ACC.items() if re.search(k, nm, re.I)), 'Accesorio')
     inst = {}
     for v in r['vs']:
         if not v['st']: continue
-        t = NORM.get(v['s'].upper().strip(), v['s'].strip().upper())
+        u = v['s'].upper().strip(); u = re.sub(r'^(\d+)R$', r'\1', u)
+        t = NORM.get(u, ALFA.get(u) if kid and u in ALFA else u)
         if t in ORDER: inst[t] = max(inst.get(t, 0), v['p'])
     st = sorted(inst, key=ORDER.index)
-    minimo = 1 if cat in ('Accesorios', 'Medias', 'Ropa interior') else 2
+    minimo = 1 if cat in ('Accesorios', 'Medias', 'Ropa interior') or marca == 'skiphop' else 2
     if len(st) < minimo: sk['talles'] += 1; continue
     usd = max(inst.values())
     if usd > a.max: sk[f'> USD {a.max:g}'] += 1; continue
@@ -121,6 +144,10 @@ for r in raw:
     if cat in ('Remeras', 'Bodies') and 'Manga Corta' in ext: ext.remove('Manga Corta')
     if quote: ext = [e for e in ext if e not in ('Estampado',)]
     parts = [base] + ([f'"{quote[0]}"'] if quote else []) + ext[:2] + ([color_es(col)] if col else [])
+    if marca == 'skiphop':
+        an = next((es for en, es in ANIM.items() if re.search(r'\b' + en + r's?\b', full, re.I)), '')
+        coll = (re.match(r'^([A-Z][\w&]+)\b', nm) or [None, ''])[1] if not an else ''
+        parts = [base] + ([an] if an else ([coll] if coll and coll.lower() not in base.lower() else [])) + ([color_es(col)] if col and not an else [])
     name = re.sub(r'\s+', ' ', ' '.join(parts)).strip()
     if base.split()[0] in FEM:
         for m_, f_ in FEMW: name = re.sub(r'\b' + m_ + r'\b', f_, name)
@@ -128,7 +155,7 @@ for r in raw:
     seen[re.sub(r' \(modelo \d+\)$', '', name)] += 1
     g = re.search(r'\b(Girl|Girls)\b', nm); bo = re.search(r'\b(Boy|Boys)\b', nm)
     gen = 'Nena' if g and not bo else ('Nene' if bo and not g else 'Unisex')
-    rows.append('\t'.join([r['code'], cat, gen, name, f'{usd:g}', '|'.join(st), r['img'], fijo]))
-open(os.path.join(HERE, 'carters_cl.tsv'), 'w', encoding='utf-8').write('code\tcat\tgen\tnombre\tusd\ttalles\timg\tfijo\n' + '\n'.join(rows) + '\n')
+    rows.append('\t'.join([r['code'], cat, gen, name, f'{usd:g}', '|'.join(st), r['img'], fijo, marca]))
+open(os.path.join(HERE, a.salida), 'w', encoding='utf-8').write('code\tcat\tgen\tnombre\tusd\ttalles\timg\tfijo\tmarca\n' + '\n'.join(rows) + '\n')
 print(len(rows), 'productos;', dict(sk))
 print(collections.Counter(x.split('\t')[1] for x in rows))
