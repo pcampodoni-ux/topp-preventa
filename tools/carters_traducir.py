@@ -133,7 +133,7 @@ for r in raw:
     usd = max(inst.values())
     if usd > a.max: sk[f'> USD {a.max:g}'] += 1; continue
     fijo = ''
-    if cat == 'Packs de Bodies': fijo = '49900' if base.startswith('Pack 3') else ('59900' if base[5] in '45' else '')
+    if cat == 'Packs de Bodies': fijo = '54900' if base[5] in '3456789' else ''   # 8/11: promo packs de 3 o más bodies a $54.900
     elif cat == 'Remeras' and usd <= 4.99: fijo = '24900'
     elif cat == 'Remeras' and usd == 5: fijo = '29900'   # 7/11: remeras de USD 5 a $29.900
     elif cat == 'Pijamas de Polar' and usd <= 10: fijo = '39900'

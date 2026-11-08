@@ -50,7 +50,7 @@ def card(r, marca):
         img = (f'https://dw.cartersstorefront.com/dw/image/v2/AAMK_PRD/on/demandware.static/{im}?sw=600' if im else f'{IMG_C}{r["img"]}?sw=600')
     else:
         url = f'https://www.gapfactory.com/browse/product.do?pid={r["code"]}'; img = f'https://content.gapinc.com/b/00{r["img"]}?width=600'
-    tag = MARCAS[marca]; grupo = 'g' if marca == 'gapfactory' else 'c'
+    tag = MARCAS[marca]; grupo = {'carters': 'c', 'oshkosh': 'o', 'skiphop': 's', 'gapfactory': 'g'}[marca]
     def grp(xs): return ''.join(f'<button class="tl" data-t="{x}">{x}</button>' for x in xs)
     lbl = groups[0][0] + (TT if groups[0][2] else '')
     btns = grp(groups[0][1]) + ''.join(f'</div>\n<p class="lb">{lb}</p>\n<div class="tls">{grp(xs)}' for lb, xs, _ in groups[1:])
@@ -60,7 +60,7 @@ def card(r, marca):
            f'<div class="bd">\n<span class="tag">{tag} · {r["cat"]} · {" y ".join(ED_TXT[e] for e in eds)}</span>\n'
            f'<h3><a class="nm" href="{url}" target="_blank" rel="noopener">{nom}</a></h3>\n<div class="pr"><b>{fmt(p)}</b></div>\n'
            f'<p class="lb">{lbl}</p>\n<div class="tls">{btns}</div>\n<button class="add" disabled>Elegí un talle</button>\n</div></article>')
-    return (0 if grupo == 'c' else 1, p, CATS.index(r['cat']), art), set(t), set(eds)
+    return ('cosg'.index(grupo), 0 if r['cat'] == 'Packs de Bodies' else 1, p, CATS.index(r['cat']), art), set(t), set(eds)
 
 items, talles, edades = [], set(), set()
 for f, marca in (('carters_full.tsv', 'carters'), ('gapfactory.tsv', 'gapfactory')):
@@ -68,16 +68,16 @@ for f, marca in (('carters_full.tsv', 'carters'), ('gapfactory.tsv', 'gapfactory
     if not os.path.exists(path): continue
     for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t'):
         it, t, e = card(r, marca); items.append(it); talles |= t; edades |= e
-items.sort(key=lambda x: (x[0], x[1], x[2]))
+items.sort(key=lambda x: (x[0], x[1], x[2], x[3]))
 
 s = open(IDX, encoding='utf-8').read()
 g0 = s.index('<div class="grid" id="grid">') + len('<div class="grid" id="grid">'); g1 = s.index('</div><div class="empty" id="empty">')
-s = s[:g0] + '\n' + '\n'.join(x[3] for x in items) + '\n' + s[g1:]
+s = s[:g0] + '\n' + '\n'.join(x[4] for x in items) + '\n' + s[g1:]
 
-present = {CATS[x[2]] for x in items}
+present = {CATS[x[3]] for x in items}
 chip = lambda f, v, t=None: f'<button class="chip" data-f="{f}" data-v="{v}">{t or v}</button>'
 s = re.sub(r'<div class="frow wrap"><em>Categoría</em>.*?</div>', '<div class="frow wrap"><em>Categoría</em>' + ''.join(chip('cat', c) for c in CATS if c in present) + '</div>', s, count=1)
-marcas = [m for m in ('carters', 'oshkosh', 'skiphop') if any(f'data-marca="{m}"' in x[3] for x in items)]
+marcas = [m for m in ('carters', 'oshkosh', 'skiphop') if any(f'data-marca="{m}"' in x[4] for x in items)]
 s = re.sub(r'<div class="frow" id="fmarca">.*?</div>', '<div class="frow" id="fmarca"><em>Marca</em>' + ''.join(chip('marca', m, MARCAS[m]) for m in marcas) + '</div>', s, count=1)
 nc = sum(1 for x in items if x[0] == 0); ng = len(items) - nc
 pf = lambda n: f'{n:,}'.replace(',', '.') + ' productos'
@@ -97,4 +97,4 @@ s = re.sub(r'<title>TOPP by WOWCYK — Pedido [^<]*</title>', f'<title>TOPP by W
 s = re.sub(r'<meta name="description" content="Pedido [^"]*">', f'<meta name="description" content="Pedido Noviembre 2026 — {a.titulo}. Reservá con seña.">', s)
 open(IDX, 'w', encoding='utf-8').write(s)
 import collections
-print(len(items), 'productos;', dict(collections.Counter(re.search(r'data-marca="(\w+)"', x[3]).group(1) for x in items)), sorted(present, key=CATS.index))
+print(len(items), 'productos;', dict(collections.Counter(re.search(r'data-marca="(\w+)"', x[4]).group(1) for x in items)), sorted(present, key=CATS.index))

@@ -23,7 +23,8 @@ out = []
 for k, xs in grp.items():
     xs.sort(key=lambda r: (float(r['usd']), r['code'] not in cl))
     xs = [r for r in xs if not re.search(r'Sorbete', r['nombre'])]   # 7/11: sin vasos con sorbete
-    out += xs[: (max(4, N // 3) if k[1] == 'u' else (N * 2 if k[0] in ('Packs de Bodies', 'Bodies', 'Remeras', 'Sets 2 Piezas') else N))]
+    xs = [r for r in xs if not (r['nombre'].startswith('Pack 2') and float(r['usd']) > 13)]   # 8/11: packs de 2 que saldrían más caros que un pack de 5
+    out += xs[: (max(4, N // 3) if k[1] == 'u' else (999 if k[0] == 'Packs de Bodies' else (N * 2 if k[0] in ('Bodies', 'Remeras', 'Sets 2 Piezas') else N)))]
 # 7/11: todas las remeras de manga corta (y musculosas), sin tope
 ya = {r['code'] for r in out}
 def manga_corta(r):
