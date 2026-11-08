@@ -129,6 +129,7 @@ for r in raw:
         if t in ORDER: inst[t] = max(inst.get(t, 0), v['p'])
     st = sorted(inst, key=ORDER.index)
     minimo = 1 if cat in ('Accesorios', 'Medias', 'Ropa interior') or marca == 'skiphop' else 2
+    if cat == 'Sets 2 Piezas' and marca == 'carters' and inst and max(inst.values()) <= 10: minimo = 1   # 8/11: sets Carter's hasta USD 10 aunque quede un talle
     if len(st) < minimo: sk['talles'] += 1; continue
     usd = max(inst.values())
     if usd > a.max: sk[f'> USD {a.max:g}'] += 1; continue
