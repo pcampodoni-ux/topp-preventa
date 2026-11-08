@@ -100,7 +100,7 @@ for r in raw:
     full = r['name'].strip()
     marca = MARCA.get(r.get('brand') or 'carters')
     if not marca: sk['otra marca'] += 1; continue
-    if (r.get('seg') or '') == 'Adult' or re.search(r'\b(Adult|Women|Men|Mommy|Daddy)\b', full): sk['adultos'] += 1; continue
+    if (r.get('seg') or '') == 'Adult' or re.search(r'^(Adult|Women|Men)\b', full): sk['adultos'] += 1; continue
     kid = (r.get('seg') == 'Kid') or bool(re.search(r'^(Girls|Boys|Kids?)\b', full))
     nm, _, col = full.partition(' - ') if ' - ' in full else (full, '', '')
     cat = base = None

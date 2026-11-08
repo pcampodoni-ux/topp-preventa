@@ -31,6 +31,9 @@ def manga_corta(r):
     n = en.get(r['code'], '') + ' ' + r['nombre']
     return not re.search(r'Long[- ]Sleeve|Turtleneck|Manga Larga|Polera', n, re.I)
 out += [r for r in rows if r['cat'] == 'Remeras' and r['code'] not in ya and manga_corta(r)]
+# 8/11: todos los sets de 2 y 3 piezas de Carter's hasta USD 10
+ya = {r['code'] for r in out}
+out += [r for r in rows if r['cat'] == 'Sets 2 Piezas' and r.get('marca', 'carters') == 'carters' and float(r['usd']) <= 10 and r['code'] not in ya]
 seen = collections.Counter()
 for r in sorted(out, key=lambda r: float(r['usd'])):
     b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
