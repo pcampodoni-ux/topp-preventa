@@ -60,7 +60,12 @@ def card(r, marca):
            f'<div class="bd">\n<span class="tag">{tag} · {r["cat"]} · {" y ".join(ED_TXT[e] for e in eds)}</span>\n'
            f'<h3><a class="nm" href="{url}" target="_blank" rel="noopener">{nom}</a></h3>\n<div class="pr"><b>{fmt(p)}</b></div>\n'
            f'<p class="lb">{lbl}</p>\n<div class="tls">{btns}</div>\n<button class="add" disabled>Elegí un talle</button>\n</div></article>')
-    return ('cosg'.index(grupo), 0 if r['cat'] == 'Packs de Bodies' else 1, p, CATS.index(r['cat']), art), set(t), set(eds)
+    nm = r['nombre']
+    if r['cat'] != 'Packs de Bodies': pri = 3
+    elif nm.startswith('Pack 5') and not re.search(r'Manga Larga|Musculosa', nm): pri = 0   # 8/11: primero packs de 5 manga corta
+    elif nm.startswith('Pack 4') and 'Manga Larga' in nm: pri = 1                          # después packs de 4 manga larga
+    else: pri = 2
+    return ('cosg'.index(grupo), pri, p, CATS.index(r['cat']), art), set(t), set(eds)
 
 items, talles, edades = [], set(), set()
 for f, marca in (('carters_full.tsv', 'carters'), ('gapfactory.tsv', 'gapfactory')):
