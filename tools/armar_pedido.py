@@ -99,8 +99,8 @@ s = re.sub(r'<div class="frow"><em>Talles niños</em>.*?</div>', fila('Talles ni
 s = re.sub(r'<div class="frow" id="ftg"><em>Talles grandes</em>.*?</div>', fila('Talles grandes', BIG, ' id="ftg"'), s, count=1)
 
 s = re.sub(r'CIERRE=new Date\("[^"]+"\)', f'CIERRE=new Date("{a.cierre}")', s)
-s = re.sub(r'<title>TOPP by WOWCYK — Pedido [^<]*</title>', f'<title>TOPP by WOWCYK — Pedido Noviembre 2026 — {a.titulo}</title>', s)
-s = re.sub(r'<meta name="description" content="Pedido [^"]*">', f'<meta name="description" content="Pedido Noviembre 2026 — {a.titulo}. Reservá con seña.">', s)
+s = re.sub(r'<title>[^<]*</title>', '<title>TOPP by WOWCYK</title>', s, count=1)   # 9/11: el título no lleva nada más (vista previa de WhatsApp)
+s = re.sub(r'<meta name="description" content="[^"]*">\n?', '', s, count=1)
 open(IDX, 'w', encoding='utf-8').write(s)
 import collections
 print(len(items), 'productos;', dict(collections.Counter(re.search(r'data-marca="(\w+)"', x[4]).group(1) for x in items)), sorted(present, key=CATS.index))
