@@ -7,12 +7,8 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 2V933310	Jardineros	Unisex	Jardinero Rayado Hickory Rojo y Blanco	12	2T|3T|4T|5T	dw7e48ea04/productimages/2V933310.jpg	49900	oshkosh
 1V930110	Jardineros	Nena	Vestido Jardinero de Corderoy Cascanueces Rojo	12	12M|18M|24M	dw66bc8dff/productimages/1V930110.jpg	49900	oshkosh
 2V934410	Jardineros	Nena	Jardinero de Corderoy Osito Rosa	12	2T|3T|4T|5T	dw4d334a0e/productimages/2V934410.jpg	49900	oshkosh
-2V934010	Remeras	Nene	Camisa Manga Larga a Cuadros Rojo y Negro	12	2T|3T|4T|5T	dw8eec3b97/productimages/2V934010.jpg	44900	oshkosh
-2V933910	Remeras	Nene	Remera Manga Larga Navideña Cascanueces Blanca	12	2T|3T|4T|5T	dw649dad0a/productimages/2V933910.jpg	44900	oshkosh
 1R980110	Jardineros	Unisex	Jardinero de Jean Elastizado Lavado Oscuro	12	3M|6M|9M|18M|24M	dw5e1205b6/productimages/1R980110.jpg	49900	oshkosh
-1V929910	Bodies	Nene	Body Manga Larga a Cuadros Rojo y Negro	12	3M|6M|9M|12M|18M|24M	dw13c03084/productimages/1V929910.jpg	44900	oshkosh
 1V929210	Jardineros	Unisex	Jardinero Rayado Hickory Rojo y Blanco	12	3M|6M|9M|12M|18M|24M	dwbeed2df7/productimages/1V929210.jpg	49900	oshkosh
-1V929810	Bodies	Nene	Body Camisero Manga Larga Navideño Cascanueces Blanco, Rojo y Negro	12	3M|6M|9M|12M|18M|24M	dw61ac1a5d/productimages/1V929810.jpg	44900	oshkosh
 2V934510	Jardineros	Nena	Jardinero de Corderoy Rosa Oscuro	12	2T|3T|4T|5T	dw9a6f3d38/productimages/2V934510.jpg	49900	oshkosh
 2V934310	Jardineros	Unisex	Jardinero de Corderoy Rojo	12	2T|3T|4T|5T	dw7423321d/productimages/2V934310.jpg	49900	oshkosh
 1V930410	Jardineros	Nena	Jardinero de Corderoy Osito Rosa	12	3M|6M|9M|12M|18M|24M	dwb5500015/productimages/1V930410.jpg	49900	oshkosh
@@ -21,13 +17,11 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 2W317510	Jardineros	Nena	Vestido Jardinero de Chambray Lavado Medio	12	2T|3T|4T|5T	dw92a3650b/productimages/2W317510.jpg	49900	oshkosh
 2R980110	Jardineros	Unisex	Jardinero de Jean Elastizado Lavado Oscuro	12	2T|3T|4T|5T	dw87486459/productimages/2R980110.jpg	49900	oshkosh
 1V930210	Jardineros	Unisex	Jardinero de Corderoy Rojo	12	3M|6M|9M|12M|18M|24M	dw02397234/productimages/1V930210.jpg	49900	oshkosh
-2V934110	Buzos	Nene	Buzo Térmico con Capucha Azul Marino	12	2T|3T|4T|5T	dwd54a1c22/productimages/2V934110.jpg	44900	oshkosh
 1V930310	Jardineros	Nena	Jardinero de Corderoy Rosa Oscuro	12	3M|6M|9M|12M|18M|24M	dw7f2f9360/productimages/1V930310.jpg	49900	oshkosh
 2R964610	Jardineros	Unisex	Jardinero de Jean Tejido Corazones Azul	12	4T|5T	dw70fcb2c2/productimages/2R964610.jpg	49900	oshkosh
 1R964310	Jardineros	Unisex	Jardinero de Jean Tejido Rayado Hickory Rosa	12	3M|6M|9M|12M|18M|24M	dwcb6ae5a0/productimages/1R964310.jpg	49900	oshkosh
 1W248510	Jardineros	Nena	Vestido Jardinero de Chambray Lavado Medio	12	3M|6M|9M|12M|18M|24M	dw8942d657/productimages/1W248510.jpg	49900	oshkosh
 2R964710	Jardineros	Unisex	Jardinero de Jean Tejido Rayado Hickory Rosa	12	4T|5T	dw82e06424/productimages/2R964710.jpg	49900	oshkosh
-1V930010	Bodies	Nene	Body Térmico Manga Larga con Capucha Azul Marino	12	3M|6M|9M|12M|18M|24M	dw63d5f7f5/productimages/1V930010.jpg	44900	oshkosh
 1V929410	Jardineros	Nene	Jardinero de Jean a Cuadros Lavado Oscuro	12	3M|6M|9M|12M|18M|24M	dw903ca933/productimages/1V929410.jpg	49900	oshkosh
 2V933510	Jardineros	Nene	Jardinero de Jean a Cuadros Lavado Oscuro	12	2T|3T|4T|5T	dwf7c510fb/productimages/2V933510.jpg	49900	oshkosh
 2V932610	Jardineros	Unisex	Jardinero de Corderoy Osito Rojo	12	2T|3T|4T|5T	dw0d4a844f/productimages/2V932610.jpg	49900	oshkosh
@@ -70,15 +64,3 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 1N357612	Pantalones	Unisex	Jean Skinny Lavado Claro Gastado	12	12M|18M|24M	dw7f671292/productimages/1N357612.jpg	44900	oshkosh
 1N357611	Pantalones	Unisex	Jean Skinny Lavado Medio	12	12M|18M|24M	dw608a2e53/productimages/1N357611.jpg	44900	oshkosh
 1N438511	Pantalones	Unisex	Jean Skinny Azul Oscuro	12	12M|18M|24M	dw10ce48cb/productimages/1N438511.jpg	44900	oshkosh
-1T322510	Bodies	Nena	Body Manga Larga Cuello con Ondas Blanco	12	3M|6M|9M|12M|18M|24M	dw7e5daf76/productimages/1T322510.jpg	44900	oshkosh
-1V930510	Bodies	Nena	Body Manga Larga Rojo	12	3M|6M|9M|12M|18M|24M	dw7145c57c/productimages/1V930510.jpg	44900	oshkosh
-2T323310	Remeras	Nena	Remera Manga Larga Cuello con Ondas Blanca	12	2T|3T|4T|5T	dwac2a22cd/productimages/2T323310.jpg	44900	oshkosh
-2V934610	Remeras	Nena	Remera Manga Larga Roja	12	2T|3T|4T|5T	dwc8ff057f/productimages/2V934610.jpg	44900	oshkosh
-2T323110	Remeras	Nena	Remera Manga Larga Cuello con Ondas Rosa	12	2T|3T|4T|5T	dwfc4b5f5f/productimages/2T323110.jpg	44900	oshkosh
-1T322410	Bodies	Nena	Body Manga Larga Cuello con Ondas Rosa	12	3M|6M|9M|12M|18M|24M	dw19a91bb0/productimages/1T322410.jpg	44900	oshkosh
-2R962910	Remeras	Nena	Remera Manga Corta Cuello con Ondas Blanca	11	3T|4T|5T	dwbcb1e56a/productimages/2R962910.jpg	42900	oshkosh
-2V934710	Remeras	Nena	Remera Manga Larga Floreada Azul Marino	12	2T|3T|4T|5T	dwf4b5dabd/productimages/2V934710.jpg	44900	oshkosh
-1V930610	Bodies	Nena	Body Manga Larga Floreado Azul Marino	12	3M|6M|9M|12M|18M|24M	dwff3d4264/productimages/1V930610.jpg	44900	oshkosh
-1R962710	Bodies	Nena	Body Manga Corta Cuello con Ondas Rosa	11	3M|6M|9M|12M|18M|24M	dwd8eccc8f/productimages/1R962710.jpg	39900	oshkosh
-1R962810	Bodies	Nena	Body Manga Corta Cuello con Ondas Blanco	11	3M|6M|9M|12M|18M|24M	dw825773fc/productimages/1R962810.jpg	39900	oshkosh
-2R963010	Remeras	Nena	Remera Manga Corta Cuello con Ondas Rosa	11	3T|4T|5T	dw18acaa42/productimages/2R963010.jpg	42900	oshkosh
