@@ -10,11 +10,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import precio as P
 
 ap = argparse.ArgumentParser()
-ap.add_argument('--cierre', required=True); ap.add_argument('--titulo', default='Black Friday'); ap.add_argument('--cot', type=float, default=1560)
+ap.add_argument('--cierre', required=True); ap.add_argument('--titulo', default='Black Friday'); ap.add_argument('--cot', type=float, default=1560); ap.add_argument('--tsv', default='carters_full.tsv:carters,gapfactory.tsv:gapfactory')
 a = ap.parse_args()
 HERE = os.path.dirname(os.path.abspath(__file__)); IDX = os.path.join(HERE, '..', 'index.html')
 IMG_C = 'https://dw.cartersstorefront.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/'
-CATS = ["Packs de Bodies", "Bodies", "Sets 2 Piezas", "Enteritos", "Pijamas", "Pijamas de Polar", "Vestidos", "Remeras", "Buzos", "Camperas",
+CATS = ["Jardineros", "Packs de Bodies", "Bodies", "Sets 2 Piezas", "Enteritos", "Pijamas", "Pijamas de Polar", "Vestidos", "Remeras", "Buzos", "Camperas",
         "Pantalones", "Shorts", "Mallas", "Medias", "Ropa interior", "Accesorios", "Hora del Baño", "Hora de Comer", "Juguetes", "Mochilas y Bolsos"]
 ACC = {'Medias', 'Accesorios', 'Ropa interior', 'Hora del Baño', 'Hora de Comer'}
 BIG = ['4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '10-12', '12', '14', '14-16', '16']
@@ -61,14 +61,15 @@ def card(r, marca):
            f'<h3><a class="nm" href="{url}" target="_blank" rel="noopener">{nom}</a></h3>\n<div class="pr"><b>{fmt(p)}</b></div>\n'
            f'<p class="lb">{lbl}</p>\n<div class="tls">{btns}</div>\n<button class="add" disabled>Elegí un talle</button>\n</div></article>')
     nm = r['nombre']
-    if r['cat'] != 'Packs de Bodies': pri = 3
+    if r['cat'] == 'Jardineros': pri = 1 if 'Corderoy' in nm else 0   # 9/11: primero jardineros (jean/chambray antes que corderoy)
+    elif r['cat'] != 'Packs de Bodies': pri = 3
     elif nm.startswith('Pack 5') and not re.search(r'Manga Larga|Musculosa', nm): pri = 0   # 8/11: primero packs de 5 manga corta
     elif nm.startswith('Pack 4') and 'Manga Larga' in nm: pri = 1                          # después packs de 4 manga larga
     else: pri = 2
     return ('cosg'.index(grupo), pri, p, CATS.index(r['cat']), art), set(t), set(eds)
 
 items, talles, edades = [], set(), set()
-for f, marca in (('carters_full.tsv', 'carters'), ('gapfactory.tsv', 'gapfactory')):
+for f, marca in (x.split(':') for x in a.tsv.split(',')):
     path = os.path.join(HERE, f)
     if not os.path.exists(path): continue
     for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t'):
