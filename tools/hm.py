@@ -20,8 +20,8 @@ MOTIVO = [('floral', 'Flores'), ('flower', 'Flores'), ('heart', 'Corazones'), ('
 ADJ = [(r'Ruffle', 'con Volados'), (r'Muslin', 'de Muselina'), (r'Linen', 'de Lino'), (r'Ribbed', 'Morley'), (r'Plumeti', 'Plumeti'),
        (r'Smock', 'Smock'), (r'Embroider', 'Bordado'), (r'Broderie|Eyelet', 'Bordado Inglés'), (r'Sleeveless', 'Sin Mangas'), (r'Jersey', 'de Jersey'),
        (r'Printed|Patterned', 'Estampado'), (r'Collar', 'con Cuello'), (r'Ladybug', 'Vaquitas'), (r'Tiered', 'con Volados'), (r'Denim', 'de Jean'),
-       (r'Bow-Tie', 'con Moñito'), (r'Shorts', 'con Short')]
-FEM = {'Remera', 'Musculosa', 'Camisa'}
+       (r'Bow-Tie', 'con Moñito'), (r'Chino', 'Chino'), (r'Cargo', 'Cargo'), (r'Sweatshort', 'de Algodón Rústico'), (r'Pull-on|Pull-On', 'con Elástico'), (r'Cotton', 'de Algodón'), (r'Shorts', 'con Short')]
+FEM = {'Remera', 'Musculosa', 'Camisa', 'Chomba'}
 
 def color_es(c):
     c = c.lower(); col = next((es for en, es in COLOR if en in c), ''); mot = next((es for en, es in MOTIVO if en in c), '')
@@ -31,9 +31,12 @@ def base_de(t, tipo):
     m = re.search(r'(\d)-[Pp]ack', t)
     if tipo == 'Vestidos': return 'Vestido'
     if tipo == 'Buzos': return 'Buzo Frisado' if re.search(r'brushed', t, re.I) else 'Buzo'
+    if tipo == 'Shorts': return (f'Pack {m.group(1)} Shorts' if m else 'Short')
+    if tipo == 'Pantalones': return (f'Pack {m.group(1)} Pantalones' if m else 'Pantalón')
     if tipo == 'Sets 2 Piezas':
         n = re.search(r'(\d)-[Pp]iece', t); return f'Set {n.group(1) if n else 2} Piezas'
-    if re.search(r'Tank', t): b = 'Musculosas' if m else 'Musculosa'
+    if re.search(r'Polo', t): b = 'Chombas' if m else 'Chomba'
+    elif re.search(r'Tank', t): b = 'Musculosas' if m else 'Musculosa'
     elif re.search(r'Shirt\b', t) and not re.search(r'T-[Ss]hirt', t): b = 'Camisas' if m else 'Camisa'
     else: b = 'Remeras' if m else 'Remera'
     return f'Pack {m.group(1)} {b}' if m else b
@@ -60,8 +63,10 @@ for x in raw:
     t = x['t']; tipo = x['tipo']
     if re.search(r'\bset\b|piece', t, re.I): tipo = 'Sets 2 Piezas'   # un set nunca es remera, aunque H&M lo liste en remeras
     elif re.search(r'sweatshirt|hoodie', t, re.I): tipo = 'Buzos'
-    if usd is None or usd > 20: sk['> USD 20'] += 1; continue
-    if tipo == 'Remeras' and not re.search(r'pack', t, re.I) and usd > 10: sk['remera suelta > USD 10'] += 1; continue
+    elif re.search(r'short', t, re.I): tipo = 'Shorts'
+    elif re.search(r'pants|trousers|chinos|jeans', t, re.I): tipo = 'Pantalones'
+    if usd is None or usd > (17 if x.get('nuevo') else 20): sk['> tope USD'] += 1; continue   # 12/11 tarde: lo agregado después va hasta USD 17
+    if not x.get('nuevo') and tipo == 'Remeras' and not re.search(r'pack', t, re.I) and usd > 10: sk['remera suelta > USD 10'] += 1; continue
     elif re.search(r'dress', t, re.I): tipo = 'Vestidos'
     b = base_de(t, tipo)
     ext = []
@@ -69,7 +74,7 @@ for x in raw:
         if re.search(pat, t, re.I) and es not in ext: ext.append(es)
     noun = b.split()[-1]
     if noun in FEM: ext = [{'Estampado': 'Estampada', 'Bordado': 'Bordada', 'Bordado Inglés': 'Bordado Inglés'}.get(e, e) for e in ext]
-    elif noun in ('Remeras', 'Musculosas', 'Camisas'): ext = [{'Estampado': 'Estampadas', 'Bordado': 'Bordadas'}.get(e, e) for e in ext]
+    elif noun in ('Remeras', 'Musculosas', 'Camisas', 'Chombas'): ext = [{'Estampado': 'Estampadas', 'Bordado': 'Bordadas'}.get(e, e) for e in ext]
     col = color_es(x.get('sw') or '')
     nombre = ' '.join([b] + ext[:2] + ([col] if col else []))
     seen[nombre] += 1
