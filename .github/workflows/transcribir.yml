@@ -30,7 +30,7 @@ jobs:
           python - <<'PY'
           import subprocess, numpy as np
           from faster_whisper import WhisperModel
-          raw = subprocess.run(["ffmpeg", "-nostdin", "-i", "/tmp/a.ogg", "-f", "s16le", "-ac", "1", "-ar", "16000", "-"], capture_output=True, check=True).stdout
+          raw = open("/tmp/a.ogg", "rb").read()   # PCM s16le 16 kHz mono, ya decodificado antes de cifrar
           audio = np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
           m = WhisperModel("medium", device="cpu", compute_type="int8")
           segs, _ = m.transcribe(audio, language="es", beam_size=5)
