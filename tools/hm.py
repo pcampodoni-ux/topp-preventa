@@ -30,6 +30,7 @@ def color_es(c):
 def base_de(t, tipo):
     m = re.search(r'(\d)-[Pp]ack', t)
     if tipo == 'Vestidos': return 'Vestido'
+    if tipo == 'Buzos': return 'Buzo Frisado' if re.search(r'brushed', t, re.I) else 'Buzo'
     if tipo == 'Sets 2 Piezas':
         n = re.search(r'(\d)-[Pp]iece', t); return f'Set {n.group(1) if n else 2} Piezas'
     if re.search(r'Tank', t): b = 'Musculosas' if m else 'Musculosa'
@@ -58,6 +59,9 @@ for x in raw:
     if len(tal) < 2: sk['menos de 2 talles'] += 1; continue
     t = x['t']; tipo = x['tipo']
     if re.search(r'\bset\b|piece', t, re.I): tipo = 'Sets 2 Piezas'   # un set nunca es remera, aunque H&M lo liste en remeras
+    elif re.search(r'sweatshirt|hoodie', t, re.I): tipo = 'Buzos'
+    if usd is None or usd > 20: sk['> USD 20'] += 1; continue
+    if tipo == 'Remeras' and not re.search(r'pack', t, re.I) and usd > 10: sk['remera suelta > USD 10'] += 1; continue
     elif re.search(r'dress', t, re.I): tipo = 'Vestidos'
     b = base_de(t, tipo)
     ext = []
