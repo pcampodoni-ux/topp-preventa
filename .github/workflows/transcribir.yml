@@ -1,0 +1,35 @@
+name: Transcribir audio
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clave del runner
+        run: |
+          openssl genpkey -algorithm RSA -out /tmp/priv.pem -pkeyopt rsa_keygen_bits:3072
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git checkout --orphan tmp-audio; git rm -rfq . ; openssl pkey -in /tmp/priv.pem -pubout -out runner.pub
+          git add runner.pub; git commit -qm "clave"; git push -fq origin tmp-audio
+      - name: Instalar whisper
+        run: pip install -q faster-whisper
+      - name: Esperar audio cifrado
+        run: |
+          for i in $(seq 1 90); do git fetch -q origin tmp-audio; if git cat-file -e origin/tmp-audio:k.enc 2>/dev/null; then break; fi; sleep 10; done
+          git checkout -q origin/tmp-audio -- k.enc a.bin
+          openssl pkeyutl -decrypt -inkey /tmp/priv.pem -in k.enc -out /tmp/k.txt
+          openssl enc -d -aes-256-cbc -pbkdf2 -in a.bin -out /tmp/a.ogg -pass file:/tmp/k.txt
+      - name: Transcribir
+        run: |
+          python - <<'PY'
+          from faster_whisper import WhisperModel
+          m = WhisperModel("medium", device="cpu", compute_type="int8")
+          segs, _ = m.transcribe("/tmp/a.ogg", language="es", beam_size=5)
+          open("/tmp/t.txt", "w").write(" ".join(s.text.strip() for s in segs))
+          PY
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/t.txt -out t.bin -pass file:/tmp/k.txt
+          git rm -q --cached k.enc a.bin 2>/dev/null || true; rm -f k.enc a.bin
+          git checkout -q tmp-audio; git pull -q origin tmp-audio; git rm -q k.enc a.bin; git add t.bin; git commit -qm "t"; git push -q origin tmp-audio
