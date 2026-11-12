@@ -56,7 +56,7 @@ def card(r, marca):
         url = f'https://www.gapfactory.com/browse/product.do?pid={r["code"]}'; img = f'https://content.gapinc.com/b/00{r["img"]}?width=600'
     tag = MARCAS[marca]; grupo = r.get('grupo') or {'carters': 'c', 'oshkosh': 'o', 'skiphop': 's', 'gapfactory': 'g', 'hm': 'h'}[marca]
     def grp(xs): return ''.join(f'<button class="tl" data-t="{x}">{x}</button>' for x in xs)
-    lbl = groups[0][0] + (TT if groups[0][2] else '')
+    lbl = groups[0][0] + (TT if (groups[0][2] or grupo == 'z') else '')
     btns = grp(groups[0][1]) + ''.join(f'</div>\n<p class="lb">{lb}</p>\n<div class="tls">{grp(xs)}' for lb, xs, _ in groups[1:])
     art = (f'<article class="card" data-grupo="{grupo}" data-marca="{marca}" data-cat="{r["cat"]}" data-edad="{"|".join(eds)}" data-gen="{r["gen"]}" '
            f'data-talles="{r["talles"]}" data-code="{r["code"]}" data-nom="{nom}" data-precio="{p}">\n'
@@ -103,7 +103,7 @@ s = re.sub(r'<div class="frow"(?: id="ftg")?><em>Talles (?:bebés|niños|grandes
 gi = s.index('<div class="frow"><em>Género</em>'); gi = s.index('</div>', gi) + len('</div>')
 s = s[:gi] + fila('Talles bebés', BABY) + fila('Talles niños', TOD) + fila('Talles grandes', BIG, ' id="ftg"') + s[gi:]
 # pestañas: una por grupo presente, en ORDEN_GRUPOS; la primera queda activa
-NOMBRE_TAB = {'z': 'Zapatillas', 'h': 'H&amp;M', 'c': "Carter's", 'o': 'OshKosh', 's': 'Skip Hop', 'g': 'GAP Factory'}
+NOMBRE_TAB = {'z': "Carter's Zapatillas", 'h': 'H&amp;M', 'c': "Carter's", 'o': 'OshKosh', 's': 'Skip Hop', 'g': 'GAP Factory'}
 grupos = [g for g in ORDEN_GRUPOS if any(f'data-grupo="{g}"' in x[4] for x in items)]
 tabs = ''.join(f'<button type="button" class="gt{" on" if i == 0 else ""}" data-g="{g}">{NOMBRE_TAB[g]}</button>' for i, g in enumerate(grupos))
 s = re.sub(r'<div class="gtabs" id="gtabs"[^>]*>.*?</div>', f'<div class="gtabs" id="gtabs" style="grid-template-columns:repeat({len(grupos)},1fr)">{tabs}</div>', s, count=1, flags=re.S)
