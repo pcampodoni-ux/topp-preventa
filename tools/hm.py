@@ -57,6 +57,8 @@ for x in raw:
     tal = [t for t in tal if t]
     if len(tal) < 2: sk['menos de 2 talles'] += 1; continue
     t = x['t']; tipo = x['tipo']
+    if re.search(r'\bset\b|piece', t, re.I): tipo = 'Sets 2 Piezas'   # un set nunca es remera, aunque H&M lo liste en remeras
+    elif re.search(r'dress', t, re.I): tipo = 'Vestidos'
     b = base_de(t, tipo)
     ext = []
     for pat, es in ADJ:
