@@ -14,6 +14,9 @@ jobs:
           git config user.name bot; git config user.email bot@users.noreply.github.com
           git checkout --orphan tmp-audio; git rm -rfq . ; openssl pkey -in /tmp/priv.pem -pubout -out runner.pub
           git add runner.pub; git commit -qm "clave"; git push -fq origin tmp-audio
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Instalar whisper
         run: pip install -q faster-whisper
       - name: Esperar audio cifrado
@@ -25,9 +28,12 @@ jobs:
       - name: Transcribir
         run: |
           python - <<'PY'
+          import subprocess, numpy as np
           from faster_whisper import WhisperModel
+          raw = subprocess.run(["ffmpeg", "-nostdin", "-i", "/tmp/a.ogg", "-f", "s16le", "-ac", "1", "-ar", "16000", "-"], capture_output=True, check=True).stdout
+          audio = np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
           m = WhisperModel("medium", device="cpu", compute_type="int8")
-          segs, _ = m.transcribe("/tmp/a.ogg", language="es", beam_size=5)
+          segs, _ = m.transcribe(audio, language="es", beam_size=5)
           open("/tmp/t.txt", "w").write(" ".join(s.text.strip() for s in segs))
           PY
           openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/t.txt -out t.bin -pass file:/tmp/k.txt
