@@ -72,6 +72,7 @@ for x in raw:
     ext = []
     for pat, es in ADJ:
         if re.search(pat, t, re.I) and es not in ext: ext.append(es)
+    if tipo != 'Sets 2 Piezas': ext = [e for e in ext if e != 'con Short']
     noun = b.split()[-1]
     if noun in FEM: ext = [{'Estampado': 'Estampada', 'Bordado': 'Bordada', 'Bordado Inglés': 'Bordado Inglés'}.get(e, e) for e in ext]
     elif noun in ('Remeras', 'Musculosas', 'Camisas', 'Chombas'): ext = [{'Estampado': 'Estampadas', 'Bordado': 'Bordadas'}.get(e, e) for e in ext]

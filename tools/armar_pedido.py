@@ -19,7 +19,7 @@ CATS = ["Zapatillas", "Sandalias", "Jardineros", "Packs de Bodies", "Bodies", "S
 ACC = {'Medias', 'Accesorios', 'Ropa interior', 'Hora del Baño', 'Hora de Comer'}
 BIG = ['4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '10-12', '12', '14', '14-16', '16']
 MARCAS = {'carters': "Carter's", 'oshkosh': "OshKosh B'gosh", 'skiphop': 'Skip Hop', 'gapfactory': 'GAP Factory', 'hm': 'H&M'}
-ORDEN_GRUPOS = 'zhcosg'   # pestañas: Zapatillas, H&M, Carter's, OshKosh, Skip Hop, GAP
+ORDEN_GRUPOS = 'zcohgs'   # pestañas: Zapatillas, Carter's, OshKosh, H&M, GAP, Skip Hop
 BABY = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M']; TOD = ['2T', '3T', '4T', '5T']
 
 TRAMOS = [(0, 10, 39900), (10, 12, 42900), (12, 13, 44900)]  # tope $39.900 hasta USD 9,99; 10–11,99 → $42.900; 12–12,99 → $44.900
