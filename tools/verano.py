@@ -57,5 +57,16 @@ def curar(rows, n, nombre_salida, por_modelo=None):
     print(nombre_salida, len(out), dict(collections.Counter(r['cat'] for r in out)))
 
 curar(leer('carters_full_all.tsv'), NC, 'carters_verano.tsv')
-curar(leer('gapfactory_all.tsv'), NG, 'gap_verano.tsv')
+# GAP Factory (13/11): la liquidación tiene un extra 60% que se aplica en el checkout ("Cyber Sale Sneak Peek").
+# El costo real es el precio de lista × 0,4 y el precio de venta se calcula sobre ese costo con ×1,9 (decisión de Patricio).
+sys.path.insert(0, HERE); import precio as P
+def precio_gap(usd):
+    P.MARGEN = 1.9; p = P.precio(usd, 1560); p = 29900 if 30300 <= p <= 35000 else p
+    for lo, hi, v in [(0, 10, 39900), (10, 12, 42900), (12, 13, 44900)]:
+        if lo <= usd < hi: p = min(p, v)
+    return p
+gap = leer('gapfactory_all.tsv')
+for r in gap:
+    r['usd_lista'] = r['usd']; r['usd'] = f"{float(r['usd']) * 0.4:.2f}"; r['fijo'] = str(precio_gap(float(r['usd'])))
+curar(gap, NG, 'gap_verano.tsv')
 curar(leer('hm.tsv'), NH, 'hm_verano.tsv', por_modelo=3)

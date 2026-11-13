@@ -104,7 +104,7 @@ for a in raw:
     minimo = 1 if cat in ('Accesorios', 'Medias') else 2
     if len(st) < minimo: sk['talles'] += 1; continue
     usd = max(a['price'], a.get('pmax') or 0)
-    if usd > 20: sk['> USD 20'] += 1; continue
+    if usd > float(os.environ.get('GAP_MAX', 20)): sk['> USD tope'] += 1; continue   # tope de precio de lista (13/11: 42,5 por el extra 60% en el checkout)
     ext = []
     for pat, es in EXTRA:
         if es and re.search(pat, nm, re.I) and es not in ext and es not in base: ext.append(es)
