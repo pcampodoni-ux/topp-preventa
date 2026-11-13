@@ -37,6 +37,7 @@ TIPOS = [
     (r'Pajama|PJ|Sleep ?& ?Play|Sleeper|Footie|Nightgown|Sleepsuit|Sleep Bag|Sleep Gown', 'Pijamas', 'Pijama'),
     (r'(\d)-Pack.*Bodysuit', 'Packs de Bodies', 'Pack {n} Bodies'),
     (r'Bodysuit Dress', 'Vestidos', 'Vestido Body'),
+    (r'Swim|Rash ?Guard|Trunks', 'Mallas', 'Malla'),   # antes que los sets: '1-Piece Swimsuit' es malla
     (r'Bodysuit', None, None),   # se decide abajo: set o body suelto
     (r'(\d)-Piece|Set\b', 'Sets 2 Piezas', 'Set {n} Piezas'),
     (r'Jumpsuit|Romper|Overall|Shortall|Coverall|One-Piece', 'Enteritos', 'Enterito'),
@@ -111,7 +112,8 @@ for r in raw:
             if pat.startswith(r'Shoe'): cat = 'ZAPATOS'
             elif marca == 'skiphop': cat = c or 'GEAR'; base = next((v for k, v in SKIP_N if re.search(k, nm, re.I)), 'Producto')
             elif pat == r'Bodysuit':
-                if re.search(r'Pant|Short|Legging|Skirt|Set|Piece', nm, re.I): cat, base = 'Sets 2 Piezas', 'Set Body y Pantalón' if re.search('Pant|Legging', nm) else 'Set Body y Short'
+                nm2 = re.sub(r'Short[- ]Sleeve', '', nm, flags=re.I)   # 'Short-Sleeve' no es un short
+                if re.search(r'Pant|\bShorts?\b|Legging|Skirt|\bSet\b|Piece', nm2, re.I): cat, base = 'Sets 2 Piezas', 'Set Body y Pantalón' if re.search('Pant|Legging', nm) else 'Set Body y Short'
                 else: cat, base = 'Bodies', 'Body'
             elif base and '{n}' in base:
                 n = next((g for g in m.groups() if g), '2'); base = base.format(n=n)

@@ -1,6 +1,10 @@
 name: Relevar GAP Factory
 on:
   workflow_dispatch:
+    inputs:
+      max:
+        description: 'Precio máximo en USD (precio de lista)'
+        default: '20'
   push:
     paths: ['tools/relevar_gap.mjs', 'tools/talles_gap.js']
 permissions:
@@ -15,7 +19,7 @@ jobs:
         with: { node-version: 20 }
       - run: npm i playwright@1 && npx playwright install --with-deps chromium
       - run: node tools/relevar_gap.mjs > tools/gf_raw.json
-        env: { SKIP_PDP: '1' }
+        env: { SKIP_PDP: '1', MAX: "${{ github.event.inputs.max || '20' }}" }
       - run: node tools/talles_gap.js
       - run: |
           git config user.name "topp-bot"

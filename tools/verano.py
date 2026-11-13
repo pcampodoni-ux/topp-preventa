@@ -28,8 +28,14 @@ def leer(f):
     p = os.path.join(HERE, f)
     return list(csv.DictReader(open(p, encoding='utf-8'), delimiter='\t')) if os.path.exists(p) else []
 
+import json
+EN = {}
+try: EN = {r['code']: r['name'] for r in json.load(open(os.path.join(HERE, 'carters_full_raw.json')))}
+except Exception: pass
+FUERA_EN = re.compile(r'Long[- ]Sleeve|Sweater|Fleece|Sherpa|Thanksgiving|Christmas|Halloween|Hanukkah|Santa|Holiday|Thermal|Velour|Corduroy|Footed', re.I)
+
 def curar(rows, n, nombre_salida, por_modelo=None):
-    ok = [r for r in rows if r['cat'] in VERANO and float(r['usd']) <= MAX and not FUERA.search(r['nombre'])]
+    ok = [r for r in rows if r['cat'] in VERANO and float(r['usd']) <= MAX and not FUERA.search(r['nombre']) and not FUERA_EN.search(EN.get(r['code'], ''))]
     if por_modelo:   # H&M: hasta 3 colores por modelo, los de más talles
         g = collections.defaultdict(list)
         for r in ok: g[r['code'][:7]].append(r)
