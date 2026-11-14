@@ -66,6 +66,7 @@ def card(r, marca):
            f'<p class="lb">{lbl}</p>\n<div class="tls">{btns}</div>\n<button class="add" disabled>Elegí un talle</button>\n</div></article>')
     nm = r['nombre']
     if grupo == 'z': pri = 0 if float(r['usd']) == 12 else 1   # 12/11: primero la promo de zapatillas a USD 12
+    elif r['cat'] in ('Pijamas', 'Pijamas de Polar'): pri = -1   # 14/11: primero los pijamas, del más barato al más caro
     elif r['cat'] == 'Jardineros': pri = 1 if 'Corderoy' in nm else 0   # 9/11: primero jardineros (jean/chambray antes que corderoy)
     elif r['cat'] != 'Packs de Bodies': pri = 3
     elif nm.startswith('Pack 5') and not re.search(r'Manga Larga|Musculosa', nm): pri = 0   # 8/11: primero packs de 5 manga corta
