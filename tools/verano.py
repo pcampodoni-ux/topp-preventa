@@ -57,6 +57,30 @@ def curar(rows, n, nombre_salida, por_modelo=None):
     print(nombre_salida, len(out), dict(collections.Counter(r['cat'] for r in out)))
 
 curar(leer('carters_full_all.tsv'), NC, 'carters_verano.tsv')
+
+# Pijamas (14/11, pedido de Patricio): todos los de verano (manga corta) + una selección de invierno,
+# los más baratos por edad (sin Halloween/Navidad/Acción de Gracias/Janucá).
+PIJ_VER = re.compile(r'Short[- ]Sleeve|Shorts?\b|Tank|Sleeveless', re.I)
+PIJ_NO = re.compile(r'Footed|Fleece|Long[- ]Sleeve|Christmas|Halloween|Holiday|Thanksgiving|Hanukkah|Santa', re.I)
+FIESTA = re.compile(r'Christmas|Halloween|Holiday|Thanksgiving|Hanukkah|Santa|Navide|Navidad|Halloween|Gracias|Janucá|Papá Noel|Reno\b|Gingerbread|Jengibre|Candy ?cane', re.I)
+def pijamas(n_inv=10):
+    rows = [r for r in leer('carters_full_all.tsv') if r['cat'] in ('Pijamas', 'Pijamas de Polar') and float(r['usd']) <= MAX]
+    ver = [r for r in rows if float(r['usd']) < 13 and PIJ_VER.search(EN.get(r['code'], '')) and not PIJ_NO.search(EN.get(r['code'], ''))]
+    inv = [r for r in rows if r not in ver and not FIESTA.search(EN.get(r['code'], '') + ' ' + r['nombre'])]
+    g = collections.defaultdict(list)
+    for r in inv: g[edad(r)].append(r)
+    sel = list(ver)
+    for xs in g.values():
+        xs.sort(key=lambda r: (float(r['usd']), -len(r['talles'].split('|')))); sel += xs[:n_inv]
+    seen = collections.Counter()
+    for r in sorted(sel, key=lambda r: float(r['usd'])):
+        b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
+        r['nombre'] = b if seen[b] == 1 else f'{b} (modelo {seen[b]})'
+    p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv')
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n')
+    w.writeheader(); w.writerows(base + sel)
+    print('pijamas', len(sel), 'verano', len(ver), 'invierno', len(sel) - len(ver))
+pijamas()
 # GAP Factory (13/11): la liquidación tiene un extra 60% que se aplica en el checkout ("Cyber Sale Sneak Peek").
 # El costo real es el precio de lista × 0,4 y el precio de venta se calcula sobre ese costo con ×1,9 (decisión de Patricio).
 sys.path.insert(0, HERE); import precio as P
