@@ -4,7 +4,7 @@ code	cat	gen	nombre	usd	talles	img
 436171001	Pijamas	Nena	GAP · Pijama Rayado Algodón Orgánico Gris	11.99	12M|18M|24M|2T|3T|4T|5T	56/429/760/cn56429760.png
 437392001	Remeras	Nene	GAP · Chomba Azul Marino	14.99	4-5|6-7|8|10|12	56/476/878/cn56476878.png
 437392041	Remeras	Nene	GAP · Chomba Blanca	9.99	4-5|6-7|8|10|12	63/612/547/cn63612547.png
-437830011	Remeras	Nene	GAP · Remera Blanca	14.99	12M|18M|24M|2T|3T|4T|5T	63/473/918/cn63473918.png
+437830011	Remeras	Nene	GAP · Remera Blanca	14.99	18M|24M|2T|3T|4T|5T	63/473/918/cn63473918.png
 437830021	Remeras	Nene	GAP · Remera Azul	11.99	12M|18M|24M|2T|3T|4T|5T	62/908/425/cn62908425.png
 455933001	Pantalones	Nena	GAP · Jean Medium Wash	21.99	4-5|6-7|8|10|12|14-16	62/483/492/cn62483492.png
 455933011	Pantalones	Nena	GAP · Jean Light Wash	21.99	4-5|6-7|8|10|12|14-16	64/211/022/cn64211022.png
@@ -17,7 +17,6 @@ code	cat	gen	nombre	usd	talles	img
 500474381	Enteritos	Nena	GAP · Enterito Estampado Beige	10.97	NB|3M|6M	62/346/711/cn62346711.png
 514396001	Pantalones	Nena	GAP · Calza Gris	11.99	4-5|6-7|8|10|12|14-16	63/570/958/cn63570958.png
 514396021	Pantalones	Nena	GAP · Calza Negra (Black)	11.99	4-5|6-7|8|10|12|14-16	56/480/287/cn56480287.png
-522544041	Pantalones	Nena	GAP · Calza Morley Negra	7.99	12M|18M|24M|2T|3T|4T|5T	56/432/002/cn56432002.png
 523371001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Beige	13.99	12M|18M|24M|2T|3T|4T|5T	57/181/219/cn57181219.png
 523586011	Buzos	Nena	GAP · Buzo Canguro Logo Estampado Crudo Beige	11.99	12M|18M|24M|2T|3T|4T|5T	56/613/587/cn56613587.png
 529311001	Pijamas	Nena	GAP · Pijama Algodón Orgánico NY Crudo	11.99	12M|18M|24M|2T|3T|4T|5T	56/895/000/cn56895000.png
@@ -26,18 +25,11 @@ code	cat	gen	nombre	usd	talles	img
 575944011	Pantalones	Nena	GAP · Pantalón Jogging Logo Negro	15.99	4-5|6-7|8|10|12|14-16	56/869/279/cn56869279.png
 575944021	Pantalones	Nena	GAP · Pantalón Jogging Logo Blanco Gris Melange	15.99	4-5|6-7|8|10|12|14-16	56/869/276/cn56869276.png
 575944031	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Marino	15.99	4-5|6-7|8|10|12|14-16	56/905/608/cn56905608.png
-623754001	Pantalones	Nene	GAP · Pantalón Jogging Logo Azul Marino (Tapestry Navy)	15.99	4-5|6-7|8|10|12|14-16	56/811/648/cn56811648.png
-623754011	Pantalones	Nene	GAP · Pantalón Jogging Logo Gris	15.99	4-5|6-7|8|10|12|14-16	56/778/004/cn56778004.png
-623754021	Pantalones	Nene	GAP · Pantalón Jogging Logo Rojo	15.99	4-5|6-7|8|10|12|14-16	56/811/672/cn56811672.png
-623754031	Pantalones	Nene	GAP · Pantalón Jogging Logo Negro (Black)	15.99	4-5|6-7|8|10|12|14-16	56/811/912/cn56811912.png
-623976001	Shorts	Nene	GAP · Short Logo Azul Marino	11.99	4-5|6-7|8|10|12|14-16	57/635/854/cn57635854.png
-623976021	Shorts	Nene	GAP · Short Logo Rojo	17.99	4-5|6-7|8|10|12|14-16	63/998/431/cn63998431.png
-623976031	Shorts	Nene	GAP · Short Logo Gris	11.99	4-5|6-7	57/727/345/cn57727345.png
 629227001	Pantalones	Nena	GAP · Pantalón Jogging Logo Blanco Gris Melange (Gray And White Marl)	11.99	12M|18M|24M|2T|3T|4T|5T	56/657/589/cn56657589.png
 629227011	Pantalones	Nena	GAP · Pantalón Jogging Logo Gris Gris Topo	11.99	12M|18M|24M|2T|3T|4T|5T	56/657/652/cn56657652.png
-629227021	Pantalones	Nena	GAP · Pantalón Jogging Logo Negro (modelo 3)	11.99	12M|18M|24M|2T|3T|4T|5T	56/657/669/cn56657669.png
-629227031	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Marino (modelo 3)	11.99	12M|18M|24M|2T|3T|4T|5T	56/657/663/cn56657663.png
-629227041	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo (Modern Red)	11.99	12M|18M|24M|2T|3T|4T|5T	57/130/315/cn57130315.png
+629227021	Pantalones	Nena	GAP · Pantalón Jogging Logo Negro (Black)	11.99	12M|18M|24M|2T|3T|4T|5T	56/657/669/cn56657669.png
+629227031	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Marino (Tapestry Navy)	11.99	12M|18M|24M|2T|3T|4T|5T	56/657/663/cn56657663.png
+629227041	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo	11.99	12M|18M|24M|2T|3T|4T|5T	57/130/315/cn57130315.png
 633105011	Buzos	Nene	GAP · Buzo Canguro Logo Negro	15.99	4-5|6-7|8|10|12|14-16	63/998/345/cn63998345.png
 633105021	Buzos	Nene	GAP · Buzo Canguro Logo Azul Marino	15.99	4-5|6-7|8|10|12|14-16	63/998/496/cn63998496.png
 633105041	Buzos	Nene	GAP · Buzo Canguro Logo Gris	15.99	4-5|6-7|8|10|12|14-16	63/998/285/cn63998285.png
@@ -53,17 +45,16 @@ code	cat	gen	nombre	usd	talles	img
 726159151	Shorts	Nene	GAP · Short Rojo	18.99	4-5|6-7|8|10	62/357/795/cn62357795.png
 726159171	Shorts	Nene	GAP · Short Azul	20.97	6-7|8|10	62/357/828/cn62357828.png
 731645001	Shorts	Nena	GAP · Short Amarillo	17.97	10|12	57/635/911/cn57635911.png
-734683001	Camperas	Nena	GAP · Campera de Jean Medium Wash	19.49	6-7|8|10	63/640/812/cn63640812.png
 734911001	Shorts	Nene	GAP · Short Medium Wash	15.99	4-5|6-7|8|10|12|14-16	57/446/005/cn57446005.png
 734921001	Shorts	Nene	GAP · Short de Jean Light Wash	15.99	4-5|6-7	63/612/196/cn63612196.png
 734923001	Pantalones	Nene	GAP · Pantalón Azul Marino	23.99	6-7|8|10|12|14-16	57/623/508/cn57623508.png
 734923011	Pantalones	Nene	GAP · Pantalón Marrón	23.99	4-5|6-7|8|10|12|14-16	63/608/223/cn63608223.png
 734923021	Pantalones	Nene	GAP · Pantalón Negro	27.99	6-7|8|10|12	59/200/332/cn59200332.png
-745087001	Pantalones	Nene	GAP · Jean Marrón	27.99	24M|2T|3T	57/253/575/cn57253575.png
+745087001	Pantalones	Nene	GAP · Jean Marrón	27.99	24M|2T	57/253/575/cn57253575.png
 745592011	Remeras	Nene	GAP · Remera Estampada Crudo	5.97	3T|4T|5T	57/233/186/cn57233186.png
-745615001	Shorts	Nene	GAP · Short Logo Rojo (Modern Red)	7.99	12M|18M|24M|2T|3T|4T|5T	57/435/157/cn57435157.png
+745615001	Shorts	Nene	GAP · Short Logo Rojo	7.99	12M|18M|24M|2T|3T|4T|5T	57/435/157/cn57435157.png
 745615011	Shorts	Nene	GAP · Short Logo Negro	7.99	12M|18M|24M|2T|3T|4T|5T	57/423/999/cn57423999.png
-745615021	Shorts	Nene	GAP · Short Logo Azul Marino (Tapestry Navy)	7.99	12M|18M|24M|2T|3T|4T|5T	57/424/028/cn57424028.png
+745615021	Shorts	Nene	GAP · Short Logo Azul Marino	7.99	12M|18M|24M|2T|3T|4T|5T	57/424/028/cn57424028.png
 745615031	Shorts	Nene	GAP · Short Logo Blanco Gris Melange (Gray And White Marl)	7.99	12M|18M|24M|2T|3T|4T|5T	57/424/014/cn57424014.png
 745615041	Shorts	Nene	GAP · Short Logo Gris Gris Topo	7.99	12M|18M|24M|2T|3T|4T|5T	57/423/988/cn57423988.png
 746387081	Pantalones	Nena	GAP · Calza Violeta	11.99	4-5|6-7|8|10|12|14-16	59/850/391/cn59850391.png
@@ -72,13 +63,13 @@ code	cat	gen	nombre	usd	talles	img
 746540081	Shorts	Nena	GAP · Calza Corta Morley Violeta	9.99	4-5|6-7|8|10|12|14-16	60/459/774/cn60459774.png
 748193001	Shorts	Nena	GAP · Calza Corta Crudo	5.99	3M|6M|12M|18M|24M|2T|3T|4T|5T	57/612/206/cn57612206.png
 759742021	Shorts	Nena	GAP · Calza Corta Negra	5.99	3M|6M|12M|18M|24M|2T|3T|4T|5T	20/163/298/cn20163298.png
-760440001	Shorts	Nena	GAP · Short Negro (Black)	11.99	4-5|6-7|8|14-16	57/456/731/cn57456731.png
+760440001	Shorts	Nena	GAP · Short Negro (Black)	11.99	4-5|6-7|8	57/456/731/cn57456731.png
 760440011	Shorts	Nena	GAP · Short Rosa Beige	11.99	4-5|6-7|8|10|12|14-16	57/456/723/cn57456723.png
 760440021	Shorts	Nena	GAP · Short Violeta	11.99	4-5|6-7|8|10|12|14-16	57/479/947/cn57479947.png
 760440051	Shorts	Nena	GAP · Short Azul (Chlorine Blue)	11.99	4-5|6-7|8|10|12|14-16	57/832/611/cn57832611.png
 760440061	Shorts	Nena	GAP · Short Naranja	16.97	12|14-16	59/949/802/cn59949802.png
 760440131	Shorts	Nena	GAP · Short Estrellas	18.99	8|10|12|14-16	62/526/124/cn62526124.png
-760440141	Shorts	Nena	GAP · Short Violeta (Purple Bow)	18.99	4-5|6-7|8|10|12|14-16	62/657/250/cn62657250.png
+760440141	Shorts	Nena	GAP · Short Violeta (Purple Bow)	18.99	6-7|8|10|12|14-16	62/657/250/cn62657250.png
 761288001	Remeras	Nene	GAP · Remera Estampada Azul Marino	10.97	12M|18M|24M|2T	57/934/577/cn57934577.png
 769883011	Shorts	Nena	GAP · Short Rosa	11.99	4-5|6-7|8|10|12|14-16	57/904/688/cn57904688.png
 769883021	Shorts	Nena	GAP · Short Negro (modelo 3)	11.99	4-5|6-7|8|10|12|14-16	57/904/712/cn57904712.png
@@ -89,8 +80,7 @@ code	cat	gen	nombre	usd	talles	img
 769883181	Shorts	Nena	GAP · Short Azul Marino Floral	27.99	4-5|6-7|8|10|12|14-16	62/657/456/cn62657456.png
 769883201	Shorts	Nena	GAP · Short Rosa Floral (Pink Floral)	27.99	4-5|6-7|8|10|12|14-16	62/657/165/cn62657165.png
 769883211	Shorts	Nena	GAP · Short Violeta Mariposas	19.99	4-5|6-7|8|10|12|14-16	62/771/698/cn62771698.png
-778371001	Camperas	Nena	GAP · Campera de Jean Medium Wash (Medium Wash)	27.99	4-5|6-7|8|10|12|14-16	59/534/998/cn59534998.png
-781177001	Pantalones	Nena	GAP · Jean Dark Wash Indigo	34.99	4-5|6-7|8|10|12|14-16	62/701/699/cn62701699.png
+781177001	Pantalones	Nena	GAP · Jean Dark Wash Indigo	34.99	8|10|12|14-16	62/701/699/cn62701699.png
 781177011	Pantalones	Nena	GAP · Jean Medium Wash (Medium Wash)	21.99	4-5|6-7|8|10|12|14-16	60/493/553/cn60493553.png
 781177021	Pantalones	Nena	GAP · Jean Light Wash (Light Wash)	21.99	4-5|6-7|8|10|12|14-16	59/593/416/cn59593416.png
 781177031	Pantalones	Nena	GAP · Jean Negro	21.99	4-5|6-7|8|10|12|14-16	60/159/921/cn60159921.png
@@ -99,19 +89,15 @@ code	cat	gen	nombre	usd	talles	img
 815585001	Pantalones	Nene	GAP · Jean Medium Wash (modelo 3)	28.99	4-5|6-7|8|10|12|14-16	59/987/026/cn59987026.png
 815589001	Pantalones	Nene	GAP · Jean Dark Wash	19.99	4-5|6-7|8|10|12|14-16	60/236/358/cn60236358.png
 815593001	Pantalones	Nene	GAP · Jean Medium Destroy	34.99	4-5|6-7|8|10|12|14-16	59/987/057/cn59987057.png
-816801001	Remeras	Nena	GAP · Remera Morley Rosa	7.99	12M|18M|24M|2T|3T|4T|5T	60/303/150/cn60303150.png
-816801061	Remeras	Nena	GAP · Remera Morley Crudo	7.99	12M|18M|24M|2T|3T|4T|5T	62/701/235/cn62701235.png
-816933031	Pantalones	Nena	GAP · Calza Morley Estampada Rosa	7.99	12M|18M|24M|2T|3T|4T|5T	59/973/565/cn59973565.png
 816962001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul	17.97	12M|18M|24M|2T	60/420/655/cn60420655.png
 816988001	Buzos	Nena	GAP · Buzo Estampado Crudo	16.97	12M|18M	59/925/219/cn59925219.png
-817133001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Crudo (modelo 3)	20.99	12M|2T|3T|4T	59/808/762/cn59808762.png
+817133001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Crudo (modelo 3)	20.99	12M|3T|4T	59/808/762/cn59808762.png
 817156001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Bleach	11.99	12M|18M|24M|2T|3T|4T	59/987/113/cn59987113.png
 817271001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Crudo (New Off White)	21.99	12M|18M|24M|2T|3T	59/711/679/cn59711679.png
 819826131	Bodies	Nena	GAP · Body Estampado Raffia Chick	5.97	6M|12M|18M|24M	61/166/597/cn61166597.png
 819826141	Bodies	Nena	GAP · Body Estampado Verde	5.97	NB|3M|6M	61/166/583/cn61166583.png
-820815001	Buzos	Nena	GAP · Campera Buzo con Cierre Osito Brannan Polar Negra	14.99	12M|18M|24M|2T|3T|4T|5T	59/721/948/cn59721948.png
 820828031	Remeras	Nena	GAP · Remera Logo Gris	5.99	12M|18M|24M|2T|3T|4T|5T	59/547/435/cn59547435.png
-820828051	Remeras	Nena	GAP · Remera Logo Negra	4.49	12M|18M|24M|2T|3T|4T|5T	59/547/445/cn59547445.png
+820828051	Remeras	Nena	GAP · Remera Logo Negra	4.49	18M|24M|2T|3T|4T	59/547/445/cn59547445.png
 820828071	Remeras	Nena	GAP · Remera Logo Azul Marino	4.49	18M|24M|2T|3T|4T|5T	59/547/467/cn59547467.png
 820862001	Pantalones	Nena	GAP · Pantalón Jogging Logo Negro (Family Black Moonless Night)	10.49	12M|18M|24M|2T|3T|4T|5T	59/672/063/cn59672063.png
 820895021	Shorts	Nene	GAP · Short Logo Negro (Family Black Moonless Night)	11.99	12M|18M|24M|2T|3T|4T|5T	59/649/515/cn59649515.png
@@ -119,7 +105,6 @@ code	cat	gen	nombre	usd	talles	img
 820975021	Buzos	Nena	GAP · Buzo Logo Blanco Gris Melange	8.00	12M|18M|24M|2T|3T|4T|5T	59/547/294/cn59547294.png
 820975051	Buzos	Nena	GAP · Buzo Logo Azul Marino	11.99	12M|18M|24M|2T	59/547/316/cn59547316.png
 820994041	Remeras	Nene	GAP · Remera Estampada Roja Autos	8.97	12M|18M	59/878/080/cn59878080.png
-821308001	Pantalones	Nena	GAP · Jean Medium Wash Indigo	21.99	4-5|6-7|8|10|12|14-16	59/593/428/cn59593428.png
 821922091	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Cerezas	29.99	4-5|6-7|8|10|12|14-16	59/962/393/cn59962393.png
 827653001	Buzos	Nena	GAP · Campera Buzo con Cierre Logo Azul	29.97	12M|18M|24M|2T|3T	60/420/654/cn60420654.png
 828983001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Verde Verde Agua	11.99	12M|18M|24M|2T|3T|4T|5T	54/351/160/cn54351160.png
@@ -131,7 +116,7 @@ code	cat	gen	nombre	usd	talles	img
 844698051	Shorts	Nene	GAP · Short Verde Verde Agua	14.99	8|10|12|14-16	62/115/732/cn62115732.png
 844698071	Shorts	Nene	GAP · Short Verde (Tweed Green)	11.99	4-5|6-7|8|10|12|14-16	62/669/341/cn62669341.png
 844698101	Shorts	Nene	GAP · Short Azul Marino (Navy Uniform)	9.99	4-5|6-7|8|10|12|14-16	62/771/329/cn62771329.png
-844698111	Shorts	Nene	GAP · Short Azul Camuflado	14.99	6-7|8|10|12|14-16	62/404/170/cn62404170.png
+844698111	Shorts	Nene	GAP · Short Azul Camuflado	14.99	8|10|12|14-16	62/404/170/cn62404170.png
 844698141	Shorts	Nene	GAP · Short Azul (Blue Galaxy)	11.99	4-5|6-7|8|10|12|14-16	63/190/268/cn63190268.png
 844698151	Shorts	Nene	GAP · Short Negro Crudo	11.99	4-5|6-7|8|10|12|14-16	63/374/108/cn63374108.png
 844698161	Shorts	Nene	GAP · Short Azul (Soccer Blue)	11.99	4-5|6-7|8|10|12|14-16	63/374/116/cn63374116.png
@@ -147,7 +132,6 @@ code	cat	gen	nombre	usd	talles	img
 878778001	Enteritos	Nena	GAP · Enterito Amarillo	12.97	NB|3M	54/863/219/cn54863219.png
 1171472051	Remeras	Nena	GAP · Remera Estampada Violeta Lila	7.99	4-5|6-7|8|10|12|14-16	60/682/207/cn60682207.png
 1171518001	Buzos	Nene	GAP · Buzo Canguro Logo Azul	24.99	4-5|6-7	62/405/488/cn62405488.png
-1171782001	Pantalones	Nena	GAP · Calza Morley Roja	7.99	12M|18M|24M|2T|3T|4T|5T	60/376/859/cn60376859.png
 1171824011	Remeras	Nena	GAP · Remera Estampada Rosa	4.49	12M|18M|24M|2T|3T|4T|5T	60/662/384/cn60662384.png
 1171824021	Remeras	Nena	GAP · Remera Estampada Crudo (New Off White Mom)	4.49	12M|18M|2T|3T|4T|5T	63/231/419/cn63231419.png
 1171878001	Remeras	Nena	GAP · Remera Estampada Crudo (New Off White Cupcake)	4.49	12M|18M|24M|2T|3T|4T|5T	60/519/829/cn60519829.png
@@ -167,7 +151,7 @@ code	cat	gen	nombre	usd	talles	img
 1172347001	Buzos	Nena	GAP · Buzo Canguro Logo Violeta Lila	14.99	12M|18M|24M|2T|3T	61/338/809/cn61338809.png
 1172354011	Pantalones	Nena	GAP · Pantalón Jogging Logo Violeta Lila	14.99	12M|18M|24M|2T	61/156/887/cn61156887.png
 1172362001	Camperas	Nena	GAP · Campera Multicolor	34.99	12M|18M	61/733/665/cn61733665.png
-1172363011	Shorts	Nena	GAP · Calza Corta Osito Brannan Violeta Lila	9.99	3M|6M|12M	61/216/614/cn61216614.png
+1172363011	Shorts	Nena	GAP · Calza Corta Osito Brannan Violeta Lila	9.99	3M|6M	61/216/614/cn61216614.png
 1172364001	Remeras	Nena	GAP · Remera Estampada Crudo Beige Frutillas	7.49	12M|18M|24M|2T|3T|4T|5T	61/656/671/cn61656671.png
 1172364021	Remeras	Nena	GAP · Remera Estampada Azul Amarilla	12.99	12M|18M|24M|2T|3T|4T|5T	62/094/923/cn62094923.png
 1172364031	Remeras	Nena	GAP · Remera Estampada Rosa Coral	12.97	12M|18M|24M|2T	61/533/674/cn61533674.png
@@ -176,18 +160,14 @@ code	cat	gen	nombre	usd	talles	img
 1172379001	Remeras	Nena	GAP · Remera Estampada Violeta Lila (Pale Lilac Purple Elsa)	6.97	12M|18M|24M|2T	61/656/700/cn61656700.png
 1172379011	Remeras	Nena	GAP · Remera Estampada Crudo (Disney Family Sis New Off White)	7.49	12M|18M|24M|2T|3T|4T|5T	62/348/453/cn62348453.png
 1172382031	Shorts	Nena	GAP · Short de Lino Azul Cuadrillé	16.99	12M|18M|24M|2T|3T|4T|5T	61/173/928/cn61173928.png
-1172385001	Remeras	Nena	GAP · Remera Morley Rosa (Parisian Pink Ladybugs)	7.97	12M|18M|24M	61/192/240/cn61192240.png
+1172385001	Remeras	Nena	GAP · Remera Morley Rosa	7.97	12M|18M	61/192/240/cn61192240.png
 1172393001	Vestidos	Nena	GAP · Vestido de Tul Violeta Lavanda	16.97	12M|18M|24M|2T	61/285/874/cn61285874.png
-1172396001	Shorts	Nena	GAP · Pollera-Short de Jean Light Wash	16.97	12M|18M|24M|2T|3T|4T|5T	61/673/489/cn61673489.png
+1172396001	Shorts	Nena	GAP · Pollera-Short de Jean Light Wash	16.97	12M|18M|24M|2T|3T|4T	61/673/489/cn61673489.png
 1172494001	Remeras	Nene	GAP · Remera Azul (Royal Blue Gem)	7.49	4-5|6-7|8|10|12|14-16	61/646/123/cn61646123.png
 1172494011	Remeras	Nene	GAP · Remera Crudo	9.99	4-5|6-7|8|10|12|14-16	63/612/400/cn63612400.png
 1172506001	Buzos	Nene	GAP · Buzo Azul Marino	16.99	4-5|6-7|8|10|12|14-16	61/252/190/cn61252190.png
 1172508001	Remeras	Nene	GAP · Remera Logo Disney Family Hyacinth	16.99	6-7|8|10|12	62/542/021/cn62542021.png
 1172528021	Shorts	Nene	GAP · Short Osito Brannan Blanco Gris Melange	9.99	2T|3T|4T	61/340/139/cn61340139.png
-1172531011	Buzos	Nena	GAP · Buzo Logo Crudo	8.00	12M|18M|24M|2T|3T|4T|5T	61/264/677/cn61264677.png
-1172531021	Buzos	Nena	GAP · Buzo Logo Azul	8.00	12M|18M|24M|2T|3T|4T	61/264/651/cn61264651.png
-1172531031	Buzos	Nena	GAP · Buzo Logo Verde	9.99	12M|18M|24M|2T	61/249/166/cn61249166.png
-1172531051	Buzos	Nena	GAP · Buzo Logo Amarillo	8.00	12M|18M|24M|2T|3T|4T	61/155/303/cn61155303.png
 1172536001	Mallas	Nene	GAP · Malla Estampada Amarilla Tiburones	11.99	12M|18M|24M|2T|3T|4T|5T	61/208/042/cn61208042.png
 1172539011	Shorts	Nene	GAP · Short Azul (Blanket Blue)	7.99	12M|18M|24M	61/233/459/cn61233459.png
 1172541001	Shorts	Nene	GAP · Short Azul Marino (modelo 5)	9.99	12M|18M|24M|2T|3T|4T|5T	61/329/527/cn61329527.png
@@ -195,7 +175,7 @@ code	cat	gen	nombre	usd	talles	img
 1172541021	Shorts	Nene	GAP · Short Indigo Chambray	11.99	24M|2T|3T|4T|5T	61/327/398/cn61327398.png
 1172542031	Buzos	Nene	GAP · Buzo Crudo Camiones	9.99	12M|18M|24M	61/264/692/cn61264692.png
 1172543001	Mallas	Nene	GAP · Malla Naranja Autos	13.99	12M|18M|24M|2T|3T|4T|5T	61/208/212/cn61208212.png
-1172543011	Mallas	Nene	GAP · Malla Azul	13.99	12M|18M|24M|2T|3T|4T|5T	61/166/755/cn61166755.png
+1172543011	Mallas	Nene	GAP · Malla Azul	13.99	12M|18M|24M|2T|3T|4T	61/166/755/cn61166755.png
 1172543021	Mallas	Nene	GAP · Malla Turquesa	13.99	12M|18M|24M|2T|3T|4T|5T	61/166/746/cn61166746.png
 1172544001	Remeras	Nene	GAP · Remera Roja	13.99	12M|18M|2T	61/155/509/cn61155509.png
 1172550011	Remeras	Nena	GAP · Remera Logo Rosa	9.99	12M|24M|2T|3T|4T	61/264/714/cn61264714.png
@@ -219,7 +199,6 @@ code	cat	gen	nombre	usd	talles	img
 1172702041	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Rosa Cerezas Frutillas	15.99	3M|6M|12M|18M|24M	62/069/530/cn62069530.png
 1172702051	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Crudo Floral Frutillas	16.97	3M|6M	61/388/856/cn61388856.png
 1172704011	Enteritos	Nena	GAP · Enterito Azul Floral	19.97	3M|6M	61/656/821/cn61656821.png
-1172709001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Violeta Lila	21.97	3M|6M	61/559/457/cn61559457.png
 1172714001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Rosa Cuadrillé	21.97	3M|6M	61/876/452/cn61876452.png
 1172720001	Shorts	Nena	GAP · Short Azul (Serene Blue Sheep)	25.99	NB|3M|6M|18M	61/678/008/cn61678008.png
 1172720011	Shorts	Nena	GAP · Short Rosa Cerezas	24.97	NB|3M|6M|18M|24M	61/674/276/cn61674276.png
@@ -251,50 +230,44 @@ code	cat	gen	nombre	usd	talles	img
 1172822021	Vestidos	Nena	GAP · Vestido Negro	17.99	6-7|8|10	61/914/903/cn61914903.png
 1172833001	Shorts	Nena	GAP · Short Crudo (New Off White)	6.97	6-7|8|10|12	61/559/187/cn61559187.png
 1172843031	Pantalones	Nena	GAP · Pantalón de Jean Negro	29.99	4-5|6-7|8	61/533/912/cn61533912.png
-1172844001	Pantalones	Nena	GAP · Pantalón de Lino Rosa Floral	15.97	8|12|14-16	62/028/161/cn62028161.png
+1172844001	Pantalones	Nena	GAP · Pantalón de Lino Rosa Floral	15.97	12|14-16	62/028/161/cn62028161.png
 1172844011	Pantalones	Nena	GAP · Pantalón de Lino Crudo	15.99	4-5|6-7|8|10	61/521/644/cn61521644.png
 1173185001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Floral	27.97	10|12|14-16	62/095/001/cn62095001.png
 1173193001	Shorts	Nena	GAP · Short Logo Amarillo Corazones	23.99	4-5|6-7|14-16	61/945/970/cn61945970.png
 1173199021	Buzos	Nena	GAP · Buzo Estampado Beige	19.99	4-5|6-7|8|10|12|14-16	61/364/548/cn61364548.png
 1173200021	Buzos	Nena	GAP · Buzo Beige	26.99	4-5|6-7|8|10|12|14-16	62/940/855/cn62940855.png
-1173207051	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue)	9.99	4-5|6-7|8	62/815/820/cn62815820.png
-1173211001	Pantalones	Nena	GAP · Pantalón Jogging Logo Rosa Rojo	27.99	6-7|8|10|12	62/162/408/cn62162408.png
+1173207051	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue)	9.99	4-5|6-7	62/815/820/cn62815820.png
+1173211001	Pantalones	Nena	GAP · Pantalón Jogging Logo Rosa Rojo	27.99	6-7|8|10	62/162/408/cn62162408.png
 1173211011	Pantalones	Nena	GAP · Pantalón Jogging Logo Amarillo Corazones	34.99	4-5|6-7|8|10|12|14-16	62/044/736/cn62044736.png
 1173211041	Pantalones	Nena	GAP · Pantalón Jogging Logo Floral	19.99	4-5|6-7|8|10|12|14-16	61/761/617/cn61761617.png
-1173211061	Pantalones	Nena	GAP · Pantalón Jogging Logo Gris (Smiley Face Grey)	14.99	4-5|6-7|8|10|12|14-16	62/979/234/cn62979234.png
+1173211061	Pantalones	Nena	GAP · Pantalón Jogging Logo Gris	14.99	4-5|6-7|8|10|12|14-16	62/979/234/cn62979234.png
 1173211081	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Estrellas Plateado	19.99	4-5|6-7|8|10|12|14-16	63/393/275/cn63393275.png
 1173213041	Pantalones	Nena	GAP · Pantalón Jogging Logo Rosa Floral	11.99	4-5|6-7|8|10|12|14-16	61/364/576/cn61364576.png
-1173218061	Remeras	Nena	GAP · Remera Estampada Violeta	20.99	4-5|6-7|8|12|14-16	62/409/535/cn62409535.png
-1173219001	Remeras	Nena	GAP · Remera Morley Violeta Lila	13.99	4-5|6-7|8|10|12|14-16	61/218/053/cn61218053.png
+1173218061	Remeras	Nena	GAP · Remera Estampada Violeta	20.99	6-7|8|12|14-16	62/409/535/cn62409535.png
+1173219001	Remeras	Nena	GAP · Remera Morley Violeta Lila	13.99	6-7|10|12|14-16	61/218/053/cn61218053.png
 1173219041	Remeras	Nena	GAP · Remera Morley Negra	7.99	4-5|6-7|8|10|12|14-16	61/464/530/cn61464530.png
 1173219051	Remeras	Nena	GAP · Remera Morley Blanca Floral	7.99	4-5|6-7|8|10|12|14-16	61/464/534/cn61464534.png
-1173219061	Remeras	Nena	GAP · Remera Morley Crudo (New Off White)	7.99	4-5|6-7|8|10|12|14-16	63/342/324/cn63342324.png
+1173219061	Remeras	Nena	GAP · Remera Morley Crudo	7.99	4-5|6-7|8|10|12|14-16	63/342/324/cn63342324.png
 1173219071	Remeras	Nena	GAP · Remera Morley Rosa (Parisian Pink)	13.99	12|14-16	61/330/175/cn61330175.png
 1173232001	Shorts	Nena	GAP · Calza Corta Morley Rosa	16.99	4-5|6-7|8|10|12|14-16	61/559/702/cn61559702.png
 1173232011	Shorts	Nena	GAP · Calza Corta Morley Azul	16.99	4-5|6-7|8|10|12|14-16	61/559/584/cn61559584.png
 1173236001	Remeras	Nena	GAP · Remera Estampada Rosa Coral (Neon Coral Pink Volt)	19.99	10|12|14-16	61/534/393/cn61534393.png
 1173357001	Shorts	Nene	GAP · Short de Jean Moonstone	15.99	4-5|6-7|8|10|12|14-16	61/459/781/cn61459781.png
 1173360001	Shorts	Nene	GAP · Short Negro (Black Wash)	24.99	4-5|6-7	63/612/558/cn63612558.png
-1173361001	Shorts	Nene	GAP · Short Morley Azul	15.99	4-5|6-7|8|10	61/416/916/cn61416916.png
+1173361001	Shorts	Nene	GAP · Short Morley Azul	15.99	6-7|8|10	61/416/916/cn61416916.png
 1173361011	Shorts	Nene	GAP · Short Morley Verde	15.99	4-5|6-7|8|10	61/416/932/cn61416932.png
 1173857001	Pantalones	Nena	GAP · Pantalón Jogging Rosa (Primrose Pink)	23.99	4-5|6-7|14-16	61/104/162/cn61104162.png
 1173857011	Pantalones	Nena	GAP · Pantalón Jogging Negro	23.99	4-5|6-7	61/285/957/cn61285957.png
 1173857021	Pantalones	Nena	GAP · Pantalón Jogging Gris	17.49	4-5|6-7	61/104/194/cn61104194.png
 1173857031	Pantalones	Nena	GAP · Pantalón Jogging Rojo	23.99	4-5|6-7|8|10|12|14-16	63/833/741/cn63833741.png
 1173858001	Buzos	Nena	GAP · Campera Buzo con Cierre Gris	11.99	4-5|6-7|8|10|12|14-16	61/097/234/cn61097234.png
-1173858011	Buzos	Nena	GAP · Campera Buzo con Cierre Negra	19.99	4-5|6-7|8|10|14-16	61/252/250/cn61252250.png
+1173858011	Buzos	Nena	GAP · Campera Buzo con Cierre Negra	19.99	4-5|6-7|8|10	61/252/250/cn61252250.png
 1173858021	Buzos	Nena	GAP · Campera Buzo con Cierre Rosa	27.99	8|10|12|14-16	61/097/229/cn61097229.png
 1174065001	Bodies	Nena	GAP · Body Estampado Blanco Ositos	9.99	18M|24M	61/138/116/cn61138116.png
 1174073021	Pijamas	Nene	GAP · Pijama Rojo	14.97	4-5|6-7|8	62/071/426/cn62071426.png
-1174077041	Shorts	Nene	GAP · Short Logo Frosty Morning	11.99	4-5|6-7|8	62/952/337/cn62952337.png
-1174077051	Shorts	Nene	GAP · Short Logo Plymouth Rock	17.99	4-5|6-7|8|10	62/892/234/cn62892234.png
-1174077061	Shorts	Nene	GAP · Short Logo Azul (Bainbridge Blue)	11.99	4-5|6-7|8|10|12	62/883/358/cn62883358.png
-1174077071	Shorts	Nene	GAP · Short Logo Verde	11.99	4-5|6-7|8|10|12|14-16	63/190/422/cn63190422.png
 1174140001	Shorts	Nene	GAP · Short de Jean Medium Wash	19.97	4-5|6-7|8|10	63/612/422/cn63612422.png
 1174403011	Buzos	Nena	GAP · Sweater Rojo Violeta Rayado	13.97	6-7|8|10|12|14-16	62/095/021/cn62095021.png
-1174569001	Pantalones	Nena	GAP · Jean Light Wash (modelo 3)	21.99	4-5|6-7|8|10|12|14-16	63/342/947/cn63342947.png
 1174649001	Shorts	Nena	GAP · Short Rosa Floral Cerezas	15.99	12M|18M|24M|2T|3T|4T|5T	61/804/171/cn61804171.png
-1174694011	Pantalones	Nena	GAP · Pantalón Jogging Logo Crudo Unicornios	14.99	18M|24M|2T	62/082/547/cn62082547.png
 1174694041	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo Beige	10.49	12M|18M|24M|2T|3T|4T|5T	62/212/145/cn62212145.png
 1174694051	Pantalones	Nena	GAP · Pantalón Jogging Logo Crudo Azul Floral	10.49	12M|18M|24M|2T|3T|4T|5T	62/349/398/cn62349398.png
 1174695001	Shorts	Nena	GAP · Short Logo Estampado Crudo Unicornios	9.97	12M|18M|24M|2T	61/804/185/cn61804185.png
@@ -306,18 +279,17 @@ code	cat	gen	nombre	usd	talles	img
 1174699011	Shorts	Nena	GAP · Calza Corta Azul	9.99	3M|6M|24M	61/804/213/cn61804213.png
 1174699021	Shorts	Nena	GAP · Calza Corta Naranja Floral	8.99	3M|6M	61/804/448/cn61804448.png
 1174699031	Shorts	Nena	GAP · Calza Corta Amarilla Arcoíris	9.99	3M|6M	62/354/182/cn62354182.png
-1174701021	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue Popsicles Fourth Of July)	6.97	12M|18M	61/930/979/cn61930979.png
 1174702031	Buzos	Nena	GAP · Buzo Rosa Lunares	12.49	12M|18M|24M|2T|3T|4T|5T	63/231/873/cn63231873.png
 1174702041	Buzos	Nena	GAP · Buzo Blanco Lunares	9.99	12M|18M|24M|2T|3T|4T|5T	63/231/881/cn63231881.png
 1174702051	Buzos	Nena	GAP · Buzo Violeta	14.99	12M|18M	62/409/601/cn62409601.png
-1174704001	Remeras	Nena	GAP · Remera Estampada Crudo Rosa Camiones	6.97	12M|18M|2T	61/804/724/cn61804724.png
+1174704001	Remeras	Nena	GAP · Remera Estampada Crudo Rosa Camiones	6.97	12M|18M	61/804/724/cn61804724.png
 1174704011	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue Fourth Of July Girl)	5.97	12M|18M	61/788/133/cn61788133.png
 1174704041	Remeras	Nena	GAP · Remera Estampada Amarilla Ositos	6.97	12M|18M|24M|2T	62/140/778/cn62140778.png
 1174705011	Remeras	Nena	GAP · Remera Morley Crudo (Ivory Cream Frost Summer Beach)	5.97	12M|18M|24M|2T|3T|4T|5T	61/804/629/cn61804629.png
 1174706001	Shorts	Nena	GAP · Short de Lino Crudo	9.99	12M|18M|24M|2T|3T|4T	62/083/017/cn62083017.png
 1174708001	Buzos	Nena	GAP · Sweater Rayado Rojo	11.99	2T|3T|4T|5T	62/082/999/cn62082999.png
 1174708011	Buzos	Nena	GAP · Sweater Rayado Violeta Rayado	15.99	3T|4T|5T	62/082/988/cn62082988.png
-1174714001	Vestidos	Nena	GAP · Vestido Osito Brannan de Jean Dark Wash	22.99	12M|24M|2T|3T|4T	62/386/353/cn62386353.png
+1174714001	Vestidos	Nena	GAP · Vestido Osito Brannan de Jean Dark Wash	22.99	2T|3T|4T	62/386/353/cn62386353.png
 1174718001	Enteritos	Nena	GAP · Enterito Crudo	16.97	4T|5T	62/357/349/cn62357349.png
 1174720011	Remeras	Nena	GAP · Remera Estampada Naranja	6.97	12M|18M|24M|2T|3T	62/349/962/cn62349962.png
 1174720031	Remeras	Nena	GAP · Remera Estampada Rosa (Primrose Pink Vacay Vibes Stitch)	6.97	12M|18M|24M|2T|3T|4T	62/167/925/cn62167925.png
@@ -333,34 +305,33 @@ code	cat	gen	nombre	usd	talles	img
 1174917011	Enteritos	Nene	GAP · Enterito Blanco Rojo	27.97	3M|6M	62/140/675/cn62140675.png
 1174921001	Vestidos	Nena	GAP · Vestido Stamp Print Flowers	14.97	3M|6M|12M|18M	62/355/173/cn62355173.png
 1174974051	Remeras	Nena	GAP · Musculosa Azul Rayada	12.99	4-5|6-7	62/409/444/cn62409444.png
-1174975001	Remeras	Nena	GAP · Musculosa Morley Crudo	12.99	4-5|6-7|8|10|12|14-16	62/071/476/cn62071476.png
+1174975001	Remeras	Nena	GAP · Musculosa Morley Crudo	12.99	6-7|8|10|12|14-16	62/071/476/cn62071476.png
 1174975011	Remeras	Nena	GAP · Musculosa Morley Rosa	12.99	6-7|8|10|12|14-16	61/804/505/cn61804505.png
 1174975031	Remeras	Nena	GAP · Musculosa Morley Violeta Lavanda	13.99	6-7|8|10|12|14-16	62/071/447/cn62071447.png
 1174975051	Remeras	Nena	GAP · Musculosa Morley Negra	13.99	6-7|8	62/082/306/cn62082306.png
 1174975081	Remeras	Nena	GAP · Musculosa Morley Verde Verde Agua	13.99	12|14-16	62/082/301/cn62082301.png
-1174975091	Remeras	Nena	GAP · Musculosa Morley Amarilla	13.99	12|14-16	61/808/438/cn61808438.png
 1174975101	Remeras	Nena	GAP · Musculosa Morley Azul Floral	13.99	8|12|14-16	62/115/116/cn62115116.png
 1174983001	Remeras	Nena	GAP · Musculosa Morley Rosa (Primrose Pink)	16.99	10|12|14-16	61/804/481/cn61804481.png
 1174989001	Pantalones	Nena	GAP · Pantalón Jogging Rosa Floral	27.99	6-7|8|10|12|14-16	61/452/812/cn61452812.png
 1174989011	Pantalones	Nena	GAP · Pantalón Jogging Azul Floral	27.99	4-5|6-7|8|10|12|14-16	61/521/645/cn61521645.png
 1174989021	Pantalones	Nena	GAP · Pantalón Jogging Blanco Floral	19.99	4-5|6-7|8|10|12|14-16	63/959/255/cn63959255.png
 1174992011	Remeras	Nena	GAP · Remera Crudo (New Off White)	11.97	4-5|6-7	62/346/220/cn62346220.png
+1174999001	Remeras	Nene	GAP · Remera Estampada Amarilla Dinosaurios	9.97	12M|18M|24M|2T|3T	61/804/579/cn61804579.png
 1175001001	Pantalones	Nena	GAP · Pantalón Jogging Logo Verde Dinosaurios	13.99	12M|18M|24M|2T|3T|4T|5T	62/357/337/cn62357337.png
 1175001011	Pantalones	Nena	GAP · Pantalón Jogging Logo Verde	17.99	12M|18M|24M|2T|3T|4T|5T	62/386/626/cn62386626.png
 1175001021	Pantalones	Nena	GAP · Pantalón Jogging Logo Beige	10.49	12M|18M|24M|2T|3T|4T|5T	62/357/332/cn62357332.png
 1175003001	Remeras	Nena	GAP · Remera Logo Azul Marino (Navy Uniform Crabs)	11.97	12M|18M	62/527/566/cn62527566.png
 1175016001	Shorts	Nene	GAP · Short Logo Verde Dinosaurios	7.97	12M|18M|24M|2T	62/386/703/cn62386703.png
-1175016021	Shorts	Nene	GAP · Short Logo Verde (Summer Spruce Green)	7.99	12M|18M|24M|2T|3T|4T|5T	62/386/647/cn62386647.png
+1175016021	Shorts	Nene	GAP · Short Logo Verde	7.99	12M|18M|24M|2T|3T|4T|5T	62/386/647/cn62386647.png
 1175017011	Shorts	Nene	GAP · Short Polar Verde Verde Agua	7.97	24M|2T	62/144/027/cn62144027.png
 1175023021	Shorts	Nene	GAP · Short Rojo Azul	10.99	24M|2T|3T|4T	62/057/148/cn62057148.png
-1175026001	Shorts	Nene	GAP · Short Rojo Cuadrillé	20.97	4T|5T	62/386/648/cn62386648.png
 1175031001	Mallas	Nene	GAP · Malla Estampada Azul Marino	14.97	12M|18M|24M|2T|3T|4T	62/082/955/cn62082955.png
 1175041001	Remeras	Nene	GAP · Musculosa Logo Crudo	12.97	12M|18M|24M|2T|3T|4T|5T	62/140/867/cn62140867.png
 1175063001	Pijamas	Nena	GAP · Pijama Blanco	11.99	12M|4T|5T	61/471/785/cn61471785.png
 1175067001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Rojo	13.99	12M|18M|24M|2T	61/572/123/cn61572123.png
 1175069001	Pijamas	Nena	GAP · Pijama Estampado Rosa	23.99	12M|18M|24M|5T	62/346/278/cn62346278.png
-1175071001	Pijamas	Nena	GAP · Pijama Estampado Crudo	23.99	12M|3T|4T	62/346/285/cn62346285.png
-1175072001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Rosa Frutillas	10.49	12M|18M|24M|5T	61/279/474/cn61279474.png
+1175071001	Pijamas	Nena	GAP · Pijama Estampado Crudo	23.99	12M|4T	62/346/285/cn62346285.png
+1175072001	Pijamas	Nena	GAP · Pijama Algodón Orgánico Rosa Frutillas	10.49	12M|18M|5T	61/279/474/cn61279474.png
 1175074001	Pijamas	Nena	GAP · Pijama Estampado Violeta	8.99	12M|18M|24M|2T|3T|4T	62/210/654/cn62210654.png
 1175077001	Pijamas	Nena	GAP · Pijama Estampado Crudo (New Off White Lightning Mcqueen)	10.49	12M|18M|24M|2T|3T	62/346/287/cn62346287.png
 1175081001	Shorts	Nene	GAP · Short Azul Marino (modelo 7)	27.99	12|14-16	62/504/206/cn62504206.png
@@ -372,14 +343,13 @@ code	cat	gen	nombre	usd	talles	img
 1175089021	Remeras	Nene	GAP · Chomba Negra	14.99	4-5|6-7|8|10	62/770/394/cn62770394.png
 1175089031	Remeras	Nene	GAP · Chomba Azul	14.99	6-7|8|10|12	62/512/610/cn62512610.png
 1175089041	Remeras	Nene	GAP · Chomba Gris	14.99	4-5|6-7|8|10|12	62/657/100/cn62657100.png
-1175091011	Remeras	Nene	GAP · Remera Rayada Azul	9.97	4-5|6-7|8|10|12|14-16	61/623/425/cn61623425.png
+1175091011	Remeras	Nene	GAP · Remera Rayada Azul	9.97	4-5|6-7|10|12|14-16	61/623/425/cn61623425.png
 1175091021	Remeras	Nene	GAP · Remera Rayada Gris	9.97	4-5|6-7|8|10|12|14-16	61/623/737/cn61623737.png
 1175091031	Remeras	Nene	GAP · Remera Rayada Verde Verde Salvia	9.97	10|12	61/623/748/cn61623748.png
-1175095011	Pantalones	Nene	GAP · Pantalón Jogging Logo Plymouth Rock	15.99	6-7|8|10	62/501/999/cn62501999.png
 1175100001	Buzos	Nene	GAP · Buzo Canguro Logo Verde	15.99	4-5|6-7|8|10|12|14-16	61/559/605/cn61559605.png
 1175103001	Shorts	Nene	GAP · Short de Jean Marrón	15.99	4-5|6-7|8|10	62/057/048/cn62057048.png
 1175104001	Shorts	Nene	GAP · Short de Jean Verde	27.99	4-5|8	62/057/066/cn62057066.png
-1175105011	Pantalones	Nene	GAP · Pantalón de Lino Verde	17.97	4-5|12|14-16	62/386/562/cn62386562.png
+1175105011	Pantalones	Nene	GAP · Pantalón de Lino Verde	17.97	4-5|14-16	62/386/562/cn62386562.png
 1175107011	Remeras	Nene	GAP · Remera Estampada Roja	19.99	4-5|6-7|8	62/997/106/cn62997106.png
 1175107021	Remeras	Nene	GAP · Remera Estampada Azul (Wind Blue)	13.99	4-5|6-7|8|10|12|14-16	63/608/310/cn63608310.png
 1175107031	Remeras	Nene	GAP · Remera Estampada Beige	13.99	4-5|6-7|8|10|12|14-16	63/587/815/cn63587815.png
@@ -389,23 +359,17 @@ code	cat	gen	nombre	usd	talles	img
 1175259001	Vestidos	Nena	GAP · Vestido Rosa	27.99	10|12|14-16	62/512/626/cn62512626.png
 1175261011	Vestidos	Nena	GAP · Vestido Azul Floral	12.97	12|14-16	61/656/796/cn61656796.png
 1175265001	Shorts	Nena	GAP · Short Negro (modelo 7)	8.99	4-5|6-7|8|10|12|14-16	62/504/235/cn62504235.png
-1175265011	Shorts	Nena	GAP · Short Beige	5.97	4-5|6-7|8|10|12	62/577/524/cn62577524.png
+1175265011	Shorts	Nena	GAP · Short Beige	5.97	6-7|8|10|12	62/577/524/cn62577524.png
 1175265021	Shorts	Nena	GAP · Short Azul Marino (modelo 8)	5.97	4-5|6-7|8|10|12|14-16	62/551/555/cn62551555.png
 1175266001	Pantalones	Nena	GAP · Pantalón de Lino Summer Berries Aloe	15.97	10|12|14-16	62/044/919/cn62044919.png
 1175274011	Pantalones	Nena	GAP · Pantalón Negro (Black)	19.99	4-5|6-7|8	62/770/440/cn62770440.png
-1175276001	Shorts	Nena	GAP · Short de Jean Estrellas	10.97	6-7|12	62/115/148/cn62115148.png
-1175290011	Pantalones	Nena	GAP · Jean Bow Dark Wash	23.99	4-5|6-7|8|10|12|14-16	62/115/130/cn62115130.png
-1175304001	Remeras	Nene	GAP · Remera Azul Cuadrillé	15.99	4-5|6-7|8|10|12|14-16	61/521/678/cn61521678.png
-1175304031	Remeras	Nene	GAP · Remera Negra Escocesa	15.99	4-5|6-7|8|10|12|14-16	63/587/810/cn63587810.png
-1175304041	Remeras	Nene	GAP · Remera Pine Tree Print	15.99	4-5|6-7|8|10|12|14-16	63/714/110/cn63714110.png
 1175545001	Remeras	Nena	GAP · Remera Estampada Azul (Cool Blue)	20.99	4-5|6-7	62/512/649/cn62512649.png
 1175545011	Remeras	Nena	GAP · Remera Estampada Gris Ositos Autos	20.99	6-7|10	62/815/777/cn62815777.png
 1175545031	Remeras	Nena	GAP · Remera Estampada Gris (Snoopy Dark Grey)	20.99	4-5|6-7	62/409/453/cn62409453.png
 1175546011	Buzos	Nena	GAP · Sweater Rosa (Pink Rose Mist)	27.99	4-5|10	62/403/857/cn62403857.png
 1175553001	Shorts	Nena	GAP · Short Lavanda	14.99	12M|18M	61/646/349/cn61646349.png
 1175553011	Shorts	Nena	GAP · Short Rosa (Neon Pink Rose)	13.99	12M|18M|24M	61/646/360/cn61646360.png
-1175606001	Remeras	Nena	GAP · Remera Logo Azul	14.99	12M|3T	62/115/270/cn62115270.png
-1175720001	Pantalones	Nena	GAP · Jean Light Wash (modelo 4)	32.99	4-5|6-7|8|10|12|14-16	64/284/265/cn64284265.png
+1175720001	Pantalones	Nena	GAP · Jean Light Wash (modelo 3)	32.99	4-5|6-7|8|10|12|14-16	64/284/265/cn64284265.png
 1175976001	Buzos	Nena	GAP · Buzo Canguro Logo Azul (Elsa Blue)	15.99	12M|18M|24M|2T|3T|4T|5T	62/247/494/cn62247494.png
 1175977001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul (Elsa Blue)	11.99	12M|18M|24M|2T|3T|4T|5T	62/211/155/cn62211155.png
 1175977011	Pantalones	Nena	GAP · Pantalón Jogging Logo Rosa Floral (Pink Rose Mist Floral)	10.49	12M|18M|24M|2T|3T|4T|5T	62/979/904/cn62979904.png
@@ -431,7 +395,7 @@ code	cat	gen	nombre	usd	talles	img
 1177213001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Rosa Floral	34.99	18M|24M	62/924/490/cn62924490.png
 1177217001	Enteritos	Nena	GAP · Enterito Floral Cerezas	29.99	3M|6M|12M|18M|24M	62/776/826/cn62776826.png
 1177220001	Bodies	Nena	GAP · Body de Jean Floral	23.99	3M|6M|12M|18M|24M	62/997/211/cn62997211.png
-1177222001	Bodies	Nena	GAP · Body Estampado Crudo	5.99	NB|3M|6M|12M|18M|24M	63/343/271/cn63343271.png
+1177222001	Bodies	Nena	GAP · Body Estampado Crudo	5.99	3M|6M|12M|18M|24M	63/343/271/cn63343271.png
 1177222021	Bodies	Nena	GAP · Body Estampado Rojo Ositos	6.99	NB|3M|6M|12M	62/904/754/cn62904754.png
 1177222041	Bodies	Nena	GAP · Body Estampado Verde Ositos	5.99	NB|3M|6M|12M|18M|24M	63/026/735/cn63026735.png
 1177222051	Bodies	Nena	GAP · Body Estampado Blanco	5.99	NB|3M|6M|12M|18M|24M	63/299/380/cn63299380.png
@@ -452,15 +416,15 @@ code	cat	gen	nombre	usd	talles	img
 1177229011	Enteritos	Nene	GAP · Enterito Osito Brannan Azul Rayado	24.49	NB|3M|6M|12M|18M|24M	63/907/852/cn63907852.png
 1177230001	Enteritos	Nene	GAP · Enterito Osito Brannan Marrón	15.99	3M|6M|12M|18M|24M	63/048/027/cn63048027.png
 1177230011	Enteritos	Nene	GAP · Enterito Osito Brannan Rosa	15.99	3M|6M|12M|18M|24M	63/046/870/cn63046870.png
-1177307001	Remeras	Nene	GAP · Remera Estampada Gris (Heather Gray)	9.97	4-5|6-7|8|10|12|14-16	62/349/159/cn62349159.png
-1177309001	Remeras	Nene	GAP · Remera Estampada Azul (Light Autumn Blue)	9.97	4-5|6-7|8|12	62/095/331/cn62095331.png
+1177307001	Remeras	Nene	GAP · Remera Estampada Gris (Heather Gray)	9.97	4-5|6-7|8|10|12	62/349/159/cn62349159.png
+1177309001	Remeras	Nene	GAP · Remera Estampada Azul (Light Autumn Blue)	9.97	4-5|6-7	62/095/331/cn62095331.png
 1177312001	Remeras	Nena	GAP · Remera Estampada Amarilla	12.97	12M|18M|24M|2T	62/038/959/cn62038959.png
 1177876001	Buzos	Nena	GAP · Sweater Rosa (Pink Apples)	11.99	12M|18M|24M|2T|3T|4T|5T	63/057/439/cn63057439.png
 1177876011	Buzos	Nena	GAP · Sweater Gris	11.99	12M|18M|24M|2T|3T|4T|5T	63/299/450/cn63299450.png
 1177876021	Buzos	Nena	GAP · Sweater Crudo Ositos	11.99	12M|18M|24M|2T|3T|4T|5T	64/308/915/cn64308915.png
 1177876031	Buzos	Nena	GAP · Sweater Marrón	11.99	12M|18M|24M|2T|3T|4T|5T	63/046/946/cn63046946.png
 1177877001	Buzos	Nena	GAP · Sweater Violeta Lavanda	13.49	12M|18M|24M|2T|3T|4T|5T	63/057/881/cn63057881.png
-1177883001	Buzos	Nena	GAP · Sweater Estampado Azul Marino	19.99	12M|18M|24M|2T|3T|4T	63/046/959/cn63046959.png
+1177883001	Buzos	Nena	GAP · Sweater Estampado Azul Marino	19.99	12M|18M|24M|2T|3T	63/046/959/cn63046959.png
 1177884001	Buzos	Nena	GAP · Sweater Calado Crudo	19.99	12M|18M|24M|2T|3T|4T|5T	63/057/839/cn63057839.png
 1177884011	Buzos	Nena	GAP · Sweater Calado Rojo	19.99	12M|18M|24M|2T|3T|4T|5T	63/680/504/cn63680504.png
 1177892001	Shorts	Nene	GAP · Short de Jean Dark Wash	15.99	4-5|6-7|8|10|12|14-16	62/935/706/cn62935706.png
@@ -472,17 +436,17 @@ code	cat	gen	nombre	usd	talles	img
 1177977001	Buzos	Nena	GAP · Sweater Rojo Rayado	29.99	8|10|12|14-16	62/935/738/cn62935738.png
 1177977011	Buzos	Nena	GAP · Sweater Gris Violeta Rayado	17.99	6-7|8|10|12|14-16	62/931/656/cn62931656.png
 1177980001	Remeras	Nena	GAP · Remera Morley Violeta Lavanda	16.99	4-5|6-7|8|10|12|14-16	62/967/240/cn62967240.png
-1177980011	Remeras	Nena	GAP · Remera Morley Crudo (modelo 4)	16.99	4-5|6-7|8|10|12|14-16	62/967/286/cn62967286.png
+1177980011	Remeras	Nena	GAP · Remera Morley Crudo (New Off White)	16.99	4-5|6-7|8|10|12|14-16	62/967/286/cn62967286.png
 1177980021	Remeras	Nena	GAP · Remera Morley Negra (Black)	15.99	4-5|6-7|8|10|12|14-16	62/967/297/cn62967297.png
 1177980031	Remeras	Nena	GAP · Remera Morley Gris	16.99	4-5|6-7|8|10|14-16	63/608/455/cn63608455.png
 1177983001	Buzos	Nena	GAP · Sweater Rayado Rojo Rayado	29.99	4-5|6-7|8|10|12|14-16	62/931/630/cn62931630.png
 1177983011	Buzos	Nena	GAP · Sweater Rayado Gris Violeta Rayado	17.99	4-5|6-7|8|10|12|14-16	62/954/776/cn62954776.png
-1177984001	Buzos	Nena	GAP · Sweater Negro	27.99	4-5|6-7|8|10|12|14-16	62/863/549/cn62863549.png
-1178426001	Remeras	Nena	GAP · Remera Violeta Lavanda	20.99	4-5|6-7|8|10|12|14-16	62/223/983/cn62223983.png
+1177984001	Buzos	Nena	GAP · Sweater Negro	27.99	4-5|6-7|8|10|12	62/863/549/cn62863549.png
+1178426001	Remeras	Nena	GAP · Remera Violeta Lavanda	20.99	4-5|6-7|10|12|14-16	62/223/983/cn62223983.png
 1178427021	Remeras	Nena	GAP · Remera Estampada Roja Frutillas	4.49	4-5|6-7|8|10|12|14-16	62/180/421/cn62180421.png
-1178427041	Remeras	Nena	GAP · Remera Estampada Negra	5.99	4-5|6-7|8|10|12	62/095/635/cn62095635.png
+1178427041	Remeras	Nena	GAP · Remera Estampada Negra	5.99	4-5|6-7|8|10|12|14-16	62/095/635/cn62095635.png
 1178427051	Remeras	Nena	GAP · Remera Estampada Violeta Lavanda Ositos	5.99	4-5|6-7|8|10|12|14-16	62/386/181/cn62386181.png
-1178427061	Remeras	Nena	GAP · Remera Estampada Rosa (Love Letter Pink)	8.99	4-5|6-7|8|10	62/095/611/cn62095611.png
+1178427061	Remeras	Nena	GAP · Remera Estampada Rosa (Love Letter Pink)	8.99	6-7|8|10	62/095/611/cn62095611.png
 1178427071	Remeras	Nena	GAP · Remera Estampada Gris Ositos	9.99	4-5|6-7|8	62/095/863/cn62095863.png
 1178427081	Remeras	Nena	GAP · Remera Estampada Roja Ositos	8.99	4-5|6-7|8|10	63/231/619/cn63231619.png
 1178427091	Remeras	Nena	GAP · Remera Estampada Beige Ositos	5.99	4-5|6-7|8|10|12|14-16	63/137/932/cn63137932.png
@@ -499,8 +463,8 @@ code	cat	gen	nombre	usd	talles	img
 1178428131	Pantalones	Nena	GAP · Pantalón Jogging Estampado Rojo Ositos (Red Logo Bear Holiday)	11.99	4-5|6-7|8|10|12|14-16	63/666/896/cn63666896.png
 1178428141	Pantalones	Nena	GAP · Pantalón Jogging Estampado Crudo	14.99	4-5|6-7|8|10|12|14-16	63/666/898/cn63666898.png
 1178430011	Buzos	Nena	GAP · Buzo Estampado Negro	20.99	4-5|6-7|8	62/072/315/cn62072315.png
-1178430021	Buzos	Nena	GAP · Buzo Estampado Rosa (Love Letter Pink)	11.99	4-5|6-7|8|10|12|14-16	63/377/257/cn63377257.png
-1178430031	Buzos	Nena	GAP · Buzo Estampado Azul Marino	11.99	4-5|6-7|8|10	63/286/708/cn63286708.png
+1178430021	Buzos	Nena	GAP · Buzo Estampado Rosa (Love Letter Pink)	11.99	6-7|8|10|12|14-16	63/377/257/cn63377257.png
+1178430031	Buzos	Nena	GAP · Buzo Estampado Azul Marino	11.99	4-5|6-7	63/286/708/cn63286708.png
 1178430041	Buzos	Nena	GAP · Buzo Estampado Beige Ositos	20.99	4-5|6-7|8|10	63/112/008/cn63112008.png
 1178430051	Buzos	Nena	GAP · Buzo Estampado Rojo Ositos	11.99	4-5|6-7|8|10|12|14-16	63/111/968/cn63111968.png
 1178430061	Buzos	Nena	GAP · Buzo Estampado Crudo (Ivory Cream Bow)	11.99	4-5|6-7|8|10|12|14-16	63/666/833/cn63666833.png
@@ -508,11 +472,9 @@ code	cat	gen	nombre	usd	talles	img
 1178430081	Buzos	Nena	GAP · Buzo Estampado Rosa Ositos	11.99	4-5|6-7|8|10|12|14-16	64/246/136/cn64246136.png
 1178430091	Buzos	Nena	GAP · Buzo Estampado Azul Ositos	11.99	4-5|6-7|8|10|12|14-16	64/202/452/cn64202452.png
 1178431011	Buzos	Nena	GAP · Buzo Azul	11.99	4-5|6-7|8|10|12|14-16	62/712/578/cn62712578.png
-1178431021	Buzos	Nena	GAP · Buzo Gris (Grey)	27.99	4-5|6-7|12	63/608/537/cn63608537.png
 1178431031	Buzos	Nena	GAP · Buzo Blanco	11.99	4-5|6-7|8|10|12|14-16	62/951/899/cn62951899.png
 1178431041	Buzos	Nena	GAP · Buzo Verde	15.99	4-5|6-7|8|10|12|14-16	62/879/391/cn62879391.png
 1178432001	Pantalones	Nena	GAP · Pantalón Jogging Logo Violeta (Pale Periwinkle Purple)	22.49	8|10|12|14-16	63/118/653/cn63118653.png
-1178432011	Pantalones	Nena	GAP · Pantalón Jogging Logo Gris (Grey Cat)	19.99	4-5|6-7	63/142/660/cn63142660.png
 1178432021	Pantalones	Nena	GAP · Pantalón Jogging Logo Negro Lunares	29.99	4-5|6-7|8|10|12|14-16	63/101/647/cn63101647.png
 1178432041	Pantalones	Nena	GAP · Pantalón Jogging Logo Blanco Lunares	14.99	4-5|6-7|8|10|12|14-16	62/771/051/cn62771051.png
 1178434001	Pantalones	Nena	GAP · Pantalón Jogging Logo Violeta Lavanda	19.99	4-5|6-7|8|10|12|14-16	62/669/330/cn62669330.png
@@ -534,7 +496,7 @@ code	cat	gen	nombre	usd	talles	img
 1178438021	Remeras	Nena	GAP · Remera Estampada Crudo (Lil Sis New Off White)	5.99	24M|2T|3T|4T|5T	62/967/602/cn62967602.png
 1178438031	Remeras	Nena	GAP · Remera Estampada Violeta (Purple Bows)	5.99	12M|18M|24M|2T|3T|4T|5T	63/026/836/cn63026836.png
 1178438041	Remeras	Nena	GAP · Remera Estampada Beige (Tan Chino Flower)	4.49	12M|18M|24M|2T|3T|4T|5T	62/967/600/cn62967600.png
-1178438061	Remeras	Nena	GAP · Remera Estampada Crudo Leopardo Corazones	5.99	2T|3T|4T|5T	63/101/917/cn63101917.png
+1178438061	Remeras	Nena	GAP · Remera Estampada Crudo Leopardo Corazones	5.99	3T|4T|5T	63/101/917/cn63101917.png
 1178438071	Remeras	Nena	GAP · Remera Estampada Crudo (Big Sis New Off White)	5.99	12M|18M|24M|2T|3T|4T|5T	62/896/571/cn62896571.png
 1178438081	Remeras	Nena	GAP · Remera Estampada Rosa (Pink Rose Mist Jam)	5.99	12M|18M|24M|2T|3T|4T|5T	63/007/285/cn63007285.png
 1178438091	Remeras	Nena	GAP · Remera Estampada Verde Verde Salvia	5.99	12M|18M|24M|2T|3T|4T|5T	63/177/936/cn63177936.png
@@ -568,34 +530,22 @@ code	cat	gen	nombre	usd	talles	img
 1178445031	Remeras	Nena	GAP · Remera Estampada Negra (Hello Kitty Mummy Black)	14.97	12M|18M|24M|2T|3T|4T|5T	63/713/896/cn63713896.png
 1178446001	Remeras	Nena	GAP · Remera Estampada Lavanda	7.49	12M|18M|24M|2T|3T|4T|5T	62/979/970/cn62979970.png
 1178446011	Remeras	Nena	GAP · Remera Estampada Rosa (Pink Mickey Minnie)	8.99	12M|18M|24M|2T|3T|4T|5T	63/026/833/cn63026833.png
-1178450001	Remeras	Nena	GAP · Remera Morley Violeta Lavanda (Nostalgic Purple Lavender)	9.99	12M|18M|24M|2T|3T|4T|5T	62/835/491/cn62835491.png
-1178450021	Remeras	Nena	GAP · Remera Morley Marrón	7.99	12M|18M|24M|2T|3T|4T|5T	62/980/087/cn62980087.png
-1178450041	Remeras	Nena	GAP · Remera Morley Azul Marino Floral	9.99	12M|18M|2T|3T|4T|5T	63/138/606/cn63138606.png
-1178453001	Pantalones	Nena	GAP · Calza Morley Violeta Lavanda	9.99	12M|18M|24M|2T|3T|4T|5T	62/788/452/cn62788452.png
-1178453011	Pantalones	Nena	GAP · Calza Morley Azul Marino Floral	9.99	12M|18M|24M|2T|3T|4T|5T	63/085/170/cn63085170.png
-1178453041	Pantalones	Nena	GAP · Calza Morley Marrón	9.99	12M|18M|24M|2T|3T|4T|5T	63/188/218/cn63188218.png
 1178455001	Shorts	Nena	GAP · Pollera-Short de Jean Medium Wash	10.49	12M|18M|24M|2T|3T|4T|5T	62/997/248/cn62997248.png
 1178458001	Vestidos	Nena	GAP · Vestido Rosa Floral	14.97	12M|18M|24M|2T|3T	62/790/257/cn62790257.png
 1178458011	Vestidos	Nena	GAP · Vestido Lunares	11.99	12M|18M|24M|2T|3T|4T|5T	62/790/284/cn62790284.png
 1178458021	Vestidos	Nena	GAP · Vestido Amarillo Floral	11.99	12M|18M|24M|2T|3T|4T|5T	62/790/246/cn62790246.png
-1178461001	Vestidos	Nena	GAP · Vestido Crudo Leopardo Corazones	12.97	24M|2T	62/954/864/cn62954864.png
-1178462001	Vestidos	Nena	GAP · Vestido Violeta Lavanda	14.97	12M|18M|24M	62/941/190/cn62941190.png
+1178462001	Vestidos	Nena	GAP · Vestido Violeta Lavanda	14.97	12M|18M	62/941/190/cn62941190.png
 1178463001	Vestidos	Nena	GAP · Vestido Verde Verde Salvia Floral	19.99	12M|18M|24M|2T|3T|4T|5T	63/101/729/cn63101729.png
-1178463011	Vestidos	Nena	GAP · Vestido Crudo Lunares	19.99	4T|5T	63/190/366/cn63190366.png
 1178470001	Pantalones	Nena	GAP · Jean Medium Wash Frill	17.99	12M|18M|24M|2T|3T|4T|5T	62/896/680/cn62896680.png
-1178484001	Pijamas	Nena	GAP · Pijama Estampado Rosa Rojo	20.99	12M|2T|3T|4T|5T	62/211/138/cn62211138.png
-1178485001	Pijamas	Nena	GAP · Pijama Estampado NY Crudo Multicolor	15.99	12M|18M|2T|3T|4T|5T	62/349/344/cn62349344.png
-1178487001	Pijamas	Nena	GAP · Pijama Escocés Rosa Cerezas	11.99	4-5|6-7|8|10|12|14-16	62/922/079/cn62922079.png
-1178490001	Pijamas	Nena	GAP · Pijama Escocés Beige	11.99	4-5|6-7|8|10|12	62/941/125/cn62941125.png
-1178493001	Pantalones	Nena	GAP · Pantalón Chambray	34.99	4-5|6-7	62/713/155/cn62713155.png
-1178499001	Remeras	Nene	GAP · Chomba Rayada Azul Marino Rayada	16.99	10|12	62/513/131/cn62513131.png
+1178484001	Pijamas	Nena	GAP · Pijama Estampado Rosa Rojo	20.99	12M|3T|4T|5T	62/211/138/cn62211138.png
+1178485001	Pijamas	Nena	GAP · Pijama Estampado NY Crudo Multicolor	15.99	3T|4T|5T	62/349/344/cn62349344.png
 1178499011	Remeras	Nene	GAP · Chomba Rayada Verde Verde Oliva Rayada	16.99	4-5|8|10|12	62/518/534/cn62518534.png
 1178522001	Shorts	Nena	GAP · Short Logo Azul Floral	15.99	4-5|6-7|8|10|12|14-16	62/816/756/cn62816756.png
 1178522011	Shorts	Nena	GAP · Short Logo Violeta	23.99	4-5|6-7|8|10|12|14-16	62/790/007/cn62790007.png
-1178522031	Shorts	Nena	GAP · Short Logo Gris (Smiley Face Grey)	26.99	4-5|6-7|8|10|12|14-16	62/931/743/cn62931743.png
+1178522031	Shorts	Nena	GAP · Short Logo Gris	26.99	4-5|6-7|8|10|12|14-16	62/931/743/cn62931743.png
 1178522041	Shorts	Nena	GAP · Short Logo Azul Floral (Blue Bandana Floral)	8.99	4-5|6-7|8|10|12|14-16	63/247/835/cn63247835.png
 1178540001	Remeras	Nena	GAP · Remera Logo Rosa Roja	14.99	4-5|6-7|8|10	62/675/392/cn62675392.png
-1178543001	Remeras	Nena	GAP · Remera Logo Azul (Elsa Blue)	9.99	12M|18M|24M|2T|3T|4T|5T	62/771/226/cn62771226.png
+1178543001	Remeras	Nena	GAP · Remera Logo Azul	9.99	12M|18M|24M|2T|3T|4T|5T	62/771/226/cn62771226.png
 1178545001	Buzos	Nena	GAP · Campera Buzo con Cierre Estampada Rosa Arcoíris	11.99	12M|18M|24M|2T|3T|4T|5T	62/979/862/cn62979862.png
 1178546001	Buzos	Nena	GAP · Buzo Canguro Logo Estampado Azul Corazones	11.99	12M|18M|24M|2T|3T|4T|5T	63/474/221/cn63474221.png
 1178546011	Buzos	Nena	GAP · Buzo Canguro Logo Estampado Rosa Floral	15.99	12M|18M|24M|2T|3T|4T|5T	62/979/828/cn62979828.png
@@ -609,7 +559,7 @@ code	cat	gen	nombre	usd	talles	img
 1178587001	Buzos	Nene	GAP · Buzo Canguro Negro	17.99	4-5|6-7|8|10|12|14-16	62/502/203/cn62502203.png
 1178587051	Buzos	Nene	GAP · Buzo Canguro Violeta	24.99	4-5|6-7	62/502/279/cn62502279.png
 1178588001	Shorts	Nena	GAP · Short Negro (Miami Heat Black)	11.99	4-5|6-7|8|10|12|14-16	62/404/095/cn62404095.png
-1178588041	Shorts	Nena	GAP · Short Verde (Boston Celtics Green)	16.99	6-7|8|12|14-16	62/211/228/cn62211228.png
+1178588041	Shorts	Nena	GAP · Short Verde (Boston Celtics Green)	16.99	6-7|12|14-16	62/211/228/cn62211228.png
 1178589001	Remeras	Nena	GAP · Remera Estampada Negra (Miami Heat Black)	8.99	4-5|6-7|8|10|12|14-16	62/181/101/cn62181101.png
 1178589011	Remeras	Nena	GAP · Remera Estampada Negra (modelo 4)	8.99	4-5|6-7|8|10|12|14-16	62/211/292/cn62211292.png
 1178591001	Remeras	Nena	GAP · Remera Estampada Verde	16.99	4-5|6-7|8	62/211/393/cn62211393.png
@@ -618,29 +568,22 @@ code	cat	gen	nombre	usd	talles	img
 1178592011	Remeras	Nena	GAP · Remera Estampada Violeta (modelo 4)	11.99	4-5|6-7|8|10|12	62/181/036/cn62181036.png
 1178593001	Remeras	Nena	GAP · Remera Estampada Azul Dorada	11.99	4-5|6-7|8|10|14-16	62/211/413/cn62211413.png
 1178593011	Remeras	Nena	GAP · Remera Estampada Azul Dorada (Golden State Warriors Blue)	11.99	4-5|6-7|8	62/211/414/cn62211414.png
-1178601001	Pijamas	Nena	GAP · Pijama Escocés Navideño Autos	14.99	6-7|8|10|12|14-16	63/111/928/cn63111928.png
-1178602001	Pijamas	Nena	GAP · Pijama Estampado Escocés Azul	11.99	4-5|6-7|8|10|12|14-16	62/922/245/cn62922245.png
-1178603001	Pijamas	Nena	GAP · Pijama Escocés Negro Multicolor	14.99	4-5|6-7|8|10|12|14-16	63/111/988/cn63111988.png
 1178609001	Buzos	Nena	GAP · Buzo Violeta Lavanda	19.99	6-7|8|10|12|14-16	62/770/613/cn62770613.png
-1178610001	Pijamas	Nena	GAP · Pijama Estampado Escocés Azul (Peanuts Blue)	17.49	4-5|6-7|8|10|12|14-16	63/444/431/cn63444431.png
-1178611001	Pijamas	Nena	GAP · Pijama Escocés Rojo Escocés	14.99	4-5|6-7|8|10|12|14-16	63/111/985/cn63111985.png
-1178611011	Pijamas	Nena	GAP · Pijama Escocés Rojo Rayado	11.99	6-7|8|10|12|14-16	63/085/072/cn63085072.png
-1178612001	Pijamas	Nena	GAP · Pijama Escocés Navideño Rosa	13.99	4-5|6-7|8|10|12|14-16	63/373/817/cn63373817.png
 1178630001	Remeras	Nena	GAP · Remera Azul Floral	20.99	4-5|6-7	63/199/222/cn63199222.png
-1178630011	Remeras	Nena	GAP · Remera Rosa Floral	20.99	4-5|14-16	63/479/377/cn63479377.png
-1178647001	Pijamas	Nena	GAP · Pijama Estampado Beige Multicolor	11.99	12M|18M|2T|3T|4T|5T	62/346/872/cn62346872.png
+1178630011	Remeras	Nena	GAP · Remera Rosa Floral	20.99	4-5|8|14-16	63/479/377/cn63479377.png
+1178647001	Pijamas	Nena	GAP · Pijama Estampado Beige Multicolor	11.99	12M|2T|3T|4T|5T	62/346/872/cn62346872.png
 1178648001	Pijamas	Nena	GAP · Pijama Estampado Rosa (Shocking Pink)	13.99	12M|18M|24M|2T|3T|4T|5T	62/997/213/cn62997213.png
 1178650001	Pantalones	Nena	GAP · Pantalón Jogging Logo Verde Dinosaurios (Mesculen Green Dinosaurs Dark)	23.99	12M|18M|24M	62/150/210/cn62150210.png
 1178650011	Pantalones	Nena	GAP · Pantalón Jogging Logo Gris Camiones	23.99	12M|18M|24M|2T	62/150/197/cn62150197.png
 1178655001	Remeras	Nena	GAP · Remera Morley Gris (Grey)	7.99	4-5|6-7|8|10|12|14-16	63/085/110/cn63085110.png
-1178655011	Remeras	Nena	GAP · Remera Morley Violeta Lavanda (modelo 3)	11.99	6-7|8|10|12|14-16	63/006/939/cn63006939.png
+1178655011	Remeras	Nena	GAP · Remera Morley Violeta Lavanda (Nostalgic Purple Lavender)	11.99	6-7|8|10|12|14-16	63/006/939/cn63006939.png
 1178655021	Remeras	Nena	GAP · Remera Morley Verde Ositos	7.99	4-5|6-7|8|10|12|14-16	63/006/943/cn63006943.png
-1178655031	Remeras	Nena	GAP · Remera Morley Rosa (Love Letter Pink)	11.99	4-5|6-7|8|10|12|14-16	63/177/932/cn63177932.png
+1178655031	Remeras	Nena	GAP · Remera Morley Rosa (Love Letter Pink)	11.99	6-7|8|10|12|14-16	63/177/932/cn63177932.png
 1178655041	Remeras	Nena	GAP · Remera Morley Amarilla Mariposas	13.99	4-5|10|12|14-16	63/007/587/cn63007587.png
 1178655051	Remeras	Nena	GAP · Remera Morley Rosa Floral	11.99	10|12|14-16	63/182/636/cn63182636.png
-1178655061	Remeras	Nena	GAP · Remera Morley Azul Marino Floral (Navy Floral)	13.99	4-5|6-7|8|14-16	63/057/947/cn63057947.png
+1178655061	Remeras	Nena	GAP · Remera Morley Azul Marino Floral	13.99	4-5|6-7|14-16	63/057/947/cn63057947.png
 1178655071	Remeras	Nena	GAP · Remera Morley Roja	11.99	4-5|6-7|8|10	63/177/934/cn63177934.png
-1178655081	Remeras	Nena	GAP · Remera Morley Azul	11.99	4-5|6-7|8|10|14-16	63/127/986/cn63127986.png
+1178655081	Remeras	Nena	GAP · Remera Morley Azul	11.99	4-5|6-7|8|14-16	63/127/986/cn63127986.png
 1178656001	Pantalones	Nena	GAP · Calza Rosa (Forever Pink)	11.99	4-5|6-7|8|10|12|14-16	62/904/635/cn62904635.png
 1178656011	Pantalones	Nena	GAP · Calza Negra (Black Bows)	13.99	4-5|6-7|8|10|12|14-16	62/904/696/cn62904696.png
 1178656021	Pantalones	Nena	GAP · Calza Negra Lunares	15.99	4-5|6-7|8|10|12|14-16	63/101/622/cn63101622.png
@@ -649,21 +592,19 @@ code	cat	gen	nombre	usd	talles	img
 1178663011	Buzos	Nena	GAP · Buzo Autos	13.49	4-5|6-7|8|10|12|14-16	63/959/426/cn63959426.png
 1178664001	Remeras	Nena	GAP · Remera Estampada Violeta (Purple Logo Bows)	6.79	4-5|6-7|8|10|12|14-16	63/487/943/cn63487943.png
 1178664021	Remeras	Nena	GAP · Remera Estampada Amarilla (Light Yellow Owl)	6.79	4-5|6-7|8|10|12|14-16	64/191/778/cn64191778.png
-1178664061	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue Cats)	10.19	4-5|6-7|8|10|12|14-16	63/421/112/cn63421112.png
+1178664061	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue Cats)	10.19	4-5|6-7|10|12|14-16	63/421/112/cn63421112.png
 1178664071	Remeras	Nena	GAP · Remera Estampada Crudo (New Off White Thanksgiving)	10.19	4-5|6-7|8|10|12|14-16	63/421/135/cn63421135.png
 1178666001	Remeras	Nena	GAP · Remera Logo Beige	13.99	4-5|6-7|8|10|12|14-16	62/837/413/cn62837413.png
 1178667041	Remeras	Nena	GAP · Remera Estampada Violeta Lavanda (Nostalgic Purple Lavender)	6.97	8|10|12|14-16	63/100/078/cn63100078.png
 1178667051	Remeras	Nena	GAP · Remera Estampada Rosa (Pink Trellis)	5.99	4-5|6-7|8|10|12|14-16	62/941/240/cn62941240.png
-1178669001	Remeras	Nena	GAP · Remera Calada Verde	20.99	4-5|6-7	63/377/278/cn63377278.png
-1178671011	Remeras	Nena	GAP · Remera Morley Rosa Floral (Pink Floral)	9.99	4-5|6-7|8|10|12|14-16	63/338/840/cn63338840.png
+1178671011	Remeras	Nena	GAP · Remera Morley Rosa Floral (Pink Floral)	9.99	6-7|8|10|12|14-16	63/338/840/cn63338840.png
 1178671021	Remeras	Nena	GAP · Remera Morley Azul (Cool Blue)	9.99	4-5|6-7|8|10|12|14-16	63/127/985/cn63127985.png
 1178671031	Remeras	Nena	GAP · Remera Morley Negra (modelo 3)	9.99	4-5|6-7|8|10|12|14-16	63/097/386/cn63097386.png
-1178671041	Remeras	Nena	GAP · Remera Morley Crudo (modelo 5)	9.99	4-5|6-7|8|10|12|14-16	63/097/384/cn63097384.png
-1178671061	Remeras	Nena	GAP · Remera Morley Verde Ositos (Tropic Green Bear)	9.99	8|10	63/097/134/cn63097134.png
+1178671041	Remeras	Nena	GAP · Remera Morley Crudo (modelo 4)	9.99	4-5|6-7|8|10|12|14-16	63/097/384/cn63097384.png
 1178671071	Remeras	Nena	GAP · Remera Morley Gris (Gray)	9.99	4-5|6-7|8|10|12|14-16	63/112/027/cn63112027.png
-1178671081	Remeras	Nena	GAP · Remera Morley Roja (Tuscan Red)	9.99	6-7|8|10	63/608/606/cn63608606.png
+1178671081	Remeras	Nena	GAP · Remera Morley Roja (Tuscan Red)	9.99	6-7|8	63/608/606/cn63608606.png
 1178671091	Remeras	Nena	GAP · Remera Morley Violeta	9.99	4-5|6-7|8|10|12|14-16	63/097/123/cn63097123.png
-1178671101	Remeras	Nena	GAP · Remera Morley Rosa (modelo 5)	9.99	4-5|6-7|8|10|12|14-16	63/112/269/cn63112269.png
+1178671101	Remeras	Nena	GAP · Remera Morley Rosa (modelo 4)	9.99	4-5|6-7|8|10|12|14-16	63/112/269/cn63112269.png
 1178671111	Remeras	Nena	GAP · Remera Morley Rosa Rayada	14.99	4-5|6-7|8|10|12|14-16	63/880/566/cn63880566.png
 1178671121	Remeras	Nena	GAP · Remera Morley Azul (Essential Blue Snowflake)	14.99	4-5|6-7|8|10|12|14-16	63/633/272/cn63633272.png
 1178671131	Remeras	Nena	GAP · Remera Morley Blanca Cerezas	14.99	4-5|6-7|8|10|12|14-16	63/666/970/cn63666970.png
@@ -685,12 +626,12 @@ code	cat	gen	nombre	usd	talles	img
 1178727001	Pijamas	Nena	GAP · Pijama Estampado Azul	17.49	12M|18M|24M|2T|3T|4T|5T	62/957/248/cn62957248.png
 1178728001	Pijamas	Nena	GAP · Pijama Estampado Gravel Halloween Pumpkin	23.97	12M|18M|24M|2T|3T|4T|5T	62/898/625/cn62898625.png
 1178730001	Pijamas	Nena	GAP · Pijama Estampado Negro	20.97	12M|18M|24M|2T|3T|4T|5T	62/863/964/cn62863964.png
-1178733001	Pijamas	Nena	GAP · Pijama Estampado Halloween Crudo	20.97	12M|24M|3T	62/896/762/cn62896762.png
+1178733001	Pijamas	Nena	GAP · Pijama Estampado Halloween Crudo	20.97	12M|3T	62/896/762/cn62896762.png
 1178735001	Pijamas	Nena	GAP · Pijama Estampado Negro (Black Halloween)	22.97	12M|18M|24M|2T|3T|4T|5T	62/864/308/cn62864308.png
 1178736001	Pijamas	Nena	GAP · Pijama Estampado Navideño Rosa	17.49	12M|24M|2T|3T|4T|5T	63/449/248/cn63449248.png
 1178738001	Pijamas	Nena	GAP · Pijama Negro	11.99	12M|18M|24M|2T|3T|4T|5T	63/101/709/cn63101709.png
 1178739001	Pijamas	Nena	GAP · Pijama Estampado Negro (Black)	11.99	12M|18M|24M|2T|3T|4T|5T	63/192/846/cn63192846.png
-1178740001	Pijamas	Nena	GAP · Pijama Negro Multicolor	14.99	12M|24M|4T|5T	63/449/266/cn63449266.png
+1178740001	Pijamas	Nena	GAP · Pijama Negro Multicolor	14.99	12M|4T	63/449/266/cn63449266.png
 1178741001	Pijamas	Nena	GAP · Pijama Estampado Violeta (Oxford Purple)	11.99	12M|18M|24M|2T|3T|4T|5T	62/864/408/cn62864408.png
 1178743001	Pijamas	Nena	GAP · Pijama Crudo	13.99	12M|18M|24M|2T|3T|4T|5T	62/996/160/cn62996160.png
 1178746001	Pijamas	Nena	GAP · Pijama Violeta	23.99	12M|18M|4T|5T	63/200/080/cn63200080.png
@@ -700,7 +641,7 @@ code	cat	gen	nombre	usd	talles	img
 1178756001	Pijamas	Nena	GAP · Pijama Estampado Halloween Rosa	20.97	12M|18M|24M|2T|3T|4T|5T	62/835/958/cn62835958.png
 1178757001	Pijamas	Nena	GAP · Pijama Estampado Crudo (Ivory Cream Frost Fall)	23.99	12M|18M|24M|2T|3T|4T|5T	63/068/008/cn63068008.png
 1178758001	Pijamas	Nena	GAP · Pijama Estampado Azul Marino	14.99	12M|18M|24M|2T|3T|4T|5T	62/864/322/cn62864322.png
-1178759001	Pijamas	Nena	GAP · Pijama Estampado Navideño Autos	14.99	12M|18M|24M|2T|3T|4T|5T	63/449/260/cn63449260.png
+1178759001	Pijamas	Nena	GAP · Pijama Estampado Navideño Autos	14.99	12M|24M|3T|4T|5T	63/449/260/cn63449260.png
 1178760001	Pijamas	Nena	GAP · Pijama Estampado Crudo (Ivory Cream Frost Morning)	11.99	12M|18M|24M|2T|3T|4T|5T	63/063/886/cn63063886.png
 1178761001	Pijamas	Nena	GAP · Pijama Osito Brannan Estampado Rosa	14.99	12M|24M|2T|3T|4T|5T	63/298/437/cn63298437.png
 1178780001	Remeras	Nene	GAP · Remera Estampada Azul (Crisp Royal Blue Pizza)	5.99	12M|18M|24M|2T|3T|4T|5T	63/101/814/cn63101814.png
@@ -716,12 +657,6 @@ code	cat	gen	nombre	usd	talles	img
 1178814011	Vestidos	Nena	GAP · Vestido Rojo Floral	29.99	4-5|6-7|8|10|12|14-16	63/138/566/cn63138566.png
 1178816001	Shorts	Nene	GAP · Short de Jean Medium Wash (Medium Wash)	15.99	4-5|6-7|8|10|12|14-16	63/283/676/cn63283676.png
 1178817001	Buzos	Nena	GAP · Buzo Logo Navideño Autos	17.99	4-5|6-7|8|10|12|14-16	63/420/843/cn63420843.png
-1178830001	Shorts	Nene	GAP · Short Logo Azul Marino (Disney Peace Navy)	15.99	4-5|6-7|8|10|12|14-16	62/996/996/cn62996996.png
-1178830011	Shorts	Nene	GAP · Short Logo Gris (Disney Headphones Grey)	15.99	4-5|6-7|8|10|12|14-16	62/954/893/cn62954893.png
-1178830021	Shorts	Nene	GAP · Short Logo Disney Peace Chino	15.99	4-5|6-7|8|10|12|14-16	62/954/885/cn62954885.png
-1178833001	Pantalones	Nene	GAP · Pantalón Jogging Logo Verde (Tropic Green)	23.99	6-7|8	63/190/250/cn63190250.png
-1178833011	Pantalones	Nene	GAP · Pantalón Jogging Logo Azul (Bainbridge Blue)	15.99	4-5|6-7|8|10|12|14-16	62/657/408/cn62657408.png
-1178833021	Pantalones	Nene	GAP · Pantalón Jogging Logo Frosty Morning	13.99	4-5|6-7|8|10	62/525/090/cn62525090.png
 1178835001	Remeras	Nene	GAP · Remera Logo Disney Peace Chino	11.99	4-5|6-7|8|10|12|14-16	63/608/345/cn63608345.png
 1178835011	Remeras	Nene	GAP · Remera Logo Gris (Disney Headphones Grey)	11.99	4-5|6-7|8|10|12|14-16	62/954/929/cn62954929.png
 1178835021	Remeras	Nene	GAP · Remera Logo Azul Marino (Disney Peace Navy)	11.99	4-5|6-7|8|10|12|14-16	62/904/723/cn62904723.png
@@ -731,22 +666,15 @@ code	cat	gen	nombre	usd	talles	img
 1178857001	Buzos	Nena	GAP · Buzo Logo Negro (Black Halloween)	22.97	6-7|8|10|12	63/247/328/cn63247328.png
 1178861001	Pantalones	Nene	GAP · Pantalón de Corderoy Azul Marino	23.99	4-5|6-7|8|10|12|14-16	63/679/417/cn63679417.png
 1178862001	Pantalones	Nene	GAP · Pantalón de Corderoy Marrón	23.99	4-5|6-7|8|10|12|14-16	63/679/428/cn63679428.png
-1178945001	Buzos	Nena	GAP · Buzo Logo Osito Brannan Verde	14.99	12M|18M|24M|2T|3T|4T|5T	62/504/452/cn62504452.png
-1178945011	Buzos	Nena	GAP · Buzo Logo Osito Brannan Azul	8.00	12M|18M|24M|2T|3T|4T|5T	62/504/437/cn62504437.png
-1178945021	Buzos	Nena	GAP · Buzo Logo Osito Brannan Amarillo	14.99	18M|24M|2T|3T|4T	62/504/433/cn62504433.png
-1178945031	Buzos	Nena	GAP · Buzo Logo Osito Brannan Rosa Beige	8.00	12M|18M|24M|2T|3T|4T|5T	62/504/444/cn62504444.png
-1178946011	Buzos	Nena	GAP · Campera Buzo con Cierre Polar Rosa Beige	9.99	12M|18M|24M|2T|3T|4T|5T	62/675/631/cn62675631.png
-1178946021	Buzos	Nena	GAP · Campera Buzo con Cierre Polar Verde	9.99	18M|4T	62/675/656/cn62675656.png
-1178946031	Buzos	Nena	GAP · Campera Buzo con Cierre Polar Azul	9.99	12M|18M|24M|2T|3T|4T|5T	62/690/486/cn62690486.png
 1178949011	Buzos	Nene	GAP · Buzo Multicolor	9.99	12M|18M|24M|2T|3T|4T|5T	63/286/772/cn63286772.png
 1178949021	Buzos	Nene	GAP · Buzo Azul Marino Camiones	9.99	12M|18M|24M|2T|3T|4T|5T	63/231/853/cn63231853.png
 1178949041	Buzos	Nene	GAP · Buzo Verde (Boggy Green Dogs)	9.99	12M|18M|24M|2T|3T|4T|5T	63/205/584/cn63205584.png
 1178949051	Buzos	Nene	GAP · Buzo Caqui Camiones	9.99	12M|18M|24M|2T|3T|4T|5T	62/904/796/cn62904796.png
-1178955001	Pantalones	Nena	GAP · Pantalón Jogging Multicolor	17.99	24M|2T|3T|4T	62/771/936/cn62771936.png
+1178955001	Pantalones	Nena	GAP · Pantalón Jogging Multicolor	17.99	18M|24M|2T|3T|4T	62/771/936/cn62771936.png
 1178958001	Remeras	Nene	GAP · Remera Estampada Azul Marino (New Navy Blue)	11.99	12M|18M|24M|2T|3T|4T|5T	63/474/202/cn63474202.png
 1178959001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Marino (Peace Navy)	13.99	12M|18M|24M|2T|3T|4T|5T	62/771/954/cn62771954.png
 1178959011	Pantalones	Nena	GAP · Pantalón Jogging Logo Gris (Headphones Gray)	13.99	12M|18M|24M|2T|3T|4T|5T	62/771/957/cn62771957.png
-1178960001	Pantalones	Nena	GAP · Pantalón Jogging Logo Verde (modelo 4)	17.99	12M|18M|24M|2T|3T|4T|5T	63/358/877/cn63358877.png
+1178960001	Pantalones	Nena	GAP · Pantalón Jogging Logo Verde (Tropic Green)	17.99	12M|18M|24M|2T|3T|4T|5T	63/358/877/cn63358877.png
 1178962001	Remeras	Nene	GAP · Remera Estampada Azul (Big Bro Blue)	5.99	12M|18M|24M|2T|3T|4T|5T	62/772/609/cn62772609.png
 1178962031	Remeras	Nene	GAP · Remera Estampada Azul (Lil Bro Blue)	5.99	18M|24M|2T|3T|4T|5T	62/833/578/cn62833578.png
 1178962041	Remeras	Nene	GAP · Remera Estampada Roja Camiones	5.99	12M|18M|24M|2T|3T|4T|5T	62/941/252/cn62941252.png
@@ -761,7 +689,7 @@ code	cat	gen	nombre	usd	talles	img
 1178972001	Shorts	Nene	GAP · Short Logo Azul Marino (Peace Navy)	11.99	12M|18M|24M|2T|3T|4T|5T	62/898/648/cn62898648.png
 1178972011	Shorts	Nene	GAP · Short Logo Gris (Headphones Gray)	11.99	12M|18M|24M|2T|3T|4T|5T	62/896/824/cn62896824.png
 1178973001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul (Footballs Blue)	10.49	12M|18M|24M|2T|3T|4T|5T	62/771/986/cn62771986.png
-1178974001	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo (Tuscan Red)	17.99	18M|24M|2T|3T|4T	63/101/803/cn63101803.png
+1178974001	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo (Tuscan Red)	17.99	24M|2T|3T	63/101/803/cn63101803.png
 1178976001	Remeras	Nene	GAP · Remera Logo Azul (Blue Suede)	11.99	12M|18M|24M|2T|3T|4T|5T	63/392/294/cn63392294.png
 1178978001	Remeras	Nene	GAP · Remera Logo Navideña Gris	8.99	12M|18M|24M|2T|3T|4T|5T	63/805/998/cn63805998.png
 1178980001	Remeras	Nene	GAP · Remera Estampada Crudo (modelo 16)	11.99	12M|18M|24M|2T|3T|4T|5T	63/515/389/cn63515389.png
@@ -769,17 +697,17 @@ code	cat	gen	nombre	usd	talles	img
 1178982001	Remeras	Nene	GAP · Remera Estampada Gris (Pilot Gray Elmo)	11.99	12M|18M|3T|4T|5T	63/177/855/cn63177855.png
 1178987001	Remeras	Nene	GAP · Remera Estampada Verde (Summer Green Brannan)	8.99	12M|18M|24M|2T|3T|4T|5T	63/205/836/cn63205836.png
 1178987011	Remeras	Nene	GAP · Remera Estampada Dorada (Golden Plate Construction)	5.99	12M|18M|24M|2T|3T|4T|5T	63/026/782/cn63026782.png
-1178987021	Remeras	Nene	GAP · Remera Estampada Azul (modelo 14)	5.99	12M|18M|24M|2T|3T|4T|5T	63/358/977/cn63358977.png
+1178987021	Remeras	Nene	GAP · Remera Estampada Azul (modelo 13)	5.99	12M|18M|24M|2T|3T|4T|5T	63/358/977/cn63358977.png
 1178987031	Remeras	Nene	GAP · Remera Estampada Gris Camiones (Pilot Gray Truck)	5.99	12M|18M|24M|2T|3T|4T|5T	63/026/908/cn63026908.png
 1178987041	Remeras	Nene	GAP · Remera Estampada Verde (modelo 6)	5.99	12M|18M|24M|2T|3T|4T|5T	63/138/729/cn63138729.png
 1178987051	Remeras	Nene	GAP · Remera Estampada Negra (modelo 9)	5.99	12M|18M|24M|2T|3T|4T|5T	63/358/985/cn63358985.png
 1178987071	Remeras	Nene	GAP · Remera Estampada Verde Dinosaurios (Mesculen Green Dinosaurs)	4.49	12M|18M|24M|2T|3T|4T|5T	63/007/606/cn63007606.png
 1178987081	Remeras	Nene	GAP · Remera Estampada Roja (modelo 7)	5.99	12M|18M|24M|2T|3T|4T|5T	63/023/227/cn63023227.png
-1178987091	Remeras	Nene	GAP · Remera Estampada Azul Marino (modelo 7)	5.99	12M|2T|3T	63/358/983/cn63358983.png
-1178990001	Remeras	Nene	GAP · Remera Estampada Amarilla (French Almond Yellow)	17.99	12M|18M|3T|4T|5T	63/205/821/cn63205821.png
+1178987091	Remeras	Nene	GAP · Remera Estampada Azul Marino (modelo 7)	5.99	12M|3T	63/358/983/cn63358983.png
+1178990001	Remeras	Nene	GAP · Remera Estampada Amarilla (French Almond Yellow)	17.99	12M|3T|4T|5T	63/205/821/cn63205821.png
 1178992001	Remeras	Nena	GAP · Remera Logo Osito Brannan Rosa Beige	5.99	12M|18M|24M|2T|3T|4T|5T	62/538/457/cn62538457.png
 1178992021	Remeras	Nena	GAP · Remera Logo Osito Brannan Azul	5.99	18M|24M|2T|3T|4T|5T	62/512/938/cn62512938.png
-1178992031	Remeras	Nena	GAP · Remera Logo Osito Brannan Verde	8.99	12M|18M|24M|2T|3T|4T|5T	62/525/034/cn62525034.png
+1178992031	Remeras	Nena	GAP · Remera Logo Osito Brannan Verde	8.99	18M|24M|2T|3T|4T|5T	62/525/034/cn62525034.png
 1178993001	Remeras	Nene	GAP · Remera Estampada Verde Verde Salvia (Desert Sage Green Dogs)	11.99	12M|18M|24M|2T|3T|4T|5T	62/905/406/cn62905406.png
 1178994001	Remeras	Nena	GAP · Remera Estampada Verde (modelo 7)	9.99	12M|18M|24M|2T|3T|4T|5T	63/713/877/cn63713877.png
 1178995001	Remeras	Nene	GAP · Remera Estampada Amarilla (modelo 6)	9.99	12M|18M|24M|2T|3T	62/790/236/cn62790236.png
@@ -804,9 +732,9 @@ code	cat	gen	nombre	usd	talles	img
 1179013001	Remeras	Nena	GAP · Remera Estampada Gris (modelo 5)	9.99	12M|18M|24M|2T|3T|4T|5T	63/026/919/cn63026919.png
 1179015001	Remeras	Nena	GAP · Remera Estampada Azul (Blue Suede Logo)	7.49	12M|18M|24M|2T|3T|4T|5T	63/515/400/cn63515400.png
 1179493001	Buzos	Nena	GAP · Sweater Rosa (Whale Pink)	17.97	12M|18M|24M|2T|3T|4T|5T	62/712/611/cn62712611.png
-1179501001	Pantalones	Nene	GAP · Pantalón Jogging Logo Negro (modelo 5)	16.97	4-5|6-7|8|10|12|14-16	62/496/742/cn62496742.png
+1179501001	Pantalones	Nene	GAP · Pantalón Jogging Logo Negro (modelo 4)	16.97	4-5|6-7|8|10|12|14-16	62/496/742/cn62496742.png
 1179501011	Pantalones	Nene	GAP · Pantalón Jogging Logo Gris (Heather Gray)	16.97	4-5|6-7|8|10|12|14-16	62/496/744/cn62496744.png
-1179501031	Pantalones	Nene	GAP · Pantalón Jogging Logo Plymouth Rock (Plymouth Rock)	16.97	4-5|6-7|8|10|12|14-16	62/496/759/cn62496759.png
+1179501031	Pantalones	Nene	GAP · Pantalón Jogging Logo Plymouth Rock	16.97	4-5|6-7|8|10|12|14-16	62/496/759/cn62496759.png
 1179502001	Remeras	Nene	GAP · Remera Estampada Negra (Black)	8.99	4-5|6-7|8|10|12|14-16	62/140/881/cn62140881.png
 1179503001	Remeras	Nene	GAP · Remera Estampada Blanca (Amazing Spiderman White)	11.99	4-5|6-7|8|10|12|14-16	62/140/893/cn62140893.png
 1179504001	Remeras	Nene	GAP · Remera Estampada Beige (Cobblestone Beige)	9.97	4-5|6-7|8|10|12|14-16	62/143/953/cn62143953.png
@@ -818,14 +746,12 @@ code	cat	gen	nombre	usd	talles	img
 1179518001	Remeras	Nena	GAP · Remera Logo Azul (Disney Ski Blue)	9.99	12M|18M|24M|2T|3T|4T|5T	63/286/795/cn63286795.png
 1179518011	Remeras	Nena	GAP · Remera Logo Roja	7.49	12M|18M|24M|2T|3T|4T|5T	63/247/756/cn63247756.png
 1179520001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul (Disney Ski Blue)	13.99	12M|18M|24M|2T|3T|4T|5T	63/298/666/cn63298666.png
-1179520011	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo (modelo 7)	13.99	12M|18M|24M|2T|3T|4T|5T	63/373/857/cn63373857.png
+1179520011	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo (modelo 6)	13.99	12M|18M|24M|2T|3T|4T|5T	63/373/857/cn63373857.png
 1179522001	Pantalones	Nene	GAP · Pantalón Jogging Marrón (Mojave Brown)	11.99	12M|18M|24M|2T|3T|4T|5T	62/896/869/cn62896869.png
 1179522011	Pantalones	Nene	GAP · Pantalón Jogging Azul Marino	11.99	12M|18M|24M|2T|3T|4T|5T	62/892/913/cn62892913.png
-1179536001	Buzos	Nena	GAP · Buzo Logo Osito Brannan Gris	8.00	12M|18M|24M|2T|3T|4T|5T	62/771/930/cn62771930.png
-1179538001	Buzos	Nena	GAP · Buzo Logo Crudo (Ivory Cream Frost)	17.99	4-5|6-7|8|10|12|14-16	63/444/279/cn63444279.png
+1179538001	Buzos	Nena	GAP · Buzo Logo Crudo	17.99	4-5|6-7|8|10|12|14-16	63/444/279/cn63444279.png
 1179538011	Buzos	Nena	GAP · Buzo Logo Azul Marino (New Navy Blue)	26.99	4-5|6-7|8|10|12|14-16	64/191/955/cn64191955.png
 1179539001	Pantalones	Nena	GAP · Jean Estampado Mariposas	23.99	4-5|6-7|8|10|12|14-16	62/806/588/cn62806588.png
-1179558001	Remeras	Nene	GAP · Remera Estampada Blanca (Sports White)	5.97	12M|24M	62/409/598/cn62409598.png
 1179670001	Pantalones	Nena	GAP · Pantalón Jogging Logo Chino Minnie	10.49	12M|18M|24M|2T|3T|4T|5T	62/772/115/cn62772115.png
 1179670011	Pantalones	Nena	GAP · Pantalón Jogging Logo Rojo Corazones	10.49	12M|18M|24M|2T|3T|4T|5T	62/772/088/cn62772088.png
 1179671001	Remeras	Nena	GAP · Remera Logo Chino Minnie	12.49	12M|18M|24M|2T|3T|4T|5T	62/772/125/cn62772125.png
@@ -840,10 +766,8 @@ code	cat	gen	nombre	usd	talles	img
 1179709011	Vestidos	Nena	GAP · Pollera Azul Marino	19.99	4-5|6-7|8|10|12	62/790/227/cn62790227.png
 1179709021	Vestidos	Nena	GAP · Pollera Rosa Escocesa	19.99	4-5|6-7|8|10|12|14-16	62/790/161/cn62790161.png
 1179719001	Pantalones	Nena	GAP · Jean Ositos	35.99	4-5|6-7|8|10|12|14-16	63/608/617/cn63608617.png
-1180075001	Buzos	Nena	GAP · Buzo Logo Azul (Blue Mickey Ski)	13.49	4-5|6-7|8|10|12|14-16	63/444/442/cn63444442.png
+1180075001	Buzos	Nena	GAP · Buzo Logo Azul	13.49	4-5|6-7|8|10|12|14-16	63/444/442/cn63444442.png
 1180075011	Buzos	Nena	GAP · Buzo Logo Rojo	13.49	4-5|6-7|8|10|12|14-16	63/462/077/cn63462077.png
-1180375011	Pantalones	Nena	GAP · Jean Cerezas	23.99	4-5|6-7|8|10|12|14-16	63/608/549/cn63608549.png
-1180375021	Pantalones	Nena	GAP · Jean Floral	23.99	8|10|12|14-16	62/484/023/cn62484023.png
 1180431001	Remeras	Nena	GAP · Remera Logo Azul (Blue Mickey Ski)	13.99	4-5|6-7|8|10|12|14-16	63/421/688/cn63421688.png
 1180431011	Remeras	Nena	GAP · Remera Logo Roja (Red Minnie Santa)	13.99	4-5|6-7|8|10|12|14-16	63/421/696/cn63421696.png
 1180969001	Remeras	Nene	GAP · Remera Estampada Rosa Roja	17.99	6-7|8|10	62/525/006/cn62525006.png
@@ -852,7 +776,7 @@ code	cat	gen	nombre	usd	talles	img
 1180973001	Remeras	Nene	GAP · Remera Estampada Negra (modelo 14)	8.99	4-5|6-7|8|10|12|14-16	62/771/629/cn62771629.png
 1180974001	Remeras	Nene	GAP · Remera Estampada Verde (Tropic Green)	17.99	6-7|8|10|12|14-16	62/879/660/cn62879660.png
 1180975001	Remeras	Nene	GAP · Remera Estampada Negra (modelo 15)	8.99	4-5|6-7|8|10|12|14-16	62/771/630/cn62771630.png
-1181300001	Remeras	Nene	GAP · Remera Estampada Azul (modelo 18)	5.99	4-5|6-7|8|10|12|14-16	62/409/651/cn62409651.png
+1181300001	Remeras	Nene	GAP · Remera Estampada Azul (modelo 17)	5.99	4-5|6-7|8|10|12|14-16	62/409/651/cn62409651.png
 1181803001	Vestidos	Nena	GAP · Pollera de Corderoy Marrón	29.99	4-5|6-7|8|10|12	63/313/900/cn63313900.png
 1182060001	Remeras	Nene	GAP · Remera Logo Osito Brannan Negra (Black)	5.99	4-5|6-7|8|10|12|14-16	62/657/286/cn62657286.png
 1182060011	Remeras	Nene	GAP · Remera Logo Osito Brannan Azul (Bainbridge Blue)	5.99	4-5|6-7|8|10|12|14-16	62/675/780/cn62675780.png
@@ -860,7 +784,7 @@ code	cat	gen	nombre	usd	talles	img
 1182060031	Remeras	Nene	GAP · Remera Logo Osito Brannan Gris	5.99	4-5|6-7|8|10|12|14-16	62/657/297/cn62657297.png
 1182141001	Buzos	Nene	GAP · Buzo Crudo Camiones (Light Cream Trucks)	14.99	12M|18M|24M|2T|3T|4T|5T	62/967/607/cn62967607.png
 1182220001	Remeras	Nena	GAP · Remera Estampada Violeta Lavanda (modelo 3)	8.97	10|12|14-16	63/100/079/cn63100079.png
-1182251021	Remeras	Nene	GAP · Remera Estampada Verde (Deep Hunter Green)	8.99	6-7|8|10|12|14-16	62/657/326/cn62657326.png
+1182251021	Remeras	Nene	GAP · Remera Estampada Verde (Deep Hunter Green)	8.99	8|10|12|14-16	62/657/326/cn62657326.png
 1182251041	Remeras	Nene	GAP · Remera Estampada Roja Autos (Red Cars)	5.99	4-5|6-7|8|10|12|14-16	63/499/898/cn63499898.png
 1182251051	Remeras	Nene	GAP · Remera Estampada Basketball	5.99	4-5|6-7|8|10|12|14-16	63/138/778/cn63138778.png
 1182251061	Remeras	Nene	GAP · Remera Estampada Blanca (White Pizza)	5.99	4-5|6-7|8|10|12|14-16	63/499/906/cn63499906.png
@@ -873,32 +797,28 @@ code	cat	gen	nombre	usd	talles	img
 1182580011	Buzos	Nena	GAP · Buzo Logo Azul Marino (Navy Brooklyn Nyc)	15.99	4-5|6-7|8|10|12|14-16	63/444/546/cn63444546.png
 1182582001	Remeras	Nena	GAP · Remera Estampada Azul Marino (Navy Blue Brooklyn)	11.99	4-5|6-7|8|10|12|14-16	64/176/228/cn64176228.png
 1182582011	Remeras	Nena	GAP · Remera Estampada Blanca (White Brooklyn Logo)	11.99	4-5|6-7|8|10|12|14-16	63/462/211/cn63462211.png
-1182664001	Pijamas	Nena	GAP · Pijama Escocés Rojo Escocés (Disney Plaid Red)	17.49	6-7|8|10|12|14-16	63/463/111/cn63463111.png
 1182670001	Pijamas	Nena	GAP · Pijama Estampado Rosa (Nutcracker Pink)	14.99	12M|18M|24M|2T|3T|4T|5T	64/051/073/cn64051073.png
-1182671001	Pijamas	Nena	GAP · Pijama Estampado Rojo Escocés	17.49	2T|3T|4T|5T	63/449/293/cn63449293.png
+1182671001	Pijamas	Nena	GAP · Pijama Estampado Rojo Escocés	17.49	4T|5T	63/449/293/cn63449293.png
 1182672001	Pijamas	Nena	GAP · Pijama Estampado Azul Marino (Nutcracker Navy Blue)	11.99	12M|18M|24M|2T|3T|4T|5T	63/490/006/cn63490006.png
-1182674001	Pijamas	Nena	GAP · Pijama Estampado Navideño Crudo	14.99	3T|4T|5T	63/463/133/cn63463133.png
+1182674001	Pijamas	Nena	GAP · Pijama Estampado Navideño Crudo	14.99	4T|5T	63/463/133/cn63463133.png
 1182678001	Pijamas	Nena	GAP · Pijama Estampado Rosa (Love Letter Pink)	14.99	12M|18M|24M|2T|3T|4T|5T	63/463/069/cn63463069.png
 1182680001	Pijamas	Nena	GAP · Pijama Holiday Trellis	14.99	3T|4T|5T	63/463/114/cn63463114.png
 1182685001	Pijamas	Nena	GAP · Pijama Estampado Navideño Deep Hunter Dogs	11.99	12M|18M|24M|2T|3T|4T|5T	63/449/413/cn63449413.png
-1182686001	Pijamas	Nena	GAP · Pijama Estampado Rosa Cerezas	14.99	12M|24M|2T|3T|4T|5T	63/490/019/cn63490019.png
-1182688001	Pijamas	Nena	GAP · Pijama Estampado Navideño Multicolor	14.99	12M|2T|3T|4T|5T	63/449/289/cn63449289.png
+1182686001	Pijamas	Nena	GAP · Pijama Estampado Rosa Cerezas	14.99	12M|3T|4T|5T	63/490/019/cn63490019.png
+1182688001	Pijamas	Nena	GAP · Pijama Estampado Navideño Multicolor	14.99	3T|4T|5T	63/449/289/cn63449289.png
 1182689001	Pijamas	Nena	GAP · Pijama Negro Escocés	14.99	3T|4T|5T	63/449/375/cn63449375.png
 1183286001	Remeras	Nena	GAP · Remera Estampada Beige Ositos Corazones	11.99	4-5|6-7|8|10|12|14-16	63/873/386/cn63873386.png
 1183286011	Remeras	Nena	GAP · Remera Estampada Amarilla (Yellow Smiley Flowers)	11.99	4-5|6-7|8|10|12|14-16	63/873/385/cn63873385.png
 1183286021	Remeras	Nena	GAP · Remera Estampada Rosa (Pink Frosting Bow)	11.99	4-5|6-7|8|10|12|14-16	63/587/424/cn63587424.png
 1183286031	Remeras	Nena	GAP · Remera Estampada Corazones Turquesa	11.99	4-5|6-7|8|10|12|14-16	63/873/374/cn63873374.png
 1183286041	Remeras	Nena	GAP · Remera Estampada Gris (Iron Gray Bows)	11.99	6-7|8|10|12|14-16	63/587/416/cn63587416.png
-1184051001	Pijamas	Nena	GAP · Pijama Estampado Rojo	17.49	12M|24M|2T|3T|4T|5T	63/490/083/cn63490083.png
 1184066001	Pijamas	Nena	GAP · Pijama Estampado Navideño Winter Dogs	14.99	4T|5T	63/667/706/cn63667706.png
 1184068001	Pijamas	Nena	GAP · Pijama Estampado Navideño Crudo (New Off White)	14.99	12M|18M|24M|2T|3T|4T|5T	63/490/030/cn63490030.png
 1184070001	Pijamas	Nena	GAP · Pijama Azul Turquesa	13.99	12M|18M|24M|2T|3T|4T|5T	63/450/286/cn63450286.png
 1184544001	Buzos	Nena	GAP · Sweater Rosa (Pink Santa)	19.99	12M|24M|2T|3T|4T|5T	63/488/063/cn63488063.png
 1184544011	Buzos	Nena	GAP · Sweater Rayado Multicolor	19.99	12M|18M|24M|2T|3T|4T|5T	63/515/694/cn63515694.png
 1184544021	Buzos	Nena	GAP · Sweater Rojo	19.99	12M|18M|24M|2T|3T|4T|5T	64/051/150/cn64051150.png
-1184544051	Buzos	Nena	GAP · Sweater Rosa Cerezas	11.99	12M|18M|24M|2T|3T|4T|5T	64/291/515/cn64291515.png
-1184548001	Remeras	Nena	GAP · Remera Morley Estampada Azul	9.99	12M|18M|24M|2T|3T|4T|5T	63/571/861/cn63571861.png
-1184548021	Remeras	Nena	GAP · Remera Morley Estampada Rosa	9.99	12M|18M|24M|2T|3T|4T|5T	63/571/862/cn63571862.png
+1184544051	Buzos	Nena	GAP · Sweater Rosa Cerezas	11.99	12M|18M|24M|2T|3T|4T|5T	64/325/045/cn64325045.png
 1184552001	Buzos	Nena	GAP · Campera Buzo con Cierre Logo Cheetah	19.99	12M|18M|24M|2T|3T|4T|5T	63/908/547/cn63908547.png
 1184552011	Buzos	Nena	GAP · Campera Buzo con Cierre Logo Rosa Corazones	19.99	12M|18M|24M|2T|3T|4T|5T	63/890/813/cn63890813.png
 1184552021	Buzos	Nena	GAP · Campera Buzo con Cierre Logo Rosa	15.99	12M|18M|24M|2T|3T|4T|5T	64/050/918/cn64050918.png
@@ -919,16 +839,12 @@ code	cat	gen	nombre	usd	talles	img
 1184562001	Remeras	Nena	GAP · Remera Estampada Negra (Grinch Holiday Black)	14.99	12M|18M|24M|2T|3T|4T|5T	63/908/607/cn63908607.png
 1184562011	Remeras	Nena	GAP · Remera Estampada Roja (Red Snoopy Valentines Day)	11.99	12M|18M|24M|2T|3T|4T|5T	64/034/800/cn64034800.png
 1184562021	Remeras	Nena	GAP · Remera Estampada Rosa (Hello Kitty Pink)	11.99	12M|18M|24M|2T|3T|4T|5T	64/140/391/cn64140391.png
-1184563011	Pantalones	Nena	GAP · Calza Morley Estampada Azul	9.99	12M|18M|24M|2T|3T|4T|5T	63/705/281/cn63705281.png
-1184563021	Pantalones	Nena	GAP · Calza Morley Estampada Rosa (Pink Trellis)	7.99	12M|18M|24M|2T|3T|4T|5T	63/681/300/cn63681300.png
-1184563031	Pantalones	Nena	GAP · Calza Morley Estampada Tiny Dancer	9.99	12M|18M|24M|2T|3T|4T|5T	63/705/273/cn63705273.png
 1184574001	Remeras	Nena	GAP · Remera Estampada Azul (Elsa Blue)	14.99	12M|18M|24M|2T|3T|4T|5T	63/681/352/cn63681352.png
 1184575011	Pantalones	Nena	GAP · Pantalón Jogging Logo Corazones	8.99	12M|18M|24M|2T|3T|4T|5T	63/587/247/cn63587247.png
 1184575041	Pantalones	Nena	GAP · Pantalón Jogging Logo Rosa (Pink Bow)	13.99	12M|18M|24M|2T|3T|4T|5T	64/050/929/cn64050929.png
 1184576001	Remeras	Nena	GAP · Remera Estampada Candycane	7.49	12M|18M|24M|2T|3T|4T|5T	63/807/080/cn63807080.png
 1184576021	Remeras	Nena	GAP · Remera Estampada Cerezas (Cats Cherry Blossom)	7.49	12M|18M|24M|2T|3T|4T|5T	63/962/598/cn63962598.png
 1184587001	Shorts	Nena	GAP · Short Logo Rojo (Disney Red Holiday)	8.99	12M|18M|24M|2T|3T|4T|5T	63/714/796/cn63714796.png
-1184589011	Remeras	Nena	GAP · Remera Morley Tiny Dancer	9.99	12M|18M|24M|2T|3T|4T|5T	63/573/914/cn63573914.png
 1184592001	Buzos	Nena	GAP · Buzo Canguro Logo Corazones	10.49	12M|18M|24M|2T|3T|4T|5T	63/573/889/cn63573889.png
 1184592021	Buzos	Nena	GAP · Buzo Canguro Logo Amarillo Lila	17.49	12M|18M|24M|2T|3T|4T|5T	64/092/191/cn64092191.png
 1184592031	Buzos	Nena	GAP · Buzo Canguro Logo Rosa Violeta	17.49	12M|18M|24M|2T|3T|4T|5T	64/092/196/cn64092196.png
@@ -942,7 +858,7 @@ code	cat	gen	nombre	usd	talles	img
 1184716021	Buzos	Nena	GAP · Buzo Violeta (Snowflake Purple Logo)	11.99	4-5|6-7|8|10|12|14-16	63/614/388/cn63614388.png
 1184716031	Buzos	Nena	GAP · Buzo Bordó Ositos	11.99	4-5|6-7|8|10|12|14-16	63/587/353/cn63587353.png
 1184716041	Buzos	Nena	GAP · Buzo Rosa (Pink Logo Candy Cane)	11.99	4-5|6-7|8|10|12|14-16	63/614/389/cn63614389.png
-1184763001	Buzos	Nene	GAP · Buzo Estampado Azul Marino Dinosaurios	14.99	12M|24M|2T|3T|4T|5T	63/705/556/cn63705556.png
+1184763001	Buzos	Nene	GAP · Buzo Estampado Azul Marino Dinosaurios	14.99	12M|24M|3T	63/705/556/cn63705556.png
 1184763011	Buzos	Nene	GAP · Buzo Estampado Ositos	9.99	12M|18M|24M|2T|3T|4T|5T	64/291/537/cn64291537.png
 1184767001	Remeras	Nene	GAP · Remera Estampada Azul (Elf Blue)	5.99	12M|18M|24M|2T|3T|4T|5T	63/705/598/cn63705598.png
 1184767021	Remeras	Nene	GAP · Remera Estampada Marrón	5.99	12M|18M|24M|2T|3T|4T|5T	63/705/590/cn63705590.png
@@ -951,29 +867,23 @@ code	cat	gen	nombre	usd	talles	img
 1184768011	Remeras	Nene	GAP · Remera Estampada Azul (Bainbridge Blue)	8.99	12M|18M|24M|2T|3T|4T|5T	63/873/149/cn63873149.png
 1184768021	Remeras	Nene	GAP · Remera Estampada Azul (Sail Blue)	5.99	12M|18M|24M|2T|3T|4T|5T	64/061/801/cn64061801.png
 1184769011	Remeras	Nene	GAP · Remera Estampada Verde (Green Feliz Navidad)	4.49	12M|18M|24M|2T|3T|4T|5T	63/714/688/cn63714688.png
-1184771011	Buzos	Nena	GAP · Buzo Logo Navideño Rosa	9.99	12M|18M|24M|2T|3T|4T|5T	64/291/677/cn64291677.png
-1184771021	Buzos	Nena	GAP · Buzo Logo Navideño Azul	14.99	12M|18M|24M|2T|3T|4T|5T	64/291/559/cn64291559.png
-1184771031	Buzos	Nena	GAP · Buzo Logo Navideño Rojo	14.99	12M|18M|24M|2T|3T|4T|5T	64/284/283/cn64284283.png
-1184771041	Buzos	Nena	GAP · Buzo Logo Navideño Blanco	14.99	12M|18M|24M|2T|3T|4T|5T	64/202/420/cn64202420.png
-1184776001	Remeras	Nene	GAP · Remera Estampada Azul (modelo 23)	8.99	12M|18M|24M|2T|3T|4T|5T	63/873/173/cn63873173.png
+1184776001	Remeras	Nene	GAP · Remera Estampada Azul (modelo 22)	8.99	12M|18M|24M|2T|3T|4T|5T	63/873/173/cn63873173.png
 1184776011	Remeras	Nene	GAP · Remera Estampada Azul Marino (modelo 13)	5.99	12M|18M|24M|2T|3T|4T|5T	63/873/174/cn63873174.png
-1184776021	Remeras	Nene	GAP · Remera Estampada Azul (modelo 24)	5.99	12M|18M|24M|2T|3T|4T|5T	64/061/815/cn64061815.png
+1184776021	Remeras	Nene	GAP · Remera Estampada Azul (modelo 23)	5.99	12M|18M|24M|2T|3T|4T|5T	64/061/815/cn64061815.png
 1184777011	Buzos	Nene	GAP · Buzo Estampado Azul	14.99	12M|18M|24M|2T|3T|4T|5T	63/751/367/cn63751367.png
-1184782001	Buzos	Nena	GAP · Campera Buzo con Cierre Osito Brannan Polar Rosa	9.99	12M|18M|24M|2T|3T|4T|5T	63/807/746/cn63807746.png
 1184809001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Marino Multicolor	13.99	12M|18M|24M|2T|3T|4T|5T	64/022/291/cn64022291.png
 1184814001	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul (Sargasus Blue Lightning Mcqueen)	20.99	12M|18M|24M|2T|3T|4T|5T	64/291/594/cn64291594.png
 1185206001	Shorts	Nene	GAP · Short Logo Azul (Disney Ski Blue)	8.99	12M|18M|24M|2T|3T|4T|5T	63/247/880/cn63247880.png
-1185206011	Shorts	Nene	GAP · Short Logo Rojo (modelo 5)	8.99	12M|18M|24M|2T|3T|4T|5T	63/247/890/cn63247890.png
-1185230001	Remeras	Nene	GAP · Remera Estampada Azul (modelo 25)	11.99	12M|18M|24M|2T|3T|4T|5T	64/182/449/cn64182449.png
+1185206011	Shorts	Nene	GAP · Short Logo Rojo (modelo 4)	8.99	12M|18M|24M|2T|3T|4T|5T	63/247/890/cn63247890.png
+1185230001	Remeras	Nene	GAP · Remera Estampada Azul (modelo 24)	11.99	12M|18M|24M|2T|3T|4T|5T	64/182/449/cn64182449.png
 1185233001	Remeras	Nene	GAP · Remera Estampada Navideña Verde	11.99	12M|18M|24M|2T|3T|4T|5T	63/908/513/cn63908513.png
 1185237001	Remeras	Nene	GAP · Remera Logo Azul (Sail Blue)	17.99	12M|18M|24M|2T|3T|4T|5T	63/824/163/cn63824163.png
 1185238001	Remeras	Nene	GAP · Remera Estampada Gris (Trek Gray Spidey)	11.99	12M|18M|24M|2T|3T|4T|5T	64/182/454/cn64182454.png
-1185245001	Remeras	Nene	GAP · Remera Logo Verde	17.99	12M|18M|24M|2T|3T|4T|5T	63/824/063/cn63824063.png
+1185245001	Remeras	Nene	GAP · Remera Logo Verde	17.99	12M|18M|24M|3T|4T|5T	63/824/063/cn63824063.png
 1185319001	Buzos	Nene	GAP · Buzo Canguro Logo Osito Brannan Rojo	17.99	4-5|6-7|8|10|12|14-16	63/874/100/cn63874100.png
-1185530001	Pijamas	Nena	GAP · Pijama Escocés Cuadrillé	13.99	4-5|6-7|8|10|12|14-16	63/681/495/cn63681495.png
 1185539001	Pijamas	Nena	GAP · Pijama Bordó	13.99	12M|18M|24M|2T|3T|4T|5T	64/254/157/cn64254157.png
-1185547001	Pijamas	Nena	GAP · Pijama Estampado Azul Cuadrillé	17.49	18M|24M|2T|3T|4T|5T	63/450/307/cn63450307.png
-1185551001	Pijamas	Nena	GAP · Pijama Estampado Navideño Azul Marino	17.49	12M|18M|24M|2T|3T	63/450/230/cn63450230.png
+1185547001	Pijamas	Nena	GAP · Pijama Estampado Azul Cuadrillé	17.49	2T|3T|4T|5T	63/450/307/cn63450307.png
+1185551001	Pijamas	Nena	GAP · Pijama Estampado Navideño Azul Marino	17.49	12M|24M|2T|3T	63/450/230/cn63450230.png
 1185554001	Pijamas	Nena	GAP · Pijama Estampado Rosa (modelo 5)	11.99	12M|18M|24M|2T|3T|4T|5T	64/254/267/cn64254267.png
 1185556001	Pijamas	Nena	GAP · Pijama Crudo (New Off White)	17.49	12M|18M|24M|2T|3T|4T|5T	64/254/255/cn64254255.png
 1185558001	Pijamas	Nena	GAP · Pijama Rosa	17.49	12M|18M|24M|2T|3T|4T|5T	64/254/264/cn64254264.png
@@ -984,9 +894,7 @@ code	cat	gen	nombre	usd	talles	img
 1185823001	Buzos	Nena	GAP · Buzo Logo Navideño Grinch Eyes	17.99	4-5|6-7|8|10|12|14-16	64/195/560/cn64195560.png
 1185827001	Buzos	Nena	GAP · Buzo Logo Blanco	17.99	4-5|6-7|8|10|12|14-16	64/195/573/cn64195573.png
 1185835001	Buzos	Nene	GAP · Buzo Canguro Logo Escocés	17.99	4-5|6-7|8|10|12|14-16	63/681/511/cn63681511.png
-1185838001	Pantalones	Nene	GAP · Pantalón Jogging Logo Estampado Azul	19.99	4-5|6-7|8|10|12|14-16	63/751/856/cn63751856.png
 1185850001	Buzos	Nene	GAP · Buzo Canguro Logo Estampado Azul	19.99	4-5|6-7|8|10|12|14-16	64/284/254/cn64284254.png
-1187013001	Buzos	Nena	GAP · Buzo Logo Brooklyn Crudo	11.99	3T|4T|5T	63/313/904/cn63313904.png
 1187016001	Buzos	Nena	GAP · Buzo Escocés	19.99	6-7|8|10|12|14-16	64/202/396/cn64202396.png
 1187016011	Buzos	Nena	GAP · Buzo Escocés Multicolor	19.99	4-5|6-7|8|10|12|14-16	63/574/026/cn63574026.png
 1187016021	Buzos	Nena	GAP · Buzo Negro (Black Night Holiday)	15.99	4-5|6-7|8|10|12|14-16	63/572/156/cn63572156.png
@@ -998,7 +906,7 @@ code	cat	gen	nombre	usd	talles	img
 1187443001	Remeras	Nene	GAP · Remera Estampada Brooklyn Azul Marino	5.99	12M|18M|24M|2T|3T|4T|5T	63/286/808/cn63286808.png
 1187812001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Crudo Leopardo Corazones	11.99	18M|24M|2T|3T|4T|5T	63/501/316/cn63501316.png
 1187812011	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Rosa Cerezas	11.99	12M|18M|24M|2T|3T|4T|5T	63/501/315/cn63501315.png
-1187816001	Remeras	Nene	GAP · Remera Logo Azul (modelo 9)	11.99	4-5|6-7|8|10|12|14-16	63/444/608/cn63444608.png
+1187816001	Remeras	Nene	GAP · Remera Logo Azul (modelo 8)	11.99	4-5|6-7|8|10|12|14-16	63/444/608/cn63444608.png
 1187816011	Remeras	Nene	GAP · Remera Logo Roja (Disney Modern Red)	11.99	4-5|6-7|8|10|12|14-16	63/291/017/cn63291017.png
 1188428001	Remeras	Nene	GAP · Remera Estampada Basketball (Basketball)	8.99	4-5|6-7|8|10|12|14-16	63/177/957/cn63177957.png
 1188428011	Remeras	Nene	GAP · Remera Estampada Gris Tiburones	8.99	4-5|6-7|8|10|12|14-16	63/500/024/cn63500024.png
@@ -1023,8 +931,6 @@ code	cat	gen	nombre	usd	talles	img
 1189240021	Remeras	Nena	GAP · Remera Estampada Grinch Era	13.99	4-5|6-7|8|10|12|14-16	64/195/153/cn64195153.png
 1189241001	Remeras	Nena	GAP · Remera Estampada Azul (Blue Snoopy Holiday)	13.99	4-5|6-7|8|10|12|14-16	64/195/544/cn64195544.png
 1189243001	Remeras	Nena	GAP · Remera Estampada Azul Marino (Navy Stitch Besties)	13.99	4-5|6-7|8|10|12|14-16	64/195/208/cn64195208.png
-1190032001	Shorts	Nene	GAP · Short Logo Azul (Blue Stone)	17.99	4-5|6-7|8|10|12|14-16	64/140/829/cn64140829.png
-1190032011	Shorts	Nene	GAP · Short Logo Amarillo	17.99	4-5|6-7|8|10|12|14-16	63/909/058/cn63909058.png
 1193961001	Remeras	Nene	GAP · Remera Logo Navideña Azul	4.49	12M|18M|24M|2T|3T|4T|5T	63/808/542/cn63808542.png
 1194065001	Remeras	Nena	GAP · Remera Estampada Rosa Ositos (Girl Pink Bear)	7.49	18M|24M|2T|3T|4T|5T	63/931/067/cn63931067.png
 1196029001	Remeras	Nene	GAP · Remera Logo NY Azul	5.99	12M|18M|24M|2T|3T|4T|5T	63/374/447/cn63374447.png
