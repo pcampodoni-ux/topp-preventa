@@ -131,3 +131,12 @@ def hm_vestidos():
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
     w.writeheader(); w.writerows(rows)
 hm_vestidos()
+
+# H&M "2-Piece Cotton Set" de USD 9,99 (modelo 1314916, 14/11, Patricio) → $37.900.
+def hm_sets():
+    p = os.path.join(HERE, 'hm_verano.tsv'); rows = leer('hm_verano.tsv')
+    for r in rows:
+        if r['code'].startswith('1314916') and abs(float(r['usd']) - 9.99) < 0.01: r['fijo'] = '37900'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
+    w.writeheader(); w.writerows(rows)
+hm_sets()
