@@ -130,6 +130,17 @@ def hm_vestidos():
         elif u < 9: r['fijo'] = '35900'
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
     w.writeheader(); w.writerows(rows)
+# H&M link del 14/11 (Patricio: "subí todo lo que está en este link", búsqueda "Cotton T-Shirt with Printed baby kids"):
+# todo lo de verano (sin manga larga) de hasta USD 17 a precio normal (sin socio), con stock verificado ese día, sin tope por grupo.
+def hm_link():
+    try: link = set(json.load(open(os.path.join(HERE, 'hm_link_14nov.json'))))
+    except Exception: return
+    p = os.path.join(HERE, 'hm_verano.tsv'); rows = leer('hm_verano.tsv'); ya = {r['code'] for r in rows}
+    extra = [r for r in leer('hm.tsv') if r['code'] in link and r['code'] not in ya and float(r['usd']) <= MAX and not FUERA.search(r['nombre'])]
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
+    w.writeheader(); w.writerows(rows + extra)
+    print('H&M link 14/11: se suman', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
+hm_link()
 hm_vestidos()
 
 # H&M "2-Piece Cotton Set" de USD 9,99 (modelo 1314916, 14/11, Patricio) → $37.900.
