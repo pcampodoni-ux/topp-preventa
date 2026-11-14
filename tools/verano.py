@@ -72,6 +72,14 @@ def pijamas(n_inv=10):
     sel = list(ver)
     for xs in g.values():
         xs.sort(key=lambda r: (float(r['usd']), -len(r['talles'].split('|')))); sel += xs[:n_inv]
+    # Precios 14/11 (Patricio, frente a la competencia; flete por peso): bebé hasta 9M $29.900,
+    # bebé 12–24M $32.900, toddler 2T–5T de USD 6 a 9,99 $38.900. Niños 4–14 y USD 10+ quedan por fórmula/tramo.
+    PRE9 = {'PRE', 'NB', '3M', '6M', '9M'}
+    for r in sel:
+        t = set(r['talles'].split('|')); u = float(r['usd'])
+        if t <= PRE9: r['fijo'] = '29900'
+        elif edad(r) == 'Bebés': r['fijo'] = '32900'
+        elif edad(r) == 'Niños' and 6 <= u < 10: r['fijo'] = '38900'
     seen = collections.Counter()
     for r in sorted(sel, key=lambda r: float(r['usd'])):
         b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
