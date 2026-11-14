@@ -102,3 +102,19 @@ for r in gap:
     r['usd_lista'] = r['usd']; r['usd'] = f"{float(r['usd']) * 0.4:.2f}"; r['fijo'] = str(precio_gap(float(r['usd'])))
 curar(gap, NG, 'gap_verano.tsv')
 curar(leer(os.environ.get('HM_TSV', 'hm.tsv')), NH, 'hm_verano.tsv', por_modelo=3)
+
+# 14/11 (Patricio): todos los vestidos de H&M de menos de USD 8 (verificados hoy) a $29.900.
+def vestidos_hm():
+    p = os.path.join(HERE, 'hm_verano.tsv'); base = leer('hm_verano.tsv'); ya = {r['code'] for r in base}
+    extra = [r for r in leer(os.environ.get('HM_TSV', 'hm.tsv')) if r['cat'] == 'Vestidos' and float(r['usd']) < 8 and r['code'] not in ya]
+    rows = base + extra
+    for r in rows:
+        if r['cat'] == 'Vestidos' and float(r['usd']) < 8: r['fijo'] = '29900'
+    seen = collections.Counter()
+    for r in sorted(rows, key=lambda r: float(r['usd'])):
+        b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
+        r['nombre'] = b if seen[b] == 1 else f'{b} (modelo {seen[b]})'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n')
+    w.writeheader(); w.writerows(rows)
+    print('vestidos H&M a $29.900:', sum(1 for r in rows if r.get('fijo') == '29900'), '(nuevos', len(extra), ')')
+vestidos_hm()
