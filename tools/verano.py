@@ -69,4 +69,4 @@ gap = leer('gapfactory_all.tsv')
 for r in gap:
     r['usd_lista'] = r['usd']; r['usd'] = f"{float(r['usd']) * 0.4:.2f}"; r['fijo'] = str(precio_gap(float(r['usd'])))
 curar(gap, NG, 'gap_verano.tsv')
-curar(leer('hm.tsv'), NH, 'hm_verano.tsv', por_modelo=3)
+curar(leer(os.environ.get('HM_TSV', 'hm.tsv')), NH, 'hm_verano.tsv', por_modelo=3)
