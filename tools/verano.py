@@ -118,3 +118,16 @@ def vestidos_hm():
     w.writeheader(); w.writerows(rows)
     print('vestidos H&M a $29.900:', sum(1 for r in rows if r.get('fijo') == '29900'), '(nuevos', len(extra), ')')
 vestidos_hm()
+
+# H&M vestidos (14/11, Patricio): menos de USD 8 → $29.900; de USD 8 a 8,99 → $35.900.
+def hm_vestidos():
+    p = os.path.join(HERE, 'hm_verano.tsv'); rows = leer('hm_verano.tsv')
+    if not rows: return
+    for r in rows:
+        if r['cat'] != 'Vestidos': continue
+        u = float(r['usd'])
+        if u < 8: r['fijo'] = '29900'
+        elif u < 9: r['fijo'] = '35900'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
+    w.writeheader(); w.writerows(rows)
+hm_vestidos()
