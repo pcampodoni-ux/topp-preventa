@@ -214,3 +214,55 @@ def oferta_dia(usd=4.0):
     w.writeheader(); w.writerows(base + extra)
     print('oferta del día USD 4: se suman', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
 oferta_dia()
+
+# Ropa interior (15/11, Patricio: precios "más agresivos"). H&M: packs de 5 de USD 9,99 $34.900, 12,99 $39.900, 14,99 $44.900
+# (precio normal, stock verificado 15/11 en tools/hm_uw_15nov.json). Carter's: USD 9,99 $39.900, 13 $44.900, 14,99–16 $49.900.
+COL_UW = [('dark green', 'Verde Oscuro'), ('navy', 'Azul Marino'), ('dark blue', 'Azul Oscuro'), ('pale blue', 'Celeste'), ('light blue', 'Celeste'),
+          ('turquoise', 'Turquesa'), ('blue', 'Azul'), ('dusty pink', 'Rosa Viejo'), ('light pink', 'Rosa Claro'), ('pink', 'Rosa'), ('lilac', 'Lila'),
+          ('red', 'Rojo'), ('black', 'Negro'), ('white', 'Blanco'), ('gray', 'Gris'), ('green', 'Verde'), ('cream', 'Crudo')]
+MOT_UW = [('heart', 'Corazones'), ('polka', 'Lunares'), ('unicorn', 'Unicornios'), ('dinosaur', 'Dinosaurios'), ('space', 'Espacio')]
+def ropa_interior():
+    def talle_hm(s):
+        s = s.replace('Y+', 'Y'); return s[:-1] + ' años' if s.endswith('Y') else s
+    def edad_t(t):
+        a = float(re.match(r'([\d½]+)', t).group(1).replace('½', '.5')); return 'Bebés' if a < 2 else ('Niños' if a < 6 else 'Grandes')
+    # H&M
+    p = os.path.join(HERE, 'hm_verano.tsv'); base = leer('hm_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for code, t, cat, sw, usd, tal, img in json.load(open(os.path.join(HERE, 'hm_uw_15nov.json'))):
+        if code in ya: continue
+        nena = 'girl' in cat; boxer = 'boxer' in cat
+        tipo = 'Bóxers' if boxer else ('Bombachas' if nena else 'Slips')
+        c = sw.lower(); col = next((es for en, es in COL_UW if en in c), ''); mot = next((es for en, es in MOT_UW if en in c), '')
+        tl = [talle_hm(x) for x in tal.split('|')]
+        extra.append(dict(code=code, cat='Ropa interior', gen='Nena' if nena else 'Nene', nombre=' '.join(x for x in (f'Pack 5 {tipo}', mot, col) if x),
+                          usd=f'{usd:g}', talles='|'.join(tl), img='https://image.hm.com/assets/hm/' + img + '?imwidth=600',
+                          fijo={9.99: '34900', 12.99: '39900', 14.99: '44900'}[usd], marca='hm', grupo='h',
+                          edad='|'.join(sorted({edad_t(x) for x in tl}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
+    seen = collections.Counter()
+    for r in extra:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + extra)
+    # Carter's
+    p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv'); ya = {r['code'] for r in base}; cx = []
+    for r in leer('carters_full_all.tsv'):
+        if r['cat'] != 'Ropa interior' or r['code'] in ya or float(r['usd']) > 16: continue
+        en = EN.get(r['code'], ''); n = re.search(r'(\d+)-Pack', en); n = n.group(1) if n else ''
+        tipo = 'Bóxers' if re.search(r'Boxer', en, re.I) else ('Bombachas' if r['gen'] == 'Nena' or re.search(r'Hipster|Bikini|Boyshort|Girl', en) else 'Slips')
+        resto = re.sub(r'^Ropa Interior ?', '', re.sub(r' \(modelo \d+\)$', '', r['nombre']))
+        r['nombre'] = ' '.join(x for x in ((f'Pack {n} {tipo}' if n else tipo), resto) if x)
+        if tipo == 'Bombachas': r['nombre'] = r['nombre'].replace('Estampada', 'Estampadas')
+        else:
+            for a, b in (('Estampada', 'Estampados'), ('Roja', 'Rojo'), ('Negra', 'Negro'), ('Blanca', 'Blanco'), ('Amarilla', 'Amarillo')):
+                r['nombre'] = re.sub(r'\b' + a + r'\b', b, r['nombre'])
+        u = float(r['usd']); r['fijo'] = '39900' if u < 10 else ('44900' if u < 14 else '49900')
+        cx.append(r)
+    seen = collections.Counter()
+    for r in cx:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + cx)
+    print('ropa interior: H&M', len(extra), "Carter's", len(cx))
+ropa_interior()
