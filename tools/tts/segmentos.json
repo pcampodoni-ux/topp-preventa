@@ -1,0 +1,10 @@
+[
+ {"id":"s0","texto":"¿Querés hacer tu pedido en TOPP? Es muy fácil. Te lo mostramos en cuatro pasos."},
+ {"id":"s1","texto":"Primero, elegí la marca y el producto. Podés filtrar por categoría, edad y talle. Tocá tu talle, y después, Reservar."},
+ {"id":"s1b","texto":"Podés sumar todos los productos que quieras, de cualquier marca."},
+ {"id":"s2","texto":"Abajo ves cuántos productos llevás. Tocá: Ver mi pedido."},
+ {"id":"s3","texto":"Completá tu nombre y apellido, tu número de WhatsApp, y tu ciudad."},
+ {"id":"s4","texto":"Ahí tenés los datos para transferir la seña: diez mil pesos por producto. Tocá: Confirmar por WhatsApp."},
+ {"id":"s5","texto":"Te llega el pedido armado por WhatsApp. Nos mandás el comprobante de la seña, y listo. El saldo lo pagás cuando llega."},
+ {"id":"s6","texto":"La entrega es en veinticinco a treinta días. ¡Te esperamos!"}
+]

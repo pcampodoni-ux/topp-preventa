@@ -1,0 +1,31 @@
+name: Voz para videos (TTS)
+on:
+  workflow_dispatch:
+    inputs:
+      voz:
+        description: Voz de edge-tts
+        default: es-AR-ElenaNeural
+permissions:
+  contents: write
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install edge-tts==6.1.12
+      - name: Generar audios
+        run: |
+          mkdir -p out
+          python3 - <<'PY'
+          import json, subprocess, os
+          voz = os.environ.get('VOZ') or 'es-AR-ElenaNeural'
+          for s in json.load(open('tools/tts/segmentos.json')):
+              subprocess.run(['edge-tts', '--voice', voz, '--rate=+6%', '--text', s['texto'], '--write-media', f"out/{s['id']}.mp3"], check=True)
+          PY
+        env:
+          VOZ: ${{ github.event.inputs.voz }}
+      - name: Subir a la rama tmp-tts
+        run: |
+          git config user.name "tts-bot"; git config user.email "tts-bot@users.noreply.github.com"
+          git checkout --orphan tmp-tts; git rm -rq --cached . ; git add -f out/*.mp3
+          git commit -qm "audios tts"; git push -f origin tmp-tts
