@@ -196,3 +196,20 @@ def pantalones(n=15, tope=10):
         r['usd_lista'] = r['usd']; r['usd'] = f"{float(r['usd']) * 0.4:.2f}"; r['fijo'] = str(precio_gap(float(r['usd'])))
     sumar('gap_verano.tsv', elegir(g))
 pantalones()
+
+# Oferta del día Carter's 15/11 ("Today's Deal: $4 graphic tees & bodysuits"): todo lo de verano a USD 4, sin tope por grupo.
+# Remeras y bodies sueltos a $24.900 (mismo precio fijo que las remeras de hasta USD 4,99).
+def oferta_dia(usd=4.0):
+    p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv'); ya = {r['code'] for r in base}
+    extra = [r for r in leer('carters_full_all.tsv') if r['code'] not in ya and abs(float(r['usd']) - usd) < 0.001
+             and r['cat'] in ('Remeras', 'Bodies') and not FUERA.search(r['nombre']) and not FUERA_EN.search(EN.get(r['code'], ''))]
+    for r in base + extra:
+        if r['cat'] in ('Remeras', 'Bodies') and abs(float(r['usd']) - usd) < 0.001: r['fijo'] = '24900'
+    seen = collections.Counter()
+    for r in sorted(base + extra, key=lambda r: float(r['usd'])):
+        b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
+        r['nombre'] = b if seen[b] == 1 else f'{b} (modelo {seen[b]})'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + extra)
+    print('oferta del día USD 4: se suman', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
+oferta_dia()

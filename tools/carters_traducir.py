@@ -47,17 +47,18 @@ TIPOS = [
     (r'Swim|Rash Guard|Trunks', 'Mallas', 'Malla'),
     (r'Puffer|Jacket|Coat|Vest\b|Parka|Snowsuit|Fleece Zip', 'Camperas', 'Campera'),
     (r'Hoodie', 'Buzos', 'Buzo Canguro'),
+    (r'Fleece.*\b(Pants?|Joggers?|Leggings?)\b', 'Pantalones', 'Pantalón Polar'),   # 15/11: 'Fleece Pants' no es buzo
     (r'Sweatshirt|Pullover|Fleece', 'Buzos', 'Buzo'),
     (r'Sweater|Cardigan', 'Buzos', 'Sweater'),
     (r'Jogger|Sweatpant', 'Pantalones', 'Pantalón Jogging'),
     (r'Legging', 'Pantalones', 'Calza'),
     (r'Bike Short', 'Shorts', 'Calza Corta'),
-    (r'Short', 'Shorts', 'Short'),
+    (r'\bShorts?\b(?![- ]Sleeve)', 'Shorts', 'Short'),   # 15/11: 'Short-Sleeve Tee' es remera, no short
     (r'Jean', 'Pantalones', 'Jean'),
     (r'Pant|Trouser|Chino', 'Pantalones', 'Pantalón'),
     (r'Sock', 'Medias', 'Medias'),
     (r'Underwear|Brief|Panties|Boxer', 'Ropa interior', 'Ropa Interior'),
-    (r'Hat|Beanie|Cap\b|Mitten|Glove|Scarf|Headband|Bow|Bib|Burp|Blanket|Swaddle|Bag|Backpack|Sunglass|Hair', 'Accesorios', 'Accesorio'),
+    (r'^(?!.*(\bTee\b|T-Shirt|\bTop\b)).*(Hat|Beanie|Cap\b|Mitten|Glove|Scarf|Headband|Bow|Bib|Burp|Blanket|Swaddle|Bag|Backpack|Sunglass|Hair)', 'Accesorios', 'Accesorio'),   # 15/11: 'Bow Graphic Tee' es remera
     (r'Polo', 'Remeras', 'Chomba'),
     (r'Tank|Cami', 'Remeras', 'Musculosa'),
     (r'Tee|T-Shirt|Shirt|Top|Henley|Turtleneck|Blouse|Tunic', 'Remeras', 'Remera'),
