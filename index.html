@@ -126,6 +126,9 @@ footer a{color:#fff}
 .ttc{display:none}.ttc.on{display:block}@media(min-width:900px){.tttabs{display:flex!important}.ttwrap:not(.zap) .ttc[data-ttc="calzado"]{display:none!important}.ttwrap.zap{display:block!important}.ttwrap.zap .ttc{display:none!important}.ttwrap.zap .ttc[data-ttc="calzado"]{display:block!important}}
 .ttc .tt td,.ttc .tt th{font-size:12px}
 @media(min-width:900px){.tttabs{display:none}.ttwrap{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;align-items:start}.ttc{display:block}}
+.shr{display:block;margin:8px auto 0;background:none;border:0;color:var(--v);font:inherit;font-size:13px;letter-spacing:1px;cursor:pointer;text-decoration:underline}
+.card.hl{outline:3px solid var(--v);outline-offset:3px;animation:hlp 1.2s ease-in-out 3}
+@keyframes hlp{50%{outline-color:transparent}}
 </style>
 </head>
 <body>
@@ -9902,6 +9905,31 @@ tick(); setInterval(tick,1000);
   document.querySelectorAll('[data-ttb]').forEach(function(x){x.onclick=function(){tab(x.dataset.ttb);};});
   document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-tt]');if(!t)return;
     var c=t.closest('.card');tab(c&&c.dataset.grupo==='z'?'calzado':(c&&c.dataset.marca==='gapfactory'?'gap':'carters'));},true);
+})();
+
+/* ---------- LINK A UN PRODUCTO (15/11): topp.wowcyk.com/?p=CÓDIGO abre la pestaña, limpia filtros y lleva al producto ---------- */
+(function(){
+  var base=location.origin+location.pathname;
+  document.querySelectorAll('.card').forEach(function(c){
+    var b=document.createElement('button');b.type='button';b.className='shr';b.textContent='🔗 Compartir este producto';
+    b.onclick=function(e){
+      e.preventDefault();e.stopPropagation();
+      var u=base+'?p='+c.dataset.code,t=c.dataset.nom+' — '+money(+c.dataset.precio);
+      if(navigator.share){navigator.share({title:'TOPP by WOWCYK',text:t,url:u}).catch(function(){});}
+      else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){toast('Link copiado');},function(){toast(u);});}
+      else toast(u);
+    };
+    var bd=c.querySelector('.bd');if(bd)bd.appendChild(b);
+  });
+  var q=(location.search.match(/[?&]p=([\w-]+)/)||location.hash.match(/^#p=([\w-]+)/)||[])[1];
+  if(!q)return;
+  var c=document.querySelector('.card[data-code="'+q+'"]');if(!c)return;
+  ['cat','gen','talle','edad','marca'].forEach(function(f){var on=document.querySelector('.chip.on[data-f="'+f+'"]');if(on)on.click();});
+  if(F.grupo!==c.dataset.grupo){
+    document.querySelectorAll('.gt').forEach(function(x){x.classList.toggle('on',x.dataset.g===c.dataset.grupo);});
+    F.grupo=c.dataset.grupo;catsTab();render();
+  }
+  setTimeout(function(){window.scrollTo(0,c.getBoundingClientRect().top+window.pageYOffset-70);c.classList.add('hl');},350);
 })();
 </script>
 </body>
