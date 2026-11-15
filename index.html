@@ -9798,13 +9798,15 @@ document.querySelectorAll('.card').forEach(function(c){
   });
   btn.onclick=function(){
     if(!sel||!ABIERTO||CERRADO||new Date()>=CIERRE){cerrarPedido();return;}
-    cart.push({code:c.dataset.code,nom:c.dataset.nom,talle:sel,precio:+c.dataset.precio});
+    cart.push({code:c.dataset.code,nom:c.dataset.nom.replace(/^(GAP|OshKosh|Skip Hop|H&M|Carter's) · /,''),talle:sel,precio:+c.dataset.precio,marca:MARCA_N[c.dataset.marca]||c.dataset.marca||''});
     btn.textContent='Agregado ✓'; btn.classList.add('done');
     setTimeout(function(){btn.textContent='Reservar';btn.classList.remove('done')},1200);
     toast(c.dataset.nom+' · Talle '+sel);
     sync();
   };
 });
+/* 15/11: la marca viaja en el pedido de WhatsApp */
+var MARCA_N={carters:"Carter's",oshkosh:'OshKosh',hm:'H&M',gapfactory:'GAP Factory',skiphop:'Skip Hop'};
 function calc(){
   var ord=cart.map(function(i,k){return {i:i,k:k};})
               .sort(function(a,b){return b.i.precio-a.i.precio;});
@@ -9823,7 +9825,7 @@ function sync(){
   var h='';
   cart.forEach(function(i,k){
     var f=c.off[k];
-    h+='<div class="li"><div>'+i.nom+'<em>Talle '+i.talle+' · '+i.code+' · '+
+    h+='<div class="li"><div>'+(i.marca?'<b>'+i.marca+'</b> · ':'')+i.nom+'<em>Talle '+i.talle+' · '+i.code+' · '+
        (f?'<s>'+money(i.precio)+'</s> '+money(f)+' <span class="dto">2da −25%</span>':money(i.precio))+
        '</em></div><button data-k="'+k+'">Quitar</button></div>';
   });
@@ -9864,9 +9866,12 @@ document.getElementById('wa').onclick=function(){
   m+='*Lugar de residencia:* '+encodeURIComponent(res)+'%0A';
   m+='*WhatsApp:* '+t+'%0A%0A';
   m+='*Pedido:*%0A';
-  cart.forEach(function(i,k){
-    m+=(k+1)+'. *'+encodeURIComponent(i.nom)+'*%0A   '+i.code+' - Talle '+i.talle+' - '+money(i.precio)+'%0A';
+  var ordc=cart.slice().sort(function(x,y){return (x.marca||'').localeCompare(y.marca||'');});
+  ordc.forEach(function(i,k){
+    m+=(k+1)+'. *'+encodeURIComponent((i.marca?i.marca+' - ':'')+i.nom)+'*%0A   '+i.code+' - Talle '+i.talle+' - '+money(i.precio)+'%0A';
   });
+  var pm={};ordc.forEach(function(i){var k=i.marca||'Otra';pm[k]=(pm[k]||0)+1;});
+  m+='%0A*Por marca:* '+encodeURIComponent(Object.keys(pm).map(function(k){return k+' '+pm[k];}).join(' · '))+'%0A';
   m+='%0A*Total del pedido:* '+money(cc.total)+'%0A';
   m+='*Seña a transferir:* '+money(cart.length*SENA)+'%0A';
   m+='(Voy a transferir al alias PATOCAMPSANT)';
