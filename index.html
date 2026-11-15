@@ -134,7 +134,7 @@ footer a{color:#fff}
 
 <section class="hero">
   <div class="wrap">
-    <div class="badge" id="badge">● OFERTAS DEL DÍA — <b>CIERRA HOY 21:30</b></div>
+    <div class="badge" id="badge">● PEDIDO ABIERTO</div>
     <div class="cd" id="cd">
       <div><span id="d">--</span><small>DÍAS</small></div>
       <div><span id="h">--</span><small>HORAS</small></div>
@@ -9038,6 +9038,13 @@ var ABIERTO = true;
 var SENA=10000, WA="5493794235712", CIERRE=new Date("2026-11-15T22:00:00-03:00");
 
 /* ---------- COUNTDOWN ---------- */
+/* Etiqueta de cierre calculada desde CIERRE (15/11: antes decía fijo "CIERRA HOY 21:30") */
+(function(){try{var b=document.getElementById('badge');if(!b)return;
+  var o={timeZone:'America/Argentina/Buenos_Aires'},f=function(d){return d.toLocaleDateString('es-AR',o)};
+  var hoy=new Date(),man=new Date(Date.now()+864e5),h=CIERRE.toLocaleTimeString('es-AR',Object.assign({hour:'2-digit',minute:'2-digit',hour12:false},o));
+  var hh=/:00$/.test(h)?h.slice(0,2)+' HS':h+' HS';
+  var dia=f(CIERRE)===f(hoy)?'HOY':(f(CIERRE)===f(man)?'MAÑANA':CIERRE.toLocaleDateString('es-AR',Object.assign({day:'2-digit',month:'2-digit'},o)));
+  b.innerHTML='● PEDIDO ABIERTO — <b>CIERRA '+dia+' '+hh+'</b>';}catch(e){}})();
 var CERRADO=false;
 function cerrarPedido(){
   if(CERRADO)return; CERRADO=true;
