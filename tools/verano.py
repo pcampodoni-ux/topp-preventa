@@ -166,3 +166,33 @@ def hm_precios():
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
     w.writeheader(); w.writerows(rows)
 hm_precios()
+
+# Pantalones (14/11 noche, Patricio: "los más baratos"): Carter's/OshKosh y GAP Factory hasta USD 10 de costo,
+# sin polar ni frisa, los 15 más baratos por marca y edad.
+SIN_ABRIGO_EN = re.compile(r'Fleece|Sherpa|French Terry|Thermal|Velour|Corduroy|Sweatpant|Plush|Quilted|Lined|Christmas|Halloween|Holiday|Santa', re.I)
+def pantalones(n=15, tope=10):
+    def elegir(rows):
+        ok = [r for r in rows if r['cat'] == 'Pantalones' and float(r['usd']) <= tope and not FUERA.search(r['nombre'])
+              and not SIN_ABRIGO_EN.search(EN.get(r['code'], ''))]
+        g = collections.defaultdict(list)
+        for r in ok: g[(r.get('marca', ''), edad(r))].append(r)
+        out = []
+        for xs in g.values():
+            xs.sort(key=lambda r: (float(r['usd']), -len(r['talles'].split('|')))); out += xs[:n]
+        return out
+    def sumar(salida, extra):
+        base = leer(salida); ya = {r['code'] for r in base}; extra = [r for r in extra if r['code'] not in ya]
+        seen = collections.Counter()
+        for r in sorted(extra, key=lambda r: float(r['usd'])):
+            b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
+            r['nombre'] = b if seen[b] == 1 else f'{b} (modelo {seen[b]})'
+        cols = list(base[0].keys())
+        w = csv.DictWriter(open(os.path.join(HERE, salida), 'w', encoding='utf-8', newline=''), fieldnames=cols, delimiter='\t', lineterminator='\n', extrasaction='ignore')
+        w.writeheader(); w.writerows(base + extra)
+        print('pantalones', salida, len(extra))
+    sumar('carters_verano.tsv', elegir(leer('carters_full_all.tsv')))
+    g = leer('gapfactory_all.tsv')
+    for r in g:
+        r['usd_lista'] = r['usd']; r['usd'] = f"{float(r['usd']) * 0.4:.2f}"; r['fijo'] = str(precio_gap(float(r['usd'])))
+    sumar('gap_verano.tsv', elegir(g))
+pantalones()
