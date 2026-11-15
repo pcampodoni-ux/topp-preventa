@@ -88,7 +88,7 @@ def pijamas(n_inv=10):
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n')
     w.writeheader(); w.writerows(base + sel)
     print('pijamas', len(sel), 'verano', len(ver), 'invierno', len(sel) - len(ver))
-pijamas()
+# pijamas()   # 14/11 21:20: Patricio los saca del pedido extendido (van a cambiar de precio)
 # GAP Factory (13/11): la liquidación tiene un extra 60% que se aplica en el checkout ("Cyber Sale Sneak Peek").
 # El costo real es el precio de lista × 0,4 y el precio de venta se calcula sobre ese costo con ×1,9 (decisión de Patricio).
 sys.path.insert(0, HERE); import precio as P
@@ -151,3 +151,18 @@ def hm_sets():
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
     w.writeheader(); w.writerows(rows)
 hm_sets()
+
+# H&M precios 14/11 noche (Patricio): remeras sueltas USD 6,99–7,99 $29.900; 9,99 $32.900; 12,99 $37.900; 14,99 $44.900;
+# sets de USD 14,99 $49.900; packs de remeras de USD 14,99 $54.900.
+def hm_precios():
+    p = os.path.join(HERE, 'hm_verano.tsv'); rows = leer('hm_verano.tsv')
+    for r in rows:
+        u = round(float(r['usd']), 2); pack = r['nombre'].startswith('Pack')
+        if r['cat'] == 'Remeras' and not pack:
+            v = '29900' if u < 8 else '32900' if u < 10 else '37900' if u < 13 else '44900' if u < 15 else None   # rangos: los USD intermedios siguen al escalón
+            if v: r['fijo'] = v
+        elif r['cat'] == 'Remeras' and pack and u == 14.99: r['fijo'] = '54900'
+        elif r['cat'] == 'Sets 2 Piezas' and u == 14.99: r['fijo'] = '49900'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n')
+    w.writeheader(); w.writerows(rows)
+hm_precios()
