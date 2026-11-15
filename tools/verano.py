@@ -198,11 +198,11 @@ def pantalones(n=15, tope=10):
 pantalones()
 
 # Oferta del día Carter's 15/11 ("Today's Deal: $4 graphic tees & bodysuits"): todo lo de verano a USD 4, sin tope por grupo.
-# Remeras y bodies sueltos a $24.900 (mismo precio fijo que las remeras de hasta USD 4,99).
+# Remeras a $24.900 (sin bodies sueltos: Patricio, 15/11) (mismo precio fijo que las remeras de hasta USD 4,99).
 def oferta_dia(usd=4.0):
     p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv'); ya = {r['code'] for r in base}
     extra = [r for r in leer('carters_full_all.tsv') if r['code'] not in ya and abs(float(r['usd']) - usd) < 0.001
-             and r['cat'] in ('Remeras', 'Bodies') and not FUERA.search(r['nombre']) and not FUERA_EN.search(EN.get(r['code'], ''))]
+             and r['cat'] == 'Remeras' and not FUERA.search(r['nombre']) and not FUERA_EN.search(EN.get(r['code'], ''))]
     for r in base + extra:
         if r['cat'] in ('Remeras', 'Bodies') and abs(float(r['usd']) - usd) < 0.001: r['fijo'] = '24900'
     seen = collections.Counter()
