@@ -205,6 +205,7 @@ def oferta_dia(usd=4.0):
              and r['cat'] == 'Remeras' and not FUERA.search(r['nombre']) and not FUERA_EN.search(EN.get(r['code'], ''))]
     for r in base + extra:
         if r['cat'] in ('Remeras', 'Bodies') and abs(float(r['usd']) - usd) < 0.001: r['fijo'] = '19900'   # 15/11 12:10: Patricio las baja a $19.900
+        if r['cat'] == 'Remeras' and float(r['usd']) <= 4.99: r['fijo'] = '19900'   # 15/11 12:10: todas las remeras Carter's/OshKosh de hasta USD 4,99 a $19.900
     seen = collections.Counter()
     for r in sorted(base + extra, key=lambda r: float(r['usd'])):
         b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
