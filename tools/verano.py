@@ -425,3 +425,56 @@ def hm_gorros():
     w_.writeheader(); w_.writerows(base + extra)
     print('H&M gorros:', len(extra))
 hm_gorros()
+
+# 16/11: liquidación (Sale) de H&M: trajes de baño y gorros de sol que estaban en oferta (USD 1,99–7,49) y no aparecían en las
+# secciones normales. tools/hm_sale_16nov.json = [code, título, categoría, color, w, red, talles con stock, img].
+# Precio: < USD 5 $19.900; < USD 8 $29.900; < USD 10 $32.900; desde USD 10 como el resto de los trajes de baño.
+def hm_sale():
+    try: data = json.load(open(os.path.join(HERE, 'hm_sale_16nov.json')))
+    except Exception: return
+    def talle(s): return 'Único' if s.upper() == 'ONESIZE' else (s[:-1] + ' años' if s.endswith('Y') else s)
+    def edad_t(t):
+        if t.endswith('M'): return 'Bebés'
+        if not re.match(r'[\d½]', t): return 'Grandes'
+        a = float(re.match(r'([\d½]+)', t).group(1).replace('½', '.5')); return 'Bebés' if a < 2 else ('Niños' if a < 6 else 'Grandes')
+    p = os.path.join(HERE, 'hm_verano.tsv'); base = leer('hm_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for code, t, cat, sw, w, red, tal, img in data:
+        if code in ya or not tal: continue
+        u = min(x for x in (w, red) if x)
+        if u > MAX: continue
+        tl = t.lower(); gorro = bool(re.search(r'\bhat\b|\bcap\b|hats\b', tl)); acc = 'poncho' in tl or 'sarong' in tl
+        if not (gorro or acc) and len(tal) < 2: continue
+        if acc:
+            tipo = 'Toallón Poncho de Muselina' if 'poncho' in tl else 'Pareo'; categ = 'Mallas'
+        elif gorro:
+            if 'sun cap' in tl: tipo = 'Gorra con Cubrenuca UPF 50'
+            elif 'bucket' in tl: tipo = 'Piluso'
+            elif '2-pack' in tl: tipo = 'Pack 2 Gorros de Sol'
+            elif 'sun hat' in tl: tipo = 'Gorro de Sol'
+            else: tipo = 'Gorra'
+            categ = 'Accesorios'
+        else:
+            if 'bikini' in tl: tipo = 'Bikini'
+            elif 'shirt' in tl or 'rash' in tl: tipo = 'Remera UV de Agua'
+            elif 'trunks' in tl or 'shorts' in tl: tipo = 'Short de Baño'
+            elif 'briefs' in tl: tipo = 'Pack 2 Bombachas de Baño' if '2-pack' in tl else 'Bombacha de Baño'
+            elif 'set' in tl: tipo = 'Set de Baño UPF 50' if 'upf' in tl else 'Set de Baño'
+            else: tipo = 'Malla Enteriza'
+            if 'upf' in tl and 'UPF' not in tipo: tipo += ' UPF 50'
+            categ = 'Mallas'
+        c = sw.lower(); col = next((es for en, es in COL_UW + [('beige', 'Beige'), ('brown', 'Marrón'), ('khaki', 'Verde Militar'), ('purple', 'Lila'), ('yellow', 'Amarillo'), ('orange', 'Naranja')] if en in c), '')
+        mot = next((es for en, es in MOT_UW + [('floral', 'Floral'), ('stripe', 'Rayas'), ('fish', 'Peces'), ('shark', 'Tiburones'), ('dinosaur', 'Dinosaurios'), ('fruit', 'Frutas'), ('cherr', 'Cerezas')] if en in c), '')
+        if tipo.startswith('Gorra') and col: col = {'Blanco': 'Blanca', 'Rojo': 'Roja', 'Negro': 'Negra'}.get(col, col)
+        tls = [talle(x) for x in tal]
+        fijo = '19900' if u < 5 else ('29900' if u < 8 else ('32900' if u < 10 else ('' if u < 13 else ('47900' if u < 15 else '52900'))))
+        gen = 'Nena' if 'girl' in cat else ('Nene' if 'boy' in cat else 'Unisex')
+        extra.append(dict(code=code, cat=categ, gen=gen, nombre=' '.join(x for x in (tipo, mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img=img,
+                          fijo=fijo, marca='hm', grupo='h', edad='|'.join(sorted({edad_t(x) for x in tls}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
+    seen = collections.Counter(r['nombre'] for r in base)
+    for r in extra:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w_ = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w_.writeheader(); w_.writerows(base + extra)
+    print('H&M liquidación (trajes de baño y gorros):', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
+hm_sale()
