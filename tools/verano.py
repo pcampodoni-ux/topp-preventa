@@ -384,3 +384,44 @@ def gap_gorros():
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
     w.writeheader(); w.writerows(rows)
 gap_gorros()
+
+# 16/11 (Patricio pregunta por los gorros de H&M): gorras y gorros de sol de H&M (categorías Hats de kids y baby), hasta USD 17.
+# Precio fijo: hasta USD 10 $32.900; hasta USD 13 $37.900; hasta USD 15 $42.900. Con 1 talle alcanza (son de talle amplio).
+def hm_gorros():
+    try: data = json.load(open(os.path.join(HERE, 'hm_gorros_16nov.json')))
+    except Exception: return
+    def talle(s): return s[:-1] + ' años' if s.endswith('Y') else s
+    def edad_t(t):
+        if t.endswith('M'): return 'Bebés'
+        a = float(re.match(r'([\d½]+)', t).group(1).replace('½', '.5')); return 'Bebés' if a < 2 else ('Niños' if a < 6 else 'Grandes')
+    p = os.path.join(HERE, 'hm_verano.tsv'); base = leer('hm_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for code, t, cat, sw, w, red, tal, img in data:
+        if code in ya or not tal: continue
+        u = min(x for x in (w, red) if x)
+        tl = t.lower()
+        if 'straw' in tl: tipo = 'Sombrero de Paja'
+        elif 'bucket' in tl: tipo = 'Piluso'
+        elif '2-pack' in tl and 'sun hat' in tl: tipo = 'Pack 2 Gorros de Sol'
+        elif 'sun cap' in tl: tipo = 'Gorra con Cubrenuca UPF 50'
+        elif 'wide-brim' in tl: tipo = 'Sombrero de Sol Ala Ancha'
+        elif 'sun hat' in tl: tipo = 'Gorro de Sol'
+        elif 'trucker' in tl: tipo = 'Gorra Trucker'
+        elif 'water-repellent' in tl: tipo = 'Gorra Deportiva Impermeable'
+        else: tipo = 'Gorra'
+        if 'linen' in tl and tipo in ('Gorro de Sol', 'Piluso'): tipo += ' de Lino'
+        c = sw.lower(); col = next((es for en, es in COL_UW + [('beige', 'Beige'), ('brown', 'Marrón'), ('khaki', 'Verde Militar'), ('taupe', 'Topo'), ('purple', 'Lila'), ('dusty green', 'Verde')] if en in c), '')
+        mot = next((es for en, es in MOT_UW + [('floral', 'Floral'), ('cherr', 'Cerezas'), ('lemon', 'Limones'), ('cars', 'Autos'), ('dinosaur', 'Dinosaurios')] if en in c), '')
+        tls = [talle(x) for x in tal]
+        if tipo.startswith('Gorra') and col: col = {'Blanco': 'Blanca', 'Rojo': 'Roja', 'Negro': 'Negra', 'Amarillo': 'Amarillo'}.get(col, col)
+        fijo = '32900' if u < 10.5 else ('37900' if u < 13.5 else '42900')
+        gen = 'Nena' if 'girl' in cat else ('Nene' if 'boys' in cat else 'Unisex')
+        extra.append(dict(code=code, cat='Accesorios', gen=gen, nombre=' '.join(x for x in (tipo, mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img='https://image.hm.com/assets/hm/' + img,
+                          fijo=fijo, marca='hm', grupo='h', edad='|'.join(sorted({edad_t(x) for x in tls}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
+    seen = collections.Counter()
+    for r in extra:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w_ = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w_.writeheader(); w_.writerows(base + extra)
+    print('H&M gorros:', len(extra))
+hm_gorros()
