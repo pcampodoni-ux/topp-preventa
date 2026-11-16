@@ -36,6 +36,7 @@ FUERA_EN = re.compile(r'Long[- ]Sleeve|Sweater|Fleece|Sherpa|Thanksgiving|Christ
 
 def curar(rows, n, nombre_salida, por_modelo=None):
     ok = [r for r in rows if r['cat'] in VERANO and float(r['usd']) <= MAX and not FUERA.search(r['nombre']) and not FUERA_EN.search(EN.get(r['code'], ''))]
+    ok = [r for r in ok if not (r['cat'] == 'Packs de Bodies' and not r.get('fijo') and r.get('marca') != 'hm')]   # 16/11: sin packs de 2 (no tienen precio fijo)
     if por_modelo:   # H&M: hasta 3 colores por modelo, los de más talles
         g = collections.defaultdict(list)
         for r in ok: g[r['code'][:7]].append(r)
@@ -45,7 +46,7 @@ def curar(rows, n, nombre_salida, por_modelo=None):
     out = []
     for k, xs in grupos.items():
         xs.sort(key=lambda r: (float(r['usd']), -len(r['talles'].split('|'))))
-        out += xs[: (999 if k[1] == 'Packs de Bodies' else n)]
+        out += xs[: (999 if k[1] in ('Packs de Bodies', 'Mallas') else n)]   # 16/11: todas las mallas
     if not out: print(nombre_salida, 'sin productos'); return
     seen = collections.Counter()   # renumera los "(modelo N)" para que arranquen de 2 dentro de lo elegido
     for r in sorted(out, key=lambda r: float(r['usd'])):
@@ -236,7 +237,7 @@ def ropa_interior():
         tl = [talle_hm(x) for x in tal.split('|')]
         extra.append(dict(code=code, cat='Ropa interior', gen='Nena' if nena else 'Nene', nombre=' '.join(x for x in (f'Pack 5 {tipo}', mot, col) if x),
                           usd=f'{usd:g}', talles='|'.join(tl), img='https://image.hm.com/assets/hm/' + img + '?imwidth=600',
-                          fijo={9.99: '34900', 12.99: '39900', 14.99: '44900'}[usd], marca='hm', grupo='h',
+                          fijo='34900' if usd < 10.5 else ('39900' if usd < 13.5 else '44900'), marca='hm', grupo='h',
                           edad='|'.join(sorted({edad_t(x) for x in tl}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
     seen = collections.Counter()
     for r in extra:
@@ -266,3 +267,107 @@ def ropa_interior():
     w.writeheader(); w.writerows(base + cx)
     print('ropa interior: H&M', len(extra), "Carter's", len(cx))
 ropa_interior()
+
+
+# 16/11 (Patricio): todo el swimwear. GAP Factory: trajes de baño de la búsqueda "swim" (no están en liquidación; el precio de la
+# página ya trae el 60% del Cyber Sale). tools/gap_swim_16nov.json = [pid, nombre, color, usd, talles, img]. Precio fijo por escalón.
+GS_COL = [('neon pink', 'Rosa Flúor'), ('pink', 'Rosa'), ('neon yellow', 'Amarillo Flúor'), ('orange', 'Naranja'), ('admiral blue', 'Azul'), ('blue', 'Azul'),
+          ('hot red', 'Rojo'), ('red', 'Rojo'), ('floral', 'Floral'), ('fish', 'Peces')]
+GS_MOT = [('sharks', 'Tiburones'), ('cars', 'Autos'), ('strawberr', 'Frutillas'), ('gingham', 'Vichy'), ('mickey', ''), ('minnie', '')]
+def gap_swim():
+    try: data = json.load(open(os.path.join(HERE, 'gap_swim_16nov.json')))
+    except Exception: return
+    SZ = {'6-12 M': '12M', '12-18 M': '18M', '18-24 M': '24M', '2 YRS': '2T', '3 YRS': '3T', '4 YRS': '4T', '5 YRS': '5T',
+          'XS (4/5)': '4-5', 'S (6/7)': '6-7', 'M (8)': '8', 'L (10)': '10', 'XL (12)': '12', 'XXL (14/16)': '14-16'}
+    p = os.path.join(HERE, 'gap_verano.tsv'); swp = {d[0] for d in data}; base = [r for r in leer('gap_verano.tsv') if r['code'] not in swp]; ya = set(); extra = []   # 16/11: las mallas de la búsqueda reemplazan a las del relevamiento de liquidación
+    for pid, nm, col, usd, tal, img in data:
+        tl = [SZ[x] for x in tal.split('|') if x in SZ]
+        if len(tl) < 2: continue
+        if 'Final sale' in nm or usd > 20: usd = round(usd * 0.4, 2)   # liquidación: 60% extra en el checkout
+        if re.search(r'Two-Piece Rash Guard', nm): tipo, gen = 'Malla 2 Piezas con Remera UV', 'Nena'
+        elif re.search(r'One-Piece Rash Guard', nm): tipo, gen = 'Malla Enteriza Manga Larga UV', 'Nena'
+        elif re.search(r'Rash Guard', nm): tipo, gen = 'Remera UV de Agua', 'Nene' if re.search(r'cars|mickey|red', col, re.I) else 'Unisex'
+        elif re.search(r'Trunks', nm): tipo, gen = 'Short de Baño', 'Nene'
+        elif re.search(r'Two-Piece', nm): tipo, gen = 'Malla 2 Piezas', 'Nena'
+        else: tipo, gen = 'Malla', 'Unisex'
+        c = col.lower(); color = next((es for en, es in GS_COL if en in c), ''); mot = next((es for en, es in GS_MOT if en in c), '')
+        nombre = ' '.join(x for x in ('GAP ·', tipo, mot, color) if x)
+        fijo = '42900' if usd < 12.5 else ('47900' if usd < 14.5 else '52900')
+        extra.append(dict(code=pid, cat='Mallas', gen=gen, nombre=nombre, usd=f'{usd:.2f}', talles='|'.join(tl), img=img, usd_lista=f'{usd:.2f}', fijo=fijo))
+    seen = collections.Counter()
+    for r in extra:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + extra)
+    print('GAP swim:', len(extra))
+gap_swim()
+
+# 16/11: Skip Hop en liquidación "a muy buen precio": al menos 50% off y hasta USD 17.
+SK_NOM = {'9W583010': 'Juguete Didáctico Bandana', '9U956210': 'Botella con Sorbete CoComelon', '9U956610': 'Colectivo Musical de Peluche CoComelon',
+          '9U956110': 'Vaso para Snacks CoComelon', '9T450410': 'Mochila Blippi', '9T484810': 'Vaso para Snacks Blippi', '9T484910': 'Vaso para Snacks Blippi y Meekah',
+          '9T459610': 'Botella Térmica con Sorbete Blippi', '9T459710': 'Botella Térmica con Sorbete Blippi y Meekah', '9T450310': 'Mini Mochila Meekah'}
+def skiphop_cl(desc=0.5):
+    raw = {x['code']: x for x in json.load(open(os.path.join(HERE, 'carters_full_raw.json')))}
+    p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for r in leer('carters_full_all.tsv'):
+        if r.get('marca') != 'skiphop' or r['code'] in ya: continue
+        x = raw.get(r['code'], {}); lst = x.get('list') or 0; u = float(r['usd'])
+        if u > MAX or not lst or u > lst * (1 - desc): continue
+        r['nombre'] = SK_NOM.get(r['code'], r['nombre']); extra.append(r)
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + extra)
+    print('Skip Hop liquidación:', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
+skiphop_cl()
+
+
+# 16/11: precio de mallas en todas las marcas (con la fórmula, las de USD 13–16 quedaban en $60.000–71.000).
+# Hasta USD 12,99 siguen la fórmula con tramos (≤ $44.900); USD 13–14,99 → $47.900; USD 15 o más → $52.900.
+def mallas_precio():
+    for f in ('carters_verano.tsv', 'gap_verano.tsv'):
+        p = os.path.join(HERE, f); rows = leer(f)
+        for r in rows:
+            if r['cat'] != 'Mallas': continue
+            u = float(r['usd'])
+            if 13 <= u < 15: r['fijo'] = '47900'
+            elif u >= 15: r['fijo'] = '52900'
+        w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+        w.writeheader(); w.writerows(rows)
+mallas_precio()
+
+# 16/11: trajes de baño H&M (categoría Swimwear de kids y baby), precio normal hasta USD 17, stock del 16/11.
+# tools/hm_swim_16nov.json = [code, título, categoría, color, w, red, talles con stock, img]
+def hm_swim():
+    try: data = json.load(open(os.path.join(HERE, 'hm_swim_16nov.json')))
+    except Exception: return
+    def talle_hm(s):
+        s = s.replace('Y+', 'Y'); return s[:-1] + ' años' if s.endswith('Y') else s.replace('M', 'M')
+    def edad_t(t):
+        if t.endswith('M'): return 'Bebés'
+        a = float(re.match(r'([\d½]+)', t).group(1).replace('½', '.5')); return 'Bebés' if a < 2 else ('Niños' if a < 6 else 'Grandes')
+    p = os.path.join(HERE, 'hm_verano.tsv'); base = leer('hm_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for code, t, cat, sw, w, red, tal, img in data:
+        if code in ya or len(tal) < 2: continue
+        u = min(x for x in (w, red) if x)
+        if u > MAX: continue
+        tl = t.lower(); nena = 'girl' in cat
+        if 'bikini' in tl: tipo = 'Bikini'
+        elif 'shorts' in tl or 'trunks' in tl: tipo = 'Short de Baño'
+        elif 'rash' in tl or 'upf' in tl and 'top' in tl: tipo = 'Remera UV de Agua'
+        elif 'set' in tl: tipo = 'Set de Baño UPF 50' if 'upf' in tl else 'Set de Baño'
+        elif 'swimsuit' in tl or 'swimwear' in tl: tipo = 'Malla Enteriza'
+        else: tipo = 'Malla'
+        c = sw.lower(); col = next((es for en, es in COL_UW if en in c), ''); mot = next((es for en, es in MOT_UW + [('shark', 'Tiburones'), ('fish', 'Peces'), ('floral', 'Floral'), ('stripe', 'Rayas'), ('fruit', 'Frutas')] if en in c), '')
+        tls = [talle_hm(x) for x in tal]
+        fijo = '' if u < 13 else ('47900' if u < 15 else '52900')
+        extra.append(dict(code=code, cat='Mallas', gen='Nena' if nena else ('Nene' if 'boy' in cat else 'Unisex'), nombre=' '.join(x for x in (tipo, mot, col) if x),
+                          usd=f'{u:g}', talles='|'.join(tls), img=img, fijo=fijo, marca='hm', grupo='h',
+                          edad='|'.join(sorted({edad_t(x) for x in tls}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
+    seen = collections.Counter()
+    for r in extra:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w_ = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w_.writeheader(); w_.writerows(base + extra)
+    print('H&M swim:', len(extra))
+hm_swim()

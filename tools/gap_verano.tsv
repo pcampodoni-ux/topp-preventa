@@ -149,8 +149,6 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1187812011	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Rosa Cerezas	4.80	12M|18M|24M|2T|3T|4T|5T	63/501/315/cn63501315.png	11.99	35790
 1187812001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Crudo Leopardo Corazones	4.80	18M|24M|2T|3T|4T|5T	63/501/316/cn63501316.png	11.99	35790
 1172374001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Azul	5.60	12M|18M	62/348/469/cn62348469.png	13.99	38990
-1172330001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Rosa	6.40	12M|18M|24M|2T|3T|4T|5T	61/233/309/cn61233309.png	15.99	39900
-1172334001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Rosa Floral Cerezas	6.40	12M|18M|24M|2T|3T|4T|5T	61/155/279/cn61155279.png	15.99	39900
 1172702011	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Verde	6.40	3M|6M|12M|18M|24M	62/069/594/cn62069594.png	15.99	39900
 1172702041	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Rosa Cerezas Frutillas	6.40	3M|6M|12M|18M|24M	62/069/530/cn62069530.png	15.99	39900
 1172576001	Sets 2 Piezas	Nene	GAP · Set 2 Piezas Verde	6.40	12M|18M|24M|2T	62/024/021/cn62024021.png	15.99	39900
@@ -175,10 +173,7 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1172528021	Shorts	Nene	GAP · Short Osito Brannan Blanco Gris Melange	4.00	2T|3T|4T	61/340/139/cn61340139.png	9.99	29900
 1172722001	Mallas	Nena	GAP · Malla Violeta Lavanda	2.39	NB|3M	61/145/051/cn61145051.png	5.97	28990
 1172722011	Mallas	Nena	GAP · Malla Azul (Union Blue Bananas)	2.39	NB|3M	61/145/052/cn61145052.png	5.97	28990
-1172536001	Mallas	Nene	GAP · Malla Estampada Amarilla Tiburones	4.80	12M|18M|24M|2T|3T|4T|5T	61/208/042/cn61208042.png	11.99	35790
-1172543001	Mallas	Nene	GAP · Malla Naranja Autos	5.60	12M|18M|24M|2T|3T|4T|5T	61/208/212/cn61208212.png	13.99	38990
 1172543021	Mallas	Nene	GAP · Malla Turquesa	5.60	12M|18M|24M|2T|3T|4T|5T	61/166/746/cn61166746.png	13.99	38990
-1172543011	Mallas	Nene	GAP · Malla Azul	5.60	12M|18M|24M|2T|3T|4T	61/166/755/cn61166755.png	13.99	38990
 1175031001	Mallas	Nene	GAP · Malla Estampada Azul Marino	5.99	12M|18M|24M|2T|3T|4T	62/082/955/cn62082955.png	14.97	39590
 1175261011	Vestidos	Nena	GAP · Vestido Azul Floral	5.19	12|14-16	61/656/796/cn61656796.png	12.97	36990
 1172822021	Vestidos	Nena	GAP · Vestido Negro	7.20	6-7|8|10	61/914/903/cn61914903.png	17.99	39900
@@ -192,7 +187,6 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1187041011	Vestidos	Nena	GAP · Vestido Rojo Azul	12.00	4-5|6-7|8|10|12|14-16	63/667/833/cn63667833.png	29.99	44900
 1172822001	Vestidos	Nena	GAP · Vestido Rosa Beige	12.00	12|14-16	61/914/901/cn61914901.png	29.99	44900
 1172822011	Vestidos	Nena	GAP · Vestido Azul	12.00	12|14-16	61/839/502/cn61839502.png	29.99	44900
-1173185001	Sets 2 Piezas	Nena	GAP · Set 2 Piezas Estampado Floral	11.19	10|12|14-16	62/095/001/cn62095001.png	27.97	42900
 1174714001	Vestidos	Nena	GAP · Vestido Osito Brannan de Jean Dark Wash	9.20	2T|3T|4T	62/386/353/cn62386353.png	22.99	39900
 1178684001	Pantalones	Nena	GAP · Calza Rosa (Pink Rose Cherries)	3.20	4-5|6-7|8|10|12|14-16	63/085/043/cn63085043.png	7.99	29900
 384974011	Pantalones	Nena	GAP · Calza Rosa	3.20	6-7|8|10|12|14-16	62/706/357/cn62706357.png	7.99	29900
@@ -224,3 +218,20 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1175977011	Pantalones	Nena	GAP · Pantalón Jogging Logo Rosa Floral (Pink Rose Mist Floral)	4.20	12M|18M|24M|2T|3T|4T|5T	62/979/904/cn62979904.png	10.49	29900
 1175977031	Pantalones	Nena	GAP · Pantalón Jogging Logo Violeta	4.20	12M|18M|24M|2T|3T|4T|5T	62/979/897/cn62979897.png	10.49	29900
 1175977061	Pantalones	Nena	GAP · Pantalón Jogging Logo Azul Corazones	4.20	12M|18M|24M|2T|3T|4T|5T	63/144/949/cn63144949.png	10.49	29900
+1172330001	Mallas	Nena	GAP · Malla 2 Piezas con Remera UV Rosa Flúor	15.99	12M|18M|24M|2T|3T|4T|5T	61/233/293/cn61233293.jpg	15.99	52900
+1172332001	Mallas	Nena	GAP · Malla Enteriza Manga Larga UV Floral	15.99	18M|2T|3T|4T|5T	61/208/156/cn61208156.jpg	15.99	52900
+1172333001	Mallas	Nena	GAP · Malla 2 Piezas Vichy Rosa	11.99	12M|18M|24M|2T|3T|4T|5T	61/144/746/cn61144746.jpg	11.99	42900
+1172334001	Mallas	Nena	GAP · Malla 2 Piezas con Remera UV Frutillas Rosa	15.99	12M|18M|24M|2T|3T|4T|5T	61/155/263/cn61155263.jpg	15.99	52900
+1172536001	Mallas	Unisex	GAP · Remera UV de Agua Tiburones Amarillo Flúor	11.99	12M|18M|24M|2T|3T|4T|5T	61/207/964/cn61207964.jpg	11.99	42900
+1172543001	Mallas	Nene	GAP · Remera UV de Agua Autos Naranja	13.99	12M|18M|24M|2T|3T|4T|5T	61/208/134/cn61208134.jpg	13.99	47900
+1172543011	Mallas	Nene	GAP · Remera UV de Agua Azul	13.99	12M|18M|24M|2T|3T|4T	61/166/702/cn61166702.jpg	13.99	47900
+1172554001	Mallas	Nene	GAP · Short de Baño Tiburones Amarillo Flúor	11.99	12M|18M|24M|2T|3T|4T|5T	61/264/652/cn61264652.jpg	11.99	42900
+1172599001	Mallas	Nene	GAP · Short de Baño Azul	13.99	12M|18M|24M|2T|3T|4T	61/286/041/cn61286041.jpg	13.99	47900
+1172599021	Mallas	Nene	GAP · Short de Baño Autos Naranja	13.99	12M|18M|24M|2T	61/286/030/cn61286030.jpg	13.99	47900
+1172805011	Mallas	Nene	GAP · Short de Baño Naranja	13.99	4-5|6-7|8|10|12|14-16	61/184/271/cn61184271.jpg	13.99	47900
+1172805021	Mallas	Nene	GAP · Short de Baño Rojo	13.99	4-5|6-7|8|10|12|14-16	61/464/480/cn61464480.jpg	13.99	47900
+1172805031	Mallas	Nene	GAP · Short de Baño Peces	13.99	4-5|6-7|8|10|12	62/056/428/cn62056428.jpg	13.99	47900
+1172807011	Mallas	Nene	GAP · Remera UV de Agua Rojo	13.99	4-5|6-7|8|10|12|14-16	61/144/842/cn61144842.jpg	13.99	47900
+1173135011	Mallas	Nena	GAP · Malla 2 Piezas con Remera UV Rosa	11.99	4-5|6-7|8|10|12|14-16	61/166/496/cn61166496.jpg	11.99	42900
+1173185001	Mallas	Nena	GAP · Malla 2 Piezas Floral	11.19	10|12|14-16	62/094/966/cn62094966.jpg	11.19	42900
+1173288001	Mallas	Nena	GAP · Malla 2 Piezas Floral (modelo 2)	10.49	4-5|6-7|8|10|12|14-16	61/207/607/cn61207607.jpg	10.49	42900

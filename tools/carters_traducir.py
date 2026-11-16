@@ -13,7 +13,7 @@ if a.excluir and os.path.exists(a.excluir):
     ya = {r['code'] for r in csv.DictReader(open(a.excluir, encoding='utf-8'), delimiter='\t')}
 
 ORDER = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M', '2T', '3T', '4T', '5T', '4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '10-12', '12', '14', '16', 'Único']
-NORM = {'OS': 'Único', 'ONE SIZE': 'Único', 'NO SIZE': 'Único', '6/6X': '6-6X', '6X': '6-6X', 'PREEMIE (UP TO 6LBS)': 'PRE', 'PREEMIE': 'PRE'}
+NORM = {'OS': 'Único', 'NS': 'Único', 'ONE SIZE': 'Único', 'NO SIZE': 'Único', '6/6X': '6-6X', '6X': '6-6X', 'PREEMIE (UP TO 6LBS)': 'PRE', 'PREEMIE': 'PRE'}
 # Talles en letras de niños grandes (tabla oficial Carter's/OshKosh): XS = 4-5, S = 6-7, M = 8, L = 10-12, XL = 14
 ALFA = {'XS': '4-5', 'S': '6-7', 'M': '8', 'L': '10-12', 'XL': '14'}
 SKIP = [(r'Stroller|Car Seat|Changing|Monitor|Night ?Light|Sound|Bouncer|Chair|Seat\b|Playard|Crib|Mattress|Gate|Carrier', None, None),
