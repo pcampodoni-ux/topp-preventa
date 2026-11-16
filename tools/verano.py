@@ -371,3 +371,16 @@ def hm_swim():
     w_.writeheader(); w_.writerows(base + extra)
     print('H&M swim:', len(extra))
 hm_swim()
+
+# 16/11: los "Baby Swim Bucket Hat" de GAP salían como "Malla": son gorros para el agua (quedan en la categoría Mallas).
+def gap_gorros():
+    try: gr = {x['pid']: x for x in json.load(open(os.path.join(HERE, 'gf_raw.json')))}
+    except Exception: return
+    p = os.path.join(HERE, 'gap_verano.tsv'); rows = leer('gap_verano.tsv')
+    for r in rows:
+        x = gr.get(r['code'])
+        if x and re.search(r'Bucket Hat|Sun Hat|Swim Hat', x.get('name', ''), re.I):
+            r['nombre'] = re.sub(r'GAP · Malla', 'GAP · Gorro de Sol para el Agua', r['nombre']); r['cat'] = 'Mallas'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(rows[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(rows)
+gap_gorros()
