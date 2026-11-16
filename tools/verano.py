@@ -478,3 +478,16 @@ def hm_sale():
     w_.writeheader(); w_.writerows(base + extra)
     print('H&M liquidación (trajes de baño y gorros):', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
 hm_sale()
+
+# 16/11 11:30 (Patricio): packs de 4 bodies manga larga de USD 12 a $59.900 (excepción al filtro de verano; sin los navideños).
+def packs_ml():
+    p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for r in leer('carters_full_all.tsv'):
+        en = EN.get(r['code'], '')
+        if r['cat'] == 'Packs de Bodies' and r['code'] not in ya and '4-Pack' in en and re.search(r'Long[- ]Sleeve', en) \
+           and abs(float(r['usd']) - 12) < 0.01 and not re.search(r'Holiday|Christmas|Santa|Halloween|Thanksgiving', en):
+            r['fijo'] = '59900'; extra.append(r)
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + extra)
+    print('packs x4 manga larga USD 12:', len(extra))
+packs_ml()
