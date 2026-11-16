@@ -468,7 +468,7 @@ def hm_sale():
         tls = [talle(x) for x in tal]
         fijo = '19900' if u < 5 else ('29900' if u < 8 else ('32900' if u < 10 else ('' if u < 13 else ('47900' if u < 15 else '52900'))))
         gen = 'Nena' if 'girl' in cat else ('Nene' if 'boy' in cat else 'Unisex')
-        extra.append(dict(code=code, cat=categ, gen=gen, nombre=' '.join(x for x in (tipo, mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img=img,
+        extra.append(dict(code=code, cat=categ, gen=gen, nombre=' '.join(x for x in (tipo, mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img='https://image.hm.com/assets/hm/' + img,
                           fijo=fijo, marca='hm', grupo='h', edad='|'.join(sorted({edad_t(x) for x in tls}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
     seen = collections.Counter(r['nombre'] for r in base)
     for r in extra:
