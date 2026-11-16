@@ -318,7 +318,7 @@ def skiphop_cl(desc=0.5):
     w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
     w.writeheader(); w.writerows(base + extra)
     print('Skip Hop liquidación:', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
-skiphop_cl()
+# skiphop_cl()   # 16/11 9:00: Patricio lo saca (no hay nada a buen precio en Skip Hop)
 
 
 # 16/11: precio de mallas en todas las marcas (con la fórmula, las de USD 13–16 quedaban en $60.000–71.000).
