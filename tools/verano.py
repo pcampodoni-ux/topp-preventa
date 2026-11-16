@@ -491,3 +491,22 @@ def packs_ml():
     w.writeheader(); w.writerows(base + extra)
     print('packs x4 manga larga USD 12:', len(extra))
 packs_ml()
+
+# 16/11 11:50 (Patricio): oferta del día de Carter's "pijamas desde USD 6". Todos los pijamas de hasta USD 8 (incluye navideños),
+# con la escala del 14/11: bebé hasta 9M $29.900; bebé 12–24M $32.900; toddler 2T–5T $38.900; niños 4–14 $39.900.
+def pijamas_hoy(tope=8.0):
+    p = os.path.join(HERE, 'carters_verano.tsv'); base = leer('carters_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    PRE9 = {'PRE', 'NB', '3M', '6M', '9M'}
+    for r in leer('carters_full_all.tsv'):
+        if r['cat'] not in ('Pijamas', 'Pijamas de Polar') or r['code'] in ya or float(r['usd']) > tope: continue
+        t = set(r['talles'].split('|')); e = edad(r)
+        r['fijo'] = '29900' if t <= PRE9 else ('32900' if e == 'Bebés' else ('38900' if e == 'Niños' else '39900'))
+        extra.append(r)
+    seen = collections.Counter()
+    for r in sorted(extra, key=lambda r: float(r['usd'])):
+        b = re.sub(r' \(modelo \d+\)$', '', r['nombre']); seen[b] += 1
+        r['nombre'] = b if seen[b] == 1 else f'{b} (modelo {seen[b]})'
+    w = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w.writeheader(); w.writerows(base + extra)
+    print('pijamas hoy (hasta USD 8):', len(extra), dict(collections.Counter(r['fijo'] for r in extra)))
+pijamas_hoy()
