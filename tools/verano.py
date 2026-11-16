@@ -415,7 +415,7 @@ def hm_gorros():
         if tipo.startswith('Gorra') and col: col = {'Blanco': 'Blanca', 'Rojo': 'Roja', 'Negro': 'Negra', 'Amarillo': 'Amarillo'}.get(col, col)
         fijo = '32900' if u < 10.5 else ('37900' if u < 13.5 else '42900')
         gen = 'Nena' if 'girl' in cat else ('Nene' if 'boys' in cat else 'Unisex')
-        extra.append(dict(code=code, cat='Accesorios', gen=gen, nombre=' '.join(x for x in (tipo, mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img='https://image.hm.com/assets/hm/' + img,
+        extra.append(dict(code=code, cat='Mallas', gen=gen, nombre=' '.join(x for x in (tipo, mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img='https://image.hm.com/assets/hm/' + img,
                           fijo=fijo, marca='hm', grupo='h', edad='|'.join(sorted({edad_t(x) for x in tls}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
     seen = collections.Counter()
     for r in extra:
@@ -452,7 +452,7 @@ def hm_sale():
             elif '2-pack' in tl: tipo = 'Pack 2 Gorros de Sol'
             elif 'sun hat' in tl: tipo = 'Gorro de Sol'
             else: tipo = 'Gorra'
-            categ = 'Accesorios'
+            categ = 'Mallas'   # 16/11: los gorros van con los trajes de baño (Patricio)
         else:
             if 'bikini' in tl: tipo = 'Bikini'
             elif 'shirt' in tl or 'rash' in tl: tipo = 'Remera UV de Agua'
