@@ -15,7 +15,7 @@ a = ap.parse_args()
 HERE = os.path.dirname(os.path.abspath(__file__)); IDX = os.path.join(HERE, '..', 'index.html')
 IMG_C = 'https://dw.cartersstorefront.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/'
 CATS = ["Zapatillas", "Sandalias", "Jardineros", "Packs de Bodies", "Bodies", "Sets 2 Piezas", "Enteritos", "Pijamas", "Pijamas de Polar", "Vestidos", "Remeras", "Buzos", "Camperas",
-        "Pantalones", "Shorts", "Mallas", "Medias", "Ropa interior", "Accesorios", "Hora del Baño", "Hora de Comer", "Juguetes", "Mochilas y Bolsos"]
+        "Pantalones", "Shorts", "Trajes de baño", "Medias", "Ropa interior", "Accesorios", "Hora del Baño", "Hora de Comer", "Juguetes", "Mochilas y Bolsos"]
 ACC = {'Medias', 'Accesorios', 'Ropa interior', 'Hora del Baño', 'Hora de Comer'}
 BIG = ['4', '4-5', '5', '6', '6-6X', '6-7', '7', '8', '10', '10-12', '12', '14', '14-16', '16']
 MARCAS = {'carters': "Carter's", 'oshkosh': "OshKosh B'gosh", 'skiphop': 'Skip Hop', 'gapfactory': 'GAP Factory', 'hm': 'H&M'}
@@ -79,6 +79,7 @@ for f, marca in (x.split(':') for x in a.tsv.split(',')):
     path = os.path.join(HERE, f)
     if not os.path.exists(path): continue
     for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t'):
+        if r['cat'] == 'Mallas': r['cat'] = 'Trajes de baño'   # 16/11: Patricio prefiere "Trajes de baño" como categoría
         it, t, e = card(r, marca); items.append(it); talles |= t; edades |= e
 items.sort(key=lambda x: (x[0], x[1], x[2], x[3]))
 
