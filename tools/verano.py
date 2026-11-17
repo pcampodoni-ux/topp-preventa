@@ -510,3 +510,50 @@ def pijamas_hoy(tope=8.0):
     w.writeheader(); w.writerows(base + extra)
     print('pijamas hoy (hasta USD 8):', len(extra), dict(collections.Counter(r['fijo'] for r in extra)))
 pijamas_hoy()
+
+# 17/11: liquidación de H&M, ropa de verano nueva (shorts, remeras, polleras, vestidos, enteritos) hasta USD 10, al menos 2 talles.
+# tools/hm_sale_ropa_17nov.json = [code, título, categoría, color, w, red, talles con stock, img]. Precio como la liquidación:
+# < USD 5 $19.900; < USD 8 $29.900; < USD 10 $32.900; USD 10 justo $32.900.
+def hm_sale_ropa():
+    try: data = json.load(open(os.path.join(HERE, 'hm_sale_ropa_17nov.json')))
+    except Exception: return
+    def talle(s): s = s.replace('Y+', 'Y'); return s[:-1] + ' años' if s.endswith('Y') else s
+    def edad_t(t):
+        if t.endswith('M'): return 'Bebés'
+        a = float(re.match(r'([\d½]+)', t).group(1).replace('½', '.5')); return 'Bebés' if a < 2 else ('Niños' if a < 6 else 'Grandes')
+    TIPOS = [(r'beanie|merino', None, None), (r'swim', 'Mallas', 'Short de Baño'), (r'soccer set', 'Sets 2 Piezas', 'Set de Fútbol'),
+             (r'sweatshorts', 'Shorts', 'Short de Algodón Rústico'), (r'cargo', 'Shorts', 'Short Cargo'), (r'denim shorts', 'Shorts', 'Short de Jean'),
+             (r'bike shorts', 'Shorts', 'Calza Corta Morley'), (r'carpenter', 'Shorts', 'Short Carpintero'), (r'twill shorts', 'Shorts', 'Short de Gabardina Bordado'),
+             (r'pointelle', 'Shorts', 'Short Calado'), (r'shorts', 'Shorts', 'Short de Algodón'), (r'skort', 'Vestidos', 'Pollera-Short de Muselina'),
+             (r'chiffon skirt', 'Vestidos', 'Pollera de Gasa'), (r'tiered.*skirt', 'Vestidos', 'Pollera con Volados'), (r'shimmery.*skirt', 'Vestidos', 'Pollera Brillante'),
+             (r'skirt', 'Vestidos', 'Pollera Morley'), (r'dress', 'Vestidos', 'Vestido Estampado'), (r'romper', 'Enteritos', 'Enterito Estampado'),
+             (r'henley', 'Remeras', 'Remera Henley'), (r'ribbed.*tops', 'Remeras', 'Remera Morley'), (r'flounce', 'Remeras', 'Remera con Volados'),
+             (r'sequin', 'Remeras', 'Remera con Lentejuelas'), (r'top|t-shirt|tee', 'Remeras', 'Remera')]
+    COL = COL_UW + [('beige', 'Beige'), ('khaki', 'Verde Militar'), ('cream', 'Crudo'), ('turquoise', 'Turquesa'), ('dark gray', 'Gris Oscuro'), ('gray', 'Gris'),
+                    ('melange', 'Melange'), ('silver', 'Plateado'), ('dusty green', 'Verde Agua')]
+    MOT = MOT_UW + [('floral', 'Flores'), ('roses', 'Rosas'), ('boats', 'Barquitos'), ('whale', 'Ballenas'), ('striped', 'Rayas'), ('raspberr', 'Frambuesas'),
+                    ('lemons', 'Limones'), ('marine', 'Animales Marinos'), ('bows', 'Moñitos'), ('palm', 'Palmeras'), ('football', 'Fútbol'), ('world cup', 'Mundial 2026')]
+    p = os.path.join(HERE, 'hm_verano.tsv'); base = leer('hm_verano.tsv'); ya = {r['code'] for r in base}; extra = []
+    for code, t, cat, sw, w, red, tal, img in data:
+        if code in ya or len(tal) < 2: continue
+        u = min(x for x in (w, red) if x)
+        if u > 10: continue
+        tl = t.lower(); hit = next(((c_, n_) for pat, c_, n_ in TIPOS if re.search(pat, tl)), None)
+        if not hit or not hit[0]: continue
+        categ, tipo = hit
+        if '2-pack' in tl: tipo = 'Pack 2 ' + {'Calza Corta': 'Calzas Cortas', 'Remera': 'Remeras', 'Short': 'Shorts'}.get(' '.join(tipo.split()[:2]) if tipo.startswith('Calza') else tipo.split()[0], tipo.split()[0] + 's') + ' ' + ' '.join(tipo.split()[2 if tipo.startswith('Calza') else 1:])
+        c = sw.lower(); col = next((es for en, es in COL if re.search(r'\b' + en + r'\b', c)), ''); mot = next((es for en, es in MOT if en in c), '')
+        if tipo.startswith(('Remera', 'Pollera')) and col: col = {'Blanco': 'Blanca', 'Rojo': 'Roja', 'Negro': 'Negra', 'Plateado': 'Plateada'}.get(col, col)
+        tls = [talle(x) for x in tal]
+        fijo = '19900' if u < 5 else ('29900' if u < 8 else '32900')
+        gen = 'Nena' if ('girl' in cat or categ == 'Vestidos') else ('Nene' if 'boy' in cat else 'Unisex')
+        extra.append(dict(code=code, cat=categ, gen=gen, nombre=' '.join(x for x in (tipo.strip(), mot, col) if x), usd=f'{u:g}', talles='|'.join(tls), img=img,
+                          fijo=fijo, marca='hm', grupo='h', edad='|'.join(sorted({edad_t(x) for x in tls}, key=['Bebés', 'Niños', 'Grandes'].index)), pdp=f'/en_us/productpage.{code}.html'))
+    seen = collections.Counter(r['nombre'] for r in base)
+    for r in extra:
+        seen[r['nombre']] += 1
+        if seen[r['nombre']] > 1: r['nombre'] += f" (modelo {seen[r['nombre']]})"
+    w_ = csv.DictWriter(open(p, 'w', encoding='utf-8', newline=''), fieldnames=list(base[0].keys()), delimiter='\t', lineterminator='\n', extrasaction='ignore')
+    w_.writeheader(); w_.writerows(base + extra)
+    print('H&M liquidación ropa de verano 17/11:', len(extra), dict(collections.Counter(r['cat'] for r in extra)))
+hm_sale_ropa()
