@@ -18,7 +18,12 @@
       const e = E[c]; if (u !== e.u || s.join('|') !== e.s.join('|')) window.__REV[c] = { s, u }; }
     return true;
   }
-  async function w() { while (q.length) { const [b, codes] = q.shift(); let ok = false; try { ok = await base(b, codes); } catch (e) {} if (!ok) window.__revBlk.push(...codes); window.__revDone++; await sl(700); } }
+  async function desafio(code) {   // H&M pide verificar el navegador: abrir la página en un iframe oculto lo resuelve
+    const f = document.createElement('iframe'); f.style.cssText = 'width:1px;height:1px;opacity:0;position:fixed;left:-9px';
+    f.src = '/en_us/productpage.' + code + '.html'; document.body.appendChild(f); await sl(9000); f.remove(); }
+  async function w() { while (q.length) { const [b, codes] = q.shift(); let ok = false;
+    for (let k = 0; k < 3 && !ok; k++) { try { ok = await base(b, codes); } catch (e) {} if (!ok) await desafio(codes[0]); }
+    if (!ok) window.__revBlk.push(...codes); window.__revDone++; await sl(900); } }
   w(); w();
   return q.length;
 })()
