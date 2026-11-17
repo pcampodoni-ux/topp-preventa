@@ -130,6 +130,39 @@ footer a{color:#fff}
 .card.hl{outline:3px solid var(--v);outline-offset:3px;animation:hlp 1.2s ease-in-out 3}
 @keyframes hlp{50%{outline-color:transparent}}
 </style>
+<!-- Meta Pixel WOWCYK (17/11/2026): PageView + AddToCart (Reservar) + Lead (Confirmar por WhatsApp) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','632991581685729');
+fbq('track','PageView');
+(function(){
+  function abierto(){try{return ABIERTO&&!CERRADO&&new Date()<CIERRE;}catch(e){return true;}}
+  document.addEventListener('click',function(e){
+    try{
+      var add=e.target.closest&&e.target.closest('.card .add');
+      if(add&&!add.disabled&&abierto()){
+        var c=add.closest('.card');
+        if(c&&c.querySelector('.tl.on')){
+          fbq('track','AddToCart',{content_ids:[c.dataset.code],content_name:c.dataset.nom,content_type:'product',value:+c.dataset.precio||0,currency:'ARS'});
+        }
+        return;
+      }
+      var wa=e.target.closest&&e.target.closest('#wa');
+      if(wa&&abierto()&&window.cart&&cart.length){
+        var ok=document.getElementById('cli').value.trim()&&
+               document.getElementById('tel').value.replace(/\D/g,'').length>=10&&
+               document.getElementById('res').value.trim();
+        if(ok){
+          var tot=0;cart.forEach(function(i){tot+=i.precio||0;});
+          fbq('track','Lead',{content_name:'TOPP - Pedido por WhatsApp',content_ids:cart.map(function(i){return i.code;}),num_items:cart.length,value:tot,currency:'ARS'});
+        }
+      }
+    }catch(err){}
+  },true);
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=632991581685729&ev=PageView&noscript=1"/></noscript>
+<!-- Fin Meta Pixel -->
 </head>
 <body>
 
