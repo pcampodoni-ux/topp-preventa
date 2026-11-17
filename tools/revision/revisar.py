@@ -9,7 +9,7 @@ Solo toca lo que ya está publicado: nunca agrega productos.
       pijamas ≤ USD 8); si subió más, el producto sale y queda en el informe para que Patricio decida.
   - Precio que BAJA: no se toca (el precio publicado se mantiene durante el pedido).
 Entradas: --carters / --hm = JSON devueltos por carters_rev.js / hm_rev.js (solo los productos que cambiaron),
-          tools/gapfactory_all.tsv recién relevado (workflow "Relevar GAP Factory" + gf_traducir.py) y --gap-promo si|no.
+          tools/gapfactory.tsv recién relevado (workflow "Relevar GAP Factory" + gf_traducir.py) y --gap-promo si|no.
 Uso: python3 tools/revision/revisar.py --carters /tmp/rev_carters.json --hm /tmp/rev_hm.json --gap-promo si [--seco]
 """
 import argparse, csv, json, os, re, subprocess, sys, collections
@@ -88,7 +88,7 @@ gv = leer('gap_verano.tsv'); campos_g = list(gv[0].keys()); out = []
 if a.gap_promo != 'si':
     inf['GAP: la promo de 60% + 60% extra ya no figura en gapfactory.com → salen todos los productos de GAP'].append(f'{len(gv)} productos'); gv2 = []
 else:
-    hoy = {r['code']: r for r in leer('gapfactory_all.tsv')}
+    hoy = {r['code']: r for r in leer('gapfactory.tsv')}   # salida fresca de gf_traducir.py
     sys.path.insert(0, T)
     def precio_gap(usd):
         P.MARGEN = 1.9; p = P.precio(usd, 1560); p = 29900 if 30300 <= p <= 35000 else p
