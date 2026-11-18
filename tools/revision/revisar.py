@@ -86,8 +86,9 @@ hv2 = out
 # --- GAP Factory (gapfactory_all.tsv recién relevado; los trajes de baño relevados aparte quedan como están)
 gv = leer('gap_verano.tsv'); campos_g = open(os.path.join(T, 'gap_verano.tsv'), encoding='utf-8').readline().rstrip('\n').split('\t'); out = []
 if a.gap_promo != 'si':
-    inf['GAP: la promo de 60% + 60% extra ya no figura en gapfactory.com → salen todos los productos de GAP'].append(f'{len(gv)} productos'); gv2 = []
+    inf['GAP: ya no figura el 10% extra al pagar (Black Friday Early) en gapfactory.com → salen todos los productos de GAP'].append(f'{len(gv)} productos'); gv2 = []
 else:
+    from gap_bf18_reglas import LICENCIA, precio_gap as _pg
     hoy = {r['code']: r for r in leer('gapfactory.tsv')}   # salida fresca de gf_traducir.py
     sys.path.insert(0, T)
     def precio_gap(usd):
@@ -100,10 +101,14 @@ else:
         if not h:
             if r['cat'] == 'Mallas': out.append(r); continue   # relevados aparte (página de búsqueda), no figuran en el workflow
             inf['sale (agotado o fuera del sitio)'].append(f"{r['nombre']} (gapfactory)"); continue
-        usd = round(float(h['usd']) * 0.4, 2)
+        # 18/11: GAP Black Friday Early (precio de la web) + 10% extra al pagar; licencias sin el 10% (ver tools/gap_bf18.py)
+        usd = round(float(h['usd']) * (1.0 if LICENCIA.search(r['nombre']) else 0.9), 2)
         nr = revisar_fila(r, 'gapfactory', usd, set(h['talles'].split('|')), True)
         if nr:
-            if nr.get('_subio'): nr['fijo'] = str(precio_gap(float(nr['usd']))); nr['usd_lista'] = h['usd']
+            if nr.get('_subio'):
+                f = precio_gap(float(nr['usd'])); f = 29900 if 29000 <= f < 29900 else f
+                if f > 39900: inf['sale (GAP quedó arriba de $39.900)'].append(f"{nr['nombre']}: USD {nr['usd']}"); continue
+                nr['fijo'] = str(f); nr['usd_lista'] = h['usd']
             out.append(nr)
     gv2 = out
 
