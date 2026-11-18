@@ -1,0 +1,25 @@
+name: Bajar imágenes para videos
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  img:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar
+        run: |
+          mkdir -p img
+          python3 - <<'PY'
+          import json, subprocess
+          UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36'
+          for it in json.load(open('tools/tts/imagenes.json')):
+              r = subprocess.run(['curl', '-sSL', '-A', UA, '-H', 'Accept: image/avif,image/webp,image/jpeg,*/*', '-o', 'img/' + it['name'], '-w', '%{http_code} %{content_type}', it['url']], capture_output=True, text=True)
+              print(it['name'], r.stdout)
+          PY
+      - name: Subir a la rama tmp-img
+        run: |
+          git config user.name "img-bot"; git config user.email "img-bot@users.noreply.github.com"
+          git checkout --orphan tmp-img; git rm -rq --cached . ; git add -f img
+          git commit -qm "imágenes"; git push -f origin tmp-img
