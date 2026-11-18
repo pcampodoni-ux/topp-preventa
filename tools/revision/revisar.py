@@ -84,7 +84,7 @@ for r in hv:
 hv2 = out
 
 # --- GAP Factory (gapfactory_all.tsv recién relevado; los trajes de baño relevados aparte quedan como están)
-gv = leer('gap_verano.tsv'); campos_g = list(gv[0].keys()); out = []
+gv = leer('gap_verano.tsv'); campos_g = open(os.path.join(T, 'gap_verano.tsv'), encoding='utf-8').readline().rstrip('\n').split('\t'); out = []
 if a.gap_promo != 'si':
     inf['GAP: la promo de 60% + 60% extra ya no figura en gapfactory.com → salen todos los productos de GAP'].append(f'{len(gv)} productos'); gv2 = []
 else:
