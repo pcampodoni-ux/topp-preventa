@@ -14,7 +14,7 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 3V604910	Remeras	Nene	"Remera ""Los Angeles"" Roja"	5.99	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe4fa36a1/productimages/3V604910.jpg		oshkosh
 3V983010	Remeras	Nene	Remera Animales Estampada Marrón y Crudo	5.99	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw47fd774e/productimages/3V983010.jpg		oshkosh
 3W059710	Remeras	Nena	"Remera ""Osh Kosh B"" Crudo"	5.99	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw364584df/productimages/3W059710.jpg		oshkosh
-3V392810	Remeras	Unisex	Remera Estampada Amarilla	5.99	4|5|6|7|8|10|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw4edaee69/productimages/3V392810.jpg		oshkosh
+3V392810	Remeras	Unisex	Remera Estampada Amarilla	5.99	5|6|7|8|10|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw4edaee69/productimages/3V392810.jpg		oshkosh
 3V459710	Remeras	Nena	Remera Estampada Azul (modelo 2)	3.49	4-5|6-7|8|10-12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd503ed09/productimages/3V459710.jpg	19900	carters
 3V456510	Remeras	Nena	"Remera ""Cherry Chic"" Cerezas Rosa"	3.49	4-5|6-7|8|10-12	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6f7bb00e/productimages/3V456510.jpg	19900	carters
 3V296310	Remeras	Nene	"Remera ""Big Sandwich Club"" Crudo"	3.49	4-5|6-7|8|10-12	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb3b0a1cc/productimages/3V296310.jpg	19900	carters
@@ -97,7 +97,6 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 1V070210	Sets 2 Piezas	Nene	"Set Body y Pantalón ""Daddy"" Azul"	7.49	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfc3384d4/productimages/1V070210.jpg		carters
 1U564410	Sets 2 Piezas	Nena	Set Body y Short Musculosa Floral Rosa	7.49	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw564cf572/productimages/1U564410.jpg		carters
 1V286810	Sets 2 Piezas	Nena	Set 2 Piezas Algodón Orgánico	7.49	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwf3c59cfa/productimages/1V286810.jpg		carters
-1U533910	Sets 2 Piezas	Nene	Set Body y Short Manga Corta	7.49	NB	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw73d29a89/productimages/1U533910.jpg		carters
 1V660310	Sets 2 Piezas	Nena	Set Body y Pantalón Bordado	7.99	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw4dea306b/productimages/1V660310.jpg		carters
 1U588710	Sets 2 Piezas	Nene	Set 2 Piezas Animales Marrón	7.99	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwa44845eb/productimages/1U588710.jpg		carters
 1U663910	Sets 2 Piezas	Unisex	Set 2 Piezas Musculosa Azul	8.49	NB	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd867c20a/productimages/1U663910.jpg		carters
@@ -109,7 +108,6 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 2U586810	Remeras	Nena	Remera Crudo	3.49	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd670d04f/productimages/2U586810.jpg	19900	carters
 2V276310	Remeras	Nene	"Remera ""Capybruh"" Verde"	3.49	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwcf914e6f/productimages/2V276310.jpg	19900	carters
 2V263210	Remeras	Unisex	"Remera ""Future Surf Legend"" Verde"	3.49	2T|3T|4T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb2ab7cee/productimages/2V263210.jpg	19900	carters
-2U958910	Remeras	Nena	"Remera ""Nap Snacks Repeat"" Gris"	3.49	4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw8750df98/productimages/2U958910.jpg	19900	carters
 2U962310	Remeras	Nene	Remera Dinosaurios Estampada Gris	3.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwa79a886a/productimages/2U962310.jpg	19900	carters
 6V944610	Remeras	Nene	Remera Dinosaurios Estampada Verde	3.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwf018272d/productimages/6V944610.jpg	19900	carters
 2U962510	Remeras	Nene	"Remera ""Big Bro"" Crudo"	3.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw5f1757f7/productimages/2U962510.jpg	19900	carters
@@ -407,7 +405,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 3W087010	Ropa interior	Nena	Pack 7 Bombachas Gatito	15	8|10-12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw2a5c8608/productimages/3W087010.jpg	49900	carters
 3T729510	Ropa interior	Nene	Pack 7 Slips	13	8	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw60c319dc/productimages/3T729510.jpg	44900	carters
 3R164710	Ropa interior	Nene	Pack 5 Bóxers Camuflada Rojo y Verde	13	6-7|8|10-12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw28092c30/productimages/3T731410.jpg	44900	carters
-3T652510	Ropa interior	Nena	Pack 7 Bombachas	15	6-6X|8|10-12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6bc6c87f/productimages/3T652510.jpg	49900	carters
+3T652510	Ropa interior	Nena	Pack 7 Bombachas	15	6-6X|10-12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6bc6c87f/productimages/3T652510.jpg	49900	carters
 3T730210	Ropa interior	Nena	Pack 7 Bombachas Estampadas Rosa y Azul	13	8|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw767e0d2a/productimages/3T730210.jpg	44900	carters
 3T728910	Ropa interior	Nene	Pack 5 Bóxers Estampados	13	6-7|8|10-12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw5df85189/productimages/3T728910.jpg	44900	carters
 3V005810	Ropa interior	Nene	Pack 5 Bóxers Naranja y Azul	13	6-7|8	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe4d341fb/productimages/3V005810.jpg	44900	carters
@@ -541,7 +539,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1W491210	Pijamas	Unisex	Pijama Navideño Rojo	5.6	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw55081bdb/productimages/1W491210.jpg	29900	carters
 1W159310	Pijamas	Nena	Pijama Floral (modelo 2)	8	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwa9b3af51/productimages/1W159310.jpg	32900	carters
 2W139710	Pijamas	Nene	Pijama Camiones Azul (modelo 3)	5.6	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfb57dc00/productimages/2W139710.jpg	38900	carters
-1W285210	Pijamas de Polar	Nena	Pijama de Polar Invierno Lila	8	PRE|NB|3M|6M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwedb6a1db/productimages/1W285210.jpg	29900	carters
+1W285210	Pijamas de Polar	Nena	Pijama de Polar Invierno Lila	8	PRE|NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwedb6a1db/productimages/1W285210.jpg	29900	carters
 2W160010	Pijamas	Nene	Pijama Invierno Verde	7	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb9510821/productimages/2W160010.jpg	38900	carters
 1W704110	Pijamas	Nene	Pijama Crudo y Azul	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwbf61c331/productimages/1W704110.jpg	29900	carters
 1V245510	Pijamas	Nena	Pijama Crudo (modelo 11)	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe8217e3f/productimages/1V245510.jpg	29900	carters
@@ -567,7 +565,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 3U635010	Pijamas	Nene	Pijama Gris y Azul	7.99	4|5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw01a21512/productimages/3U635010.jpg	39900	carters
 3V620910	Pijamas	Nena	Pijama Manzanas Rosa	7.49	5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw05d61169/productimages/3V620910.jpg	39900	carters
 3W243410	Pijamas de Polar	Unisex	Pijama de Polar Navideño Verde	8	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw85a60970/productimages/3W243410.jpg	39900	carters
-3W243010	Pijamas de Polar	Unisex	Pijama de Polar Escocés Navideño Rojo y Verde	8	4|5|6|7|8|10|12	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfea9bbd7/productimages/3W243010.jpg	39900	carters
+3W243010	Pijamas de Polar	Unisex	Pijama de Polar Escocés Navideño Rojo y Verde	8	4|5|6|7|8|10	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfea9bbd7/productimages/3W243010.jpg	39900	carters
 2W153210	Pijamas	Unisex	"Pijama ""Feliz Navidad"" Navideño Azul Marino"	6.16	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6c9bc26e/productimages/2W153210_1.jpg	38900	carters
 3W145810	Pijamas de Polar	Unisex	Pijama de Polar Navideño	8	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw9bb0052e/productimages/3W145810.jpg	39900	carters
 3W145910	Pijamas de Polar	Unisex	"Pijama de Polar ""Feliz Navidad"" Navideño Azul Marino"	5.6	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw06df0503/productimages/3W145910.jpg	39900	carters
