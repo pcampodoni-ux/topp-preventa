@@ -11564,6 +11564,7 @@ document.getElementById('wa').onclick=function(){
   m+='%0A*Total del pedido:* '+money(cc.total)+'%0A';
   m+='*Seña a transferir:* '+money(cart.length*SENA)+'%0A';
   m+='(Voy a transferir al alias PATOCAMPSANT)';
+  m+='%0A%0A📷 *Ver pedido con fotos:* '+encodeURIComponent('https://topp.wowcyk.com/pedido.html?i='+cart.map(function(i){return encodeURIComponent(i.code)+'~'+encodeURIComponent(i.talle);}).join(','));
   window.open('https://wa.me/'+WA+'?text='+m,'_blank');
 };
 

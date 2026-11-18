@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pedido con fotos · TOPP by WOWCYK</title>
+<style>
+:root{--v:#5E8A8C;--v2:#cfe0e0;--tx:#3b4446;--gr:#eef2f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f2f8f8;color:var(--tx)}
+header{background:var(--v);color:#fff;text-align:center;padding:18px 12px}
+header h1{font-size:24px;letter-spacing:6px;font-weight:600}header small{display:block;font-size:10px;letter-spacing:4px;opacity:.9}
+main{max-width:620px;margin:0 auto;padding:16px 12px 40px}
+h2{font-size:17px;margin:4px 0 12px}
+.it{display:flex;gap:12px;background:#fff;border-radius:12px;padding:10px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);text-decoration:none;color:inherit}
+.it img{width:96px;height:96px;object-fit:contain;border-radius:8px;background:#fafafa;flex:0 0 auto}
+.it .n{font-size:11px;letter-spacing:1px;color:var(--v);text-transform:uppercase;font-weight:700}
+.it h3{font-size:15px;font-weight:600;margin:3px 0 6px;line-height:1.25}
+.it .d{font-size:13.5px}.it .d b{font-size:16px}
+.it .c{font-size:11.5px;color:#8a9496;margin-top:4px}
+.tot{display:flex;justify-content:space-between;font-size:16px;font-weight:700;padding:12px 4px;border-top:2px solid var(--v2);margin-top:6px}
+.sena{display:flex;justify-content:space-between;font-size:14px;padding:0 4px;color:var(--v)}
+.vac{background:#fff;border-radius:12px;padding:16px;text-align:center}
+.bt{display:block;text-align:center;margin-top:18px;background:var(--v);color:#fff;text-decoration:none;padding:13px;border-radius:12px;font-weight:700}
+</style>
+</head>
+<body>
+<header><h1>TOPP</h1><small>BY WOWCYK</small></header>
+<main>
+<h2 id="tit">Pedido con fotos</h2>
+<div id="lista"><div class="vac">Cargando…</div></div>
+<a class="bt" href="./">Ver la tienda por pedido</a>
+</main>
+<script>
+(function(){
+  var SENA=10000;
+  var money=function(n){return '$'+Math.round(n).toLocaleString('es-AR');};
+  var q=(location.search.match(/[?&]i=([^&]+)/)||[])[1]||'';
+  var items=q.split(',').filter(Boolean).map(function(x){var p=x.split('~');return {code:decodeURIComponent(p[0]),talle:decodeURIComponent(p[1]||'')};});
+  var L=document.getElementById('lista');
+  if(!items.length){L.innerHTML='<div class="vac">No hay productos en este link.</div>';return;}
+  fetch('./?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.text();}).then(function(h){
+    var d=new DOMParser().parseFromString(h,'text/html'),tot=0,html='';
+    var MN={carters:"Carter's",oshkosh:'OshKosh',hm:'H&M',gapfactory:'GAP Factory',skiphop:'Skip Hop'};
+    items.forEach(function(it,k){
+      var c=d.querySelector('.card[data-code="'+it.code.replace(/"/g,'')+'"]');
+      if(!c){html+='<div class="it"><div><div class="n">'+(k+1)+'. Producto</div><h3>Ya no está publicado</h3><div class="d">Código '+it.code+' · Talle '+it.talle+'</div></div></div>';return;}
+      var img=c.querySelector('img'),p=+c.dataset.precio;tot+=p;
+      html+='<a class="it" href="./?p='+encodeURIComponent(it.code)+'"><img src="'+(img?img.getAttribute('src'):'')+'" alt="" loading="lazy">'+
+        '<div><div class="n">'+(k+1)+'. '+(MN[c.dataset.marca]||c.dataset.marca||'')+'</div><h3>'+c.dataset.nom.replace(/^(GAP|OshKosh|Skip Hop|H&M|Carter's) · /,'')+'</h3>'+
+        '<div class="d">Talle <b>'+it.talle+'</b> · '+money(p)+'</div><div class="c">Código '+it.code+'</div></div></a>';
+    });
+    html+='<div class="tot"><span>Total del pedido</span><span>'+money(tot)+'</span></div>'+
+      '<div class="sena"><span>Seña ('+items.length+' × '+money(SENA)+')</span><span>'+money(items.length*SENA)+'</span></div>';
+    document.getElementById('tit').textContent='Pedido con fotos · '+items.length+(items.length===1?' producto':' productos');
+    L.innerHTML=html;
+  }).catch(function(){L.innerHTML='<div class="vac">No se pudo cargar el pedido. Probá de nuevo en un momento.</div>';});
+})();
+</script>
+</body>
+</html>
