@@ -62,7 +62,7 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1174699011	Shorts	Nena	GAP · Calza Corta Azul	8.99	3M|6M	61/804/213/cn61804213.png	9.99	39900
 1174699021	Shorts	Nena	GAP · Calza Corta Naranja Floral	8.09	3M|6M	61/804/448/cn61804448.png	8.99	39900
 1174699031	Shorts	Nena	GAP · Calza Corta Amarilla Arcoíris	8.99	3M|6M	62/354/182/cn62354182.png	9.99	39900
-1174702011	Buzos	Nena	GAP · Buzo Crudo (New Off White Americana Flag Fourth Of July Fruit)	9.87	12M|18M|24M|2T|3T|4T	61/946/364/cn61946364.png	10.97	39900
+1174702011	Buzos	Nena	GAP · Buzo Crudo (New Off White Americana Flag Fourth Of July Fruit)	9.87	12M|2T|3T|4T	61/946/364/cn61946364.png	10.97	39900
 1174702041	Buzos	Nena	GAP · Buzo Blanco Lunares	8.99	12M|18M|24M|2T|3T|4T|5T	63/231/881/cn63231881.png	9.99	39900
 1174704011	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue Fourth Of July Girl)	5.37	12M|18M	61/788/133/cn61788133.png	5.97	29900
 1174704041	Remeras	Nena	GAP · Remera Estampada Amarilla Ositos	6.27	18M|24M	62/140/778/cn62140778.png	6.97	36990
@@ -106,7 +106,6 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1177222241	Bodies	Nena	GAP · Body Estampado Gris Ositos	8.09	NB|3M|6M|12M|18M|24M	63/729/978/cn63729978.png	8.99	39900
 1177222251	Bodies	Nena	GAP · Body Estampado Rosa (Auntie'S Bestie Pink)	8.09	NB|3M|6M|12M|18M|24M	63/710/050/cn63710050.png	8.99	39900
 1177222261	Bodies	Nena	GAP · Body Estampado Violeta	8.09	NB|3M|6M|12M|18M|24M	63/714/031/cn63714031.png	8.99	39900
-1177307001	Remeras	Nene	GAP · Remera Estampada Gris (Heather Gray)	8.97	6-7|8	62/349/159/cn62349159.png	9.97	39900
 1177309001	Remeras	Nene	GAP · Remera Estampada Azul (Light Autumn Blue)	8.97	4-5|6-7	62/095/331/cn62095331.png	9.97	39900
 1178427021	Remeras	Nena	GAP · Remera Estampada Roja Frutillas	5.39	4-5|6-7|8|10|12|14-16	62/180/421/cn62180421.png	5.99	29900
 1178427041	Remeras	Nena	GAP · Remera Estampada Negra	6.74	4-5|6-7|8|10	62/095/635/cn62095635.png	7.49	37990
@@ -130,7 +129,7 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1178439001	Remeras	Nena	GAP · Remera Estampada Crudo (modelo 2)	6.74	18M|24M|2T|3T|4T|5T	62/980/042/cn62980042.png	7.49	37990
 1178439031	Remeras	Nena	GAP · Remera Estampada Beige	5.39	12M|18M|24M|2T|3T|4T|5T	62/954/806/cn62954806.png	5.99	29900
 1178439041	Remeras	Nena	GAP · Remera Estampada Crudo (modelo 3)	6.74	12M|18M|24M|2T|3T|4T|5T	62/941/258/cn62941258.png	7.49	37990
-1178439051	Remeras	Nena	GAP · Remera Estampada Naranja (Icy Orange Pumpkin)	5.37	12M|24M|3T|4T	62/954/855/cn62954855.png	5.97	29900
+1178439051	Remeras	Nena	GAP · Remera Estampada Naranja (Icy Orange Pumpkin)	5.37	12M|24M|3T	62/954/855/cn62954855.png	5.97	29900
 1178440001	Remeras	Nena	GAP · Remera Grape Flavor Bow	5.39	12M|18M|24M|2T|3T|4T|5T	63/668/476/cn63668476.png	5.99	29900
 1178440011	Remeras	Nena	GAP · Remera Verde Verde Salvia	5.39	12M|18M|24M|2T|3T|4T|5T	63/047/015/cn63047015.png	5.99	29900
 1178440021	Remeras	Nena	GAP · Remera Beige (Tan Chino Flowers)	5.39	12M|18M|24M|2T|3T|4T|5T	62/771/215/cn62771215.png	5.99	29900
@@ -255,7 +254,7 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1188428001	Remeras	Nene	GAP · Remera Estampada Basketball (Basketball)	8.09	4-5|6-7|8|10|12|14-16	63/177/957/cn63177957.png	8.99	39900
 1188428011	Remeras	Nene	GAP · Remera Estampada Gris Tiburones	8.09	4-5|6-7|8|10|12|14-16	63/500/024/cn63500024.png	8.99	39900
 1188946031	Remeras	Nena	GAP · Remera Estampada Roja (Red Candy Canes Logo)	6.11	4-5|6-7|8|10|12|14-16	63/571/994/cn63571994.png	6.79	35690
-1188946051	Remeras	Nena	GAP · Remera Estampada Holly	9.17	4-5|6-7|8|10|12|14-16	64/202/554/cn64202554.png	10.19	39900
+1188946051	Remeras	Nena	GAP · Remera Estampada Holly	9.17	4-5|6-7|10|12|14-16	64/202/554/cn64202554.png	10.19	39900
 1188946061	Remeras	Nena	GAP · Remera Estampada Elf	6.11	4-5|6-7|8|10|12|14-16	64/202/572/cn64202572.png	6.79	35690
 1188946071	Remeras	Nena	GAP · Remera Estampada Puppy Love	6.11	4-5|6-7|8|10|12|14-16	64/202/574/cn64202574.png	6.79	35690
 1188946081	Remeras	Nena	GAP · Remera Estampada Azul Marino (Navy Dog)	6.11	4-5|6-7|8|10|12|14-16	64/202/543/cn64202543.png	6.79	35690
