@@ -49,8 +49,8 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1172550051	Remeras	Nena	GAP · Remera Logo Rosa (Neon Pink Glow)	4.04	12M|18M|24M|2T|3T|4T|5T	61/264/717/cn61264717.png	4.49	29900
 1172592001	Remeras	Nena	GAP · Remera Estampada Blanca	8.99	12M|18M|24M|2T|3T|4T|5T	61/265/156/cn61265156.png	9.99	39900
 1172600001	Remeras	Nena	GAP · Remera Estampada Crudo (New Off White Fruit)	8.07	12M|18M|24M|2T|3T|4T|5T	61/534/558/cn61534558.png	8.97	39900
-1172722001	Mallas	Nena	GAP · Malla Violeta Lavanda	5.37	NB|3M	61/145/051/cn61145051.png	5.97	29900
-1172722011	Mallas	Nena	GAP · Malla Azul (Union Blue Bananas)	5.37	NB|3M	61/145/052/cn61145052.png	5.97	29900
+1172722001	Mallas	Nena	GAP · Gorro de Sol para el Agua Violeta Lavanda	5.37	NB|3M	61/145/051/cn61145051.png	5.97	29900
+1172722011	Mallas	Nena	GAP · Gorro de Sol para el Agua Azul (Union Blue Bananas)	5.37	NB|3M	61/145/052/cn61145052.png	5.97	29900
 1172821031	Pantalones	Nena	GAP · Pantalón Jogging Rosa	9.44	4-5|8|10|12|14-16	61/327/760/cn61327760.png	10.49	39900
 1172833001	Shorts	Nena	GAP · Short Crudo (New Off White)	6.27	10|12	61/559/187/cn61559187.png	6.97	36990
 1173207051	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue)	8.99	4-5|6-7	62/815/820/cn62815820.png	9.99	39900
@@ -265,3 +265,20 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1194065001	Remeras	Nena	GAP · Remera Estampada Rosa Ositos (Girl Pink Bear)	8.09	12M|18M|24M|2T|3T|4T|5T	63/931/067/cn63931067.png	8.99	39900
 1196029001	Remeras	Nene	GAP · Remera Logo NY Azul	6.74	12M|18M|24M|2T|3T|4T|5T	63/374/447/cn63374447.png	7.49	37990
 1196518061	Remeras	Nena	GAP · Remera Estampada Blanca (Birthday Balloon White)	8.09	12M|18M|24M|2T|3T|4T|5T	64/092/166/cn64092166.png	8.99	39900
+1172330001	Mallas	Nena	GAP · Malla 2 Piezas con Remera UV Rosa Flúor	15.99	12M|18M|24M|2T|3T|4T|5T	61/233/293/cn61233293.jpg	15.99	52900
+1172332001	Mallas	Nena	GAP · Malla Enteriza Manga Larga UV Floral	15.99	12M|2T|3T|4T|5T	61/208/156/cn61208156.jpg	15.99	52900
+1172333001	Mallas	Nena	GAP · Malla 2 Piezas Vichy Rosa	11.99	12M|18M|24M|2T|3T|4T|5T	61/144/746/cn61144746.jpg	11.99	42900
+1172334001	Mallas	Nena	GAP · Malla 2 Piezas con Remera UV Frutillas Rosa	15.99	12M|18M|24M|2T|3T|4T|5T	61/155/263/cn61155263.jpg	15.99	52900
+1172536001	Mallas	Unisex	GAP · Remera UV de Agua Tiburones Amarillo Flúor	11.99	12M|18M|24M|2T|3T|4T|5T	61/207/964/cn61207964.jpg	11.99	42900
+1172543001	Mallas	Nene	GAP · Remera UV de Agua Autos Naranja	13.99	12M|18M|24M|2T|3T|4T|5T	61/208/134/cn61208134.jpg	13.99	47900
+1172543011	Mallas	Nene	GAP · Remera UV de Agua Azul	13.99	12M|18M|24M|2T|3T|4T	61/166/702/cn61166702.jpg	13.99	47900
+1172554001	Mallas	Nene	GAP · Short de Baño Tiburones Amarillo Flúor	11.99	12M|18M|24M|2T|3T|4T|5T	61/264/652/cn61264652.jpg	11.99	42900
+1172599001	Mallas	Nene	GAP · Short de Baño Azul	13.99	12M|18M|24M|2T|3T|4T	61/286/041/cn61286041.jpg	13.99	47900
+1172599021	Mallas	Nene	GAP · Short de Baño Autos Naranja	13.99	12M|18M|24M|2T	61/286/030/cn61286030.jpg	13.99	47900
+1172805011	Mallas	Nene	GAP · Short de Baño Naranja	13.99	4-5|6-7|8|10|12|14-16	61/184/271/cn61184271.jpg	13.99	47900
+1172805021	Mallas	Nene	GAP · Short de Baño Rojo	15.74	4-5|6-7|8|10|12|14-16	61/464/480/cn61464480.jpg	17.49	63990
+1172805031	Mallas	Nene	GAP · Short de Baño Peces	15.74	4-5|6-7|8|10|12	62/056/428/cn62056428.jpg	17.49	63990
+1172807011	Mallas	Nene	GAP · Remera UV de Agua Rojo	15.74	4-5|6-7|8|10|12|14-16	61/144/842/cn61144842.jpg	17.49	63990
+1173135011	Mallas	Nena	GAP · Malla 2 Piezas con Remera UV Rosa	11.99	4-5|6-7|8|10|12|14-16	61/166/496/cn61166496.jpg	11.99	42900
+1173288001	Mallas	Nena	GAP · Malla 2 Piezas Floral (modelo 2)	10.49	4-5|6-7|8|10|12|14-16	61/207/607/cn61207607.jpg	10.49	42900
+1175031001	Mallas	Nene	GAP · Malla Estampada Azul Marino	13.47	12M|18M|24M|2T|3T	62/082/955/cn62082955.png	14.97	56590
