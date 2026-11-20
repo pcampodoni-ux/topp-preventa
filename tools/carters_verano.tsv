@@ -42,7 +42,7 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 1U789210	Vestidos	Nena	Vestido Gris	9.99	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwbcb21a9e/productimages/1U789210.jpg		carters
 1U789310	Vestidos	Nena	Vestido Rosa	10.99	12M|18M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd41dcb39/productimages/1U789310.jpg		carters
 1V257310	Vestidos	Nena	Vestido Algodón Orgánico	10.99	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb1486cf8/productimages/1V257310.jpg		carters
-1W921810	Vestidos	Nena	Vestido Body Corazones Rosa	11	NB|3M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw172bbb95/productimages/1W921810.jpg		carters
+1W921810	Vestidos	Nena	Vestido Body Corazones Rosa	11	NB|3M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw172bbb95/productimages/1W921810.jpg		carters
 1V240310	Packs de Bodies	Nena	Pack 5 Bodies Rosa y Verde	12	PRE|NB|3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw3a920def/productimages/1V240310.jpg	59900	carters
 1W119010	Packs de Bodies	Nena	Pack 5 Bodies Manga Corta Floral	12	PRE|NB|3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw9124e951/productimages/1W119010.jpg	59900	carters
 1V240710	Packs de Bodies	Nena	Pack 5 Bodies	12	PRE|NB|3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb8d0c6c1/productimages/1V240710.jpg	59900	carters
@@ -226,7 +226,6 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1U590410	Enteritos	Nena	Enterito Musculosa Caqui	6.49	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd548c92e/productimages/1U590410.jpg		carters
 1U330910	Enteritos	Nene	Enterito Musculosa Rayado Marrón y Blanco	6.49	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw25a04d0f/productimages/1U330910.jpg		carters
 1U590510	Enteritos	Nene	Enterito Musculosa Beige	6.99	NB|3M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw2de8df3d/productimages/1U590510.jpg		carters
-1V217210	Enteritos	Nena	Enterito Floral Amarillo	6.99	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwc0aa2e69/productimages/1V217210[1].jpg		carters
 1V045410	Enteritos	Unisex	Enterito Deportes Rojo	9.49	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdf7a18cc/productimages/1V045410.jpg		carters
 1V543510	Enteritos	Nena	Enterito Floral Rosa	10.8	NB|3M|6M|9M|12M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw65ab0680/productimages/1V543510.jpg		carters
 1U940210	Enteritos	Nena	Enterito de Gasa Algodón Orgánico	11.99	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw5be1b1f8/productimages/1U940210.jpg		carters
@@ -267,7 +266,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 6W647810	Remeras	Nene	"Remera ""Authentic Playwear Oshkosh Since 1895"" Crudo"	11	3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd38a2581/productimages/6W647810.jpg		oshkosh
 2N107110	Remeras	Nene	Remera Blanca (modelo 4)	11.2	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6e6dd9b7/productimages/2N107110.jpg		oshkosh
 6V954010	Remeras	Nene	Remera Invierno Medium Wash	12.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw3036c030/productimages/6V954010.jpg		oshkosh
-2V397310	Vestidos	Nena	Pollera de Jean Floral Light Wash	10.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwee55371d/productimages/2V397310.jpg		oshkosh
+2V397310	Vestidos	Nena	Pollera de Jean Floral Light Wash	10.99	2T|3T|4T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwee55371d/productimages/2V397310.jpg		oshkosh
 2V404210	Vestidos	Nena	Vestido Manga Corta Azul Marino	10.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw16ea302d/productimages/2V404210.jpg		oshkosh
 2U529610	Vestidos	Nena	Pollera de Jean Dark Wash (modelo 2)	12.8	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfa30b960/productimages/2U529610.jpg		oshkosh
 2U533610	Vestidos	Nena	Vestido de Jean Dark Wash (modelo 2)	16	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw63148ca4/productimages/2U533610.jpg		oshkosh
@@ -316,7 +315,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 3V461810	Mallas	Nene	Malla (modelo 4)	13.99	6|7|8	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6dfde1ac/productimages/3V461810.jpg	47900	carters
 3W762310	Mallas	Nene	Malla Gris	14	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw884b3614/productimages/3W762310.jpg	47900	carters
 3W762410	Mallas	Nene	Malla Gris y Roja	14	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd4c00a3d/productimages/3W762410.jpg	47900	carters
-3W723310	Mallas	Nena	Malla Rayada Corazones Azul (modelo 3)	16	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0ac8c667/productimages/3W723310.jpg	52900	carters
+3W723310	Mallas	Nena	Malla Rayada Corazones Azul (modelo 3)	16	4|5|6-6X|7|8|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0ac8c667/productimages/3W723310.jpg	52900	carters
 3U575410	Mallas	Nene	Malla	6.49	4|5	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwbf8474ae/productimages/3U575410.jpg		oshkosh
 3W062210	Vestidos	Nena	Pollera de Jean Floral Medium Wash	9.99	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwc48362dc/productimages/3W062210.jpg		oshkosh
 3W228210	Vestidos	Nena	Pollera de Jean Dark Wash	10.99	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw480b2802/productimages/3W228210.jpg		oshkosh
@@ -364,7 +363,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 2T842110	Pantalones	Nene	Pantalón Jogging Azul Marino	10	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw390683dd/productimages/2T842110.jpg		carters
 2T842410	Pantalones	Nene	Pantalón Jogging Marrón	10	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw44abcaea/productimages/2T842410.jpg		carters
 3V986710	Pantalones	Nene	Jean de Jean Dark Wash	9.24	5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd739d604/productimages/3V986710.jpg		oshkosh
-3W066110	Pantalones	Nena	Jean de Jean Osito Medium Wash	13.2	4|5|6-6X|7|8|10|12	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwca9ccce0/productimages/3W066110.jpg		oshkosh
+3W066110	Pantalones	Nena	Jean de Jean Osito Medium Wash	13.2	5|6-6X|7|8|10|12	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwca9ccce0/productimages/3W066110.jpg		oshkosh
 3W048610	Pantalones	Nena	Calza Rosa	4.99	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb0ce5024/productimages/3W048610.jpg		carters
 3R779710	Pantalones	Nena	Calza Negra (modelo 2)	6	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw3d068cd5/productimages/3R779710.jpg		carters
 3R779713	Pantalones	Nena	Calza Azul Marino (modelo 2)	6	4|5|6-6X|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwff89a8b9/productimages/3R779713.jpg		carters
@@ -502,7 +501,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1W115110	Pijamas de Polar	Nena	Pijama de Polar Leopardo Marrón	8	PRE|NB	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdced837e/productimages/1W115110.jpg	35900	carters
 1V716210	Pijamas	Nena	Pijama Mariposas Crudo	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0ef1dea2/productimages/1V716210.jpg	29900	carters
 2W146410	Pijamas	Nena	Pijama Rosa (modelo 6)	7.28	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd5f5e01d/productimages/2W146410.jpg	38900	carters
-3W153610	Pijamas de Polar	Unisex	Pijama de Polar Navideño Crudo	8	4|5|10	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe04a82f1/productimages/3W153610.jpg	35900	carters
+3W153610	Pijamas de Polar	Unisex	Pijama de Polar Navideño Crudo	8	4|10	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe04a82f1/productimages/3W153610.jpg	35900	carters
 2W159310	Pijamas	Nena	Pijama Floral	8	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw75cf0d2b/productimages/2W159310.jpg	38900	carters
 1W149010	Pijamas	Nene	Pijama Autos Azul	5.6	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw2d16f1b5/productimages/1W149010.jpg	32900	carters
 1W140510	Pijamas	Nena	Pijama Rosa (modelo 8)	8	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb6e96436/productimages/1W140510.jpg	32900	carters
@@ -550,7 +549,6 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1V244810	Pijamas	Nene	Pijama Autos Gris	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw71a0d7cf/productimages/1V244810.jpg	29900	carters
 2W140310	Pijamas	Nena	Pijama Azul (modelo 4)	5.6	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwbcb1767b/productimages/2W140310.jpg	38900	carters
 1V374110	Pijamas	Nena	Pijama Frutillas Rosa	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwa26a7ea5/productimages/1V374110.jpg	29900	carters
-2W033310	Pijamas	Unisex	Pijama Navideño Azul	7.84	3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0c66a85b/productimages/2W033310.jpg	38900	carters
 1V717210	Pijamas	Nena	Pijama Perrito Coral	8	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwc48d4e39/productimages/1V717210.jpg	29900	carters
 3U636210	Pijamas	Nene	Pijama Gris	7.49	4|5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwea86b3ad/productimages/3U636210.jpg	39900	carters
 3U635010	Pijamas	Nene	Pijama Gris y Azul	7.99	4|5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw01a21512/productimages/3U635010.jpg	39900	carters
