@@ -40,8 +40,6 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1172364001	Remeras	Nena	GAP · Remera Estampada Crudo Beige Frutillas	6.74	12M|18M|24M|2T|3T|4T|5T	61/656/671/cn61656671.png	7.49	37990
 1172379001	Remeras	Nena	GAP · Remera Estampada Violeta Lila (Pale Lilac Purple Elsa)	6.27	12M|18M|24M|2T	61/656/700/cn61656700.png	6.97	36990
 1172379011	Remeras	Nena	GAP · Remera Estampada Crudo (Disney Family Sis New Off White)	7.49	12M|18M|24M|2T|3T|4T|5T	62/348/453/cn62348453.png	7.49	39690
-1172494001	Remeras	Nene	GAP · Remera Azul	6.74	4-5|6-7|8|10|12|14-16	61/646/123/cn61646123.png	7.49	37990
-1172494011	Remeras	Nene	GAP · Remera Crudo	8.99	4-5|6-7|8|10|12|14-16	63/612/400/cn63612400.png	9.99	39900
 1172528021	Shorts	Nene	GAP · Short Osito Brannan Blanco Gris Melange	8.99	2T|3T	61/340/139/cn61340139.png	9.99	39900
 1172542031	Buzos	Nene	GAP · Buzo Crudo Camiones	8.99	12M|18M	61/264/692/cn61264692.png	9.99	39900
 1172543021	Mallas	Nene	GAP · Malla Turquesa	9.44	12M|18M|24M|2T|3T|4T|5T	61/166/746/cn61166746.png	10.49	39900
@@ -62,7 +60,7 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1174699011	Shorts	Nena	GAP · Calza Corta Azul	8.99	3M|6M	61/804/213/cn61804213.png	9.99	39900
 1174699021	Shorts	Nena	GAP · Calza Corta Naranja Floral	8.09	3M|6M	61/804/448/cn61804448.png	8.99	39900
 1174699031	Shorts	Nena	GAP · Calza Corta Amarilla Arcoíris	8.99	3M|6M	62/354/182/cn62354182.png	9.99	39900
-1174702011	Buzos	Nena	GAP · Buzo Crudo (New Off White Americana Flag Fourth Of July Fruit)	9.87	2T|3T|4T	61/946/364/cn61946364.png	10.97	39900
+1174702011	Buzos	Nena	GAP · Buzo Crudo (New Off White Americana Flag Fourth Of July Fruit)	9.87	2T|4T	61/946/364/cn61946364.png	10.97	39900
 1174702041	Buzos	Nena	GAP · Buzo Blanco Lunares	8.99	12M|18M|24M|2T|3T|4T|5T	63/231/881/cn63231881.png	9.99	39900
 1174704011	Remeras	Nena	GAP · Remera Estampada Azul (Essential Blue Fourth Of July Girl)	5.37	12M|18M	61/788/133/cn61788133.png	5.97	29900
 1174704041	Remeras	Nena	GAP · Remera Estampada Amarilla Ositos	6.27	18M|24M	62/140/778/cn62140778.png	6.97	36990
@@ -139,7 +137,7 @@ code	cat	gen	nombre	usd	talles	img	usd_lista	fijo
 1178441031	Buzos	Nena	GAP · Buzo Marrón Leopardo	8.99	12M|18M|24M|2T|3T|4T|5T	62/904/877/cn62904877.png	9.99	39900
 1178442011	Pantalones	Nena	GAP · Calza Crudo	5.39	12M|18M|24M|2T|3T|4T|5T	62/941/189/cn62941189.png	5.99	29900
 1178442061	Pantalones	Nena	GAP · Calza Grape Flavor Bow	8.09	12M|18M|24M|2T|3T|4T|5T	63/138/674/cn63138674.png	8.99	39900
-1178442071	Pantalones	Nena	GAP · Calza Azul Marino Corazones	4.04	12M|18M|24M|2T|3T	62/896/592/cn62896592.png	4.49	29900
+1178442071	Pantalones	Nena	GAP · Calza Azul Marino Corazones	4.04	18M|24M|2T|3T	62/896/592/cn62896592.png	4.49	29900
 1178442081	Pantalones	Nena	GAP · Calza Verde Verde Salvia	6.74	12M|18M|24M|2T|3T|4T|5T	63/046/927/cn63046927.png	7.49	37990
 1178442091	Pantalones	Nena	GAP · Calza Rosa Cerezas	8.09	12M|18M|24M|2T|3T|4T|5T	63/101/725/cn63101725.png	8.99	39900
 1178445001	Remeras	Nena	GAP · Remera Estampada Crudo (Snoopy Ivory)	8.99	12M|18M|24M|2T|3T|4T|5T	63/474/214/cn63474214.png	8.99	39900
