@@ -2,6 +2,7 @@
 # redondeo a la centena - 10; terminaciones 090/190/290/390/490 -> 990
 FLETE_PRENDA_USD = 6.94   # = peso_kg x flete_USD_kg (calibrado con pedidos de junio)
 MARGEN = 1.9
+COT = 1588           # cotización: siempre el dólar de referencia de la app de Ualá (Patricio, 20/11/2026: $1.588)
 UMBRAL_PSICO = 3000  # $70.000–$72.990 -> $69.900
 def precio(usd, cot, flete=None):
     raw = (usd*1.07 + (FLETE_PRENDA_USD if flete is None else flete)) * cot * MARGEN

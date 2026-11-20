@@ -94,7 +94,7 @@ def pijamas(n_inv=10):
 # El costo real es el precio de lista × 0,4 y el precio de venta se calcula sobre ese costo con ×1,9 (decisión de Patricio).
 sys.path.insert(0, HERE); import precio as P
 def precio_gap(usd):
-    P.MARGEN = 1.9; p = P.precio(usd, 1560); p = 29900 if 30300 <= p <= 35000 else p
+    P.MARGEN = 1.9; p = P.precio(usd, P.COT); p = 29900 if 30300 <= p <= 35000 else p
     for lo, hi, v in [(0, 10, 39900), (10, 12, 42900), (12, 13, 44900)]:
         if lo <= usd < hi: p = min(p, v)
     return p

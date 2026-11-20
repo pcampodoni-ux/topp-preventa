@@ -6,7 +6,7 @@ Lee tools/gapfactory.tsv (workflow "Relevar GAP Factory" + gf_traducir.py) y esc
 import csv, os, re, sys, collections
 T = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, T); import precio as P
 def precio_gap(usd):
-    P.MARGEN = 1.7; p = P.precio(usd, 1560); p = 29900 if 30300 <= p <= 35000 else p
+    P.MARGEN = 1.7; p = P.precio(usd, P.COT); p = 29900 if 30300 <= p <= 35000 else p
     for lo, hi, v in [(0, 10, 39900), (10, 12, 42900), (12, 13, 44900)]:
         if lo <= usd < hi: p = min(p, v)
     return p

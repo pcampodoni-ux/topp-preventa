@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import precio as P
 
 ap = argparse.ArgumentParser()
-ap.add_argument('--cierre', required=True); ap.add_argument('--titulo', default='Black Friday'); ap.add_argument('--cot', type=float, default=1560); ap.add_argument('--tsv', default='zapatillas.tsv:carters,hm.tsv:hm')
+ap.add_argument('--cierre', required=True); ap.add_argument('--titulo', default='Black Friday'); ap.add_argument('--cot', type=float, default=P.COT); ap.add_argument('--tsv', default='zapatillas.tsv:carters,hm.tsv:hm')
 a = ap.parse_args()
 HERE = os.path.dirname(os.path.abspath(__file__)); IDX = os.path.join(HERE, '..', 'index.html')
 IMG_C = 'https://dw.cartersstorefront.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/'
