@@ -67,7 +67,7 @@ code	cat	gen	nombre	usd	talles	img	fijo	marca
 1V240610	Packs de Bodies	Nena	Pack 5 Bodies Floral Amarillo y Azul	12	PRE|NB|3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfee93e07/productimages/1V240610.jpg	59900	carters
 1W118910	Packs de Bodies	Nena	Pack 5 Bodies Manga Corta Osito Rosa y Lila	12	PRE|NB|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw9f8d42ed/productimages/1W118910.jpg	59900	carters
 1W935310	Packs de Bodies	Unisex	"Pack 5 Bodies ""My Little Sunshine"" Rayado"	12	NB|3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe82f1a36/productimages/1W935310.jpg	59900	carters
-1V243210	Packs de Bodies	Unisex	Pack 5 Bodies (modelo 8)	12	PRE|3M|6M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdd505f2b/productimages/1V243210.jpg	59900	carters
+1V243210	Packs de Bodies	Unisex	Pack 5 Bodies (modelo 8)	12	PRE|3M|6M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdd505f2b/productimages/1V243210.jpg	59900	carters
 1U237510	Packs de Bodies	Nena	Pack 5 Bodies Lila y Azul	13.99	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwda855f55/productimages/1U237510.jpg	59900	carters
 1T009310	Packs de Bodies	Nene	Pack 5 Bodies Manga Corta (modelo 2)	13.99	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdd715287/productimages/1T009310.jpg	59900	carters
 1T006810	Packs de Bodies	Unisex	Pack 5 Bodies Manga Corta Rayado Crudo	13.99	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwc4a4e867/productimages/1T006810.jpg	59900	carters
@@ -250,7 +250,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1W489910	Enteritos	Unisex	Enterito Light Wash	14.99	3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw19bc80fd/productimages/1W489910.jpg		oshkosh
 1V928210	Enteritos	Unisex	Enterito de Jean Dark Wash (modelo 3)	14.99	3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw1f1b2c33/productimages/1V928210.jpg		oshkosh
 1V928410	Enteritos	Unisex	Enterito Caqui	14.99	3M|6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwaf72ef5b/productimages/1V928410.jpg		oshkosh
-2V933510	Enteritos	Nene	Enterito de Jean Dark Wash (modelo 2)	13.16	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdb66863e/productimages/2V933510.jpg		oshkosh
+2V933510	Enteritos	Nene	Enterito de Jean Dark Wash (modelo 2)	13.16	2T|3T|4T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdb66863e/productimages/2V933510.jpg		oshkosh
 2V408810	Enteritos	Nena	Enterito Manga Corta de Jean Light Wash	15.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwa436f7dd/productimages/2V408810.jpg		oshkosh
 2V408610	Enteritos	Nena	Enterito Manga Corta Floral Crudo	15.99	3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw51580c26/productimages/2V408610.jpg		oshkosh
 2V932310	Enteritos	Unisex	Enterito de Jean Dark Wash (modelo 4)	16.99	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw15c04ac0/productimages/2V932310.jpg		oshkosh
@@ -504,7 +504,6 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1W115110	Pijamas de Polar	Nena	Pijama de Polar Leopardo Marrón	8	PRE|NB	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwdced837e/productimages/1W115110.jpg	29900	carters
 1V716210	Pijamas	Nena	Pijama Mariposas Crudo	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0ef1dea2/productimages/1V716210.jpg	29900	carters
 2W146410	Pijamas	Nena	Pijama Rosa (modelo 6)	7.28	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwd5f5e01d/productimages/2W146410.jpg	38900	carters
-1W584810	Pijamas de Polar	Nena	Pijama de Polar Mariposas Rosa (modelo 2)	8	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw73d562d5/productimages/1W584810.jpg	32900	carters
 1W584510	Pijamas de Polar	Nene	Pijama de Polar Espacio Negro (modelo 2)	8	18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe8cfc033/productimages/1W584510.jpg	32900	carters
 3W153610	Pijamas de Polar	Unisex	Pijama de Polar Navideño Crudo	8	4|5|10	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe04a82f1/productimages/3W153610.jpg	39900	carters
 2W159310	Pijamas	Nena	Pijama Floral	8	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw75cf0d2b/productimages/2W159310.jpg	38900	carters
@@ -555,11 +554,9 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 2W140310	Pijamas	Nena	Pijama Azul (modelo 4)	5.6	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwbcb1767b/productimages/2W140310.jpg	38900	carters
 1V374110	Pijamas	Nena	Pijama Frutillas Rosa	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwa26a7ea5/productimages/1V374110.jpg	29900	carters
 2W033310	Pijamas	Unisex	Pijama Navideño Azul	7.84	3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0c66a85b/productimages/2W033310.jpg	38900	carters
-1V717210	Pijamas	Nena	Pijama Perrito Coral	8	NB|3M|6M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwc48d4e39/productimages/1V717210.jpg	29900	carters
-1W343610	Pijamas	Unisex	Pijama Algodón Orgánico Navideño (modelo 2)	7.99	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw98c49fa3/productimages/1W343610.jpg	29900	carters
+1V717210	Pijamas	Nena	Pijama Perrito Coral	8	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwc48d4e39/productimages/1V717210.jpg	29900	carters
 3U636210	Pijamas	Nene	Pijama Gris	7.49	4|5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwea86b3ad/productimages/3U636210.jpg	39900	carters
 3U635010	Pijamas	Nene	Pijama Gris y Azul	7.99	4|5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw01a21512/productimages/3U635010.jpg	39900	carters
-3V620910	Pijamas	Nena	Pijama Manzanas Rosa	7.49	5|6	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw05d61169/productimages/3V620910.jpg	39900	carters
 3W243410	Pijamas de Polar	Unisex	Pijama de Polar Navideño Verde	8	4|5|6|7|8|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw85a60970/productimages/3W243410.jpg	39900	carters
 3W243010	Pijamas de Polar	Unisex	Pijama de Polar Escocés Navideño Rojo y Verde	8	5|6|7|8|10	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwfea9bbd7/productimages/3W243010.jpg	39900	carters
 2W153210	Pijamas	Unisex	"Pijama ""Feliz Navidad"" Navideño Azul Marino"	6.16	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6c9bc26e/productimages/2W153210_1.jpg	38900	carters
@@ -616,7 +613,7 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1V246210	Pijamas	Nena	Pijama Verde (modelo 2)	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0995965c/productimages/1V246210.jpg	29900	carters
 1W110710	Pijamas	Nena	Pijama Floral Crudo (modelo 4)	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw717baa81/productimages/1W110710.jpg	29900	carters
 2W159010	Pijamas	Nene	Pijama Azul Marino (modelo 2)	8	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6be5ef58/productimages/2W159010.jpg	38900	carters
-1W114710	Pijamas	Nena	Pijama Azul (modelo 11)	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwaac87989/productimages/1W114710.jpg	29900	carters
+1W114710	Pijamas	Nena	Pijama Azul (modelo 11)	8	PRE|NB|3M|6M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwaac87989/productimages/1W114710.jpg	29900	carters
 1V245910	Pijamas	Nena	Pijama Crudo (modelo 14)	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw0998d915/productimages/1V245910.jpg	29900	carters
 1W115010	Pijamas de Polar	Nena	Pijama de Polar Floral Lila	8	PRE|NB|3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb670dc87/productimages/1W115010.jpg	29900	carters
 1W033110	Pijamas	Unisex	Pijama Navideño Azul (modelo 2)	7.84	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw9dee14b0/productimages/1W033110.jpg	32900	carters
@@ -660,11 +657,11 @@ CR08884	Sets 2 Piezas	Nena	Set 2 Piezas Cerezas Azul Marino y Rojo	9	Único	http
 1W144110	Pijamas	Unisex	Pijama Crudo (modelo 3)	5.99	6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb9fcf513/productimages/1W144110.jpg	32900	carters
 3W144110	Pijamas	Unisex	Pijama Crudo (modelo 6)	7.99	5|6|10|12|14	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw28838150/productimages/3W144110.jpg	39900	carters
 1W185210	Pijamas	Unisex	Pijama Algodón Orgánico (modelo 2)	7.99	6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw6ca4953f/productimages/1W185210.jpg	32900	carters
-3W143310	Pijamas	Unisex	Pijama Halloween	6.99	4|5|6|7|8	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwf28508a0/productimages/3W143310.jpg	39900	carters
+3W143310	Pijamas	Unisex	Pijama Halloween	6.99	4|5|6|7	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwf28508a0/productimages/3W143310.jpg	39900	carters
 1W167410	Pijamas	Unisex	Pijama Algodón Orgánico	6.99	6M|9M|12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw76b71e74/productimages/1W167410.jpg	32900	carters
 1W143910	Pijamas	Unisex	Pijama Crudo (modelo 4)	5.99	12M|18M|24M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwb592fd5d/productimages/1W143910.jpg	32900	carters
 2W145410	Pijamas	Unisex	Pijama Navideño Verde	6.49	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw919300e2/productimages/2W145410.jpg	38900	carters
 2W143010	Pijamas	Unisex	Pijama Halloween Estampado Crudo (modelo 2)	6.49	2T|3T|4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwe9a6f859/productimages/2W143010.jpg	38900	carters
 2V318210	Pijamas	Nena	Pijama Crudo (modelo 5)	6.49	4T|5T	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw89401efa/productimages/2V318210.jpg	38900	carters
-1W353510	Pijamas	Unisex	Pijama Crudo (modelo 7)	7.99	3M|6M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw65096ac2/productimages/1W353510.jpg	29900	carters
+1W353510	Pijamas	Unisex	Pijama Crudo (modelo 7)	7.99	3M|9M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dw65096ac2/productimages/1W353510.jpg	29900	carters
 1W128410	Pijamas	Unisex	Pijama Halloween Gris	6.49	NB|3M	https://www.carters.com/on/demandware.static/-/Sites-carters_master_catalog/default/dwed79d498/productimages/1W128410.jpg	29900	carters
