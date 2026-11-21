@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Revisión de precios y stock del pedido abierto (17/11/2026, extendido hasta el jueves 19/11 y reabierto hasta el viernes 20/11 22 hs).
+"""Revisión de precios y stock del pedido abierto (17/11/2026, extendido hasta el jueves 19/11 y reabierto hasta el viernes 20/11 23 hs).
 
 Solo toca lo que ya está publicado: nunca agrega productos.
   - Talles: saca los que se agotaron. Si quedan menos de 2 (o de 1 si tenía uno solo), saca el producto.
