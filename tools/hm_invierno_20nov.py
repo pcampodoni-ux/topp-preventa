@@ -41,7 +41,6 @@ D = [
  ('1211290025', 'Pantalones', 'Nene', 'Jogger Cargo Frisado Gris', 200, 9.99, '1½-2Y|2-3Y', '88/40/88406a78c379fc5e481b1d26195b0164063b9b25.jpg'),
  ('1308028012', 'Pantalones', 'Nene', 'Jogger Bordado Gris Oscuro', 200, 9.99, '1½-2Y|2-3Y', '0f/3f/0f3f2bf30940da8579959f73b46e442e975be6bf.jpg'),
  ('1332470002', 'Pantalones', 'Unisex', 'Jogger Frisado Negro', 200, 9.99, '1½-2Y|2-3Y', 'b9/36/b93669ebb7cd9fb5ca6c53366e72748607b7469f.jpg'),
- ('0916397030', 'Pantalones', 'Nena', 'Pack 3 Calzas de Algodón Rosa y Blanco', 300, 9.99, '6-7Y|8-9Y', '2c/35/2c359144e0dcdbb0fbc8f655c49390c5ddd3c594.jpg'),
  ('1260989001', 'Pantalones', 'Unisex', 'Pack 2 Calzas de Algodón Pima Negro y Marrón', 120, 10.99, '0-1M|1-2M', '00/01/00014264cdcfd6e1d6ed7d4f41919cd999d30b2d.jpg'),
  ('1313707002', 'Pantalones', 'Nena', 'Pantalón Oxford Negro Rayado', 150, 11.99, '1½-2Y|2-3Y|3-4Y|4-5Y', 'f3/73/f373c030eb3d16376a9bc53d0f28e14736e4ba4c.jpg'),
  ('1291272013', 'Pantalones', 'Nena', 'Pack 2 Calzas Oxford Lila y Gris', 220, 12.49, '1½-2Y|2-3Y', 'a6/be/a6be244fe77e36d24b47fb3b58bf417078c32c8d.jpg'),
@@ -50,6 +49,11 @@ D = [
  ('1092245046', 'Pijamas', 'Nene', 'Pack 2 Pijamas Superman Celeste', 250, 12.49, '0-1M|1-2M', '88/b4/88b41e67a7ebe39a390fa2239cb6e9661e365a49.jpg'),
  ('1333816001', 'Pijamas', 'Unisex', 'Pack 2 Pijamas Enteritos Mickey Gris', 250, 12.49, '0-1M|1-2M', '4e/bd/4ebde79e6b936b99f6187955b71da3cfc3efb71e.jpg'),
  ('1280451001', 'Pijamas', 'Nena', 'Pijama de Algodón Lilo & Stitch', 300, 12.49, '13Y|14Y', '4c/7b/4c7bbab79ad8314bbdd0c7c083e8103efb12f5d6.jpg'),
+ # 21/11: sumados en la reapertura (lo nuevo de la liquidación de hoy con 2+ talles)
+ ('1235864011', 'Pantalones', 'Nena', 'Jegging Gris Oscuro', 150, 7.99, '4-6M|6-9M|9-12M|12-18M|1½-2Y', '76/89/7689cc66fd98751e3849b7302bb17cf25b5c2382.jpg'),
+ ('1252145001', 'Pantalones', 'Nena', 'Pantalón Efecto Jean', 150, 4.99, '2-3Y|3-4Y', 'c4/59/c459633f2fb93855c2a6d1fae04aab08d964b6a4.jpg'),
+ ('1170884014', 'Pantalones', 'Nena', 'Jean Oxford Elastizado Azul Oscuro', 250, 12.49, '1½-2Y|2-3Y', '15/72/1572befb01ab4c219a91b0f079f9ebeb80761e96.jpg'),
+ ('1307238002', 'Enteritos', 'Nena', 'Enterito de Plush Rosa Claro', 200, 10.49, '4-6M|9-12M', '0c/e0/0ce0a375d54ed7173bf70388fea276c345c80ef8.jpg'),
 ]
 TRAMOS = [(0, 10, 39900), (10, 12, 42900), (12, 13, 44900)]
 def precio(usd, cat, g):
