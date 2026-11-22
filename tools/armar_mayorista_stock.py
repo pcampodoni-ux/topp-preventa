@@ -115,9 +115,15 @@ for url, p in precios.items():
     for (t, c), n in sorted(vs.items(), key=lambda kv: (kv[0][1], orden_t(kv[0][0]))):
         tv = 'Único' if t.upper() == 'OSZ' else t
         tl.append({'t': (c + ' ' + tv).strip() if multi_color else tv, 'n': n, 'f': t})
+    # tope: nunca más caro que el precio con transferencia (20% off) del talle más barato con stock en la tienda,
+    # salvo los packs de 4 y 5 bodies a $49.900 (decisión de Patricio)
+    precio = p['may']
+    vp = [v['precio'] for v in st.get('variantes', []) if v.get('precio') and ((v.get('stock') or 0) > 0 or v.get('stock') is None)]
+    if vp and precio != 49900:
+        precio = min(precio, int(min(vp) * 0.8) // 100 * 100)
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
-    prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=p['may'], img=img, sku=li.get('sku') or st.get('sku') or '',
+    prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=precio, img=img, sku=li.get('sku') or st.get('sku') or '',
                       g=g, gen=genero(nom + ' ' + desc), edad=edad(desc + ' ' + nom, [x['f'] for x in tl]), tl=tl))
 
 prods.sort(key=lambda x: (CATS.index(x['cat']) if x['cat'] in CATS else 99, x['nom']))
