@@ -1,0 +1,13 @@
+{
+  "_nota": "Ajustes a mano de Patricio (22/11/2026). fijos: precio mayorista fijo por URL. excluir: no se muestran en la lista mayorista.",
+  "fijos": {
+    "https://www.wowcyk.com/productos/carters-pack-5-bodies-mangas-cortas-1q934210-9ebow/": 45800,
+    "https://www.wowcyk.com/productos/carters-pack-5-bodies-mangas-cortas-1q339110/": 45800,
+    "https://www.wowcyk.com/productos/carter-s-pack-5-bodies-playa-1u627110/": 45800
+  },
+  "excluir": [
+    "https://www.wowcyk.com/productos/carters-pack-5-bodies-mangas-cortas-1s338210/",
+    "https://www.wowcyk.com/productos/carters-pack-5-bodies-mangas-cortas-1s726910/",
+    "https://www.wowcyk.com/productos/carters-pack-5-bodies-mangas-cortas-1q339610/"
+  ]
+}

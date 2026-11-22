@@ -15,6 +15,7 @@ R = 'tools/'
 stock = {x['url']: x for x in json.load(open(R + 'wowcyk_stock.json'))}
 precios = json.load(open(R + 'wowcyk_mayorista_precios.json'))
 listado = {x['url']: x for x in json.load(open(R + 'wowcyk_listado.json'))}
+ajustes = json.load(open(R + 'wowcyk_mayorista_ajustes.json'))
 
 TALLE_RX = re.compile(r'^(PRE|NB|OSZ|ÚNICO|UNICO|U|XXS|XS|S|M|L|XL|XXL|\d+\s*[MT]|\d+(-\d+X?)?|\d+X|N°\s*\d+|\d+\s*-\s*\d+\s*[MT]?|\d+/\d+)$', re.I)
 ORD_T = ['PRE', 'NB', '0-3M', '3M', '3-6M', '6M', '6-9M', '9M', '12M', '18M', '24M', '2T', '3T', '4T', '5T', '6T', '7T', '8T',
@@ -86,6 +87,8 @@ def desc_talles(desc):
 
 prods = []
 for url, p in precios.items():
+    if url in ajustes['excluir']:
+        continue
     li = listado.get(url, {})
     st = stock.get(url, {})
     nom = (li.get('name') or st.get('nombre') or '').strip().strip('"').replace('""', '"')
@@ -128,6 +131,7 @@ for url, p in precios.items():
         baja = int(tr - 5000) // 100 * 100
         if precio > tr - 1000 and baja >= p['costo'] * 1.10:
             precio = baja
+    precio = ajustes['fijos'].get(url, precio)
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
     prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=precio, img=img, sku=li.get('sku') or st.get('sku') or '',
