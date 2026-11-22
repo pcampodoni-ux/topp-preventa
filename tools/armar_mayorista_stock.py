@@ -16,6 +16,13 @@ stock = {x['url']: x for x in json.load(open(R + 'wowcyk_stock.json'))}
 precios = json.load(open(R + 'wowcyk_mayorista_precios.json'))
 listado = {x['url']: x for x in json.load(open(R + 'wowcyk_listado.json'))}
 ajustes = json.load(open(R + 'wowcyk_mayorista_ajustes.json'))
+# costo real por producto (planilla "WOWCYK Stock y Ventas" del Drive de Patricio). NO se sube al repo (es público):
+# está en .gitignore; si falta, se usa el costo de reposición estimado.
+try:
+    costos_reales = json.load(open(R + 'wowcyk_costos_reales.json'))
+except FileNotFoundError:
+    costos_reales = {}
+    print('AVISO: falta tools/wowcyk_costos_reales.json; se usa el costo estimado')
 
 TALLE_RX = re.compile(r'^(PRE|NB|OSZ|ÚNICO|UNICO|U|XXS|XS|S|M|L|XL|XXL|\d+\s*[MT]|\d+(-\d+X?)?|\d+X|N°\s*\d+|\d+\s*-\s*\d+\s*[MT]?|\d+/\d+)$', re.I)
 ORD_T = ['PRE', 'NB', '0-3M', '3M', '3-6M', '6M', '6-9M', '9M', '12M', '18M', '24M', '2T', '3T', '4T', '5T', '6T', '7T', '8T',
@@ -86,6 +93,7 @@ def desc_talles(desc):
 
 
 prods = []
+fuera = []
 for url, p in precios.items():
     if url in ajustes['excluir']:
         continue
@@ -121,17 +129,25 @@ for url, p in precios.items():
     # tope: nunca más caro que el precio con transferencia (20% off) del talle más barato con stock en la tienda,
     # salvo los packs de 4 y 5 bodies a $49.900 (decisión de Patricio)
     precio = p['may']
+    costo = costos_reales.get(url) or p['costo']      # costo real de la planilla; si falta, el estimado
     vp = [v['precio'] for v in st.get('variantes', []) if v.get('precio') and ((v.get('stock') or 0) > 0 or v.get('stock') is None)]
     if vp and precio != 49900:
         precio = min(precio, int(min(vp) * 0.8) // 100 * 100)
     # 22/11 (Patricio): lo que queda igual o más caro que la tienda con transferencia baja $5.000,
-    # solo si sigue dejando al menos 10% sobre el costo de reposición
+    # solo si sigue dejando al menos 10% sobre el costo
     if vp:
         tr = min(vp) * 0.8
         baja = int(tr - 5000) // 100 * 100
-        if precio > tr - 1000 and baja >= p['costo'] * 1.10:
+        if precio > tr - 1000 and baja >= costo * 1.10:
             precio = baja
     precio = ajustes['fijos'].get(url, precio)
+    # piso: al menos 10% sobre el costo real; si el piso supera el precio de la tienda con transferencia, queda fuera
+    piso = -(-int(costo * 1.10) // 100) * 100
+    if precio < piso and (not vp or piso <= min(vp) * 0.8):
+        precio = piso
+    if precio < costo * 1.10:
+        fuera.append((nom, precio, round(costo), url))
+        continue
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
     prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=precio, img=img, sku=li.get('sku') or st.get('sku') or '',
@@ -316,3 +332,5 @@ page = f"""<!DOCTYPE html>
 """
 open('mayorista-stock.html', 'w').write(page)
 print('productos', len(prods), 'unidades', unidades, 'bytes', len(page))
+json.dump([f[:2] + f[3:] for f in fuera], open(R + 'wowcyk_mayorista_fuera.json', 'w'), ensure_ascii=False, indent=0)
+print('fuera por margen < 10%:', len(fuera))
