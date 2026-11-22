@@ -146,8 +146,12 @@ for url, p in precios.items():
     if precio < piso and (not vp or piso <= min(vp) * 0.8):
         precio = piso
     if precio < costo * 1.10:
+        # 22/11 (Patricio): los que no llegan a costo + 10% sin superar la tienda van a costo + $3.000
+        # ... pero nunca más caro que la tienda con transferencia (decisión de Patricio)
+        precio = -(-int(costo + 3000) // 100) * 100
+        if vp:
+            precio = min(precio, int(min(vp) * 0.8) // 100 * 100)
         fuera.append((nom, precio, round(costo), url))
-        continue
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
     prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=precio, img=img, sku=li.get('sku') or st.get('sku') or '',
@@ -333,4 +337,4 @@ page = f"""<!DOCTYPE html>
 open('mayorista-stock.html', 'w').write(page)
 print('productos', len(prods), 'unidades', unidades, 'bytes', len(page))
 json.dump([f[:2] + f[3:] for f in fuera], open(R + 'wowcyk_mayorista_fuera.json', 'w'), ensure_ascii=False, indent=0)
-print('fuera por margen < 10%:', len(fuera))
+print('a costo + $3.000:', len(fuera))
