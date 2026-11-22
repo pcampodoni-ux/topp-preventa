@@ -129,6 +129,7 @@ for url, p in precios.items():
     # tope: nunca más caro que el precio con transferencia (20% off) del talle más barato con stock en la tienda,
     # salvo los packs de 4 y 5 bodies a $49.900 (decisión de Patricio)
     precio = p['may']
+    rebajado5 = False
     costo = costos_reales.get(url) or p['costo']      # costo real de la planilla; si falta, el estimado
     vp = [v['precio'] for v in st.get('variantes', []) if v.get('precio') and ((v.get('stock') or 0) > 0 or v.get('stock') is None)]
     if vp and precio != 49900:
@@ -140,12 +141,18 @@ for url, p in precios.items():
         baja = int(tr - 5000) // 100 * 100
         if precio > tr - 1000 and baja >= costo * 1.10:
             precio = baja
+        elif precio > tr - 1000 and tr >= costo * 1.10:
+            # 22/11 (Patricio): si $5.000 deja menos de 10%, bajar hasta $5.000 pero dejando al menos 5% sobre el costo
+            nuevo = max(baja, -(-int(costo * 1.05) // 100) * 100)
+            if nuevo < precio:
+                precio = nuevo
+                rebajado5 = True
     precio = ajustes['fijos'].get(url, precio)
     # piso: al menos 10% sobre el costo real; si el piso supera el precio de la tienda con transferencia, queda fuera
     piso = -(-int(costo * 1.10) // 100) * 100
-    if precio < piso and (not vp or piso <= min(vp) * 0.8):
+    if precio < piso and not rebajado5 and (not vp or piso <= min(vp) * 0.8):
         precio = piso
-    if precio < costo * 1.10:
+    if precio < costo * (1.05 if rebajado5 else 1.10):
         # 22/11 (Patricio): los que no llegan a costo + 10% sin superar la tienda van a costo + $3.000
         # ... pero nunca más caro que la tienda con transferencia (decisión de Patricio)
         precio = -(-int(costo + 3000) // 100) * 100
