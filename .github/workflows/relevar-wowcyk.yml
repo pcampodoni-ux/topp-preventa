@@ -1,0 +1,20 @@
+name: Relevar WOWCYK
+on:
+  workflow_dispatch:
+  push:
+    paths: ['tools/relevar_wowcyk.py']
+permissions:
+  contents: write
+jobs:
+  relevar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/relevar_wowcyk.py
+      - run: |
+          git config user.name "topp-bot"
+          git config user.email "topp-bot@users.noreply.github.com"
+          git add tools/wowcyk_stock.json
+          git commit -m "Relevamiento stock wowcyk.com con talles" || echo "sin cambios"
+          git pull --rebase -q && git push
