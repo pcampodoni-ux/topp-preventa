@@ -121,6 +121,13 @@ for url, p in precios.items():
     vp = [v['precio'] for v in st.get('variantes', []) if v.get('precio') and ((v.get('stock') or 0) > 0 or v.get('stock') is None)]
     if vp and precio != 49900:
         precio = min(precio, int(min(vp) * 0.8) // 100 * 100)
+    # 22/11 (Patricio): lo que queda igual o más caro que la tienda con transferencia baja $5.000,
+    # solo si sigue dejando al menos 10% sobre el costo de reposición
+    if vp:
+        tr = min(vp) * 0.8
+        baja = int(tr - 5000) // 100 * 100
+        if precio > tr - 1000 and baja >= p['costo'] * 1.10:
+            precio = baja
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
     prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=precio, img=img, sku=li.get('sku') or st.get('sku') or '',
