@@ -44,18 +44,23 @@ def orden_t(t):
     return (ORD_T.index(u), u) if u in ORD_T else (99, u)
 
 
-def grupo(nom, desc):
-    s = (nom + ' ' + (desc or '')).lower()
-    if s.startswith("carter") or nom.lower().startswith("carter"):
-        return 'c'
-    if nom.lower().startswith('oshkosh'):
+CARTERS_SKU = re.compile(r'^L?(\d[A-Z]\d{6}|\d{3}[A-Z]\d{3}|\d{6}1[01])$')
+SKIPHOP_SKU = re.compile(r'^9[A-Z]\d{6}$')
+
+
+def grupo(nom, desc, skus=()):
+    """Carter's / OshKosh / Skip Hop por nombre, descripción o código (los códigos tipo 1T006810 son de Carter's/OshKosh;
+    9R168110 = Skip Hop). Little Planet es una línea de Carter's."""
+    n, s = nom.lower(), (nom + ' ' + (desc or '')).lower()
+    skus = [str(x).strip().upper() for x in skus if x]
+    if n.startswith('oshkosh') or ('oshkosh' in s and not n.startswith('carter')):
         return 'o'
-    if 'skip hop' in s:
+    if n.startswith('carter') or 'little planet' in s:
+        return 'c'
+    if 'skip hop' in s or 'spark style' in s or any(SKIPHOP_SKU.match(x) for x in skus):
         return 's'
-    if "carter's" in s:
+    if "carter" in s or any(CARTERS_SKU.match(x) for x in skus):
         return 'c'
-    if 'oshkosh' in s:
-        return 'o'
     return 'x'
 
 
@@ -110,7 +115,7 @@ for url, p in precios.items():
     for (t, c), n in sorted(vs.items(), key=lambda kv: (kv[0][1], orden_t(kv[0][0]))):
         tv = 'Único' if t.upper() == 'OSZ' else t
         tl.append({'t': (c + ' ' + tv).strip() if multi_color else tv, 'n': n, 'f': t})
-    g = grupo(nom, desc)
+    g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
     prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=p['may'], img=img, sku=li.get('sku') or st.get('sku') or '',
                       g=g, gen=genero(nom + ' ' + desc), edad=edad(desc + ' ' + nom, [x['f'] for x in tl]), tl=tl))
