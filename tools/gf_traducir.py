@@ -21,6 +21,7 @@ TIPOS = [
     (r'Dress|Skirtall|Jumper|Jumpsuit', 'Vestidos', 'Vestido'),
     (r'Skort', 'Shorts', 'Pollera-Short'),
     (r'Skirt', 'Vestidos', 'Pollera'),
+    (r'Swim Bucket Hat|Sun Hat|Swim Hat', 'Mallas', 'Gorro de Sol para el Agua'),
     (r'Swim|Rash Guard|Trunks', 'Mallas', 'Malla'),
     (r'Puffer|Jacket|Coat|Vest|Parka|Anorak|Shacket', 'Camperas', 'Campera'),
     (r'Zip Hoodie', 'Buzos', 'Campera Buzo con Cierre'),

@@ -102,7 +102,8 @@ else:
             if r['cat'] == 'Mallas': out.append(r); continue   # relevados aparte (página de búsqueda), no figuran en el workflow
             inf['sale (agotado o fuera del sitio)'].append(f"{r['nombre']} (gapfactory)"); continue
         # 18/11: GAP Black Friday Early (precio de la web) + 10% extra al pagar; licencias sin el 10% (ver tools/gap_bf18.py)
-        usd = round(float(h['usd']) * (1.0 if LICENCIA.search(r['nombre']) else 0.9), 2)
+        # 22/11: liquidación con 50% extra al pagar (columna desc=50, marcado por la API de GAP Factory: "Extra 50% off. Applied at checkout")
+        usd = round(float(h['usd']) * (0.5 if r.get('desc') == '50' else (1.0 if LICENCIA.search(r['nombre']) else 0.9)), 2)
         nr = revisar_fila(r, 'gapfactory', usd, set(h['talles'].split('|')), True)
         if nr:
             if nr.get('_subio'):
