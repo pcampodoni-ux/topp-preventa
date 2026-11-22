@@ -94,6 +94,7 @@ def desc_talles(desc):
 
 prods = []
 fuera = []
+perdida = []
 for url, p in precios.items():
     if url in ajustes['excluir']:
         continue
@@ -159,6 +160,10 @@ for url, p in precios.items():
         if vp:
             precio = min(precio, int(min(vp) * 0.8) // 100 * 100)
         fuera.append((nom, precio, round(costo), url))
+    # 22/11 (Patricio): fuera de la lista todo lo que quede por debajo del costo
+    if precio < costo:
+        perdida.append((nom, precio, url))
+        continue
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
     img = re.sub(r'-\d+-0\.webp$', '-480-0.webp', li.get('img') or st.get('img') or '')
     prods.append(dict(url=url, nom=nom, cat=p['cat'], precio=precio, img=img, sku=li.get('sku') or st.get('sku') or '',
@@ -345,3 +350,5 @@ open('mayorista-stock.html', 'w').write(page)
 print('productos', len(prods), 'unidades', unidades, 'bytes', len(page))
 json.dump([f[:2] + f[3:] for f in fuera], open(R + 'wowcyk_mayorista_fuera.json', 'w'), ensure_ascii=False, indent=0)
 print('a costo + $3.000:', len(fuera))
+json.dump(perdida, open(R + 'wowcyk_mayorista_perdida.json', 'w'), ensure_ascii=False, indent=0)
+print('fuera por quedar debajo del costo:', len(perdida))
