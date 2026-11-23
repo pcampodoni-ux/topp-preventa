@@ -10,6 +10,13 @@ Reglas: mínimo 25 unidades surtidas, solo transferencia, sin seña.
 import html
 import json
 import re
+import sys
+from datetime import datetime, timedelta, timezone
+
+# --solo-stock: actualiza talles y stock con el último relevamiento sin recalcular precios (no necesita costos).
+# Usa los precios finales de tools/wowcyk_mayorista_final.json (los que ya se publicaron). Lo corre el workflow
+# "Relevar WOWCYK" dos veces por día.
+SOLO = '--solo-stock' in sys.argv
 
 R = 'tools/'
 stock = {x['url']: x for x in json.load(open(R + 'wowcyk_stock.json'))}
@@ -95,6 +102,8 @@ def desc_talles(desc):
 prods = []
 fuera = []
 perdida = []
+revisar = []
+final = json.load(open(R + 'wowcyk_mayorista_final.json')) if SOLO else {}
 for url, p in precios.items():
     if url in ajustes['excluir']:
         continue
@@ -129,6 +138,17 @@ for url, p in precios.items():
         tl.append({'t': (c + ' ' + tv).strip() if multi_color else tv, 'n': n, 'f': t})
     # tope: nunca más caro que el precio con transferencia (20% off) del talle más barato con stock en la tienda,
     # salvo los packs de 4 y 5 bodies a $49.900 (decisión de Patricio)
+    vp = [v['precio'] for v in st.get('variantes', []) if v.get('precio') and ((v.get('stock') or 0) > 0 or v.get('stock') is None)]
+    if SOLO:
+        if url not in final:
+            continue
+        precio = final[url]
+        if vp and precio != 49900 and precio > min(vp) * 0.8:
+            revisar.append((nom, precio, round(min(vp) * 0.8), url))   # la tienda bajó el precio: revisar a mano
+            continue
+    else:
+        precio = None
+    precio_final_solo = precio
     precio = p['may']
     rebajado5 = False
     costo = costos_reales.get(url) or p['costo']      # costo real de la planilla; si falta, el estimado
@@ -160,8 +180,10 @@ for url, p in precios.items():
         if vp:
             precio = min(precio, int(min(vp) * 0.8) // 100 * 100)
         fuera.append((nom, precio, round(costo), url))
+    if SOLO:
+        precio = precio_final_solo
     # 22/11 (Patricio): fuera de la lista todo lo que quede por debajo del costo
-    if precio < costo:
+    elif precio < costo:
         perdida.append((nom, precio, url))
         continue
     g = grupo(nom, desc, [li.get('sku')] + [v.get('sku') for v in st.get('variantes', [])])
@@ -336,7 +358,7 @@ page = f"""<!DOCTYPE html>
 
 <footer>
   <b>WOWCYK · Venta mayorista</b><br>
-  Lista de precios del 22/11/2026. Precios por unidad, válidos solo con transferencia; pueden cambiar sin aviso.<br>
+  Lista de precios del 22/11/2026. Stock actualizado el {datetime.now(timezone(timedelta(hours=-3))).strftime('%d/%m/%Y a las %H:%M')}. Precios por unidad, válidos solo con transferencia; pueden cambiar sin aviso.<br>
   Consultas: <a href="https://wa.me/5493794235712">3794235712</a>
 </footer>
 
@@ -348,7 +370,12 @@ page = f"""<!DOCTYPE html>
 """
 open('mayorista-stock.html', 'w').write(page)
 print('productos', len(prods), 'unidades', unidades, 'bytes', len(page))
-json.dump([f[:2] + f[3:] for f in fuera], open(R + 'wowcyk_mayorista_fuera.json', 'w'), ensure_ascii=False, indent=0)
-print('a costo + $3.000:', len(fuera))
-json.dump(perdida, open(R + 'wowcyk_mayorista_perdida.json', 'w'), ensure_ascii=False, indent=0)
-print('fuera por quedar debajo del costo:', len(perdida))
+if SOLO:
+    json.dump(revisar, open(R + 'wowcyk_mayorista_revisar.json', 'w'), ensure_ascii=False, indent=0)
+    print('fuera porque la tienda bajó el precio (revisar):', len(revisar))
+else:
+    json.dump([f[:2] + f[3:] for f in fuera], open(R + 'wowcyk_mayorista_fuera.json', 'w'), ensure_ascii=False, indent=0)
+    print('a costo + $3.000:', len(fuera))
+    json.dump(perdida, open(R + 'wowcyk_mayorista_perdida.json', 'w'), ensure_ascii=False, indent=0)
+    print('fuera por quedar debajo del costo:', len(perdida))
+    json.dump({p['url']: p['precio'] for p in prods}, open(R + 'wowcyk_mayorista_final.json', 'w'), ensure_ascii=False, indent=0)
