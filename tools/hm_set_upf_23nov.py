@@ -8,7 +8,7 @@ import precio as P
 code, cat, gen, nom, g, u = '1139368013', 'Mallas', 'Unisex', 'Set UPF 50 Remera + Short de Baño + Gorra Animales Marinos Turquesa', 150, 27.99
 tal = ['2-6M', '6-12M', '1-2Y', '2-4Y']; tls = ['2-6M', '6-12M', '1-2 años', '2-4 años']
 img = 'https://image.hm.com/assets/hm/fb/e0/fbe0ba4859707a14532ba1dc78b439a57054f6ed.jpg'
-pr = P.precio(u, P.COT, g / 1000 * 26.5 + 0.85)
+pr = 86900   # precio fijo de Patricio (23/11 19:15): ~$30.000 de ganancia; por fórmula daba $107.990
 p = os.path.join(T, 'hm_verano.tsv'); base = list(csv.DictReader(open(p, encoding='utf-8'), delimiter='\t'))
 if code not in {r['code'] for r in base}:
     base.append(dict(code=code, cat=cat, gen=gen, nombre=nom, usd=f'{u:g}', talles='|'.join(tls), img=img, fijo=str(pr), marca='hm', grupo='h',
