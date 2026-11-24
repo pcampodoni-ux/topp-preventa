@@ -22,6 +22,8 @@ MARCAS = {'carters': "Carter's", 'oshkosh': "OshKosh B'gosh", 'skiphop': 'Skip H
 ORDEN_GRUPOS = 'zcohgs'   # pestañas: Zapatillas, Carter's, OshKosh, H&M, GAP, Skip Hop
 BABY = ['PRE', 'NB', '3M', '6M', '9M', '12M', '18M', '24M']; TOD = ['2T', '3T', '4T', '5T']
 
+ATRACTIVO = {'Sets 2 Piezas': 0, 'Packs de Bodies': 1, 'Pijamas': 2, 'Jardineros': 2, 'Vestidos': 3, 'Enteritos': 3, 'Trajes de baño': 3,
+             'Remeras': 4, 'Shorts': 4, 'Bodies': 4, 'Zapatillas': 4, 'Sandalias': 4, 'Pantalones': 5, 'Buzos': 5, 'Pijamas de Polar': 5, 'Camperas': 6}
 TRAMOS = [(0, 10, 39900), (10, 12, 42900), (12, 13, 44900)]  # tope $39.900 hasta USD 9,99; 10–11,99 → $42.900; 12–12,99 → $44.900
 
 def fmt(n): return '$' + f"{n:,}".replace(',', '.')
@@ -64,14 +66,10 @@ def card(r, marca):
            f'<div class="bd">\n<span class="tag">{tag} · {r["cat"]} · {" y ".join(ED_TXT[e] for e in eds)}</span>\n'
            f'<h3><a class="nm" href="{url}" target="_blank" rel="noopener">{nom}</a></h3>\n<div class="pr"><b>{fmt(p)}</b></div>\n'
            f'<p class="lb">{lbl}</p>\n<div class="tls">{btns}</div>\n<button class="add" disabled>Elegí un talle</button>\n</div></article>')
-    nm = r['nombre']
-    if grupo == 'z': pri = 0 if float(r['usd']) == 12 else 1   # 12/11: primero la promo de zapatillas a USD 12
-    elif r['cat'] in ('Pijamas', 'Pijamas de Polar'): pri = -1   # 14/11: primero los pijamas, del más barato al más caro
-    elif r['cat'] == 'Jardineros': pri = 1 if 'Corderoy' in nm else 0   # 9/11: primero jardineros (jean/chambray antes que corderoy)
-    elif r['cat'] != 'Packs de Bodies': pri = 3
-    elif nm.startswith('Pack 5') and not re.search(r'Manga Larga|Musculosa', nm): pri = 0   # 8/11: primero packs de 5 manga corta
-    elif nm.startswith('Pack 4') and 'Manga Larga' in nm: pri = 1                          # después packs de 4 manga larga
-    else: pri = 2
+    # 24/11 (Patricio: "ordenalos siempre de más atractivos y menor precio a menos atractivos"): dentro de cada pestaña,
+    # primero las categorías más atractivas (sets y conjuntos, packs de bodies, pijamas…) y en cada una del más barato al más caro.
+    # Dentro de cada categoría, los que tienen 3 talles o más van antes que los de 1 o 2 talles (se ven menos atractivos).
+    pri = ATRACTIVO.get(r['cat'], 9) * 2 + (1 if len(t) < 3 else 0)
     return (ORDEN_GRUPOS.index(grupo), pri, p, CATS.index(r['cat']), art), set(t), set(eds)
 
 items, talles, edades = [], set(), set()
