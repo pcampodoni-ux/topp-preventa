@@ -49,13 +49,12 @@ def revisar_fila(r, marca, nuevo_usd, talles_ok, esp_ok):
         if len(quedan) < len(tal): inf['talles agotados'].append(f"{nom}: sin {', '.join(t for t in tal if t not in quedan)}")
         r['talles'] = '|'.join(quedan)
     viejo = float(r['usd'])
-    if nuevo_usd is None or nuevo_usd <= viejo + 0.005: return r
-    if r.get('fijo') and marca != 'gapfactory':
-        regla = (marca in ('carters', 'oshkosh') and r['cat'] == 'Remeras' and r['fijo'] == '19900' and nuevo_usd <= 4.99) or \
-                (r['cat'] in ('Pijamas', 'Pijamas de Polar') and nuevo_usd <= 8)
-        if nuevo_usd <= viejo * 1.10 or regla: inf['costo subió, precio fijo se mantiene'].append(f"{nom}: USD {viejo:g} → {nuevo_usd:g}"); r['usd'] = f'{nuevo_usd:g}'; return r
-        inf['sale (subió el costo, precio fijo)'].append(f"{nom}: USD {viejo:g} → {nuevo_usd:g}, publicado ${int(r['fijo']):,}".replace(',', '.')); return None
-    r['usd'] = f'{nuevo_usd:g}'; r['_subio'] = f'USD {viejo:g} → {nuevo_usd:g}'; return r
+    if nuevo_usd is None: return r
+    # 25/11: el precio lo pone tools/regla_precios.py (regla por rol de prenda). Acá solo se actualiza el costo, suba o baje;
+    # la regla después baja lo que corresponde, y sube solo lo que con el precio publicado deja menos de USD 5.
+    if nuevo_usd > viejo + 0.005: inf['subió el costo'].append(f"{nom}: USD {viejo:g} → {nuevo_usd:g}")
+    elif nuevo_usd < viejo - 0.005: inf['bajó el costo'].append(f"{nom}: USD {viejo:g} → {nuevo_usd:g}")
+    r['usd'] = f'{nuevo_usd:g}'; return r
 
 # --- Carter's / OshKosh
 cv = leer('carters_verano.tsv'); campos_c = list(cv[0].keys()); out = []
@@ -106,11 +105,7 @@ else:
         usd = round(float(h['usd']) * (0.5 if r.get('desc') == '50' else (1.0 if LICENCIA.search(r['nombre']) else 0.9)), 2)
         nr = revisar_fila(r, 'gapfactory', usd, set(h['talles'].split('|')), True)
         if nr:
-            if nr.get('_subio'):
-                f = precio_gap(float(nr['usd'])); f = 29900 if 29000 <= f < 29900 else f
-                if f > 39900: inf['sale (GAP quedó arriba de $39.900)'].append(f"{nr['nombre']}: USD {nr['usd']}"); continue
-                nr['fijo'] = str(f); nr['usd_lista'] = h['usd']
-            out.append(nr)
+            nr['usd_lista'] = h['usd']; out.append(nr)
     gv2 = out
 
 def precios(f):
@@ -121,6 +116,8 @@ cierre = re.search(r'CIERRE=new Date\("([^"]+)"\)', open(IDX, encoding='utf-8').
 if not a.seco:
     escribir('carters_verano.tsv', cv2, campos_c); escribir('hm_verano.tsv', hv2, campos_h); escribir('gap_verano.tsv', gv2, campos_g)
     json.dump(E, open(os.path.join(R, 'esperado.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
+    # 25/11: regla de precios por rol de prenda (tools/regla_precios.py); con el pedido abierto no sube precios publicados
+    subprocess.run([sys.executable, os.path.join(T, 'regla_precios.py'), '--solo-bajar'], check=True, cwd=os.path.join(T, '..'))
     subprocess.run([sys.executable, os.path.join(T, 'armar_pedido.py'), '--cierre', cierre, '--tsv', 'carters_verano.tsv:carters,hm_verano.tsv:hm,gap_verano.tsv:gapfactory'], check=True, cwd=os.path.join(T, '..'))
     s = open(IDX, encoding='utf-8').read()
     if 'var ABIERTO = true;' not in s: s = re.sub(r'var ABIERTO = (true|false);', 'var ABIERTO = true;', s, count=1); open(IDX, 'w', encoding='utf-8').write(s)
