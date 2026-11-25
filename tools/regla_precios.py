@@ -53,6 +53,14 @@ def regla(cat, nombre, usd, cot=None):
         n = n_pack(nombre, 5); peso = 60 * n; techo = 49900 if n <= 3 else (59900 if n <= 5 else 69900)
     elif cat == 'Ropa interior':
         peso = 30 * n_pack(nombre, 3); techo = TECHO[cat]
+    elif re.match(r'Pack \d+', nombre) and cat in PESO:
+        # 25/11 16:17: packs de remeras, shorts o calzas (H&M). Peso por prenda × N; techo = techo de la categoría + 50% por
+        # cada prenda extra (pack de 3 remeras: $59.900); rol ticket. Antes se los trataba como una sola prenda y salían todos.
+        n = n_pack(nombre, 2); peso = PESO[cat] * n
+        techo = int(round(TECHO.get(cat, 44900) * (1 + 0.5 * (n - 1)) / 1000)) * 1000 - 100
+        cost = (usd * 1.07 + peso / 1000 * 26.5 + 0.85) * (cot or P.COT)
+        p = min(int(round((cost + GANANCIA['ticket'] * (cot or P.COT) + 100) / 1000)) * 1000 - 100, techo)
+        return (p if p - cost >= MIN_USD * (cot or P.COT) else None), cost, 'ticket'
     elif cat == 'Sets 2 Piezas' and re.search(r'3 Piezas', nombre, re.I):
         peso = 200; techo = 69900
     else:
