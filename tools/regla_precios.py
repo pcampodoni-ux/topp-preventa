@@ -36,6 +36,9 @@ PESO = {'Remeras': 70, 'Shorts': 50, 'Bodies': 60, 'Pijamas': 215, 'Vestidos': 1
         'Sets 2 Piezas': 150}
 FIJOS = {'3U482410': 19900, '1139368013': 86900, '1314910013': 68900, '1347744002': 68900}   # decisiones de Patricio (21/11, 23/11, 24/11)
 MIN_USD = 5
+# 25/11 07:59, Patricio: "los packs déjalos como estaban, al igual que los pijamitas: son las cosas que se vendieron".
+# Estas categorías no las toca la regla: quedan al precio publicado (ni bajan ni salen por la regla; sí salen si se agotan).
+EXCLUIR = {'Packs de Bodies', 'Pijamas', 'Pijamas de Polar'}
 
 
 def n_pack(nombre, defecto):
@@ -76,6 +79,8 @@ def main():
         rows = list(csv.DictReader(open(p, encoding='utf-8'), delimiter='\t')); quedan = []
         for r in rows:
             c = r['code']; marca = r.get('marca') or ('gapfactory' if f.startswith('gap') else 'hm')
+            if r['cat'] in EXCLUIR and pub.get(c):
+                r['fijo'] = str(pub[c]); quedan.append(r); inf['igual'] += 1; continue
             nuevo, costo, rol = regla(r['cat'], r['nombre'], float(r['usd']))
             if c in FIJOS and (nuevo is None or nuevo > FIJOS[c]): nuevo = FIJOS[c]
             actual = pub.get(c)
