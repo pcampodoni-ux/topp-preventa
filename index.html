@@ -15330,8 +15330,12 @@ document.getElementById('wa').onclick=function(){
   m+='*WhatsApp:* '+t+'%0A%0A';
   m+='*Pedido:*%0A';
   var ordc=cart.slice().sort(function(x,y){return (x.marca||'').localeCompare(y.marca||'');});
-  ordc.forEach(function(i,k){
-    m+=(k+1)+'. *'+encodeURIComponent((i.marca?i.marca+' - ':'')+i.nom)+'*%0A   '+i.code+' - Talle '+i.talle+' - '+money(i.precio)+'%0A';
+  /* 25/11 (Patricio): el mismo producto en el mismo talle va en una sola línea con la cantidad de unidades */
+  var grp=[],ix={};
+  ordc.forEach(function(i){var key=i.code+'~'+i.talle;if(ix[key]===undefined){ix[key]=grp.length;grp.push({i:i,n:0});}grp[ix[key]].n++;});
+  grp.forEach(function(g,k){var i=g.i;
+    m+=(k+1)+'. *'+encodeURIComponent((i.marca?i.marca+' - ':'')+i.nom)+'*%0A   '+i.code+' - Talle '+i.talle+' - '+
+      (g.n>1?g.n+' unidades x '+money(i.precio)+' = '+money(i.precio*g.n):money(i.precio))+'%0A';
   });
   var pm={};ordc.forEach(function(i){var k=i.marca||'Otra';pm[k]=(pm[k]||0)+1;});
   m+='%0A*Por marca:* '+encodeURIComponent(Object.keys(pm).map(function(k){return k+' '+pm[k];}).join(' · '))+'%0A';
