@@ -94,6 +94,10 @@ def main():
             actual = pub.get(c)
             fila = (marca, c, r['cat'], r['nombre'], r['usd'], actual, nuevo, round((nuevo or 0) - costo), rol)
             if nuevo is None:
+                # 28/11: con el pedido abierto, lo ya publicado que queda apenas debajo del mínimo (deja al menos USD 4) se mantiene
+                # a su precio en vez de salir (al pasar al dólar MEP salían 32 productos por menos de $500 de diferencia).
+                if solo_bajar and actual and actual - costo >= 4 * P.COT:
+                    inf.setdefault('mantiene_bajo_minimo', []).append(fila); r['fijo'] = str(actual); quedan.append(r); continue
                 inf['sale'].append(fila); continue
             if actual and nuevo > actual and solo_bajar and actual - costo > 0:
                 inf['sube_congelado'].append(fila); r['fijo'] = str(actual); quedan.append(r); continue
